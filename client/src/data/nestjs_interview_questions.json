@@ -1,0 +1,1197 @@
+{
+    "junior": {
+        "level": "Junior (1 năm kinh nghiệm)",
+        "categories": {
+            "A. Kiến thức cơ bản về NestJS": {
+                "1. Giới thiệu về NestJS": [
+                    {
+                        "number": 1,
+                        "text": "NestJS là gì và tại sao nó được sử dụng để xây dựng các ứng dụng Node.js?"
+                    },
+                    {
+                        "number": 2,
+                        "text": "Nêu các tính năng chính và lợi ích của NestJS."
+                    },
+                    {
+                        "number": 3,
+                        "text": "NestJS được xây dựng dựa trên framework nào?"
+                    },
+                    {
+                        "number": 4,
+                        "text": "Giải thích cách NestJS tận dụng TypeScript."
+                    },
+                    {
+                        "number": 5,
+                        "text": "Sự khác biệt chính giữa NestJS và Express.js là gì?"
+                    },
+                    {
+                        "number": 6,
+                        "text": "Làm thế nào để khởi tạo một dự án NestJS mới?"
+                    },
+                    {
+                        "number": 7,
+                        "text": "Giải thích khái niệm về nền tảng (platform) trong NestJS."
+                    },
+                    {
+                        "number": 8,
+                        "text": "Kể tên một số thư viện hoặc công nghệ mà NestJS tích hợp sẵn."
+                    },
+                    {
+                        "number": 9,
+                        "text": "Làm thế nào để chạy một ứng dụng NestJS cơ bản?"
+                    },
+                    {
+                        "number": 10,
+                        "text": "Giải thích cấu trúc thư mục mặc định của một dự án NestJS."
+                    }
+                ],
+                "2. Cấu trúc ứng dụng NestJS": [
+                    {
+                        "number": 1,
+                        "text": "Mô tả cấu trúc module hóa của NestJS."
+                    },
+                    {
+                        "number": 2,
+                        "text": "Vai trò của `main.ts` trong một ứng dụng NestJS là gì?"
+                    },
+                    {
+                        "number": 3,
+                        "text": "Giải thích cách các thành phần (modules, controllers, providers) tương tác với nhau."
+                    },
+                    {
+                        "number": 4,
+                        "text": "Tại sao NestJS khuyến khích việc tổ chức code theo module?"
+                    },
+                    {
+                        "number": 5,
+                        "text": "Làm thế nào để tạo một module mới trong NestJS?"
+                    },
+                    {
+                        "number": 6,
+                        "text": "Giải thích cách NestJS sử dụng decorators."
+                    },
+                    {
+                        "number": 7,
+                        "text": "Sự khác biệt giữa `app.module.ts` và các module khác là gì?"
+                    },
+                    {
+                        "number": 8,
+                        "text": "Làm thế nào để import và export các module?"
+                    },
+                    {
+                        "number": 9,
+                        "text": "Nêu lợi ích của việc sử dụng CLI của NestJS."
+                    },
+                    {
+                        "number": 10,
+                        "text": "Giải thích khái niệm về `bootstrap` trong NestJS."
+                    }
+                ],
+                "3. Modules": [
+                    {
+                        "number": 1,
+                        "text": "Module trong NestJS là gì?"
+                    },
+                    {
+                        "number": 2,
+                        "text": "Nêu các thuộc tính chính của decorator `@Module()`."
+                    },
+                    {
+                        "number": 3,
+                        "text": "Làm thế nào để đăng ký controllers và providers trong một module?"
+                    },
+                    {
+                        "number": 4,
+                        "text": "Giải thích cách các module chia sẻ providers với nhau."
+                    },
+                    {
+                        "number": 5,
+                        "text": "Sự khác biệt giữa `imports` và `exports` trong `@Module()` là gì?"
+                    },
+                    {
+                        "number": 6,
+                        "text": "Làm thế nào để tạo các module có tính năng (feature modules)?"
+                    },
+                    {
+                        "number": 7,
+                        "text": "Giải thích khái niệm về `global modules`."
+                    },
+                    {
+                        "number": 8,
+                        "text": "Khi nào nên sử dụng `Dynamic Modules`?"
+                    },
+                    {
+                        "number": 9,
+                        "text": "Làm thế nào để tránh các vấn đề về `circular dependency` giữa các module?"
+                    },
+                    {
+                        "number": 10,
+                        "text": "Nêu ví dụ về một module cơ bản."
+                    }
+                ],
+                "4. Controllers": [
+                    {
+                        "number": 1,
+                        "text": "Controller trong NestJS là gì và vai trò của nó?"
+                    },
+                    {
+                        "number": 2,
+                        "text": "Làm thế nào để định nghĩa một controller trong NestJS?"
+                    },
+                    {
+                        "number": 3,
+                        "text": "Nêu các HTTP method decorators phổ biến (ví dụ: `@Get()`, `@Post()`, `@Put()`, `@Delete()`)."
+                    },
+                    {
+                        "number": 4,
+                        "text": "Làm thế nào để xử lý các tham số URL (`@Param()`) và query parameters (`@Query()`)?"
+                    },
+                    {
+                        "number": 5,
+                        "text": "Giải thích cách NestJS ánh xạ các request đến các controller methods."
+                    },
+                    {
+                        "number": 6,
+                        "text": "Làm thế nào để truy cập body của request (`@Body()`)?"
+                    },
+                    {
+                        "number": 7,
+                        "text": "Sự khác biệt giữa `@Req()` và `@Res()` là gì?"
+                    },
+                    {
+                        "number": 8,
+                        "text": "Làm thế nào để trả về một phản hồi JSON từ controller?"
+                    },
+                    {
+                        "number": 9,
+                        "text": "Giải thích cách sử dụng `@HttpCode()` và `@Header()`."
+                    },
+                    {
+                        "number": 10,
+                        "text": "Nêu ví dụ về một controller cơ bản."
+                    }
+                ],
+                "5. Providers (Services)": [
+                    {
+                        "number": 1,
+                        "text": "Provider (Service) trong NestJS là gì và vai trò của nó?"
+                    },
+                    {
+                        "number": 2,
+                        "text": "Làm thế nào để định nghĩa một service trong NestJS?"
+                    },
+                    {
+                        "number": 3,
+                        "text": "Giải thích cách một service được inject vào một controller."
+                    },
+                    {
+                        "number": 4,
+                        "text": "Tại sao nên tách logic nghiệp vụ vào các service thay vì controller?"
+                    },
+                    {
+                        "number": 5,
+                        "text": "Nêu các loại providers khác nhau trong NestJS (ví dụ: services, repositories, factories)."
+                    },
+                    {
+                        "number": 6,
+                        "text": "Làm thế nào để tạo một custom provider?"
+                    },
+                    {
+                        "number": 7,
+                        "text": "Giải thích khái niệm về `scope` của providers (singleton, request, transient)."
+                    },
+                    {
+                        "number": 8,
+                        "text": "Khi nào nên sử dụng `useFactory` hoặc `useValue` cho providers?"
+                    },
+                    {
+                        "number": 9,
+                        "text": "Làm thế nào để xử lý các providers bất đồng bộ?"
+                    },
+                    {
+                        "number": 10,
+                        "text": "Nêu ví dụ về một service cơ bản."
+                    }
+                ],
+                "6. Dependency Injection": [
+                    {
+                        "number": 1,
+                        "text": "Dependency Injection (DI) là gì và tại sao nó quan trọng trong NestJS?"
+                    },
+                    {
+                        "number": 2,
+                        "text": "Giải thích cách NestJS thực hiện DI."
+                    },
+                    {
+                        "number": 3,
+                        "text": "Nêu lợi ích của việc sử dụng DI."
+                    },
+                    {
+                        "number": 4,
+                        "text": "Sự khác biệt giữa DI trong NestJS và các cách tiếp cận khác (ví dụ: thủ công) là gì?"
+                    },
+                    {
+                        "number": 5,
+                        "text": "Làm thế nào để inject một provider vào một provider khác?"
+                    },
+                    {
+                        "number": 6,
+                        "text": "Giải thích khái niệm về `IoC container` trong NestJS."
+                    },
+                    {
+                        "number": 7,
+                        "text": "Làm thế nào để giải quyết các `circular dependencies` trong DI?"
+                    },
+                    {
+                        "number": 8,
+                        "text": "Nêu ví dụ về cách sử dụng `@Inject()` decorator."
+                    },
+                    {
+                        "number": 9,
+                        "text": "Giải thích cách DI giúp testing dễ dàng hơn."
+                    },
+                    {
+                        "number": 10,
+                        "text": "Tầm quan trọng của việc sử dụng `constructor injection`."
+                    }
+                ]
+            },
+            "B. Xử lý HTTP và Routing": {
+                "1. Routing và Decorators": [
+                    {
+                        "number": 1,
+                        "text": "Làm thế nào để định nghĩa các route với các tiền tố (prefixes) trong NestJS?"
+                    },
+                    {
+                        "number": 2,
+                        "text": "Giải thích cách sử dụng `@Redirect()` decorator."
+                    },
+                    {
+                        "number": 3,
+                        "text": "Nêu các decorator cho các HTTP method khác ngoài GET/POST/PUT/DELETE."
+                    },
+                    {
+                        "number": 4,
+                        "text": "Làm thế nào để xử lý các route động với nhiều tham số?"
+                    },
+                    {
+                        "number": 5,
+                        "text": "Giải thích cách NestJS xử lý các route không tìm thấy (404)."
+                    },
+                    {
+                        "number": 6,
+                        "text": "Sự khác biệt giữa `@Controller()` và `@Module()` decorators là gì?"
+                    },
+                    {
+                        "number": 7,
+                        "text": "Làm thế nào để tạo các route cho các tài nguyên lồng nhau (nested resources)?"
+                    },
+                    {
+                        "number": 8,
+                        "text": "Nêu ví dụ về cách sử dụng `Wildcard routes`."
+                    },
+                    {
+                        "number": 9,
+                        "text": "Giải thích cách sử dụng `Route parameters` với các ràng buộc (constraints)."
+                    },
+                    {
+                        "number": 10,
+                        "text": "Làm thế nào để áp dụng nhiều decorators cho một route method?"
+                    }
+                ],
+                "2. Request và Response Objects": [
+                    {
+                        "number": 1,
+                        "text": "Làm thế nào để truy cập đối tượng `Request` và `Response` gốc của nền tảng (ví dụ: Express) trong NestJS?"
+                    },
+                    {
+                        "number": 2,
+                        "text": "Giải thích cách sử dụng `@Headers()` và `@Ip()` decorators."
+                    },
+                    {
+                        "number": 3,
+                        "text": "Nêu các cách để gửi phản hồi tùy chỉnh (ví dụ: streaming, file download)."
+                    },
+                    {
+                        "number": 4,
+                        "text": "Sự khác biệt giữa `res.send()` và `res.json()` trong ngữ cảnh Express.js được NestJS sử dụng là gì?"
+                    },
+                    {
+                        "number": 5,
+                        "text": "Làm thế nào để thiết lập cookies và session trong NestJS?"
+                    },
+                    {
+                        "number": 6,
+                        "text": "Giải thích cách sử dụng `@HostParam()` decorator."
+                    },
+                    {
+                        "number": 7,
+                        "text": "Làm thế nào để xử lý các request có `Content-Type` khác nhau?"
+                    },
+                    {
+                        "number": 8,
+                        "text": "Nêu các cách để xử lý các request bất đồng bộ."
+                    },
+                    {
+                        "number": 9,
+                        "text": "Giải thích cách NestJS tự động chuyển đổi kiểu dữ liệu cho các tham số request."
+                    },
+                    {
+                        "number": 10,
+                        "text": "Làm thế nào để tùy chỉnh đối tượng `Request` (ví dụ: thêm thuộc tính user)?"
+                    }
+                ],
+                "3. Pipes": [
+                    {
+                        "number": 1,
+                        "text": "Pipe trong NestJS là gì và vai trò của nó?"
+                    },
+                    {
+                        "number": 2,
+                        "text": "Nêu các loại pipes tích hợp sẵn trong NestJS (ví dụ: `ValidationPipe`, `ParseIntPipe`)."
+                    },
+                    {
+                        "number": 3,
+                        "text": "Làm thế nào để tạo một custom pipe?"
+                    },
+                    {
+                        "number": 4,
+                        "text": "Giải thích cách một pipe được thực thi trong request lifecycle."
+                    },
+                    {
+                        "number": 5,
+                        "text": "Sự khác biệt giữa `ValidationPipe` và việc xác thực thủ công là gì?"
+                    },
+                    {
+                        "number": 6,
+                        "text": "Làm thế nào để áp dụng pipe ở cấp độ method, parameter hoặc global?"
+                    },
+                    {
+                        "number": 7,
+                        "text": "Giải thích cách pipes xử lý các ngoại lệ (exceptions)."
+                    },
+                    {
+                        "number": 8,
+                        "text": "Nêu ví dụ về một custom pipe để chuyển đổi dữ liệu."
+                    },
+                    {
+                        "number": 9,
+                        "text": "Tầm quan trọng của việc sử dụng pipes để đảm bảo tính toàn vẹn của dữ liệu."
+                    },
+                    {
+                        "number": 10,
+                        "text": "Làm thế nào để sử dụng `Class-validator` với `ValidationPipe`?"
+                    }
+                ],
+                "4. Guards": [
+                    {
+                        "number": 1,
+                        "text": "Guard trong NestJS là gì và vai trò của nó?"
+                    },
+                    {
+                        "number": 2,
+                        "text": "Làm thế nào để tạo một custom guard?"
+                    },
+                    {
+                        "number": 3,
+                        "text": "Giải thích cách một guard được thực thi trong request lifecycle."
+                    },
+                    {
+                        "number": 4,
+                        "text": "Sự khác biệt giữa guards và middleware là gì?"
+                    },
+                    {
+                        "number": 5,
+                        "text": "Làm thế nào để áp dụng guard ở cấp độ controller hoặc method?"
+                    },
+                    {
+                        "number": 6,
+                        "text": "Giải thích cách guards xử lý các trường hợp không được phép truy cập (403 Forbidden)."
+                    },
+                    {
+                        "number": 7,
+                        "text": "Nêu ví dụ về một guard để kiểm tra quyền truy cập dựa trên vai trò."
+                    },
+                    {
+                        "number": 8,
+                        "text": "Tầm quan trọng của việc sử dụng guards để bảo vệ các route."
+                    },
+                    {
+                        "number": 9,
+                        "text": "Làm thế nào để truyền dữ liệu từ guard sang controller?"
+                    },
+                    {
+                        "number": 10,
+                        "text": "Giải thích cách sử dụng `@SetMetadata()` với guards."
+                    }
+                ],
+                "5. Interceptors": [
+                    {
+                        "number": 1,
+                        "text": "Interceptor trong NestJS là gì và vai trò của nó?"
+                    },
+                    {
+                        "number": 2,
+                        "text": "Nêu các trường hợp sử dụng phổ biến cho interceptors."
+                    },
+                    {
+                        "number": 3,
+                        "text": "Làm thế nào để tạo một custom interceptor?"
+                    },
+                    {
+                        "number": 4,
+                        "text": "Giải thích cách một interceptor được thực thi trong request lifecycle."
+                    },
+                    {
+                        "number": 5,
+                        "text": "Sự khác biệt giữa interceptors và middleware là gì?"
+                    },
+                    {
+                        "number": 6,
+                        "text": "Làm thế nào để áp dụng interceptor ở cấp độ controller, method hoặc global?"
+                    },
+                    {
+                        "number": 7,
+                        "text": "Nêu ví dụ về một interceptor để biến đổi response data."
+                    },
+                    {
+                        "number": 8,
+                        "text": "Giải thích cách interceptors xử lý các stream (ví dụ: `Observable`)."
+                    },
+                    {
+                        "number": 9,
+                        "text": "Làm thế nào để sử dụng interceptor để ghi log các request/response?"
+                    },
+                    {
+                        "number": 10,
+                        "text": "Tầm quan trọng của việc sử dụng interceptors để thêm logic xuyên suốt (cross-cutting concerns)."
+                    }
+                ],
+                "6. Exception Filters": [
+                    {
+                        "number": 1,
+                        "text": "Exception Filter trong NestJS là gì và vai trò của nó?"
+                    },
+                    {
+                        "number": 2,
+                        "text": "Làm thế nào để tạo một custom exception filter?"
+                    },
+                    {
+                        "number": 3,
+                        "text": "Giải thích cách một exception filter được thực thi khi có lỗi."
+                    },
+                    {
+                        "number": 4,
+                        "text": "Sự khác biệt giữa exception filters và middleware xử lý lỗi là gì?"
+                    },
+                    {
+                        "number": 5,
+                        "text": "Làm thế nào để áp dụng exception filter ở cấp độ controller, method hoặc global?"
+                    },
+                    {
+                        "number": 6,
+                        "text": "Nêu ví dụ về một exception filter để xử lý lỗi `NotFoundException`."
+                    },
+                    {
+                        "number": 7,
+                        "text": "Giải thích cách exception filters xử lý các loại lỗi khác nhau."
+                    },
+                    {
+                        "number": 8,
+                        "text": "Làm thế nào để trả về một phản hồi lỗi tùy chỉnh từ exception filter?"
+                    },
+                    {
+                        "number": 9,
+                        "text": "Tầm quan trọng của việc sử dụng exception filters để chuẩn hóa phản hồi lỗi."
+                    },
+                    {
+                        "number": 10,
+                        "text": "Làm thế nào để sử dụng `HttpException` và các lớp con của nó?"
+                    }
+                ]
+            },
+            "C. Cơ sở dữ liệu và ORM/ODM": {
+                "1. Tích hợp cơ sở dữ liệu": [
+                    {
+                        "number": 1,
+                        "text": "Làm thế nào để tích hợp NestJS với cơ sở dữ liệu quan hệ (ví dụ: PostgreSQL, MySQL)?"
+                    },
+                    {
+                        "number": 2,
+                        "text": "Làm thế nào để tích hợp NestJS với cơ sở dữ liệu NoSQL (ví dụ: MongoDB)?"
+                    },
+                    {
+                        "number": 3,
+                        "text": "Nêu các module NestJS phổ biến để làm việc với cơ sở dữ liệu."
+                    },
+                    {
+                        "number": 4,
+                        "text": "Giải thích cách cấu hình kết nối cơ sở dữ liệu trong NestJS."
+                    },
+                    {
+                        "number": 5,
+                        "text": "Tầm quan trọng của việc quản lý kết nối cơ sở dữ liệu và connection pooling."
+                    },
+                    {
+                        "number": 6,
+                        "text": "Làm thế nào để xử lý các biến môi trường cho thông tin kết nối cơ sở dữ liệu?"
+                    },
+                    {
+                        "number": 7,
+                        "text": "Nêu các best practices để bảo mật thông tin kết nối cơ sở dữ liệu."
+                    },
+                    {
+                        "number": 8,
+                        "text": "Giải thích cách NestJS hỗ trợ các transaction."
+                    },
+                    {
+                        "number": 9,
+                        "text": "Làm thế nào để tạo một repository hoặc DAO pattern trong NestJS?"
+                    },
+                    {
+                        "number": 10,
+                        "text": "Sự khác biệt giữa `TypeOrmModule.forRoot()` và `TypeOrmModule.forFeature()`."
+                    }
+                ],
+                "2. TypeORM/Mongoose": [
+                    {
+                        "number": 1,
+                        "text": "Giới thiệu về TypeORM và cách nó được sử dụng trong NestJS."
+                    },
+                    {
+                        "number": 2,
+                        "text": "Giới thiệu về Mongoose và cách nó được sử dụng trong NestJS."
+                    },
+                    {
+                        "number": 3,
+                        "text": "Làm thế nào để định nghĩa một entity (TypeORM) hoặc schema (Mongoose)?"
+                    },
+                    {
+                        "number": 4,
+                        "text": "Nêu các thao tác CRUD cơ bản với TypeORM."
+                    },
+                    {
+                        "number": 5,
+                        "text": "Nêu các thao tác CRUD cơ bản với Mongoose."
+                    },
+                    {
+                        "number": 6,
+                        "text": "Giải thích cách xử lý các mối quan hệ giữa các entity/schema."
+                    },
+                    {
+                        "number": 7,
+                        "text": "Làm thế nào để sử dụng `Repository` pattern với TypeORM?"
+                    },
+                    {
+                        "number": 8,
+                        "text": "Làm thế nào để sử dụng `Model` với Mongoose?"
+                    },
+                    {
+                        "number": 9,
+                        "text": "Sự khác biệt giữa `Active Record` và `Data Mapper` patterns trong TypeORM."
+                    },
+                    {
+                        "number": 10,
+                        "text": "Làm thế nào để thực hiện các truy vấn phức tạp với TypeORM/Mongoose?"
+                    }
+                ],
+                "3. Migrations và Seeding": [
+                    {
+                        "number": 1,
+                        "text": "Migration là gì và tại sao nó quan trọng trong phát triển cơ sở dữ liệu?"
+                    },
+                    {
+                        "number": 2,
+                        "text": "Làm thế nào để tạo và chạy migrations với TypeORM trong NestJS?"
+                    },
+                    {
+                        "number": 3,
+                        "text": "Seeding là gì và khi nào nên sử dụng nó?"
+                    },
+                    {
+                        "number": 4,
+                        "text": "Làm thế nào để tạo và chạy seeders trong NestJS?"
+                    },
+                    {
+                        "number": 5,
+                        "text": "Giải thích cách quản lý các thay đổi schema cơ sở dữ liệu."
+                    },
+                    {
+                        "number": 6,
+                        "text": "Nêu các best practices cho việc viết migrations."
+                    },
+                    {
+                        "number": 7,
+                        "text": "Làm thế nào để xử lý các rollback migrations?"
+                    },
+                    {
+                        "number": 8,
+                        "text": "Sự khác biệt giữa `schema:sync` và migrations trong TypeORM."
+                    },
+                    {
+                        "number": 9,
+                        "text": "Làm thế nào để tự động chạy migrations khi triển khai ứng dụng?"
+                    },
+                    {
+                        "number": 10,
+                        "text": "Tầm quan trọng của việc có dữ liệu mẫu (seed data) cho môi trường phát triển và testing."
+                    }
+                ]
+            },
+            "D. Xác thực và Ủy quyền": {
+                "1. Authentication (Passport.js, JWT)": [
+                    {
+                        "number": 1,
+                        "text": "Làm thế nào để triển khai xác thực người dùng trong NestJS?"
+                    },
+                    {
+                        "number": 2,
+                        "text": "Giới thiệu về `@nestjs/passport` và cách nó tích hợp Passport.js."
+                    },
+                    {
+                        "number": 3,
+                        "text": "Làm thế nào để sử dụng JWT (JSON Web Token) để xác thực trong NestJS?"
+                    },
+                    {
+                        "number": 4,
+                        "text": "Giải thích các chiến lược Passport.js phổ biến (Local, JWT, OAuth)."
+                    },
+                    {
+                        "number": 5,
+                        "text": "Làm thế nào để tạo một `JwtStrategy` tùy chỉnh?"
+                    },
+                    {
+                        "number": 6,
+                        "text": "Giải thích cách NestJS xử lý các `Guard` để bảo vệ các route."
+                    },
+                    {
+                        "number": 7,
+                        "text": "Nêu các best practices để lưu trữ và quản lý JWT."
+                    },
+                    {
+                        "number": 8,
+                        "text": "Làm thế nào để triển khai xác thực dựa trên session trong NestJS?"
+                    },
+                    {
+                        "number": 9,
+                        "text": "Sự khác biệt giữa `access token` và `refresh token` trong NestJS."
+                    },
+                    {
+                        "number": 10,
+                        "text": "Làm thế nào để xử lý việc đăng ký và đăng nhập người dùng?"
+                    }
+                ],
+                "2. Authorization (Roles, Permissions)": [
+                    {
+                        "number": 1,
+                        "text": "Ủy quyền (Authorization) là gì và làm thế nào để triển khai nó trong NestJS?"
+                    },
+                    {
+                        "number": 2,
+                        "text": "Làm thế nào để tạo một `Guard` để kiểm tra vai trò của người dùng (Role-Based Access Control - RBAC)?"
+                    },
+                    {
+                        "number": 3,
+                        "text": "Giải thích cách sử dụng `@Roles()` decorator tùy chỉnh."
+                    },
+                    {
+                        "number": 4,
+                        "text": "Nêu các best practices để quản lý vai trò và quyền hạn."
+                    },
+                    {
+                        "number": 5,
+                        "text": "Làm thế nào để truyền thông tin người dùng đã xác thực đến các service?"
+                    },
+                    {
+                        "number": 6,
+                        "text": "Giải thích cách xử lý các trường hợp người dùng không có quyền (403 Forbidden)."
+                    },
+                    {
+                        "number": 7,
+                        "text": "Sự khác biệt giữa `Guard` và `Interceptor` trong ngữ cảnh ủy quyền."
+                    },
+                    {
+                        "number": 8,
+                        "text": "Làm thế nào để triển khai ủy quyền dựa trên thuộc tính (Attribute-Based Access Control - ABAC)?"
+                    },
+                    {
+                        "number": 9,
+                        "text": "Nêu các thư viện hoặc cách tiếp cận phổ biến để quản lý ủy quyền phức tạp."
+                    },
+                    {
+                        "number": 10,
+                        "text": "Tầm quan trọng của việc kiểm tra ủy quyền ở cả phía client và server."
+                    }
+                ]
+            },
+            "E. Testing": {
+                "1. Unit Testing": [
+                    {
+                        "number": 1,
+                        "text": "Tại sao unit testing quan trọng trong NestJS?"
+                    },
+                    {
+                        "number": 2,
+                        "text": "Nêu các công cụ testing phổ biến được sử dụng với NestJS (ví dụ: Jest)."
+                    },
+                    {
+                        "number": 3,
+                        "text": "Làm thế nào để viết một unit test cho một service trong NestJS?"
+                    },
+                    {
+                        "number": 4,
+                        "text": "Giải thích cách sử dụng `Test.createTestingModule()` để tạo một testing module."
+                    },
+                    {
+                        "number": 5,
+                        "text": "Làm thế nào để mock các dependencies trong unit tests?"
+                    },
+                    {
+                        "number": 6,
+                        "text": "Nêu các best practices cho việc viết unit tests hiệu quả."
+                    },
+                    {
+                        "number": 7,
+                        "text": "Giải thích khái niệm về `test doubles` (mocks, stubs, spies)."
+                    },
+                    {
+                        "number": 8,
+                        "text": "Làm thế nào để kiểm tra các private methods (nếu cần)?"
+                    },
+                    {
+                        "number": 9,
+                        "text": "Tầm quan trọng của việc đạt được `code coverage` cao."
+                    },
+                    {
+                        "number": 10,
+                        "text": "Làm thế nào để chạy các unit tests trong một dự án NestJS?"
+                    }
+                ],
+                "2. Integration Testing": [
+                    {
+                        "number": 1,
+                        "text": "Integration testing trong NestJS là gì và tại sao nó quan trọng?"
+                    },
+                    {
+                        "number": 2,
+                        "text": "Làm thế nào để viết một integration test cho một controller trong NestJS?"
+                    },
+                    {
+                        "number": 3,
+                        "text": "Giải thích cách sử dụng `Supertest` để kiểm tra các HTTP endpoints."
+                    },
+                    {
+                        "number": 4,
+                        "text": "Làm thế nào để tạo một testing application context cho integration tests?"
+                    },
+                    {
+                        "number": 5,
+                        "text": "Nêu các best practices cho việc thiết lập và dọn dẹp cơ sở dữ liệu trong integration tests."
+                    },
+                    {
+                        "number": 6,
+                        "text": "Giải thích cách mock các external services trong integration tests."
+                    },
+                    {
+                        "number": 7,
+                        "text": "Làm thế nào để kiểm tra các `Guard`, `Pipe`, `Interceptor` trong integration tests?"
+                    },
+                    {
+                        "number": 8,
+                        "text": "Sự khác biệt giữa unit và integration testing trong NestJS."
+                    },
+                    {
+                        "number": 9,
+                        "text": "Tầm quan trọng của việc kiểm tra luồng dữ liệu giữa các thành phần."
+                    },
+                    {
+                        "number": 10,
+                        "text": "Làm thế nào để chạy các integration tests trong một dự án NestJS?"
+                    }
+                ],
+                "3. End-to-End Testing": [
+                    {
+                        "number": 1,
+                        "text": "End-to-End (E2E) testing trong NestJS là gì và tại sao nó quan trọng?"
+                    },
+                    {
+                        "number": 2,
+                        "text": "Nêu các công cụ E2E testing phổ biến (ví dụ: Cypress, Playwright)."
+                    },
+                    {
+                        "number": 3,
+                        "text": "Làm thế nào để viết một E2E test cho một ứng dụng NestJS?"
+                    },
+                    {
+                        "number": 4,
+                        "text": "Giải thích cách thiết lập môi trường cho E2E tests."
+                    },
+                    {
+                        "number": 5,
+                        "text": "Nêu các best practices cho việc viết E2E tests đáng tin cậy."
+                    },
+                    {
+                        "number": 6,
+                        "text": "Giải thích cách E2E tests mô phỏng hành vi người dùng."
+                    },
+                    {
+                        "number": 7,
+                        "text": "Sự khác biệt giữa integration và E2E testing trong NestJS."
+                    },
+                    {
+                        "number": 8,
+                        "text": "Tầm quan trọng của việc kiểm tra toàn bộ luồng người dùng."
+                    },
+                    {
+                        "number": 9,
+                        "text": "Làm thế nào để xử lý các yếu tố bất đồng bộ và thời gian chờ trong E2E tests?"
+                    },
+                    {
+                        "number": 10,
+                        "text": "Làm thế nào để chạy các E2E tests trong một dự án NestJS?"
+                    }
+                ]
+            },
+            "F. Kiến trúc nâng cao và Best Practices": {
+                "1. Microservices": [
+                    {
+                        "number": 1,
+                        "text": "Làm thế nào để xây dựng microservices với NestJS?"
+                    },
+                    {
+                        "number": 2,
+                        "text": "Nêu các chiến lược giao tiếp giữa các microservices trong NestJS (ví dụ: TCP, Redis, Kafka)."
+                    },
+                    {
+                        "number": 3,
+                        "text": "Giải thích khái niệm về `Clients` và `Servers` trong NestJS microservices."
+                    },
+                    {
+                        "number": 4,
+                        "text": "Làm thế nào để xử lý `event-based communication` giữa các microservices?"
+                    },
+                    {
+                        "number": 5,
+                        "text": "Nêu các best practices cho việc thiết kế và triển khai microservices với NestJS."
+                    },
+                    {
+                        "number": 6,
+                        "text": "Giải thích cách NestJS hỗ trợ `API Gateway` pattern."
+                    },
+                    {
+                        "number": 7,
+                        "text": "Làm thế nào để xử lý `distributed transactions` trong kiến trúc microservices?"
+                    },
+                    {
+                        "number": 8,
+                        "text": "Sự khác biệt giữa `message patterns` và `event patterns`."
+                    },
+                    {
+                        "number": 9,
+                        "text": "Tầm quan trọng của việc giám sát và logging trong môi trường microservices."
+                    },
+                    {
+                        "number": 10,
+                        "text": "Làm thế nào để triển khai `service discovery` cho microservices NestJS?"
+                    }
+                ],
+                "2. GraphQL": [
+                    {
+                        "number": 1,
+                        "text": "Làm thế nào để tích hợp GraphQL vào ứng dụng NestJS?"
+                    },
+                    {
+                        "number": 2,
+                        "text": "Nêu các cách để định nghĩa schema GraphQL trong NestJS (Code First, Schema First)."
+                    },
+                    {
+                        "number": 3,
+                        "text": "Giải thích cách sử dụng `@Query()`, `@Mutation()`, `@ResolveField()` decorators."
+                    },
+                    {
+                        "number": 4,
+                        "text": "Làm thế nào để xử lý các `resolvers` và `type definitions`?"
+                    },
+                    {
+                        "number": 5,
+                        "text": "Nêu các best practices cho việc xây dựng API GraphQL với NestJS."
+                    },
+                    {
+                        "number": 6,
+                        "text": "Giải thích cách NestJS hỗ trợ `subscriptions` trong GraphQL."
+                    },
+                    {
+                        "number": 7,
+                        "text": "Làm thế nào để tích hợp xác thực và ủy quyền với GraphQL?"
+                    },
+                    {
+                        "number": 8,
+                        "text": "Sự khác biệt giữa REST và GraphQL trong ngữ cảnh NestJS."
+                    },
+                    {
+                        "number": 9,
+                        "text": "Tầm quan trọng của việc sử dụng `DataLoader` để giải quyết vấn đề N+1."
+                    },
+                    {
+                        "number": 10,
+                        "text": "Làm thế nào để kiểm tra các API GraphQL trong NestJS?"
+                    }
+                ],
+                "3. WebSockets": [
+                    {
+                        "number": 1,
+                        "text": "Làm thế nào để tích hợp WebSockets vào ứng dụng NestJS?"
+                    },
+                    {
+                        "number": 2,
+                        "text": "Nêu các decorator chính cho WebSockets (ví dụ: `@WebSocketGateway()`, `@SubscribeMessage()`)."
+                    },
+                    {
+                        "number": 3,
+                        "text": "Giải thích cách NestJS sử dụng `Gateways` để xử lý WebSockets."
+                    },
+                    {
+                        "number": 4,
+                        "text": "Làm thế nào để gửi và nhận tin nhắn qua WebSockets?"
+                    },
+                    {
+                        "number": 5,
+                        "text": "Nêu các best practices cho việc xây dựng ứng dụng thời gian thực với NestJS WebSockets."
+                    },
+                    {
+                        "number": 6,
+                        "text": "Giải thích cách xử lý `namespaces` và `rooms` trong WebSockets."
+                    },
+                    {
+                        "number": 7,
+                        "text": "Làm thế nào để tích hợp xác thực và ủy quyền với WebSockets?"
+                    },
+                    {
+                        "number": 8,
+                        "text": "Sự khác biệt giữa WebSockets và HTTP trong ngữ cảnh NestJS."
+                    },
+                    {
+                        "number": 9,
+                        "text": "Tầm quan trọng của việc xử lý `connection management` và `error handling`."
+                    },
+                    {
+                        "number": 10,
+                        "text": "Làm thế nào để kiểm tra các ứng dụng WebSocket trong NestJS?"
+                    }
+                ],
+                "4. Validation": [
+                    {
+                        "number": 1,
+                        "text": "Làm thế nào để thực hiện validation dữ liệu đầu vào trong NestJS?"
+                    },
+                    {
+                        "number": 2,
+                        "text": "Nêu các thư viện validation phổ biến được sử dụng với NestJS (ví dụ: `class-validator`)."
+                    },
+                    {
+                        "number": 3,
+                        "text": "Giải thích cách sử dụng `ValidationPipe` và `class-validator`."
+                    },
+                    {
+                        "number": 4,
+                        "text": "Làm thế nào để tạo các `custom validation decorators`?"
+                    },
+                    {
+                        "number": 5,
+                        "text": "Nêu các best practices cho việc validation dữ liệu phức tạp."
+                    },
+                    {
+                        "number": 6,
+                        "text": "Giải thích cách xử lý các thông báo lỗi validation tùy chỉnh."
+                    },
+                    {
+                        "number": 7,
+                        "text": "Sự khác biệt giữa validation ở cấp độ DTO và ở cấp độ service."
+                    },
+                    {
+                        "number": 8,
+                        "text": "Tầm quan trọng của việc validation dữ liệu ở phía server."
+                    },
+                    {
+                        "number": 9,
+                        "text": "Làm thế nào để validation các `nested objects` và `arrays`?"
+                    },
+                    {
+                        "number": 10,
+                        "text": "Làm thế nào để tích hợp validation với `GraphQL`?"
+                    }
+                ],
+                "5. Configuration": [
+                    {
+                        "number": 1,
+                        "text": "Làm thế nào để quản lý cấu hình ứng dụng trong NestJS?"
+                    },
+                    {
+                        "number": 2,
+                        "text": "Nêu các cách để load các biến môi trường (ví dụ: `.env` files)."
+                    },
+                    {
+                        "number": 3,
+                        "text": "Giải thích cách sử dụng `@nestjs/config` module."
+                    },
+                    {
+                        "number": 4,
+                        "text": "Làm thế nào để tạo các `custom configuration files`?"
+                    },
+                    {
+                        "number": 5,
+                        "text": "Nêu các best practices cho việc quản lý cấu hình trong môi trường production."
+                    },
+                    {
+                        "number": 6,
+                        "text": "Giải thích cách xử lý các `sensitive configuration data` (secrets)."
+                    },
+                    {
+                        "number": 7,
+                        "text": "Sự khác biệt giữa `synchronous` và `asynchronous` configuration loading."
+                    },
+                    {
+                        "number": 8,
+                        "text": "Tầm quan trọng của việc validation cấu hình."
+                    },
+                    {
+                        "number": 9,
+                        "text": "Làm thế nào để truy cập các giá trị cấu hình trong các service và controller?"
+                    },
+                    {
+                        "number": 10,
+                        "text": "Làm thế nào để sử dụng `ConfigService` để cung cấp cấu hình."
+                    }
+                ],
+                "6. Logging": [
+                    {
+                        "number": 1,
+                        "text": "Làm thế nào để thực hiện logging trong NestJS?"
+                    },
+                    {
+                        "number": 2,
+                        "text": "Nêu các thư viện logging phổ biến được sử dụng với NestJS (ví dụ: Winston, Pino)."
+                    },
+                    {
+                        "number": 3,
+                        "text": "Giải thích cách sử dụng `Logger` module của NestJS."
+                    },
+                    {
+                        "number": 4,
+                        "text": "Làm thế nào để tạo một `custom logger`?"
+                    },
+                    {
+                        "number": 5,
+                        "text": "Nêu các best practices cho việc logging trong môi trường production."
+                    },
+                    {
+                        "number": 6,
+                        "text": "Giải thích cách xử lý các `log levels` và `transports`."
+                    },
+                    {
+                        "number": 7,
+                        "text": "Sự khác biệt giữa logging đồng bộ và bất đồng bộ."
+                    },
+                    {
+                        "number": 8,
+                        "text": "Tầm quan trọng của việc `structured logging`."
+                    },
+                    {
+                        "number": 9,
+                        "text": "Làm thế nào để tích hợp logging với các hệ thống giám sát?"
+                    },
+                    {
+                        "number": 10,
+                        "text": "Làm thế nào để ghi log các `request` và `response` một cách hiệu quả?"
+                    }
+                ],
+                "7. Best Practices và Design Patterns": [
+                    {
+                        "number": 1,
+                        "text": "Nêu các best practices chung khi phát triển ứng dụng NestJS."
+                    },
+                    {
+                        "number": 2,
+                        "text": "Giải thích cách áp dụng các `SOLID principles` trong NestJS."
+                    },
+                    {
+                        "number": 3,
+                        "text": "Làm thế nào để sử dụng `Repository Pattern` hoặc `Unit of Work Pattern`?"
+                    },
+                    {
+                        "number": 4,
+                        "text": "Nêu các `design patterns` phổ biến khác có thể áp dụng trong NestJS."
+                    },
+                    {
+                        "number": 5,
+                        "text": "Tầm quan trọng của việc `code readability` và `maintainability`."
+                    },
+                    {
+                        "number": 6,
+                        "text": "Làm thế nào để xử lý `asynchronous operations` một cách hiệu quả (Promises, Async/Await, RxJS)?"
+                    },
+                    {
+                        "number": 7,
+                        "text": "Giải thích cách sử dụng `CQRS` (Command Query Responsibility Segregation) trong NestJS."
+                    },
+                    {
+                        "number": 8,
+                        "text": "Nêu các best practices cho việc quản lý `technical debt`."
+                    },
+                    {
+                        "number": 9,
+                        "text": "Làm thế nào để tối ưu hóa hiệu suất của ứng dụng NestJS?"
+                    },
+                    {
+                        "number": 10,
+                        "text": "Tầm quan trọng của việc `documentation` trong các dự án NestJS lớn."
+                    }
+                ]
+            }
+        }
+    },
+    "middle": {
+        "level": "Middle (2-4 năm kinh nghiệm)",
+        "categories": {
+            "A. Kiến thức cơ bản về NestJS": {
+                "1. Giới thiệu về NestJS": [],
+                "2. Cấu trúc ứng dụng NestJS": [],
+                "3. Modules": [],
+                "4. Controllers": [],
+                "5. Providers (Services)": [],
+                "6. Dependency Injection": []
+            },
+            "B. Xử lý HTTP và Routing": {
+                "1. Routing và Decorators": [],
+                "2. Request và Response Objects": [],
+                "3. Pipes": [],
+                "4. Guards": [],
+                "5. Interceptors": [],
+                "6. Exception Filters": []
+            },
+            "C. Cơ sở dữ liệu và ORM/ODM": {
+                "1. Tích hợp cơ sở dữ liệu": [],
+                "2. TypeORM/Mongoose": [],
+                "3. Migrations và Seeding": []
+            },
+            "D. Xác thực và Ủy quyền": {
+                "1. Authentication (Passport.js, JWT)": [],
+                "2. Authorization (Roles, Permissions)": []
+            },
+            "E. Testing": {
+                "1. Unit Testing": [],
+                "2. Integration Testing": [],
+                "3. End-to-End Testing": []
+            },
+            "F. Kiến trúc nâng cao và Best Practices": {
+                "1. Microservices": [],
+                "2. GraphQL": [],
+                "3. WebSockets": [],
+                "4. Validation": [],
+                "5. Configuration": [],
+                "6. Logging": [],
+                "7. Best Practices và Design Patterns": []
+            }
+        }
+    }
+}

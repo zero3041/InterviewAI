@@ -35,6 +35,24 @@
       "color": "orange",
       "levels": ["junior", "middle"],
       "dataFile": "nextjs_questions"
+    },
+    {
+      "id": "nestjs",
+      "name": "NestJS",
+      "icon": "server",
+      "description": "Backend framework với TypeScript và Node.js",
+      "color": "red",
+      "levels": ["junior", "middle"],
+      "dataFile": "nestjs_interview_questions"
+    },
+    {
+      "id": "express",
+      "name": "Express.js",
+      "icon": "zap",
+      "description": "Minimalist web framework cho Node.js",
+      "color": "slate",
+      "levels": ["junior", "middle"],
+      "dataFile": "express_interview_questions"
     }
   ]
 }

@@ -2,6 +2,8 @@ import javaQuestions from "@/data/questions.json";
 import phpQuestions from "@/data/php_questions.json";
 import reactQuestions from "@/data/react_questions.json";
 import nextjsQuestions from "@/data/nextjs_questions.json";
+import nestjsQuestions from "@/data/nestjs_interview_questions.json";
+import expressQuestions from "@/data/express_interview_questions.json";
 
 export interface Question {
   number: number;
@@ -31,6 +33,8 @@ const dataMap: Record<string, QuestionsData> = {
   "php": phpQuestions as QuestionsData,
   "react": reactQuestions as QuestionsData,
   "nextjs": nextjsQuestions as QuestionsData,
+  "nestjs": nestjsQuestions as QuestionsData,
+  "express": expressQuestions as QuestionsData,
 };
 
 export function getQuestionsData(techId: string): QuestionsData | null {

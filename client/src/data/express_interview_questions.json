@@ -1,0 +1,1252 @@
+{
+    "junior": {
+        "level": "Junior (1 năm kinh nghiệm)",
+        "categories": {
+            "A. Kiến thức cơ bản về Express.js": {
+                "1. Giới thiệu về Express.js": [
+                    {
+                        "number": 1,
+                        "text": "Express.js là gì và tại sao nó phổ biến trong phát triển Node.js?"
+                    },
+                    {
+                        "number": 2,
+                        "text": "Nêu các tính năng chính của Express.js."
+                    },
+                    {
+                        "number": 3,
+                        "text": "Làm thế nào để khởi tạo một ứng dụng Express.js cơ bản?"
+                    },
+                    {
+                        "number": 4,
+                        "text": "Phân biệt giữa Node.js và Express.js."
+                    },
+                    {
+                        "number": 5,
+                        "text": "Giải thích vai trò của Express.js trong kiến trúc ứng dụng web."
+                    },
+                    {
+                        "number": 6,
+                        "text": "Làm thế nào để cài đặt Express.js trong một dự án Node.js?"
+                    },
+                    {
+                        "number": 7,
+                        "text": "Cú pháp cơ bản để tạo một server HTTP với Express.js là gì?"
+                    },
+                    {
+                        "number": 8,
+                        "text": "Giải thích khái niệm 'application instance' trong Express.js."
+                    },
+                    {
+                        "number": 9,
+                        "text": "Làm thế nào để lắng nghe các request trên một cổng cụ thể trong Express.js?"
+                    },
+                    {
+                        "number": 10,
+                        "text": "Kể tên một số framework hoặc thư viện phổ biến được sử dụng cùng với Express.js."
+                    }
+                ],
+                "2. Cấu trúc ứng dụng Express.js": [
+                    {
+                        "number": 1,
+                        "text": "Mô tả cấu trúc thư mục điển hình cho một ứng dụng Express.js."
+                    },
+                    {
+                        "number": 2,
+                        "text": "Tại sao việc tổ chức code là quan trọng trong các dự án Express.js lớn?"
+                    },
+                    {
+                        "number": 3,
+                        "text": "Giải thích cách sử dụng các module để tổ chức routing và middleware."
+                    },
+                    {
+                        "number": 4,
+                        "text": "Nêu lợi ích của việc tách biệt logic kinh doanh khỏi logic trình bày."
+                    },
+                    {
+                        "number": 5,
+                        "text": "Làm thế nào để quản lý các biến môi trường trong Express.js?"
+                    },
+                    {
+                        "number": 6,
+                        "text": "Sự khác biệt giữa `app.js` và `server.js` (hoặc `index.js`) trong một dự án Express.js là gì?"
+                    },
+                    {
+                        "number": 7,
+                        "text": "Giải thích cách sử dụng `express.Router()` để tạo các route module."
+                    },
+                    {
+                        "number": 8,
+                        "text": "Làm thế nào để load các file cấu hình khác nhau dựa trên môi trường (development, production)?"
+                    },
+                    {
+                        "number": 9,
+                        "text": "Nêu một số công cụ giúp quản lý cấu trúc dự án Express.js."
+                    },
+                    {
+                        "number": 10,
+                        "text": "Giải thích khái niệm 'application settings' trong Express.js."
+                    }
+                ],
+                "3. Routing": [
+                    {
+                        "number": 1,
+                        "text": "Routing trong Express.js là gì?"
+                    },
+                    {
+                        "number": 2,
+                        "text": "Làm thế nào để định nghĩa một route cơ bản trong Express.js?"
+                    },
+                    {
+                        "number": 3,
+                        "text": "Giải thích các phương thức HTTP phổ biến được sử dụng trong routing (GET, POST, PUT, DELETE)."
+                    },
+                    {
+                        "number": 4,
+                        "text": "Làm thế nào để xử lý các tham số URL (URL parameters) trong Express.js?"
+                    },
+                    {
+                        "number": 5,
+                        "text": "Sự khác biệt giữa `app.get()` và `app.use()` trong ngữ cảnh routing là gì?"
+                    },
+                    {
+                        "number": 6,
+                        "text": "Làm thế nào để tạo các route động với các tham số?"
+                    },
+                    {
+                        "number": 7,
+                        "text": "Giải thích cách sử dụng `express.Router()` để nhóm các route liên quan."
+                    },
+                    {
+                        "number": 8,
+                        "text": "Làm thế nào để xử lý các route không tìm thấy (404 Not Found)?"
+                    },
+                    {
+                        "number": 9,
+                        "text": "Nêu ví dụ về cách sử dụng các biểu thức chính quy (regex) trong routing."
+                    },
+                    {
+                        "number": 10,
+                        "text": "Làm thế nào để áp dụng nhiều hàm xử lý (handler functions) cho một route?"
+                    }
+                ],
+                "4. Middleware": [
+                    {
+                        "number": 1,
+                        "text": "Middleware trong Express.js là gì?"
+                    },
+                    {
+                        "number": 2,
+                        "text": "Giải thích cách hoạt động của một hàm middleware."
+                    },
+                    {
+                        "number": 3,
+                        "text": "Nêu ví dụ về một số middleware tích hợp sẵn trong Express.js."
+                    },
+                    {
+                        "number": 4,
+                        "text": "Làm thế nào để tạo một custom middleware?"
+                    },
+                    {
+                        "number": 5,
+                        "text": "Giải thích thứ tự thực thi của middleware trong một request-response cycle."
+                    },
+                    {
+                        "number": 6,
+                        "text": "Sự khác biệt giữa middleware cấp ứng dụng và middleware cấp router là gì?"
+                    },
+                    {
+                        "number": 7,
+                        "text": "Làm thế nào để sử dụng middleware của bên thứ ba (ví dụ: `body-parser`)?"
+                    },
+                    {
+                        "number": 8,
+                        "text": "Giải thích cách sử dụng `next()` trong middleware."
+                    },
+                    {
+                        "number": 9,
+                        "text": "Nêu một số trường hợp sử dụng phổ biến cho middleware."
+                    },
+                    {
+                        "number": 10,
+                        "text": "Làm thế nào để áp dụng middleware cho tất cả các route hoặc chỉ cho các route cụ thể?"
+                    }
+                ],
+                "5. Request và Response Objects": [
+                    {
+                        "number": 1,
+                        "text": "Giải thích đối tượng `req` (request) trong Express.js."
+                    },
+                    {
+                        "number": 2,
+                        "text": "Giải thích đối tượng `res` (response) trong Express.js."
+                    },
+                    {
+                        "number": 3,
+                        "text": "Làm thế nào để truy cập dữ liệu từ query string (`req.query`)?"
+                    },
+                    {
+                        "number": 4,
+                        "text": "Làm thế nào để truy cập dữ liệu từ body của request (`req.body`)?"
+                    },
+                    {
+                        "number": 5,
+                        "text": "Làm thế nào để gửi một phản hồi JSON (`res.json()`)?"
+                    },
+                    {
+                        "number": 6,
+                        "text": "Làm thế nào để thiết lập mã trạng thái HTTP (`res.status()`)?"
+                    },
+                    {
+                        "number": 7,
+                        "text": "Làm thế nào để gửi một file (`res.sendFile()`)?"
+                    },
+                    {
+                        "number": 8,
+                        "text": "Giải thích cách thiết lập các header HTTP tùy chỉnh (`res.set()`)."
+                    },
+                    {
+                        "number": 9,
+                        "text": "Làm thế nào để chuyển hướng request (`res.redirect()`)?"
+                    },
+                    {
+                        "number": 10,
+                        "text": "Nêu sự khác biệt giữa `res.send()` và `res.json()`."
+                    }
+                ]
+            },
+            "B. Xử lý dữ liệu và Cơ sở dữ liệu": {
+                "1. Kết nối cơ sở dữ liệu (MongoDB, SQL)": [
+                    {
+                        "number": 1,
+                        "text": "Làm thế nào để kết nối Express.js với cơ sở dữ liệu MongoDB?"
+                    },
+                    {
+                        "number": 2,
+                        "text": "Làm thế nào để kết nối Express.js với cơ sở dữ liệu SQL (ví dụ: PostgreSQL, MySQL)?"
+                    },
+                    {
+                        "number": 3,
+                        "text": "Nêu các thư viện phổ biến để tương tác với MongoDB và SQL trong Node.js/Express.js."
+                    },
+                    {
+                        "number": 4,
+                        "text": "Giải thích tầm quan trọng của việc quản lý kết nối cơ sở dữ liệu."
+                    },
+                    {
+                        "number": 5,
+                        "text": "Làm thế nào để xử lý lỗi kết nối cơ sở dữ liệu?"
+                    },
+                    {
+                        "number": 6,
+                        "text": "Sự khác biệt giữa cơ sở dữ liệu NoSQL và SQL là gì? Khi nào nên sử dụng loại nào?"
+                    },
+                    {
+                        "number": 7,
+                        "text": "Làm thế nào để bảo mật thông tin kết nối cơ sở dữ liệu?"
+                    },
+                    {
+                        "number": 8,
+                        "text": "Giải thích khái niệm 'connection pooling' và lợi ích của nó."
+                    },
+                    {
+                        "number": 9,
+                        "text": "Nêu các bước cơ bản để thực hiện một truy vấn đọc dữ liệu từ MongoDB."
+                    },
+                    {
+                        "number": 10,
+                        "text": "Nêu các bước cơ bản để thực hiện một truy vấn đọc dữ liệu từ SQL."
+                    }
+                ],
+                "2. ORM/ODM (Mongoose, Sequelize)": [
+                    {
+                        "number": 1,
+                        "text": "ORM/ODM là gì và tại sao chúng được sử dụng trong Express.js?"
+                    },
+                    {
+                        "number": 2,
+                        "text": "Giới thiệu về Mongoose và cách nó được sử dụng với MongoDB."
+                    },
+                    {
+                        "number": 3,
+                        "text": "Giới thiệu về Sequelize và cách nó được sử dụng với cơ sở dữ liệu SQL."
+                    },
+                    {
+                        "number": 4,
+                        "text": "Làm thế nào để định nghĩa một schema (Mongoose) hoặc model (Sequelize)?"
+                    },
+                    {
+                        "number": 5,
+                        "text": "Nêu lợi ích của việc sử dụng ORM/ODM so với việc viết truy vấn SQL/NoSQL thuần."
+                    },
+                    {
+                        "number": 6,
+                        "text": "Làm thế nào để thực hiện các thao tác CRUD (Create, Read, Update, Delete) với Mongoose?"
+                    },
+                    {
+                        "number": 7,
+                        "text": "Làm thế nào để thực hiện các thao tác CRUD với Sequelize?"
+                    },
+                    {
+                        "number": 8,
+                        "text": "Giải thích khái niệm 'validation' trong Mongoose/Sequelize."
+                    },
+                    {
+                        "number": 9,
+                        "text": "Làm thế nào để xử lý các mối quan hệ giữa các model (ví dụ: One-to-Many, Many-to-Many)?"
+                    },
+                    {
+                        "number": 10,
+                        "text": "Nêu sự khác biệt giữa 'populate' trong Mongoose và 'include' trong Sequelize."
+                    }
+                ],
+                "3. Xử lý dữ liệu đầu vào (Body-parser, Validation)": [
+                    {
+                        "number": 1,
+                        "text": "Tại sao cần xử lý dữ liệu đầu vào trong Express.js?"
+                    },
+                    {
+                        "number": 2,
+                        "text": "`body-parser` là gì và vai trò của nó trong Express.js?"
+                    },
+                    {
+                        "number": 3,
+                        "text": "Làm thế nào để sử dụng `body-parser` để xử lý dữ liệu JSON và URL-encoded?"
+                    },
+                    {
+                        "number": 4,
+                        "text": "Giải thích tầm quan trọng của việc xác thực dữ liệu đầu vào."
+                    },
+                    {
+                        "number": 5,
+                        "text": "Nêu một số thư viện phổ biến để xác thực dữ liệu trong Express.js (ví dụ: `express-validator`, `Joi`)."
+                    },
+                    {
+                        "number": 6,
+                        "text": "Làm thế nào để thực hiện xác thực dữ liệu cơ bản cho một trường input?"
+                    },
+                    {
+                        "number": 7,
+                        "text": "Giải thích cách xử lý lỗi xác thực và trả về phản hồi cho client."
+                    },
+                    {
+                        "number": 8,
+                        "text": "Sự khác biệt giữa xác thực phía client và phía server là gì?"
+                    },
+                    {
+                        "number": 9,
+                        "text": "Làm thế nào để xử lý việc upload file trong Express.js (ví dụ: `multer`)?"
+                    },
+                    {
+                        "number": 10,
+                        "text": "Nêu các loại dữ liệu đầu vào phổ biến mà Express.js cần xử lý."
+                    }
+                ]
+            },
+            "C. Bảo mật và Xác thực": {
+                "1. Xác thực (Authentication - Passport.js, JWT)": [
+                    {
+                        "number": 1,
+                        "text": "Xác thực (Authentication) là gì và tại sao nó quan trọng trong ứng dụng web?"
+                    },
+                    {
+                        "number": 2,
+                        "text": "Giới thiệu về Passport.js và cách nó đơn giản hóa việc xác thực."
+                    },
+                    {
+                        "number": 3,
+                        "text": "JWT (JSON Web Token) là gì và cách nó hoạt động trong xác thực?"
+                    },
+                    {
+                        "number": 4,
+                        "text": "Làm thế nào để triển khai xác thực dựa trên JWT trong Express.js?"
+                    },
+                    {
+                        "number": 5,
+                        "text": "Nêu lợi ích của việc sử dụng JWT so với session-based authentication."
+                    },
+                    {
+                        "number": 6,
+                        "text": "Giải thích các thành phần của một JWT (Header, Payload, Signature)."
+                    },
+                    {
+                        "number": 7,
+                        "text": "Làm thế nào để bảo vệ các route yêu cầu xác thực?"
+                    },
+                    {
+                        "number": 8,
+                        "text": "Sự khác biệt giữa 'stateless' và 'stateful' authentication là gì?"
+                    },
+                    {
+                        "number": 9,
+                        "text": "Làm thế nào để lưu trữ JWT một cách an toàn trên client?"
+                    },
+                    {
+                        "number": 10,
+                        "text": "Giải thích khái niệm 'refresh token' và cách sử dụng nó."
+                    }
+                ],
+                "2. Ủy quyền (Authorization)": [
+                    {
+                        "number": 1,
+                        "text": "Ủy quyền (Authorization) là gì và sự khác biệt với Authentication?"
+                    },
+                    {
+                        "number": 2,
+                        "text": "Làm thế nào để triển khai ủy quyền dựa trên vai trò (Role-Based Access Control - RBAC) trong Express.js?"
+                    },
+                    {
+                        "number": 3,
+                        "text": "Nêu ví dụ về cách kiểm tra quyền truy cập của người dùng vào một tài nguyên cụ thể."
+                    },
+                    {
+                        "number": 4,
+                        "text": "Giải thích cách sử dụng middleware để thực hiện kiểm tra ủy quyền."
+                    },
+                    {
+                        "number": 5,
+                        "text": "Sự khác biệt giữa ủy quyền dựa trên vai trò và ủy quyền dựa trên thuộc tính (Attribute-Based Access Control - ABAC) là gì?"
+                    },
+                    {
+                        "number": 6,
+                        "text": "Làm thế nào để xử lý các trường hợp người dùng không có quyền truy cập (403 Forbidden)?"
+                    },
+                    {
+                        "number": 7,
+                        "text": "Nêu một số thư viện hoặc cách tiếp cận để quản lý ủy quyền phức tạp."
+                    },
+                    {
+                        "number": 8,
+                        "text": "Giải thích cách lưu trữ thông tin vai trò của người dùng."
+                    },
+                    {
+                        "number": 9,
+                        "text": "Làm thế nào để đảm bảo rằng các kiểm tra ủy quyền được thực thi một cách nhất quán?"
+                    },
+                    {
+                        "number": 10,
+                        "text": "Nêu các rủi ro bảo mật nếu ủy quyền không được triển khai đúng cách."
+                    }
+                ],
+                "3. Bảo mật ứng dụng (CORS, Helmet, CSRF)": [
+                    {
+                        "number": 1,
+                        "text": "CORS (Cross-Origin Resource Sharing) là gì và tại sao nó cần thiết?"
+                    },
+                    {
+                        "number": 2,
+                        "text": "Làm thế nào để cấu hình CORS trong Express.js?"
+                    },
+                    {
+                        "number": 3,
+                        "text": "Helmet.js là gì và các biện pháp bảo mật mà nó cung cấp?"
+                    },
+                    {
+                        "number": 4,
+                        "text": "CSRF (Cross-Site Request Forgery) là gì và cách ngăn chặn nó trong Express.js?"
+                    },
+                    {
+                        "number": 5,
+                        "text": "Nêu các lỗ hổng bảo mật phổ biến khác trong ứng dụng web và cách Express.js giúp giảm thiểu chúng."
+                    },
+                    {
+                        "number": 6,
+                        "text": "Giải thích về XSS (Cross-Site Scripting) và cách phòng tránh."
+                    },
+                    {
+                        "number": 7,
+                        "text": "Làm thế nào để bảo vệ ứng dụng khỏi SQL Injection hoặc NoSQL Injection?"
+                    },
+                    {
+                        "number": 8,
+                        "text": "Tầm quan trọng của việc sử dụng HTTPS trong ứng dụng Express.js là gì?"
+                    },
+                    {
+                        "number": 9,
+                        "text": "Nêu các best practices để bảo mật các API endpoints."
+                    },
+                    {
+                        "number": 10,
+                        "text": "Làm thế nào để quản lý các secret (ví dụ: API keys, database credentials) một cách an toàn?"
+                    }
+                ]
+            },
+            "D. Xử lý lỗi và Logging": {
+                "1. Xử lý lỗi tập trung": [
+                    {
+                        "number": 1,
+                        "text": "Tại sao cần xử lý lỗi tập trung trong Express.js?"
+                    },
+                    {
+                        "number": 2,
+                        "text": "Làm thế nào để tạo một middleware xử lý lỗi tùy chỉnh trong Express.js?"
+                    },
+                    {
+                        "number": 3,
+                        "text": "Giải thích cấu trúc của một hàm middleware xử lý lỗi (error-handling middleware)."
+                    },
+                    {
+                        "number": 4,
+                        "text": "Làm thế nào để phân biệt các loại lỗi khác nhau (ví dụ: lỗi hoạt động, lỗi lập trình)?"
+                    },
+                    {
+                        "number": 5,
+                        "text": "Nêu các best practices để trả về phản hồi lỗi cho client."
+                    },
+                    {
+                        "number": 6,
+                        "text": "Làm thế nào để xử lý các lỗi bất đồng bộ (async errors) trong Express.js?"
+                    },
+                    {
+                        "number": 7,
+                        "text": "Giải thích cách sử dụng `try-catch` trong các route handler."
+                    },
+                    {
+                        "number": 8,
+                        "text": "Sự khác biệt giữa `next(err)` và `throw err` trong Express.js là gì?"
+                    },
+                    {
+                        "number": 9,
+                        "text": "Làm thế nào để ghi lại (log) các lỗi trước khi gửi phản hồi?"
+                    },
+                    {
+                        "number": 10,
+                        "text": "Nêu các thông tin quan trọng cần có trong một phản hồi lỗi."
+                    }
+                ],
+                "2. Logging (Morgan, Winston)": [
+                    {
+                        "number": 1,
+                        "text": "Logging là gì và tại sao nó quan trọng trong phát triển ứng dụng?"
+                    },
+                    {
+                        "number": 2,
+                        "text": "Giới thiệu về Morgan và cách nó được sử dụng để log HTTP requests."
+                    },
+                    {
+                        "number": 3,
+                        "text": "Giới thiệu về Winston và cách nó được sử dụng để log các sự kiện ứng dụng."
+                    },
+                    {
+                        "number": 4,
+                        "text": "Làm thế nào để cấu hình Morgan để log các định dạng khác nhau?"
+                    },
+                    {
+                        "number": 5,
+                        "text": "Làm thế nào để cấu hình Winston để log vào nhiều transports (console, file, database)?"
+                    },
+                    {
+                        "number": 6,
+                        "text": "Nêu các cấp độ log phổ biến (info, warn, error, debug)."
+                    },
+                    {
+                        "number": 7,
+                        "text": "Giải thích tầm quan trọng của việc log các thông tin nhạy cảm một cách an toàn."
+                    },
+                    {
+                        "number": 8,
+                        "text": "Làm thế nào để tích hợp logging vào middleware xử lý lỗi?"
+                    },
+                    {
+                        "number": 9,
+                        "text": "Nêu các best practices cho việc logging trong môi trường production."
+                    },
+                    {
+                        "number": 10,
+                        "text": "Sự khác biệt giữa logging đồng bộ và bất đồng bộ là gì?"
+                    }
+                ]
+            },
+            "E. Triển khai và Hiệu suất": {
+                "1. Triển khai ứng dụng Express.js": [
+                    {
+                        "number": 1,
+                        "text": "Nêu các bước cơ bản để triển khai một ứng dụng Express.js lên môi trường production."
+                    },
+                    {
+                        "number": 2,
+                        "text": "Giải thích vai trò của PM2 hoặc các process manager khác trong triển khai."
+                    },
+                    {
+                        "number": 3,
+                        "text": "Làm thế nào để sử dụng Nginx hoặc Apache làm reverse proxy cho ứng dụng Express.js?"
+                    },
+                    {
+                        "number": 4,
+                        "text": "Nêu các yếu tố cần xem xét khi chọn nhà cung cấp dịch vụ hosting (ví dụ: AWS, Heroku, DigitalOcean)."
+                    },
+                    {
+                        "number": 5,
+                        "text": "Làm thế nào để đảm bảo ứng dụng Express.js chạy liên tục và có khả năng phục hồi sau lỗi?"
+                    },
+                    {
+                        "number": 6,
+                        "text": "Giải thích khái niệm 'load balancing' và cách nó áp dụng cho Express.js."
+                    },
+                    {
+                        "number": 7,
+                        "text": "Làm thế nào để quản lý các biến môi trường trong môi trường production?"
+                    },
+                    {
+                        "number": 8,
+                        "text": "Nêu các công cụ CI/CD phổ biến để tự động hóa quá trình triển khai."
+                    },
+                    {
+                        "number": 9,
+                        "text": "Làm thế nào để giám sát hiệu suất và lỗi của ứng dụng đã triển khai?"
+                    },
+                    {
+                        "number": 10,
+                        "text": "Giải thích tầm quan trọng của việc sao lưu dữ liệu."
+                    }
+                ],
+                "2. Tối ưu hiệu suất": [
+                    {
+                        "number": 1,
+                        "text": "Nêu các kỹ thuật tối ưu hiệu suất phổ biến cho ứng dụng Express.js."
+                    },
+                    {
+                        "number": 2,
+                        "text": "Giải thích cách sử dụng caching để cải thiện hiệu suất."
+                    },
+                    {
+                        "number": 3,
+                        "text": "Làm thế nào để tối ưu hóa các truy vấn cơ sở dữ liệu?"
+                    },
+                    {
+                        "number": 4,
+                        "text": "Nêu lợi ích của việc sử dụng Gzip compression trong Express.js."
+                    },
+                    {
+                        "number": 5,
+                        "text": "Làm thế nào để tối ưu hóa việc phục vụ các file tĩnh?"
+                    },
+                    {
+                        "number": 6,
+                        "text": "Giải thích khái niệm 'event loop' trong Node.js và cách nó ảnh hưởng đến hiệu suất."
+                    },
+                    {
+                        "number": 7,
+                        "text": "Làm thế nào để tránh các 'blocking operations' trong Express.js?"
+                    },
+                    {
+                        "number": 8,
+                        "text": "Nêu các công cụ profiling để xác định các điểm nghẽn hiệu suất."
+                    },
+                    {
+                        "number": 9,
+                        "text": "Làm thế nào để sử dụng Web Workers hoặc cluster module để tận dụng đa nhân CPU?"
+                    },
+                    {
+                        "number": 10,
+                        "text": "Giải thích tầm quan trọng của việc tối ưu hóa code và thuật toán."
+                    }
+                ],
+                "3. Testing (Mocha, Chai, Jest, Supertest)": [
+                    {
+                        "number": 1,
+                        "text": "Tại sao testing là quan trọng trong phát triển ứng dụng Express.js?"
+                    },
+                    {
+                        "number": 2,
+                        "text": "Nêu các loại testing phổ biến (Unit, Integration, End-to-End)."
+                    },
+                    {
+                        "number": 3,
+                        "text": "Giới thiệu về Mocha và Chai để viết unit và integration tests."
+                    },
+                    {
+                        "number": 4,
+                        "text": "Giới thiệu về Jest và cách nó được sử dụng để testing."
+                    },
+                    {
+                        "number": 5,
+                        "text": "Giới thiệu về Supertest để kiểm tra các HTTP endpoints."
+                    },
+                    {
+                        "number": 6,
+                        "text": "Làm thế nào để viết một unit test cho một hàm trong Express.js?"
+                    },
+                    {
+                        "number": 7,
+                        "text": "Làm thế nào để viết một integration test cho một route API?"
+                    },
+                    {
+                        "number": 8,
+                        "text": "Giải thích khái niệm 'test coverage' và tại sao nó quan trọng."
+                    },
+                    {
+                        "number": 9,
+                        "text": "Làm thế nào để mock các dependency trong quá trình testing?"
+                    },
+                    {
+                        "number": 10,
+                        "text": "Nêu các best practices cho việc viết testable code."
+                    }
+                ]
+            },
+            "F. Kiến trúc và Thiết kế": {
+                "1. Thiết kế API RESTful": [
+                    {
+                        "number": 1,
+                        "text": "API RESTful là gì và các nguyên tắc cơ bản của nó?"
+                    },
+                    {
+                        "number": 2,
+                        "text": "Làm thế nào để thiết kế các URL tài nguyên (resource URLs) theo chuẩn RESTful?"
+                    },
+                    {
+                        "number": 3,
+                        "text": "Giải thích cách sử dụng các phương thức HTTP (GET, POST, PUT, DELETE, PATCH) trong API RESTful."
+                    },
+                    {
+                        "number": 4,
+                        "text": "Nêu các best practices để xử lý phiên bản API (API versioning)."
+                    },
+                    {
+                        "number": 5,
+                        "text": "Làm thế nào để xử lý phân trang (pagination), sắp xếp (sorting) và lọc (filtering) trong API RESTful?"
+                    },
+                    {
+                        "number": 6,
+                        "text": "Giải thích khái niệm 'idempotency' trong ngữ cảnh API RESTful."
+                    },
+                    {
+                        "number": 7,
+                        "text": "Nêu các mã trạng thái HTTP phổ biến và ý nghĩa của chúng."
+                    },
+                    {
+                        "number": 8,
+                        "text": "Làm thế nào để thiết kế API cho các mối quan hệ tài nguyên (resource relationships)?"
+                    },
+                    {
+                        "number": 9,
+                        "text": "Sự khác biệt giữa REST và GraphQL là gì?"
+                    },
+                    {
+                        "number": 10,
+                        "text": "Làm thế nào để tài liệu hóa API (ví dụ: Swagger/OpenAPI)?"
+                    }
+                ],
+                "2. Microservices với Express.js": [
+                    {
+                        "number": 1,
+                        "text": "Kiến trúc Microservices là gì và lợi ích của nó?"
+                    },
+                    {
+                        "number": 2,
+                        "text": "Làm thế nào để xây dựng một microservice bằng Express.js?"
+                    },
+                    {
+                        "number": 3,
+                        "text": "Nêu các thách thức khi làm việc với kiến trúc microservices."
+                    },
+                    {
+                        "number": 4,
+                        "text": "Giải thích cách các microservices giao tiếp với nhau (ví dụ: HTTP, Message Queues)."
+                    },
+                    {
+                        "number": 5,
+                        "text": "Sự khác biệt giữa kiến trúc monolithic và microservices là gì?"
+                    },
+                    {
+                        "number": 6,
+                        "text": "Làm thế nào để quản lý dữ liệu trong kiến trúc microservices?"
+                    },
+                    {
+                        "number": 7,
+                        "text": "Nêu các best practices cho việc triển khai và quản lý microservices."
+                    },
+                    {
+                        "number": 8,
+                        "text": "Giải thích khái niệm 'API Gateway' trong kiến trúc microservices."
+                    },
+                    {
+                        "number": 9,
+                        "text": "Làm thế nào để xử lý 'distributed transactions' trong microservices?"
+                    },
+                    {
+                        "number": 10,
+                        "text": "Nêu các công cụ và nền tảng phổ biến để xây dựng microservices."
+                    }
+                ],
+                "3. Best Practices": [
+                    {
+                        "number": 1,
+                        "text": "Nêu các best practices chung khi phát triển ứng dụng Express.js."
+                    },
+                    {
+                        "number": 2,
+                        "text": "Tại sao nên sử dụng các biến môi trường để cấu hình ứng dụng?"
+                    },
+                    {
+                        "number": 3,
+                        "text": "Giải thích tầm quan trọng của việc xử lý lỗi một cách duyên dáng (graceful error handling)."
+                    },
+                    {
+                        "number": 4,
+                        "text": "Làm thế nào để giữ cho code của bạn sạch sẽ và dễ bảo trì?"
+                    },
+                    {
+                        "number": 5,
+                        "text": "Nêu các best practices về bảo mật trong Express.js."
+                    },
+                    {
+                        "number": 6,
+                        "text": "Giải thích tầm quan trọng của việc validate dữ liệu đầu vào."
+                    },
+                    {
+                        "number": 7,
+                        "text": "Làm thế nào để tối ưu hóa hiệu suất của ứng dụng Express.js?"
+                    },
+                    {
+                        "number": 8,
+                        "text": "Nêu các công cụ và thư viện hữu ích cho phát triển Express.js."
+                    },
+                    {
+                        "number": 9,
+                        "text": "Làm thế nào để viết code có thể kiểm thử (testable code)?"
+                    },
+                    {
+                        "number": 10,
+                        "text": "Giải thích tầm quan trọng của việc tài liệu hóa code và API."
+                    }
+                ]
+            }
+        }
+    },
+    "middle": {
+        "level": "Middle (2-4 năm kinh nghiệm)",
+        "categories": {
+            "A. Kiến thức cơ bản về Express.js": {
+                "1. Giới thiệu về Express.js": [
+                    {
+                        "number": 1,
+                        "text": "Phân tích sâu hơn về kiến trúc của Express.js và cách nó xử lý các request."
+                    },
+                    {
+                        "number": 2,
+                        "text": "So sánh Express.js với các framework Node.js khác như Koa, Hapi về hiệu suất và tính năng."
+                    },
+                    {
+                        "number": 3,
+                        "text": "Giải thích cách Express.js tận dụng Event Loop của Node.js."
+                    },
+                    {
+                        "number": 4,
+                        "text": "Thảo luận về các trường hợp sử dụng tốt nhất và các hạn chế của Express.js."
+                    },
+                    {
+                        "number": 5,
+                        "text": "Làm thế nào để mở rộng các đối tượng `req` và `res` trong Express.js?"
+                    }
+                ],
+                "2. Cấu trúc ứng dụng Express.js": [
+                    {
+                        "number": 1,
+                        "text": "Đề xuất một cấu trúc dự án Express.js cho một ứng dụng lớn, có khả năng mở rộng."
+                    },
+                    {
+                        "number": 2,
+                        "text": "Thảo luận về việc sử dụng các design patterns (ví dụ: MVC, Repository) trong Express.js."
+                    },
+                    {
+                        "number": 3,
+                        "text": "Làm thế nào để quản lý các dependencies và inject chúng vào các module?"
+                    },
+                    {
+                        "number": 4,
+                        "text": "Giải thích cách sử dụng các container (ví dụ: Docker) để đóng gói ứng dụng Express.js."
+                    },
+                    {
+                        "number": 5,
+                        "text": "Làm thế nào để tổ chức các file cấu hình phức tạp cho nhiều môi trường?"
+                    }
+                ],
+                "3. Routing": [
+                    {
+                        "number": 1,
+                        "text": "Làm thế nào để xử lý các route lồng nhau (nested routes) và route groups?"
+                    },
+                    {
+                        "number": 2,
+                        "text": "Giải thích cách sử dụng các route parameters nâng cao và biểu thức chính quy."
+                    },
+                    {
+                        "number": 3,
+                        "text": "Thảo luận về việc sử dụng các công cụ tạo tài liệu API (ví dụ: Swagger/OpenAPI) cho các route."
+                    },
+                    {
+                        "number": 4,
+                        "text": "Làm thế nào để triển khai 'versioning' cho các API routes?"
+                    },
+                    {
+                        "number": 5,
+                        "text": "Giải thích cách sử dụng `app.all()` và `router.all()`."
+                    }
+                ],
+                "4. Middleware": [
+                    {
+                        "number": 1,
+                        "text": "Thiết kế một chuỗi middleware phức tạp để xử lý xác thực, ủy quyền và ghi log."
+                    },
+                    {
+                        "number": 2,
+                        "text": "Thảo luận về các vấn đề tiềm ẩn khi sử dụng quá nhiều middleware và cách tối ưu hóa."
+                    },
+                    {
+                        "number": 3,
+                        "text": "Làm thế nào để tạo một middleware xử lý lỗi bất đồng bộ một cách hiệu quả?"
+                    },
+                    {
+                        "number": 4,
+                        "text": "Giải thích cách sử dụng các middleware 'conditional' (chỉ áp dụng trong một số điều kiện)."
+                    },
+                    {
+                        "number": 5,
+                        "text": "So sánh các phương pháp truyền dữ liệu giữa các middleware (ví dụ: `req.user`, `res.locals`)."
+                    }
+                ],
+                "5. Request và Response Objects": [
+                    {
+                        "number": 1,
+                        "text": "Làm thế nào để xử lý các request streaming và response streaming trong Express.js?"
+                    },
+                    {
+                        "number": 2,
+                        "text": "Giải thích cách sử dụng `res.format()` để gửi các loại phản hồi khác nhau dựa trên `Accept` header."
+                    },
+                    {
+                        "number": 3,
+                        "text": "Thảo luận về việc tùy chỉnh các header HTTP để tối ưu hóa hiệu suất và bảo mật."
+                    },
+                    {
+                        "number": 4,
+                        "text": "Làm thế nào để xử lý các trường hợp 'long polling' hoặc 'Server-Sent Events' (SSE)?"
+                    },
+                    {
+                        "number": 5,
+                        "text": "Giải thích cách sử dụng `req.accepts()` để đàm phán loại nội dung."
+                    }
+                ]
+            },
+            "B. Xử lý dữ liệu và Cơ sở dữ liệu": {
+                "1. Kết nối cơ sở dữ liệu (MongoDB, SQL)": [
+                    {
+                        "number": 1,
+                        "text": "Thiết kế một chiến lược quản lý kết nối cơ sở dữ liệu mạnh mẽ cho ứng dụng Express.js có tải cao."
+                    },
+                    {
+                        "number": 2,
+                        "text": "Thảo luận về việc sử dụng các cơ sở dữ liệu phân tán hoặc đa cơ sở dữ liệu trong Express.js."
+                    },
+                    {
+                        "number": 3,
+                        "text": "Làm thế nào để triển khai 'transaction management' trong các ứng dụng Express.js với SQL/NoSQL?"
+                    },
+                    {
+                        "number": 4,
+                        "text": "Giải thích cách xử lý 'database migrations' cho cơ sở dữ liệu SQL."
+                    },
+                    {
+                        "number": 5,
+                        "text": "Nêu các best practices để tối ưu hóa hiệu suất truy vấn cơ sở dữ liệu."
+                    }
+                ],
+                "2. ORM/ODM (Mongoose, Sequelize)": [
+                    {
+                        "number": 1,
+                        "text": "Thiết kế một schema/model phức tạp với các mối quan hệ đa cấp và validation tùy chỉnh."
+                    },
+                    {
+                        "number": 2,
+                        "text": "Thảo luận về việc tối ưu hóa các truy vấn ORM/ODM để tránh các vấn đề N+1 query."
+                    },
+                    {
+                        "number": 3,
+                        "text": "Làm thế nào để triển khai 'soft delete' bằng Mongoose hoặc Sequelize?"
+                    },
+                    {
+                        "number": 4,
+                        "text": "Giải thích cách sử dụng các 'hooks' hoặc 'lifecycle methods' trong ORM/ODM."
+                    },
+                    {
+                        "number": 5,
+                        "text": "So sánh các tính năng nâng cao của Mongoose (ví dụ: Aggregation Pipeline) và Sequelize (ví dụ: Raw Queries)."
+                    }
+                ],
+                "3. Xử lý dữ liệu đầu vào (Body-parser, Validation)": [
+                    {
+                        "number": 1,
+                        "text": "Thiết kế một hệ thống xác thực dữ liệu đầu vào toàn diện với các quy tắc phức tạp và thông báo lỗi tùy chỉnh."
+                    },
+                    {
+                        "number": 2,
+                        "text": "Thảo luận về việc sử dụng các schema validation (ví dụ: JSON Schema) để đảm bảo tính nhất quán của dữ liệu."
+                    },
+                    {
+                        "number": 3,
+                        "text": "Làm thế nào để xử lý các cuộc tấn công 'mass assignment' trong Express.js?"
+                    },
+                    {
+                        "number": 4,
+                        "text": "Giải thích cách xử lý các loại dữ liệu đầu vào nhị phân (binary data) hoặc multipart forms."
+                    },
+                    {
+                        "number": 5,
+                        "text": "Nêu các best practices để làm sạch (sanitize) dữ liệu đầu vào để ngăn chặn XSS."
+                    }
+                ]
+            },
+            "C. Bảo mật và Xác thực": {
+                "1. Xác thực (Authentication - Passport.js, JWT)": [
+                    {
+                        "number": 1,
+                        "text": "Thiết kế một hệ thống xác thực đa yếu tố (MFA) cho ứng dụng Express.js."
+                    },
+                    {
+                        "number": 2,
+                        "text": "Thảo luận về các chiến lược quản lý session và token trong môi trường phân tán."
+                    },
+                    {
+                        "number": 3,
+                        "text": "Làm thế nào để triển khai 'OAuth 2.0' hoặc 'OpenID Connect' trong Express.js?"
+                    },
+                    {
+                        "number": 4,
+                        "text": "Giải thích các lỗ hổng bảo mật liên quan đến JWT (ví dụ: key exposure, algorithm confusion)."
+                    },
+                    {
+                        "number": 5,
+                        "text": "Nêu các best practices để bảo mật 'refresh tokens' và 'access tokens'."
+                    }
+                ],
+                "2. Ủy quyền (Authorization)": [
+                    {
+                        "number": 1,
+                        "text": "Thiết kế một hệ thống ủy quyền dựa trên chính sách (Policy-Based Access Control - PBAC) cho một ứng dụng phức tạp."
+                    },
+                    {
+                        "number": 2,
+                        "text": "Thảo luận về việc tích hợp ủy quyền với các dịch vụ bên ngoài (ví dụ: Okta, Auth0)."
+                    },
+                    {
+                        "number": 3,
+                        "text": "Làm thế nào để xử lý ủy quyền trong kiến trúc microservices?"
+                    },
+                    {
+                        "number": 4,
+                        "text": "Giải thích cách sử dụng các 'scopes' hoặc 'permissions' để kiểm soát quyền truy cập chi tiết."
+                    },
+                    {
+                        "number": 5,
+                        "text": "Nêu các thách thức khi triển khai ủy quyền động dựa trên dữ liệu."
+                    }
+                ],
+                "3. Bảo mật ứng dụng (CORS, Helmet, CSRF)": [
+                    {
+                        "number": 1,
+                        "text": "Thiết kế một chiến lược bảo mật toàn diện cho ứng dụng Express.js, bao gồm các biện pháp phòng thủ sâu."
+                    },
+                    {
+                        "number": 2,
+                        "text": "Thảo luận về việc sử dụng các Web Application Firewall (WAF) để bảo vệ ứng dụng."
+                    },
+                    {
+                        "number": 3,
+                        "text": "Làm thế nào để triển khai 'Content Security Policy' (CSP) để ngăn chặn XSS?"
+                    },
+                    {
+                        "number": 4,
+                        "text": "Giải thích cách sử dụng 'rate limiting' để chống lại các cuộc tấn công brute-force và DDoS."
+                    },
+                    {
+                        "number": 5,
+                        "text": "Nêu các best practices để kiểm tra và khắc phục các lỗ hổng bảo mật (ví dụ: penetration testing)."
+                    }
+                ]
+            },
+            "D. Xử lý lỗi và Logging": {
+                "1. Xử lý lỗi tập trung": [
+                    {
+                        "number": 1,
+                        "text": "Thiết kế một hệ thống xử lý lỗi toàn diện với khả năng thông báo lỗi (ví dụ: Sentry, Bugsnag) và ghi log chi tiết."
+                    },
+                    {
+                        "number": 2,
+                        "text": "Thảo luận về việc xử lý các loại lỗi khác nhau (ví dụ: lỗi mạng, lỗi cơ sở dữ liệu, lỗi nghiệp vụ)."
+                    },
+                    {
+                        "number": 3,
+                        "text": "Làm thế nào để đảm bảo rằng các lỗi không làm lộ thông tin nhạy cảm cho client?"
+                    },
+                    {
+                        "number": 4,
+                        "text": "Giải thích cách sử dụng 'domain-specific errors' để cải thiện khả năng đọc và bảo trì code."
+                    },
+                    {
+                        "number": 5,
+                        "text": "Nêu các best practices để xử lý lỗi trong các ứng dụng phân tán."
+                    }
+                ],
+                "2. Logging (Morgan, Winston)": [
+                    {
+                        "number": 1,
+                        "text": "Thiết kế một kiến trúc logging tập trung (ví dụ: ELK stack) cho ứng dụng Express.js."
+                    },
+                    {
+                        "number": 2,
+                        "text": "Thảo luận về việc sử dụng các 'structured logging' để dễ dàng phân tích và tìm kiếm log."
+                    },
+                    {
+                        "number": 3,
+                        "text": "Làm thế nào để tích hợp logging với các hệ thống giám sát (monitoring systems)?"
+                    },
+                    {
+                        "number": 4,
+                        "text": "Giải thích cách xử lý 'log rotation' và lưu trữ log hiệu quả."
+                    },
+                    {
+                        "number": 5,
+                        "text": "Nêu các best practices để đảm bảo hiệu suất logging không ảnh hưởng đến ứng dụng."
+                    }
+                ]
+            },
+            "E. Triển khai và Hiệu suất": {
+                "1. Triển khai ứng dụng Express.js": [
+                    {
+                        "number": 1,
+                        "text": "Thiết kế một quy trình CI/CD tự động hoàn toàn để triển khai ứng dụng Express.js lên môi trường cloud."
+                    },
+                    {
+                        "number": 2,
+                        "text": "Thảo luận về việc sử dụng các công nghệ containerization (ví dụ: Kubernetes) để quản lý triển khai."
+                    },
+                    {
+                        "number": 3,
+                        "text": "Làm thế nào để triển khai 'zero-downtime deployments' cho ứng dụng Express.js?"
+                    },
+                    {
+                        "number": 4,
+                        "text": "Giải thích cách sử dụng các 'serverless functions' (ví dụ: AWS Lambda) với Express.js."
+                    },
+                    {
+                        "number": 5,
+                        "text": "Nêu các best practices để quản lý 'secrets' và 'configuration' trong môi trường production."
+                    }
+                ],
+                "2. Tối ưu hiệu suất": [
+                    {
+                        "number": 1,
+                        "text": "Thiết kế một chiến lược tối ưu hiệu suất toàn diện, bao gồm cả phía server và client."
+                    },
+                    {
+                        "number": 2,
+                        "text": "Thảo luận về việc sử dụng các 'message queues' (ví dụ: RabbitMQ, Kafka) để xử lý các tác vụ nặng."
+                    },
+                    {
+                        "number": 3,
+                        "text": "Làm thế nào để triển khai 'server-side rendering' (SSR) hoặc 'pre-rendering' để cải thiện hiệu suất ban đầu?"
+                    },
+                    {
+                        "number": 4,
+                        "text": "Giải thích cách sử dụng các 'content delivery networks' (CDN) để phục vụ tài nguyên tĩnh."
+                    },
+                    {
+                        "number": 5,
+                        "text": "Nêu các best practices để giám sát và điều chỉnh hiệu suất liên tục."
+                    }
+                ],
+                "3. Testing (Mocha, Chai, Jest, Supertest)": [
+                    {
+                        "number": 1,
+                        "text": "Thiết kế một chiến lược testing toàn diện, bao gồm unit, integration, end-to-end và performance testing."
+                    },
+                    {
+                        "number": 2,
+                        "text": "Thảo luận về việc sử dụng các 'test doubles' (mocks, stubs, spies) một cách hiệu quả."
+                    },
+                    {
+                        "number": 3,
+                        "text": "Làm thế nào để tích hợp testing vào quy trình CI/CD?"
+                    },
+                    {
+                        "number": 4,
+                        "text": "Giải thích cách viết các 'behavior-driven development' (BDD) tests."
+                    },
+                    {
+                        "number": 5,
+                        "text": "Nêu các best practices để duy trì bộ test suite lớn và phức tạp."
+                    }
+                ]
+            },
+            "F. Kiến trúc và Thiết kế": {
+                "1. Thiết kế API RESTful": [
+                    {
+                        "number": 1,
+                        "text": "Thiết kế một API RESTful phức tạp với các tài nguyên lồng nhau và các hành động tùy chỉnh."
+                    },
+                    {
+                        "number": 2,
+                        "text": "Thảo luận về việc sử dụng các 'HATEOAS' (Hypermedia as the Engine of Application State) trong API RESTful."
+                    },
+                    {
+                        "number": 3,
+                        "text": "Làm thế nào để xử lý các yêu cầu 'partial updates' (PATCH) một cách hiệu quả?"
+                    },
+                    {
+                        "number": 4,
+                        "text": "Giải thích cách sử dụng 'ETags' và 'Conditional Requests' để tối ưu hóa API."
+                    },
+                    {
+                        "number": 5,
+                        "text": "Nêu các best practices để thiết kế API cho các ứng dụng thời gian thực (real-time applications)."
+                    }
+                ],
+                "2. Microservices với Express.js": [
+                    {
+                        "number": 1,
+                        "text": "Thiết kế một kiến trúc microservices phức tạp với nhiều dịch vụ, cổng API và cơ chế giao tiếp."
+                    },
+                    {
+                        "number": 2,
+                        "text": "Thảo luận về việc sử dụng 'event-driven architecture' (EDA) với microservices."
+                    },
+                    {
+                        "number": 3,
+                        "text": "Làm thế nào để triển khai 'service discovery' và 'load balancing' trong kiến trúc microservices?"
+                    },
+                    {
+                        "number": 4,
+                        "text": "Giải thích cách xử lý 'data consistency' và 'distributed transactions' trong microservices."
+                    },
+                    {
+                        "number": 5,
+                        "text": "Nêu các best practices để giám sát và khắc phục sự cố trong môi trường microservices."
+                    }
+                ],
+                "3. Best Practices": [
+                    {
+                        "number": 1,
+                        "text": "Thiết kế một quy trình phát triển toàn diện, bao gồm coding standards, code reviews và continuous improvement."
+                    },
+                    {
+                        "number": 2,
+                        "text": "Thảo luận về việc sử dụng 'Domain-Driven Design' (DDD) trong các ứng dụng Express.js lớn."
+                    },
+                    {
+                        "number": 3,
+                        "text": "Làm thế nào để quản lý 'technical debt' trong một dự án Express.js đang phát triển?"
+                    },
+                    {
+                        "number": 4,
+                        "text": "Giải thích tầm quan trọng của việc 'refactoring' và khi nào nên thực hiện."
+                    },
+                    {
+                        "number": 5,
+                        "text": "Nêu các best practices để xây dựng một cộng đồng phát triển mạnh mẽ xung quanh dự án Express.js."
+                    }
+                ]
+            }
+        }
+    }
+}
