@@ -1,9 +1,10 @@
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Spinner } from "@/components/ui/spinner";
 import { Link } from "wouter";
 import { Code2, BookOpen, Zap, Coffee, Atom, FileCode2, Code, History, Server } from "lucide-react";
-import technologiesData from "@/data/technologies.json";
-import { getQuestionsData, countQuestions } from "@/lib/questionsData";
+import { useTechnologies, type Technology } from "@/hooks/useQuestionsApi";
 
 const iconMap: Record<string, React.ElementType> = {
   coffee: Coffee,
@@ -23,26 +24,36 @@ const colorMap: Record<string, string> = {
   slate: "text-slate-600 bg-slate-100",
 };
 
-// Count total questions across all technologies
-const countAllQuestions = () => {
-  let total = 0;
-  technologiesData.technologies.forEach((tech) => {
-    const data = getQuestionsData(tech.id);
-    if (data) {
-      tech.levels.forEach((level) => {
-        const levelData = data[level as "junior" | "middle"];
-        if (levelData) {
-          total += countQuestions(levelData);
-        }
-      });
-    }
-  });
-  return total;
-};
-
 export default function Home() {
-  const totalQuestions = countAllQuestions();
-  const totalTechnologies = technologiesData.technologies.length;
+  const { technologies, isLoading, error } = useTechnologies();
+  const [totalQuestions, setTotalQuestions] = useState(0);
+
+  // Fetch total questions count
+  useEffect(() => {
+    async function fetchQuestionCounts() {
+      let total = 0;
+      for (const tech of technologies) {
+        for (const level of tech.levels) {
+          try {
+            const response = await fetch(`/api/technologies/${tech.id}/questions?level=${level}`);
+            if (response.ok) {
+              const data = await response.json();
+              total += data.totalQuestions || 0;
+            }
+          } catch {
+            // Ignore errors
+          }
+        }
+      }
+      setTotalQuestions(total);
+    }
+
+    if (technologies.length > 0) {
+      fetchQuestionCounts();
+    }
+  }, [technologies]);
+
+  const totalTechnologies = technologies.length;
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
@@ -111,35 +122,43 @@ export default function Home() {
 
         {/* Technologies */}
         <h3 className="text-2xl font-bold text-slate-900 mb-6 text-center">Chọn công nghệ</h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
-          {technologiesData.technologies.map((tech) => {
-            const Icon = iconMap[tech.icon] || Code2;
-            const colorClass = colorMap[tech.color] || "text-blue-600 bg-blue-100";
+        {isLoading ? (
+          <div className="flex justify-center py-12">
+            <Spinner className="w-8 h-8" />
+          </div>
+        ) : error ? (
+          <div className="text-center py-12 text-red-600">{error}</div>
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
+            {technologies.map((tech) => {
+              const Icon = iconMap[tech.icon] || Code2;
+              const colorClass = colorMap[tech.color] || "text-blue-600 bg-blue-100";
 
-            return (
-              <Link key={tech.id} href={`/tech/${tech.id}`}>
-                <Card className="cursor-pointer hover:shadow-lg transition-all hover:-translate-y-1 border-slate-200 h-full">
-                  <CardHeader>
-                    <div className={`w-12 h-12 rounded-lg ${colorClass} flex items-center justify-center mb-3`}>
-                      <Icon className="w-6 h-6" />
-                    </div>
-                    <CardTitle className="text-xl">{tech.name}</CardTitle>
-                    <CardDescription>{tech.description}</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="flex items-center gap-2 text-sm text-slate-600">
-                      <BookOpen className="w-4 h-4" />
-                      <span>{tech.levels.length} cấp độ</span>
-                    </div>
-                    <Button className="w-full mt-4" variant="outline">
-                      Bắt đầu →
-                    </Button>
-                  </CardContent>
-                </Card>
-              </Link>
-            );
-          })}
-        </div>
+              return (
+                <Link key={tech.id} href={`/tech/${tech.id}`}>
+                  <Card className="cursor-pointer hover:shadow-lg transition-all hover:-translate-y-1 border-slate-200 h-full">
+                    <CardHeader>
+                      <div className={`w-12 h-12 rounded-lg ${colorClass} flex items-center justify-center mb-3`}>
+                        <Icon className="w-6 h-6" />
+                      </div>
+                      <CardTitle className="text-xl">{tech.name}</CardTitle>
+                      <CardDescription>{tech.description}</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="flex items-center gap-2 text-sm text-slate-600">
+                        <BookOpen className="w-4 h-4" />
+                        <span>{tech.levels.length} cấp độ</span>
+                      </div>
+                      <Button className="w-full mt-4" variant="outline">
+                        Bắt đầu →
+                      </Button>
+                    </CardContent>
+                  </Card>
+                </Link>
+              );
+            })}
+          </div>
+        )}
 
         {/* Features */}
         <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6">

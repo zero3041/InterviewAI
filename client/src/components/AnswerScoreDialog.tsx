@@ -27,7 +27,7 @@ import {
 } from "@/components/ui/collapsible";
 import { CheckCircle, AlertCircle, Lightbulb, Send, MessageCircle, ChevronDown, ChevronUp, History, Trash2 } from "lucide-react";
 import type { ScoreResponse } from "@shared/ai-models";
-import { useHistory, generateQuestionId, type HistoryEntry, type ChatMessage } from "@/hooks/useHistory";
+import { useHistoryApi, type HistoryEntry, type ChatMessage } from "@/hooks/useHistoryApi";
 import { MarkdownContent } from "@/components/MarkdownContent";
 
 interface AIModel {
@@ -46,6 +46,7 @@ interface AnswerScoreDialogProps {
   onOpenChange: (open: boolean) => void;
   question: string;
   questionNumber: number;
+  questionId: number;  // Database question ID
   technology?: string;
   techId?: string;
   level?: string;
@@ -57,6 +58,7 @@ export function AnswerScoreDialog({
   onOpenChange,
   question,
   questionNumber,
+  questionId,
   technology = "lập trình",
   techId = "unknown",
   level = "junior",
@@ -78,12 +80,11 @@ export function AnswerScoreDialog({
   const chatEndRef = useRef<HTMLDivElement>(null);
 
   // History state
-  const { addEntry, updateChatMessages, getQuestionHistory, deleteEntry } = useHistory();
+  const { addEntry, updateChatMessages, getQuestionHistory, deleteEntry } = useHistoryApi();
   const [viewMode, setViewMode] = useState<"answer" | "history">("answer");
-  const [currentHistoryId, setCurrentHistoryId] = useState<string | null>(null);
+  const [currentHistoryId, setCurrentHistoryId] = useState<number | null>(null);
   const [selectedHistoryEntry, setSelectedHistoryEntry] = useState<HistoryEntry | null>(null);
 
-  const questionId = generateQuestionId(techId, level, questionNumber);
   const questionHistory = getQuestionHistory(questionId);
 
   // Scroll to bottom when new message arrives
@@ -211,11 +212,10 @@ export function AnswerScoreDialog({
         const result: ScoreResponse = await response.json();
         setScoreResult(result);
 
-        // Save to history
-        const historyId = addEntry({
+        // Save to history (async)
+        const historyId = await addEntry({
           questionId,
           questionText: question,
-          technology,
           techId,
           level,
           userAnswer: answer.trim(),
@@ -303,7 +303,7 @@ export function AnswerScoreDialog({
                     ← Quay lại
                   </Button>
                   <span className="text-sm text-slate-500">
-                    {new Date(selectedHistoryEntry.timestamp).toLocaleString("vi-VN")}
+                    {new Date(selectedHistoryEntry.createdAt).toLocaleString("vi-VN")}
                   </span>
                 </div>
 
@@ -471,7 +471,7 @@ export function AnswerScoreDialog({
                             {entry.score}/100
                           </Badge>
                           <span className="text-sm text-slate-500">
-                            {new Date(entry.timestamp).toLocaleString("vi-VN")}
+                            {new Date(entry.createdAt).toLocaleString("vi-VN")}
                           </span>
                           {entry.chatMessages.length > 0 && (
                             <span className="text-xs text-purple-600 flex items-center gap-1">

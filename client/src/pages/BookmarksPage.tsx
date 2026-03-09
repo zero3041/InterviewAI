@@ -1,92 +1,58 @@
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo } from "react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { ChevronLeft, Search, Trash2 } from "lucide-react";
-import questionsData from "@/data/questions.json";
-
-interface Question {
-  number: number;
-  text: string;
-}
-
-interface BookmarkedQuestion {
-  level: "junior" | "middle";
-  category: string;
-  subcategory: string;
-  question: Question;
-  questionId: string;
-}
-
-const typedQuestionsData = questionsData as any;
+import { Badge } from "@/components/ui/badge";
+import { ChevronLeft, Search, Trash2, Bookmark, Loader2 } from "lucide-react";
+import { useBookmarksApi, type BookmarkWithQuestion } from "@/hooks/useBookmarksApi";
+import { useTechnologies } from "@/hooks/useQuestionsApi";
 
 export default function BookmarksPage() {
-  const [bookmarkedQuestions, setBookmarkedQuestions] = useState<BookmarkedQuestion[]>([]);
+  const { bookmarks, isLoading, removeBookmark } = useBookmarksApi();
+  const { technologies } = useTechnologies();
   const [searchQuery, setSearchQuery] = useState("");
 
-  // Load bookmarks from localStorage
-  useEffect(() => {
-    const saved = localStorage.getItem("bookmarkedQuestions");
-    if (saved) {
-      try {
-        const bookmarkIds = JSON.parse(saved);
-        const bookmarkedList: BookmarkedQuestion[] = [];
-
-        // Iterate through all levels and categories to find bookmarked questions
-        Object.entries(typedQuestionsData).forEach(([level, levelData]: [string, any]) => {
-          Object.entries(levelData.categories).forEach(([category, subcategories]: [string, any]) => {
-            Object.entries(subcategories).forEach(([subcategory, questions]: [string, any]) => {
-              questions.forEach((question: Question) => {
-                const questionId = `${category}-${subcategory}-${question.number}`;
-                if (bookmarkIds.includes(questionId)) {
-                  bookmarkedList.push({
-                    level: level as "junior" | "middle",
-                    category,
-                    subcategory,
-                    question,
-                    questionId,
-                  });
-                }
-              });
-            });
-          });
-        });
-
-        setBookmarkedQuestions(bookmarkedList);
-      } catch (e) {
-        console.error("Failed to load bookmarks:", e);
-      }
-    }
-  }, []);
+  // Get tech name helper
+  const getTechName = (techId: string) => {
+    const tech = technologies.find((t) => t.id === techId);
+    return tech?.name || techId;
+  };
 
   // Filter questions based on search query
-  const filteredQuestions = useMemo(() => {
-    return bookmarkedQuestions.filter((item) =>
-      item.question.text.toLowerCase().includes(searchQuery.toLowerCase())
+  const filteredBookmarks = useMemo(() => {
+    if (!searchQuery.trim()) return bookmarks;
+    const query = searchQuery.toLowerCase();
+    return bookmarks.filter(
+      (b) =>
+        b.question?.text.toLowerCase().includes(query) ||
+        b.question?.techId.toLowerCase().includes(query)
     );
-  }, [searchQuery, bookmarkedQuestions]);
+  }, [searchQuery, bookmarks]);
 
-  // Group by level
-  const groupedByLevel = useMemo(() => {
-    const groups: Record<string, BookmarkedQuestion[]> = {};
-    filteredQuestions.forEach((item) => {
-      if (!groups[item.level]) {
-        groups[item.level] = [];
+  // Group by technology
+  const groupedByTech = useMemo(() => {
+    const groups: Record<string, BookmarkWithQuestion[]> = {};
+    filteredBookmarks.forEach((bookmark) => {
+      const techId = bookmark.question?.techId || "unknown";
+      if (!groups[techId]) {
+        groups[techId] = [];
       }
-      groups[item.level].push(item);
+      groups[techId].push(bookmark);
     });
     return groups;
-  }, [filteredQuestions]);
+  }, [filteredBookmarks]);
 
-  const removeBookmark = (questionId: string) => {
-    const saved = localStorage.getItem("bookmarkedQuestions");
-    if (saved) {
-      const bookmarkIds = JSON.parse(saved).filter((id: string) => id !== questionId);
-      localStorage.setItem("bookmarkedQuestions", JSON.stringify(bookmarkIds));
-      setBookmarkedQuestions((prev) => prev.filter((item) => item.questionId !== questionId));
-    }
-  };
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 flex items-center justify-center">
+        <div className="text-center">
+          <Loader2 className="w-8 h-8 animate-spin mx-auto mb-4 text-blue-600" />
+          <p className="text-slate-600">Đang tải bookmarks...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
@@ -97,14 +63,17 @@ export default function BookmarksPage() {
             <Link href="/">
               <Button variant="ghost" size="sm" className="gap-2">
                 <ChevronLeft className="w-4 h-4" />
-                Back
+                Quay lại
               </Button>
             </Link>
-            <h1 className="text-2xl font-bold text-slate-900 flex-1">
-              Bookmarked Questions
-            </h1>
+            <div className="flex items-center gap-2 flex-1">
+              <Bookmark className="w-6 h-6 text-blue-600" />
+              <h1 className="text-2xl font-bold text-slate-900">
+                Câu hỏi đã lưu
+              </h1>
+            </div>
             <div className="text-sm text-slate-600">
-              {bookmarkedQuestions.length} bookmarks
+              {bookmarks.length} bookmarks
             </div>
           </div>
 
@@ -112,7 +81,7 @@ export default function BookmarksPage() {
           <div className="relative">
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-slate-400" />
             <Input
-              placeholder="Search bookmarked questions..."
+              placeholder="Tìm kiếm câu hỏi đã lưu..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="pl-10 border-slate-200"
@@ -123,57 +92,63 @@ export default function BookmarksPage() {
 
       {/* Main Content */}
       <div className="container max-w-4xl mx-auto px-4 py-8">
-        {bookmarkedQuestions.length === 0 ? (
+        {bookmarks.length === 0 ? (
           <Card className="border-slate-200">
             <CardContent className="pt-12 pb-12 text-center">
-              <p className="text-slate-600 mb-4">No bookmarked questions yet</p>
+              <Bookmark className="w-12 h-12 text-slate-300 mx-auto mb-4" />
+              <p className="text-slate-600 mb-4">Chưa có câu hỏi nào được lưu</p>
               <Link href="/">
                 <Button className="bg-blue-600 hover:bg-blue-700">
-                  Start Exploring Questions
+                  Bắt đầu ôn tập
                 </Button>
               </Link>
             </CardContent>
           </Card>
-        ) : filteredQuestions.length === 0 ? (
+        ) : filteredBookmarks.length === 0 ? (
           <Card className="border-slate-200">
             <CardContent className="pt-12 pb-12 text-center">
-              <p className="text-slate-600 mb-4">No bookmarked questions match your search</p>
+              <p className="text-slate-600 mb-4">Không tìm thấy câu hỏi phù hợp</p>
               <Button
                 variant="outline"
                 onClick={() => setSearchQuery("")}
                 className="border-slate-200"
               >
-                Clear Search
+                Xóa tìm kiếm
               </Button>
             </CardContent>
           </Card>
         ) : (
           <div className="space-y-6">
-            {Object.entries(groupedByLevel).map(([level, questions]) => (
-              <div key={level}>
-                <h2 className="text-xl font-bold text-slate-900 mb-4 capitalize">
-                  {level === "junior" ? "Junior Developer" : "Middle Developer"}
+            {Object.entries(groupedByTech).map(([techId, techBookmarks]) => (
+              <div key={techId}>
+                <h2 className="text-xl font-bold text-slate-900 mb-4">
+                  {getTechName(techId)}
                 </h2>
                 <div className="space-y-4">
-                  {questions.map((item) => (
-                    <Card key={item.questionId} className="border-slate-200">
+                  {techBookmarks.map((bookmark) => (
+                    <Card key={bookmark.id} className="border-slate-200 hover:border-blue-200 transition-colors">
                       <CardContent className="pt-6">
                         <div className="flex items-start justify-between gap-4">
                           <div className="flex-1">
-                            <div className="flex items-center gap-2 mb-2">
-                              <span className="inline-block px-2 py-1 rounded text-xs font-semibold bg-slate-100 text-slate-700">
-                                {item.category}
-                              </span>
-                              <span className="inline-block px-2 py-1 rounded text-xs font-semibold bg-blue-100 text-blue-700">
-                                {item.subcategory}
-                              </span>
+                            <div className="flex items-center gap-2 mb-2 flex-wrap">
+                              <Badge variant="outline" className="text-xs">
+                                {getTechName(bookmark.question?.techId || "")}
+                              </Badge>
+                              <Badge variant="outline" className="text-xs capitalize">
+                                {bookmark.question?.level}
+                              </Badge>
+                              <Badge variant="secondary" className="text-xs">
+                                Câu {bookmark.question?.questionNumber}
+                              </Badge>
                             </div>
-                            <p className="text-slate-900 font-medium">{item.question.text}</p>
+                            <p className="text-slate-900 font-medium">
+                              {bookmark.question?.text}
+                            </p>
                           </div>
                           <button
-                            onClick={() => removeBookmark(item.questionId)}
+                            onClick={() => removeBookmark(bookmark.questionId)}
                             className="flex-shrink-0 p-2 hover:bg-red-50 rounded-md transition-colors"
-                            title="Remove bookmark"
+                            title="Xóa bookmark"
                           >
                             <Trash2 className="w-5 h-5 text-red-500" />
                           </button>

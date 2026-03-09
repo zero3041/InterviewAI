@@ -1,17 +1,62 @@
+import { useState, useEffect } from "react";
 import { useParams, Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Spinner } from "@/components/ui/spinner";
 import { ChevronLeft, BookOpen, Zap, Target, ClipboardList } from "lucide-react";
-import technologiesData from "@/data/technologies.json";
-import { getQuestionsData, getLevelData, countQuestions, countCategories } from "@/lib/questionsData";
+import { useTechnologies } from "@/hooks/useQuestionsApi";
 
 export default function TechPage() {
   const { techId } = useParams<{ techId: string }>();
+  const { technologies, isLoading: techLoading, error: techError } = useTechnologies();
+  const [questionCounts, setQuestionCounts] = useState<Record<string, number>>({});
+  const [categoryCounts, setCategoryCounts] = useState<Record<string, number>>({});
+  const [isLoadingCounts, setIsLoadingCounts] = useState(true);
 
-  const tech = technologiesData.technologies.find((t) => t.id === techId);
-  const questionsData = techId ? getQuestionsData(techId) : null;
+  const tech = technologies.find((t) => t.id === techId);
 
-  if (!tech || !questionsData) {
+  // Fetch question counts for each level
+  useEffect(() => {
+    async function fetchCounts() {
+      if (!tech) return;
+      
+      setIsLoadingCounts(true);
+      const qCounts: Record<string, number> = {};
+      const cCounts: Record<string, number> = {};
+
+      for (const level of tech.levels) {
+        try {
+          const response = await fetch(`/api/technologies/${techId}/questions?level=${level}`);
+          if (response.ok) {
+            const data = await response.json();
+            qCounts[level] = data.totalQuestions || 0;
+            cCounts[level] = Object.keys(data.categories || {}).length;
+          }
+        } catch {
+          qCounts[level] = 0;
+          cCounts[level] = 0;
+        }
+      }
+
+      setQuestionCounts(qCounts);
+      setCategoryCounts(cCounts);
+      setIsLoadingCounts(false);
+    }
+
+    if (tech) {
+      fetchCounts();
+    }
+  }, [tech, techId]);
+
+  if (techLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <Spinner className="w-8 h-8" />
+      </div>
+    );
+  }
+
+  if (!tech || techError) {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <Card className="border-slate-200">
@@ -25,19 +70,6 @@ export default function TechPage() {
       </div>
     );
   }
-
-  // Count questions per level
-  const getQuestionCount = (levelKey: "junior" | "middle") => {
-    const data = getLevelData(techId!, levelKey);
-    if (!data) return 0;
-    return countQuestions(data);
-  };
-
-  const getCategoryCount = (levelKey: "junior" | "middle") => {
-    const data = getLevelData(techId!, levelKey);
-    if (!data) return 0;
-    return countCategories(data);
-  };
 
   const levelInfo = {
     junior: {
@@ -84,8 +116,8 @@ export default function TechPage() {
             if (!info) return null;
 
             const Icon = info.icon;
-            const questionCount = getQuestionCount(level as "junior" | "middle");
-            const categoryCount = getCategoryCount(level as "junior" | "middle");
+            const questionCount = questionCounts[level] || 0;
+            const categoryCount = categoryCounts[level] || 0;
 
             return (
               <Card key={level} className="border-slate-200 hover:shadow-lg transition-shadow">
@@ -101,11 +133,19 @@ export default function TechPage() {
                   <div className="space-y-2 mb-6">
                     <div className="flex items-center gap-2 text-sm text-slate-600">
                       <BookOpen className="w-4 h-4" />
-                      <span>{questionCount}+ câu hỏi</span>
+                      {isLoadingCounts ? (
+                        <Spinner className="w-4 h-4" />
+                      ) : (
+                        <span>{questionCount}+ câu hỏi</span>
+                      )}
                     </div>
                     <div className="flex items-center gap-2 text-sm text-slate-600">
                       <Zap className="w-4 h-4" />
-                      <span>{categoryCount} danh mục</span>
+                      {isLoadingCounts ? (
+                        <Spinner className="w-4 h-4" />
+                      ) : (
+                        <span>{categoryCount} danh mục</span>
+                      )}
                     </div>
                   </div>
                   <div className="flex gap-3">

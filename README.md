@@ -20,7 +20,7 @@
 
 ### 1. Tải và cài đặt
 
-Tải app từ [GitHub Releases](https://github.com/YOUR_REPO/antigravity/releases) phù hợp với hệ điều hành:
+Tải app từ [GitHub Releases](https://github.com/lbjlaq/Antigravity-Manager/releases) phù hợp với hệ điều hành:
 
 - **macOS**: `.dmg`
 - **Windows**: `.msi` hoặc `.zip`
@@ -136,17 +136,84 @@ pnpm start
 
 ## API Endpoints
 
+### AI Endpoints
+
 | Endpoint           | Method | Mô tả                               |
 | ------------------ | ------ | ----------------------------------- |
 | `/api/models`      | GET    | Lấy danh sách AI models             |
 | `/api/score`       | POST   | Chấm điểm một câu trả lời           |
 | `/api/score-batch` | POST   | Chấm điểm nhiều câu trả lời (batch) |
+| `/api/chat`        | POST   | Hỏi thêm sau khi AI chấm điểm       |
+
+### Database Endpoints
+
+| Endpoint                          | Method | Mô tả                       |
+| --------------------------------- | ------ | --------------------------- |
+| `/api/technologies`               | GET    | Lấy danh sách technologies  |
+| `/api/technologies/:id/questions` | GET    | Lấy câu hỏi theo technology |
+| `/api/sessions`                   | POST   | Tạo/lấy session             |
+| `/api/history`                    | GET    | Lấy lịch sử chấm điểm       |
+| `/api/history`                    | POST   | Thêm entry lịch sử          |
+| `/api/history/:id`                | DELETE | Xóa entry lịch sử           |
+| `/api/history/:id/chat`           | POST   | Cập nhật chat messages      |
+| `/api/bookmarks`                  | GET    | Lấy danh sách bookmark      |
+| `/api/bookmarks`                  | POST   | Thêm bookmark               |
+| `/api/bookmarks/:questionId`      | DELETE | Xóa bookmark                |
+| `/api/stats`                      | GET    | Lấy thống kê                |
 
 ## Công nghệ sử dụng
 
 - **Frontend**: React 19, TypeScript, Vite, Tailwind CSS, shadcn/ui
 - **Backend**: Express.js, Node.js
+- **Database**: PostgreSQL 16, Drizzle ORM
 - **AI**: OpenAI-compatible API (qua Antigravity Proxy)
+
+## Cài đặt Database (PostgreSQL)
+
+### Sử dụng Docker (khuyến nghị)
+
+```bash
+# Khởi động PostgreSQL container
+docker-compose up -d
+
+# Kiểm tra container đang chạy
+docker ps
+```
+
+### Cài đặt thủ công
+
+1. Cài đặt PostgreSQL 16
+2. Tạo database:
+
+```sql
+CREATE DATABASE interview_prep;
+```
+
+3. Cấu hình DATABASE_URL trong file `.env`:
+
+```env
+DATABASE_URL=postgres://postgres:postgres@localhost:5432/interview_prep
+```
+
+### Migrate và Seed data
+
+```bash
+# Push schema tới database
+pnpm db:push
+
+# Seed dữ liệu từ JSON files vào database
+pnpm db:seed
+```
+
+### Database Commands
+
+| Command            | Mô tả                                   |
+| ------------------ | --------------------------------------- |
+| `pnpm db:generate` | Generate migration files                |
+| `pnpm db:migrate`  | Run migrations                          |
+| `pnpm db:push`     | Push schema trực tiếp (development)     |
+| `pnpm db:seed`     | Seed dữ liệu câu hỏi                    |
+| `pnpm db:studio`   | Mở Drizzle Studio (UI quản lý database) |
 
 ## License
 

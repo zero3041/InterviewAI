@@ -1,54 +1,89 @@
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo, useEffect, useCallback } from "react";
 import { useParams, Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { Spinner } from "@/components/ui/spinner";
 import { ChevronLeft, Search, Bookmark, BookmarkCheck, MessageCircle, History } from "lucide-react";
 import { AnswerScoreDialog } from "@/components/AnswerScoreDialog";
-import { useQuestions, useTechnologies, type Question } from "@/hooks/useQuestionsApi";
-import { useHistoryApi } from "@/hooks/useHistoryApi";
-import { useBookmarksApi } from "@/hooks/useBookmarksApi";
+import { getLevelData, normalizeToCategories, countQuestions, type Question } from "@/lib/questionsData";
+import { useHistory, generateQuestionId } from "@/hooks/useHistory";
+import technologiesData from "@/data/technologies.json";
 
 export default function QuestionsPage() {
   const { level, techId } = useParams<{ level: string; techId?: string }>();
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const [bookmarkedQuestions, setBookmarkedQuestions] = useState<Set<string>>(new Set());
   const [answerDialogOpen, setAnswerDialogOpen] = useState(false);
-  const [selectedQuestion, setSelectedQuestion] = useState<{ text: string; number: number; id: number } | null>(null);
+  const [selectedQuestion, setSelectedQuestion] = useState<{ text: string; number: number } | null>(null);
   const [, forceUpdate] = useState(0);
 
-  // API hooks
-  const currentTechId = techId || "java-springboot";
-  const { technologies } = useTechnologies();
-  const { categories, questions, totalQuestions, levelLabel, isLoading, error } = useQuestions(
-    currentTechId,
-    level || null
-  );
-  const { hasHistory } = useHistoryApi();
-  const { isBookmarked, toggleBookmark } = useBookmarksApi();
-
-  // Get technology name
-  const currentTech = technologies.find((t) => t.id === currentTechId);
-  const technologyName = currentTech?.name || "Lập trình";
+  // History hook
+  const { hasHistory } = useHistory();
 
   // Determine back link based on techId
   const backLink = techId ? `/tech/${techId}` : "/";
 
-  // Initialize selected category when data loads
+  // Get data for the current tech and level
+  const currentTechId = techId || "java-springboot";
+  const currentTech = technologiesData.technologies.find(t => t.id === currentTechId);
+  const technologyName = currentTech?.name || "Lập trình";
+  const levelData = (level === "junior" || level === "middle") ? getLevelData(currentTechId, level) : null;
+
+  // Load bookmarks from localStorage
   useEffect(() => {
-    if (selectedCategory === null && Object.keys(categories).length > 0) {
-      setSelectedCategory(Object.keys(categories)[0]);
+    const saved = localStorage.getItem("bookmarkedQuestions");
+    if (saved) {
+      setBookmarkedQuestions(new Set(JSON.parse(saved)));
     }
-  }, [categories, selectedCategory]);
+  }, []);
 
-  // Filter questions based on search query (must be before early returns)
-  const filteredCategories = useMemo(() => {
-    if (!searchQuery) return categories;
+  // Save bookmarks to localStorage
+  const toggleBookmark = (questionId: string) => {
+    const updated = new Set(bookmarkedQuestions);
+    if (updated.has(questionId)) {
+      updated.delete(questionId);
+    } else {
+      updated.add(questionId);
+    }
+    setBookmarkedQuestions(updated);
+    localStorage.setItem("bookmarkedQuestions", JSON.stringify(Array.from(updated)));
+  };
 
+  // Open answer dialog for a question
+  const openAnswerDialog = (question: { text: string; number: number }) => {
+    setSelectedQuestion(question);
+    setAnswerDialogOpen(true);
+  };
+
+  if (!levelData) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <Card className="border-slate-200">
+          <CardContent className="pt-6">
+            <p className="text-slate-600 mb-4">Invalid level or technology selected</p>
+            <Link href="/">
+              <Button>Back to Home</Button>
+            </Link>
+          </CardContent>
+        </Card>
+      </div>
+    );
+  }
+
+  const categorizedData = normalizeToCategories(levelData);
+  const categories = Object.entries(categorizedData);
+
+  // Initialize selected category
+  if (selectedCategory === null && categories.length > 0) {
+    setSelectedCategory(categories[0][0]);
+  }
+
+  // Filter questions based on search query
+  const filteredQuestions = useMemo(() => {
     const result: Record<string, Record<string, Question[]>> = {};
 
-    Object.entries(categories).forEach(([categoryName, subcategories]) => {
+    Object.entries(categorizedData).forEach(([categoryName, subcategories]) => {
       const filteredSubcategories: Record<string, Question[]> = {};
 
       Object.entries(subcategories).forEach(([subcategoryName, questions]) => {
@@ -67,43 +102,13 @@ export default function QuestionsPage() {
     });
 
     return result;
-  }, [searchQuery, categories]);
+  }, [searchQuery, categorizedData]);
 
-  const displayedCategory = selectedCategory && filteredCategories[selectedCategory];
+  const displayCategories = searchQuery ? filteredQuestions : categorizedData;
+  const displayedCategory = selectedCategory && displayCategories[selectedCategory];
 
-  // Open answer dialog for a question
-  const openAnswerDialog = (question: Question) => {
-    setSelectedQuestion({ text: question.text, number: question.questionNumber, id: question.id });
-    setAnswerDialogOpen(true);
-  };
-
-  // Handle bookmark toggle
-  const handleToggleBookmark = async (questionId: number) => {
-    await toggleBookmark(questionId);
-  };
-
-  if (isLoading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <Spinner className="w-8 h-8" />
-      </div>
-    );
-  }
-
-  if (error || !level || (level !== "junior" && level !== "middle")) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <Card className="border-slate-200">
-          <CardContent className="pt-6">
-            <p className="text-slate-600 mb-4">{error || "Invalid level or technology selected"}</p>
-            <Link href="/">
-              <Button>Back to Home</Button>
-            </Link>
-          </CardContent>
-        </Card>
-      </div>
-    );
-  }
+  // Count total questions
+  const totalQuestions = countQuestions(levelData);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
@@ -117,8 +122,12 @@ export default function QuestionsPage() {
                 Quay lại
               </Button>
             </Link>
-            <h1 className="text-2xl font-bold text-slate-900 flex-1">{levelLabel}</h1>
-            <div className="text-sm text-slate-600">{totalQuestions} câu hỏi</div>
+            <h1 className="text-2xl font-bold text-slate-900 flex-1">
+              {levelData.level}
+            </h1>
+            <div className="text-sm text-slate-600">
+              {totalQuestions} câu hỏi
+            </div>
           </div>
 
           {/* Search Bar */}
@@ -145,7 +154,7 @@ export default function QuestionsPage() {
               </CardHeader>
               <CardContent>
                 <div className="space-y-2">
-                  {Object.keys(filteredCategories).map((categoryName) => (
+                  {Object.keys(displayCategories).map((categoryName) => (
                     <button
                       key={categoryName}
                       onClick={() => setSelectedCategory(categoryName)}
@@ -175,19 +184,21 @@ export default function QuestionsPage() {
                     <CardContent>
                       <div className="space-y-4">
                         {questions.map((question) => {
-                          const questionBookmarked = isBookmarked(question.id);
-                          const questionHasHistory = hasHistory(question.id);
+                          const questionId = `${selectedCategory}-${subcategoryName}-${question.number}`;
+                          const isBookmarked = bookmarkedQuestions.has(questionId);
+                          const historyQuestionId = generateQuestionId(currentTechId, level || "junior", question.number);
+                          const questionHasHistory = hasHistory(historyQuestionId);
 
                           return (
                             <div
-                              key={question.id}
+                              key={question.number}
                               className="pb-4 border-b border-slate-200 last:border-b-0 last:pb-0"
                             >
                               <div className="flex items-start justify-between gap-4">
                                 <div className="flex-1">
                                   <div className="flex items-center gap-2 mb-2">
                                     <span className="inline-block w-6 h-6 rounded-full bg-blue-100 text-blue-700 text-xs font-semibold flex items-center justify-center">
-                                      {question.questionNumber}
+                                      {question.number}
                                     </span>
                                     <p className="text-slate-900 font-medium">{question.text}</p>
                                     {questionHasHistory && (
@@ -207,11 +218,11 @@ export default function QuestionsPage() {
                                     <MessageCircle className="w-5 h-5 text-blue-500" />
                                   </button>
                                   <button
-                                    onClick={() => handleToggleBookmark(question.id)}
+                                    onClick={() => toggleBookmark(questionId)}
                                     className="p-2 hover:bg-slate-100 rounded-md transition-colors"
-                                    title={questionBookmarked ? "Remove bookmark" : "Add bookmark"}
+                                    title={isBookmarked ? "Remove bookmark" : "Add bookmark"}
                                   >
-                                    {questionBookmarked ? (
+                                    {isBookmarked ? (
                                       <BookmarkCheck className="w-5 h-5 text-blue-600" />
                                     ) : (
                                       <Bookmark className="w-5 h-5 text-slate-400" />
@@ -252,7 +263,6 @@ export default function QuestionsPage() {
           onOpenChange={setAnswerDialogOpen}
           question={selectedQuestion.text}
           questionNumber={selectedQuestion.number}
-          questionId={selectedQuestion.id}
           technology={technologyName}
           techId={currentTechId}
           level={level || "junior"}
