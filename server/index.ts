@@ -1,0 +1,153 @@
+import express from "express";
+import { createServer } from "http";
+import path from "path";
+import { fileURLToPath } from "url";
+import { config } from "dotenv";
+import { AI_MODELS, type ScoreRequest, type ScoreResponse } from "../shared/ai-models.js";
+
+// Load environment variables
+config();
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// AI API Configuration
+const AI_API_BASE_URL = process.env.AI_API_BASE_URL || "http://127.0.0.1:8045/v1";
+const AI_API_KEY = process.env.AI_API_KEY || "";
+const DEFAULT_AI_MODEL = process.env.DEFAULT_AI_MODEL || "gemini-2.5-flash";
+
+async function startServer() {
+  const app = express();
+  const server = createServer(app);
+
+  // Parse JSON body
+  app.use(express.json());
+
+  // Serve static files from dist/public in production
+  const staticPath =
+    process.env.NODE_ENV === "production"
+      ? path.resolve(__dirname, "public")
+      : path.resolve(__dirname, "..", "dist", "public");
+
+  app.use(express.static(staticPath));
+
+  // API: Get available AI models
+  app.get("/api/models", (_req, res) => {
+    res.json({
+      models: AI_MODELS,
+      defaultModel: DEFAULT_AI_MODEL,
+    });
+  });
+
+  // API: Score an answer using AI
+  app.post("/api/score", async (req, res) => {
+    try {
+      const { question, answer, model } = req.body as ScoreRequest;
+
+      if (!question || !answer) {
+        return res.status(400).json({ error: "Question and answer are required" });
+      }
+
+      if (!AI_API_KEY) {
+        return res.status(500).json({ error: "AI API key not configured" });
+      }
+
+      const selectedModel = model || DEFAULT_AI_MODEL;
+
+      // Build the scoring prompt
+      const systemPrompt = `Bạn là một chuyên gia phỏng vấn Java/Spring Boot với nhiều năm kinh nghiệm. 
+Nhiệm vụ của bạn là đánh giá câu trả lời phỏng vấn và cung cấp phản hồi chi tiết.
+
+Hãy đánh giá câu trả lời theo các tiêu chí sau:
+1. Độ chính xác kỹ thuật (40%)
+2. Độ đầy đủ của câu trả lời (30%)
+3. Cách trình bày và giải thích (20%)
+4. Ví dụ minh họa (10%)
+
+Trả lời theo định dạng JSON sau:
+{
+  "score": <điểm từ 0-100>,
+  "feedback": "<nhận xét tổng quan về câu trả lời>",
+  "strengths": ["<điểm mạnh 1>", "<điểm mạnh 2>", ...],
+  "improvements": ["<điểm cần cải thiện 1>", "<điểm cần cải thiện 2>", ...],
+  "sampleAnswer": "<câu trả lời mẫu ngắn gọn và đầy đủ>"
+}`;
+
+      const userPrompt = `Câu hỏi phỏng vấn: ${question}
+
+Câu trả lời của ứng viên: ${answer}
+
+Hãy đánh giá câu trả lời trên.`;
+
+      // Call the AI API (OpenAI-compatible format)
+      const response = await fetch(`${AI_API_BASE_URL}/chat/completions`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${AI_API_KEY}`,
+        },
+        body: JSON.stringify({
+          model: selectedModel,
+          messages: [
+            { role: "system", content: systemPrompt },
+            { role: "user", content: userPrompt },
+          ],
+          temperature: 0.7,
+          max_tokens: 2000,
+        }),
+      });
+
+      if (!response.ok) {
+        const errorText = await response.text();
+        console.error("AI API error:", errorText);
+        return res.status(500).json({ error: "Failed to get AI response" });
+      }
+
+      const aiResponse = await response.json();
+      const content = aiResponse.choices?.[0]?.message?.content;
+
+      if (!content) {
+        return res.status(500).json({ error: "Empty AI response" });
+      }
+
+      // Parse the JSON response from AI
+      try {
+        // Extract JSON from the response (in case there's extra text)
+        const jsonMatch = content.match(/\{[\s\S]*\}/);
+        if (!jsonMatch) {
+          throw new Error("No JSON found in response");
+        }
+        const scoreResult: ScoreResponse = JSON.parse(jsonMatch[0]);
+        return res.json(scoreResult);
+      } catch (parseError) {
+        console.error("Failed to parse AI response:", content);
+        // Return a fallback response with the raw content
+        return res.json({
+          score: 0,
+          feedback: content,
+          strengths: [],
+          improvements: ["Không thể phân tích phản hồi từ AI"],
+          sampleAnswer: "",
+        });
+      }
+    } catch (error) {
+      console.error("Score API error:", error);
+      return res.status(500).json({ error: "Internal server error" });
+    }
+  });
+
+  // Handle client-side routing - serve index.html for all routes
+  app.get("*", (_req, res) => {
+    res.sendFile(path.join(staticPath, "index.html"));
+  });
+
+  const port = process.env.PORT || (process.env.NODE_ENV === "production" ? 3000 : 3001);
+
+  server.listen(port, () => {
+    console.log(`Server running on http://localhost:${port}/`);
+    console.log(`AI API configured: ${AI_API_BASE_URL}`);
+    console.log(`Default model: ${DEFAULT_AI_MODEL}`);
+  });
+}
+
+startServer().catch(console.error);

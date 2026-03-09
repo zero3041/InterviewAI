@@ -1,0 +1,1841 @@
+{
+  "junior": {
+    "level": "Junior (1 năm kinh nghiệm)",
+    "categories": {
+      "A. Java Core (Nền Tảng Vững Chắc)": {
+        "1. OOP (Lập trình hướng đối tượng)": [
+          {
+            "number": 1,
+            "text": "Giải thích 4 nguyên lý cơ bản của OOP: **Encapsulation, Inheritance, Polymorphism, Abstraction**. Cung cấp ví dụ cụ thể cho từng nguyên lý trong Java."
+          },
+          {
+            "number": 2,
+            "text": "Tại sao OOP lại được coi là một mô hình lập trình mạnh mẽ và quan trọng trong phát triển phần mềm hiện đại?"
+          },
+          {
+            "number": 3,
+            "text": "Sự khác biệt cơ bản giữa `interface` và `abstract class` là gì? Khi nào bạn sẽ chọn sử dụng `interface` và khi nào là `abstract class`?"
+          },
+          {
+            "number": 4,
+            "text": "Kể tên các loại thành viên mà một `interface` có thể có từ Java 8 trở lên. Giải thích cách sử dụng `default` và `static` methods trong `interface`."
+          },
+          {
+            "number": 5,
+            "text": "`Overloading` và `Overriding` là gì? Cho ví dụ minh họa cho cả hai trường hợp."
+          },
+          {
+            "number": 6,
+            "text": "Nêu các quy tắc cần tuân thủ khi `overriding` một method trong Java. Điều gì xảy ra nếu bạn vi phạm các quy tắc này?"
+          },
+          {
+            "number": 7,
+            "text": "Giải thích khái niệm `Composition` và `Aggregation`. So sánh chúng với `Inheritance` và khi nào nên ưu tiên `Composition` hơn `Inheritance`?"
+          },
+          {
+            "number": 8,
+            "text": "`Coupling` và `Cohesion` là gì trong ngữ cảnh OOP? Làm thế nào để thiết kế code với `low coupling` và `high cohesion`?"
+          },
+          {
+            "number": 9,
+            "text": "`Final` keyword có thể được sử dụng với class, method và variable như thế nào? Ý nghĩa của nó trong từng trường hợp?"
+          },
+          {
+            "number": 10,
+            "text": "Sự khác biệt giữa `is-a` và `has-a` relationship trong OOP? Cho ví dụ."
+          }
+        ],
+        "2. Collections Framework": [
+          {
+            "number": 11,
+            "text": "Kể tên các `Collection` chính trong Java (List, Set, Map) và các triển khai phổ biến của chúng (ví dụ: `ArrayList`, `LinkedList`, `HashSet`, `TreeSet`, `HashMap`, `TreeMap`)."
+          },
+          {
+            "number": 12,
+            "text": "So sánh `ArrayList` và `LinkedList` về cấu trúc dữ liệu, hiệu suất thêm/xóa/truy cập phần tử. Khi nào bạn sử dụng loại nào?"
+          },
+          {
+            "number": 13,
+            "text": "Giải thích cách `HashMap` hoạt động bên trong. Điều gì xảy ra khi có `hash collision`?"
+          },
+          {
+            "number": 14,
+            "text": "Sự khác biệt giữa `HashMap` và `ConcurrentHashMap`? Khi nào bạn cần sử dụng `ConcurrentHashMap`?"
+          },
+          {
+            "number": 15,
+            "text": "Giải thích cách `hashCode()` và `equals()` hoạt động cùng nhau trong `HashMap` và các `Collection` dựa trên hash khác. Điều gì xảy ra nếu bạn không override chúng đúng cách?"
+          },
+          {
+            "number": 16,
+            "text": "Sự khác biệt giữa `Iterator` và `ListIterator`? Khi nào bạn sử dụng `ListIterator`?"
+          },
+          {
+            "number": 17,
+            "text": "`Comparable` và `Comparator` dùng để làm gì? Cho ví dụ về cách sử dụng cả hai để sắp xếp các đối tượng tùy chỉnh."
+          },
+          {
+            "number": 18,
+            "text": "`Set` khác `List` như thế nào? Kể tên một số triển khai của `Set` và sự khác biệt giữa chúng (`HashSet`, `LinkedHashSet`, `TreeSet`)."
+          },
+          {
+            "number": 19,
+            "text": "`Queue` và `Deque` là gì? Kể tên một số triển khai và trường hợp sử dụng."
+          },
+          {
+            "number": 20,
+            "text": "Làm thế nào để đảm bảo một `Collection` là `thread-safe`? (Ngoài `ConcurrentHashMap`)."
+          }
+        ],
+        "3. Exception Handling": [
+          {
+            "number": 21,
+            "text": "Sự khác biệt cơ bản giữa `checked exceptions`, `unchecked exceptions` và `errors` trong Java? Cung cấp ví dụ cho từng loại."
+          },
+          {
+            "number": 22,
+            "text": "Giải thích chi tiết khối `try-catch-finally`. `finally` block luôn được thực thi trong mọi trường hợp không? Giải thích."
+          },
+          {
+            "number": 23,
+            "text": "Lợi ích của việc sử dụng `try-with-resources` (từ Java 7)? Nó hoạt động như thế nào?"
+          },
+          {
+            "number": 24,
+            "text": "Khi nào bạn nên `throw` một exception và khi nào nên `catch` nó? Nêu nguyên tắc `fail-fast`."
+          },
+          {
+            "number": 25,
+            "text": "`Custom exceptions` là gì? Khi nào bạn tạo `custom exception` và cách tạo chúng?"
+          },
+          {
+            "number": 26,
+            "text": "Sự khác biệt giữa `throw` và `throws` keyword?"
+          },
+          {
+            "number": 27,
+            "text": "`printStackTrace()` dùng để làm gì? Khi nào nên sử dụng nó và khi nào nên log exception một cách có cấu trúc hơn?"
+          },
+          {
+            "number": 28,
+            "text": "Làm thế nào để xử lý nhiều loại exception trong một `try-catch` block?"
+          },
+          {
+            "number": 29,
+            "text": "`Exception chaining` là gì? Tại sao nó hữu ích?"
+          },
+          {
+            "number": 30,
+            "text": "Giải thích `Liskov Substitution Principle` trong ngữ cảnh của exception handling."
+          }
+        ],
+        "4. Multithreading & Concurrency (Cơ bản)": [
+          {
+            "number": 31,
+            "text": "Giải thích khái niệm `Thread` trong Java. Tại sao cần sử dụng đa luồng?"
+          },
+          {
+            "number": 32,
+            "text": "Có mấy cách để tạo một `Thread` trong Java? Cho ví dụ code cho từng cách."
+          },
+          {
+            "number": 33,
+            "text": "Sự khác biệt chính giữa việc triển khai `Runnable` và kế thừa `Thread` class?"
+          },
+          {
+            "number": 34,
+            "text": "Mô tả các trạng thái chính trong `Thread lifecycle` (New, Runnable, Running, Blocked, Waiting, Timed Waiting, Terminated)."
+          },
+          {
+            "number": 35,
+            "text": "Vấn đề `race condition` là gì? Cho ví dụ. Làm thế nào để tránh nó bằng cách sử dụng `synchronized` keyword?"
+          },
+          {
+            "number": 36,
+            "text": "`synchronized` keyword hoạt động như thế nào? Nó có thể được sử dụng với method và block code không?"
+          },
+          {
+            "number": 37,
+            "text": "`volatile` keyword dùng để làm gì? Khi nào bạn sử dụng nó và tại sao?"
+          },
+          {
+            "number": 38,
+            "text": "`wait()`, `notify()`, `notifyAll()` methods dùng để làm gì? Chúng phải được gọi trong `synchronized` block không? Tại sao?"
+          },
+          {
+            "number": 39,
+            "text": "Sự khác biệt giữa `sleep()` và `wait()`?"
+          },
+          {
+            "number": 40,
+            "text": "`ThreadLocal` là gì? Khi nào bạn sử dụng nó?"
+          }
+        ],
+        "5. Generics": [
+          {
+            "number": 41,
+            "text": "Mục đích chính của Generics trong Java là gì? Lợi ích của việc sử dụng Generics?"
+          },
+          {
+            "number": 42,
+            "text": "Cung cấp một ví dụ về cách sử dụng Generics trong một class hoặc method."
+          },
+          {
+            "number": 43,
+            "text": "Giải thích khái niệm `Type erasure` trong Generics. Nó ảnh hưởng đến việc sử dụng Generics như thế nào?"
+          },
+          {
+            "number": 44,
+            "text": "`Wildcards` (`?`) trong Generics dùng để làm gì? Giải thích `upper bounded wildcards` (`<? extends T>`) và `lower bounded wildcards` (`<? super T>`)."
+          },
+          {
+            "number": 45,
+            "text": "Nguyên tắc `PECS` (Producer Extends, Consumer Super) là gì? Cho ví dụ."
+          },
+          {
+            "number": 46,
+            "text": "Bạn có thể tạo một instance của một kiểu Generic tại runtime không? Tại sao (không)?"
+          },
+          {
+            "number": 47,
+            "text": "`Raw types` là gì? Tại sao nên tránh sử dụng chúng?"
+          },
+          {
+            "number": 48,
+            "text": "Sự khác biệt giữa `List<Object>` và `List<?>`?"
+          },
+          {
+            "number": 49,
+            "text": "`Generic methods` là gì? Cho ví dụ."
+          },
+          {
+            "number": 50,
+            "text": "`Bounded type parameters` là gì? Cho ví dụ."
+          }
+        ],
+        "6. Input/Output (I/O) & NIO": [
+          {
+            "number": 51,
+            "text": "Sự khác biệt cơ bản giữa `Byte Streams` và `Character Streams`? Kể tên một số class phổ biến cho mỗi loại."
+          },
+          {
+            "number": 52,
+            "text": "`InputStream`, `OutputStream`, `Reader`, `Writer` là các class cơ sở nào? Chức năng của chúng?"
+          },
+          {
+            "number": 53,
+            "text": "`BufferedInputStream` và `BufferedReader` dùng để làm gì? Lợi ích của việc sử dụng chúng?"
+          },
+          {
+            "number": 54,
+            "text": "`Serialization` và `Deserialization` là gì? Khi nào bạn sử dụng chúng? Interface `Serializable` có vai trò gì?"
+          },
+          {
+            "number": 55,
+            "text": "`transient` keyword dùng để làm gì trong `Serialization`?"
+          },
+          {
+            "number": 56,
+            "text": "`NIO (New I/O)` là gì? So sánh với I/O truyền thống. Các thành phần chính của NIO (Channels, Buffers, Selectors)?"
+          },
+          {
+            "number": 57,
+            "text": "Làm thế nào để đọc/ghi file bằng `Files` class (từ Java 7)?"
+          },
+          {
+            "number": 58,
+            "text": "`Path` và `Paths` class dùng để làm gì?"
+          },
+          {
+            "number": 59,
+            "text": "`StandardCharsets` dùng để làm gì?"
+          },
+          {
+            "number": 60,
+            "text": "Làm thế nào để copy một file trong Java?"
+          }
+        ],
+        "7. Java 8+ Features (Cơ bản)": [
+          {
+            "number": 61,
+            "text": "Giới thiệu về `Lambda Expressions`. Cú pháp và lợi ích của chúng."
+          },
+          {
+            "number": 62,
+            "text": "`Functional Interfaces` là gì? Kể tên một số `Functional Interface` có sẵn trong gói `java.util.function` (ví dụ: `Predicate`, `Consumer`, `Function`, `Supplier`)."
+          },
+          {
+            "number": 63,
+            "text": "`Stream API` là gì? Mục đích của nó. So sánh `Stream` với `Collection`."
+          },
+          {
+            "number": 64,
+            "text": "Cho ví dụ đơn giản về việc sử dụng các phép toán `intermediate` (`filter`, `map`) và `terminal` (`forEach`, `collect`) trong Stream API."
+          },
+          {
+            "number": 65,
+            "text": "`Optional` class dùng để làm gì? Lợi ích của nó trong việc tránh `NullPointerException`. Cho ví dụ sử dụng `Optional`."
+          },
+          {
+            "number": 66,
+            "text": "`Method References` là gì? Kể tên các loại `Method References` và cho ví dụ."
+          },
+          {
+            "number": 67,
+            "text": "`Date and Time API` (java.time package) có gì mới so với `java.util.Date` và `java.util.Calendar`? Kể tên một số class chính (`LocalDate`, `LocalTime`, `LocalDateTime`, `Instant`)."
+          },
+          {
+            "number": 68,
+            "text": "`CompletableFuture` là gì? Lợi ích của nó trong lập trình bất đồng bộ (cơ bản)."
+          },
+          {
+            "number": 69,
+            "text": "`default` methods trong interface dùng để làm gì?"
+          },
+          {
+            "number": 70,
+            "text": "`static` methods trong interface dùng để làm gì?"
+          }
+        ]
+      },
+      "B. Spring Boot & Spring Framework (Cơ bản)": {
+        "1. Giới thiệu về Spring Boot": [
+          {
+            "number": 71,
+            "text": "Spring Boot là gì? Giải thích ngắn gọn về mục tiêu và triết lý của nó."
+          },
+          {
+            "number": 72,
+            "text": "Tại sao các dự án hiện đại thường ưu tiên sử dụng Spring Boot thay vì Spring Framework truyền thống?"
+          },
+          {
+            "number": 73,
+            "text": "Kể tên ít nhất 5 tính năng chính của Spring Boot."
+          },
+          {
+            "number": 74,
+            "text": "`Spring Initializr` là gì và dùng để làm gì? Bạn đã sử dụng nó như thế nào?"
+          },
+          {
+            "number": 75,
+            "text": "`Embedded servers` (ví dụ: Tomcat, Jetty, Undertow) trong Spring Boot là gì? Lợi ích của việc sử dụng chúng."
+          },
+          {
+            "number": 76,
+            "text": "`Spring Boot Starters` là gì? Chúng giải quyết vấn đề gì?"
+          },
+          {
+            "number": 77,
+            "text": "`Auto-configuration` trong Spring Boot là gì? Nó hoạt động như thế nào?"
+          },
+          {
+            "number": 78,
+            "text": "Làm thế nào để tắt `auto-configuration` cho một module cụ thể?"
+          },
+          {
+            "number": 79,
+            "text": "`SpringApplication.run()` method có vai trò gì trong một ứng dụng Spring Boot?"
+          },
+          {
+            "number": 80,
+            "text": "`Fat JARs` (hoặc `Executable JARs`) trong Spring Boot là gì? Lợi ích của chúng."
+          }
+        ],
+        "2. Dependency Injection (DI) & IoC (Inversion of Control)": [
+          {
+            "number": 81,
+            "text": "Giải thích khái niệm `Dependency Injection (DI)` và `Inversion of Control (IoC)` trong Spring. Tại sao chúng quan trọng?"
+          },
+          {
+            "number": 82,
+            "text": "`Spring IoC Container` là gì? Nó có vai trò gì?"
+          },
+          {
+            "number": 83,
+            "text": "`Bean` là gì trong ngữ cảnh của Spring? `Spring Bean lifecycle` (vòng đời của một Bean) bao gồm những giai đoạn nào?"
+          },
+          {
+            "number": 84,
+            "text": "Có mấy cách để thực hiện `Dependency Injection` trong Spring? (Constructor, Setter, Field Injection). Cho ví dụ code cho từng cách."
+          },
+          {
+            "number": 85,
+            "text": "So sánh ưu và nhược điểm của `Constructor Injection`, `Setter Injection`, và `Field Injection`. Cách nào được khuyến nghị nhất và tại sao?"
+          },
+          {
+            "number": 86,
+            "text": "`ApplicationContext` và `BeanFactory` khác nhau như thế nào? Cái nào được sử dụng phổ biến hơn trong các ứng dụng Spring Boot?"
+          },
+          {
+            "number": 87,
+            "text": "`Bean Scopes` trong Spring là gì? Kể tên các `scope` phổ biến (`singleton`, `prototype`, `request`, `session`) và giải thích ý nghĩa của chúng."
+          },
+          {
+            "number": 88,
+            "text": "`singleton` scope có nghĩa là gì trong Spring? Nó có giống với `singleton pattern` trong Java không? Giải thích."
+          },
+          {
+            "number": 89,
+            "text": "Làm thế nào để tạo một `Bean` trong Spring? (XML, Java Config, Component Scan)."
+          },
+          {
+            "number": 90,
+            "text": "`Component Scan` hoạt động như thế nào? Làm thế nào để cấu hình các package cần scan?"
+          }
+        ],
+        "3. Spring Annotations (Cơ bản)": [
+          {
+            "number": 91,
+            "text": "Giải thích chức năng và trường hợp sử dụng của các annotation: `@Component`, `@Service`, `@Repository`, `@Controller`, `@RestController`."
+          },
+          {
+            "number": 92,
+            "text": "Sự khác biệt chính giữa `@Autowired` và `@Resource`? Khi nào bạn sử dụng `@Qualifier`?"
+          },
+          {
+            "number": 93,
+            "text": "` @SpringBootApplication` là một `meta-annotation`. Nó bao gồm những annotation nào? Giải thích chức năng của từng annotation con."
+          },
+          {
+            "number": 94,
+            "text": "`@Configuration` và `@Bean` dùng để làm gì? Cho ví dụ về cách sử dụng chúng để định nghĩa các Bean."
+          },
+          {
+            "number": 95,
+            "text": "`@Value` annotation dùng để làm gì? Làm thế nào để đọc các thuộc tính từ file `application.properties` hoặc `application.yml`?"
+          },
+          {
+            "number": 96,
+            "text": "`@RequestMapping` và các biến thể của nó (`@GetMapping`, `@PostMapping`, v.v.) dùng để làm gì?"
+          },
+          {
+            "number": 97,
+            "text": "`@PathVariable` và `@RequestParam` dùng để làm gì? Sự khác biệt giữa chúng?"
+          },
+          {
+            "number": 98,
+            "text": "`@RequestBody` và `@ResponseBody` dùng để làm gì? Chúng liên quan đến việc xử lý JSON/XML như thế nào?"
+          },
+          {
+            "number": 99,
+            "text": "`@Transactional` annotation dùng để làm gì? (Cơ bản)."
+          },
+          {
+            "number": 100,
+            "text": "`@Profile` annotation dùng để làm gì? Làm thế nào để kích hoạt một profile?"
+          }
+        ],
+        "4. Spring Data JPA": [
+          {
+            "number": 101,
+            "text": "Spring Data JPA là gì? Lợi ích chính của việc sử dụng nó trong các ứng dụng Spring Boot."
+          },
+          {
+            "number": 102,
+            "text": "`JPA (Java Persistence API)` là gì? `Hibernate` là gì? Mối quan hệ giữa JPA và Hibernate?"
+          },
+          {
+            "number": 103,
+            "text": "`EntityManager` là gì? Vai trò của nó trong JPA."
+          },
+          {
+            "number": 104,
+            "text": "Giải thích các annotation `@Entity`, `@Table`, `@Id`, `@GeneratedValue`. Các chiến lược `GenerationType` phổ biến (`AUTO`, `IDENTITY`, `SEQUENCE`, `TABLE`)?"
+          },
+          {
+            "number": 105,
+            "text": "Làm thế nào để tạo một `Repository` trong Spring Data JPA? Kế thừa từ interface nào?"
+          },
+          {
+            "number": 106,
+            "text": "Kể tên ít nhất 5 phương thức `CRUD` cơ bản được cung cấp sẵn bởi `JpaRepository`."
+          },
+          {
+            "number": 107,
+            "text": "Làm thế nào để viết một `custom query` trong Spring Data JPA bằng cách sử dụng `method name convention`? Cho ví dụ."
+          },
+          {
+            "number": 108,
+            "text": "Làm thế nào để viết một `custom query` bằng cách sử dụng `@Query` annotation? Cho ví dụ."
+          },
+          {
+            "number": 109,
+            "text": "`Lazy loading` và `Eager loading` là gì trong JPA? Khi nào sử dụng loại nào?"
+          },
+          {
+            "number": 110,
+            "text": "`OneToOne`, `OneToMany`, `ManyToOne`, `ManyToMany` relationships trong JPA? Cho ví dụ về cách ánh xạ chúng."
+          },
+          {
+            "number": 111,
+            "text": "`CascadeType` là gì? Kể tên một số loại `CascadeType` và ý nghĩa của chúng."
+          },
+          {
+            "number": 112,
+            "text": "`FetchType` là gì? Giải thích `FetchType.LAZY` và `FetchType.EAGER`."
+          },
+          {
+            "number": 113,
+            "text": "`Dirty Checking` trong Hibernate là gì? Nó hoạt động như thế nào?"
+          },
+          {
+            "number": 114,
+            "text": "`Persistence Context` là gì? Các trạng thái của một `Entity` trong `Persistence Context` (New, Managed, Detached, Removed)."
+          },
+          {
+            "number": 115,
+            "text": "`Spring Data JPA` có hỗ trợ phân trang (pagination) và sắp xếp (sorting) không? Làm thế nào để sử dụng?"
+          }
+        ],
+        "5. RESTful APIs": [
+          {
+            "number": 116,
+            "text": "Giải thích các nguyên tắc cơ bản của `RESTful API` (Client-Server, Stateless, Cacheable, Layered System, Uniform Interface, Code on Demand - optional)."
+          },
+          {
+            "number": 117,
+            "text": "`Statelessness` trong RESTful API có nghĩa là gì? Tại sao nó quan trọng?"
+          },
+          {
+            "number": 118,
+            "text": "Kể tên và giải thích chức năng của các HTTP methods phổ biến (GET, POST, PUT, DELETE, PATCH). Khi nào sử dụng PUT vs PATCH?"
+          },
+          {
+            "number": 119,
+            "text": "Các HTTP status codes phổ biến bạn thường sử dụng trong RESTful API? (ví dụ: 200, 201, 204, 400, 401, 403, 404, 500)."
+          },
+          {
+            "number": 120,
+            "text": "Sự khác biệt giữa `@Controller` và `@RestController` trong Spring?"
+          },
+          {
+            "number": 121,
+            "text": "Làm thế nào để xử lý `request parameters`, `path variables` và `request headers` trong Spring MVC/REST?"
+          },
+          {
+            "number": 122,
+            "text": "`Idempotency` là gì trong ngữ cảnh RESTful API? Các HTTP methods nào là `idempotent`?"
+          },
+          {
+            "number": 123,
+            "text": "`Content Negotiation` là gì trong RESTful API? Làm thế nào để Spring Boot hỗ trợ nó?"
+          },
+          {
+            "number": 124,
+            "text": "`HATEOAS` là gì? Lợi ích của nó trong RESTful API (cơ bản)."
+          },
+          {
+            "number": 125,
+            "text": "Làm thế nào để thiết kế URL cho một RESTful API? Nêu các best practices."
+          }
+        ],
+        "6. Spring MVC (Cơ bản)": [
+          {
+            "number": 126,
+            "text": "Giải thích luồng xử lý request trong Spring MVC, bắt đầu từ khi request đến `DispatcherServlet` cho đến khi response được trả về."
+          },
+          {
+            "number": 127,
+            "text": "`DispatcherServlet` có vai trò gì?"
+          },
+          {
+            "number": 128,
+            "text": "`Controller` trong Spring MVC là gì? Nó có nhiệm vụ gì?"
+          },
+          {
+            "number": 129,
+            "text": "`ViewResolver` là gì? Các loại `ViewResolver` phổ biến?"
+          },
+          {
+            "number": 130,
+            "text": "`Model` và `ModelAndView` dùng để làm gì trong Spring MVC?"
+          },
+          {
+            "number": 131,
+            "text": "Làm thế nào để truyền dữ liệu từ Controller sang View?"
+          },
+          {
+            "number": 132,
+            "text": "`Form handling` trong Spring MVC hoạt động như thế nào?"
+          },
+          {
+            "number": 133,
+            "text": "`Data Binding` là gì trong Spring MVC?"
+          },
+          {
+            "number": 134,
+            "text": "`Interceptor` trong Spring MVC là gì? Khi nào bạn sử dụng nó?"
+          },
+          {
+            "number": 135,
+            "text": "So sánh Spring MVC và Spring WebFlux (cơ bản)."
+          }
+        ],
+        "7. Cấu hình và Profiles": [
+          {
+            "number": 136,
+            "text": "`application.properties` và `application.yml` dùng để làm gì? Sự khác biệt giữa chúng?"
+          },
+          {
+            "number": 137,
+            "text": "Làm thế nào để định nghĩa và sử dụng các thuộc tính tùy chỉnh trong file cấu hình?"
+          },
+          {
+            "number": 138,
+            "text": "`Spring Profiles` là gì? Tại sao chúng hữu ích trong các môi trường khác nhau (dev, test, prod)?"
+          },
+          {
+            "number": 139,
+            "text": "Làm thế nào để kích hoạt một `Spring Profile`?"
+          },
+          {
+            "number": 140,
+            "text": "Làm thế nào để định nghĩa các thuộc tính cấu hình riêng cho từng profile?"
+          },
+          {
+            "number": 141,
+            "text": "`Externalized Configuration` là gì? Lợi ích của nó."
+          },
+          {
+            "number": 142,
+            "text": "`Environment` interface trong Spring dùng để làm gì?"
+          },
+          {
+            "number": 143,
+            "text": "`PropertySource` là gì?"
+          },
+          {
+            "number": 144,
+            "text": "Làm thế nào để ghi đè các thuộc tính cấu hình mặc định của Spring Boot?"
+          },
+          {
+            "number": 145,
+            "text": "`Spring Boot` có hỗ trợ `JNDI` không?"
+          }
+        ]
+      },
+      "C. Cơ Sở Dữ Liệu (Cơ bản)": {
+        "1. SQL (Cơ bản)": [
+          {
+            "number": 146,
+            "text": "Sự khác biệt giữa `JOIN` (INNER JOIN) và `LEFT JOIN` (LEFT OUTER JOIN)? Cho ví dụ."
+          },
+          {
+            "number": 147,
+            "text": "Giải thích các ràng buộc toàn vẹn dữ liệu (Data Integrity Constraints): `PRIMARY KEY`, `FOREIGN KEY`, `UNIQUE`, `NOT NULL`, `CHECK`."
+          },
+          {
+            "number": 148,
+            "text": "Viết một câu lệnh SQL để lấy tất cả người dùng có tuổi lớn hơn 25 và sắp xếp theo tên tăng dần."
+          },
+          {
+            "number": 149,
+            "text": "Viết một câu lệnh SQL để đếm số lượng sản phẩm trong mỗi danh mục."
+          },
+          {
+            "number": 150,
+            "text": "`GROUP BY` và `HAVING` clauses dùng để làm gì? Sự khác biệt giữa chúng?"
+          },
+          {
+            "number": 151,
+            "text": "`UNION` và `UNION ALL` khác nhau như thế nào?"
+          },
+          {
+            "number": 152,
+            "text": "`Subquery` là gì? Cho ví dụ."
+          },
+          {
+            "number": 153,
+            "text": "`VIEW` trong SQL là gì? Lợi ích của nó."
+          },
+          {
+            "number": 154,
+            "text": "`INDEX` trong SQL là gì? Tại sao cần sử dụng Index?"
+          },
+          {
+            "number": 155,
+            "text": "`Transaction` trong SQL là gì? Các thuộc tính `ACID` của Transaction?"
+          }
+        ],
+        "2. JPA & Hibernate (Cơ bản)": [
+          {
+            "number": 156,
+            "text": "JPA là gì? Hibernate là gì? Mối quan hệ giữa chúng?"
+          },
+          {
+            "number": 157,
+            "text": "Giải thích các trạng thái của một `Entity` trong JPA (New/Transient, Managed/Persistent, Detached, Removed)."
+          },
+          {
+            "number": 158,
+            "text": "`Persistence Context` là gì? Vai trò của nó trong JPA."
+          },
+          {
+            "number": 159,
+            "text": "`EntityManager` là gì? Các phương thức cơ bản của nó (`persist`, `merge`, `remove`, `find`)."
+          },
+          {
+            "number": 160,
+            "text": "`@Column`, `@Table`, `@Entity` annotations dùng để làm gì?"
+          },
+          {
+            "number": 161,
+            "text": "`GeneratedValue` và `GenerationType` dùng để làm gì?"
+          },
+          {
+            "number": 162,
+            "text": "`Lazy loading` và `Eager loading` là gì? Cho ví dụ."
+          },
+          {
+            "number": 163,
+            "text": "`N+1 select problem` là gì? (Cơ bản)."
+          },
+          {
+            "number": 164,
+            "text": "`JPQL (Java Persistence Query Language)` là gì? So sánh với SQL."
+          },
+          {
+            "number": 165,
+            "text": "Làm thế nào để thực hiện các truy vấn phức tạp hơn trong JPA (ví dụ: sử dụng `Criteria API` - cơ bản)."
+          }
+        ]
+      },
+      "D. Testing (Cơ bản)": {},
+      "E. Công Cụ & Thực Hành Phát Triển (Cơ bản)": {
+        "1. Build Tools (Maven/Gradle)": [
+          {
+            "number": 176,
+            "text": "Mục đích chính của `Maven` hoặc `Gradle` trong một dự án Java là gì?"
+          },
+          {
+            "number": 177,
+            "text": "Giải thích các phần chính của file `pom.xml` (Maven) hoặc `build.gradle` (Gradle) (ví dụ: `groupId`, `artifactId`, `version`, `dependencies`, `plugins`)."
+          },
+          {
+            "number": 178,
+            "text": "`Dependency Management` trong Maven/Gradle là gì?"
+          },
+          {
+            "number": 179,
+            "text": "`Plugin Management` trong Maven là gì?"
+          },
+          {
+            "number": 180,
+            "text": "Các lệnh Maven/Gradle cơ bản bạn thường sử dụng (ví dụ: `mvn clean install`, `gradle build`)."
+          }
+        ],
+        "2. Version Control (Git)": [
+          {
+            "number": 181,
+            "text": "`Git` là gì? Tại sao nó là công cụ quản lý phiên bản phổ biến?"
+          },
+          {
+            "number": 182,
+            "text": "Các lệnh Git cơ bản bạn thường sử dụng hàng ngày (`git clone`, `git add`, `git commit`, `git push`, `git pull`, `git branch`, `git checkout`, `git merge`)."
+          },
+          {
+            "number": 183,
+            "text": "Giải thích `merge conflict` là gì và cách bạn giải quyết nó."
+          },
+          {
+            "number": 184,
+            "text": "`Branching strategy` bạn thường sử dụng trong dự án (ví dụ: `Gitflow` - cơ bản, `Feature Branch Workflow`)."
+          },
+          {
+            "number": 185,
+            "text": "Sự khác biệt giữa `git merge` và `git rebase` (cơ bản)?"
+          }
+        ],
+        "3. IDEs & Debugging": [
+          {
+            "number": 186,
+            "text": "Bạn thường sử dụng IDE nào cho phát triển Java/Spring Boot (IntelliJ IDEA, Eclipse, VS Code)? Các tính năng yêu thích của bạn?"
+          },
+          {
+            "number": 187,
+            "text": "Làm thế nào để `debug` một ứng dụng Spring Boot trong IDE của bạn? Các kỹ thuật debugging cơ bản (breakpoints, step over, step into, watch variables)."
+          },
+          {
+            "number": 188,
+            "text": "`Hot-swapping` code trong quá trình debug là gì?"
+          },
+          {
+            "number": 189,
+            "text": "`Remote debugging` là gì? Khi nào bạn sử dụng nó?"
+          },
+          {
+            "number": 190,
+            "text": "`Logging` trong ứng dụng Spring Boot hoạt động như thế nào? Các cấp độ log (INFO, DEBUG, ERROR, WARN) và khi nào sử dụng chúng?"
+          }
+        ],
+        "4. Khác": [
+          {
+            "number": 191,
+            "text": "`JAR` và `WAR` files khác nhau như thế nào? Khi nào bạn tạo `JAR` và khi nào tạo `WAR`?"
+          },
+          {
+            "number": 192,
+            "text": "`Maven Wrapper` hoặc `Gradle Wrapper` là gì? Lợi ích của chúng."
+          },
+          {
+            "number": 193,
+            "text": "`Postman` hoặc `Swagger/OpenAPI` dùng để làm gì trong quá trình phát triển API?"
+          },
+          {
+            "number": 194,
+            "text": "`JSON` và `XML` là gì? Khi nào sử dụng loại nào?"
+          },
+          {
+            "number": 195,
+            "text": "`HTTP` và `HTTPS` khác nhau như thế nào?"
+          },
+          {
+            "number": 196,
+            "text": "`URL` và `URI` khác nhau như thế nào?"
+          },
+          {
+            "number": 197,
+            "text": "`Cookies` và `Sessions` dùng để làm gì trong ứng dụng web?"
+          },
+          {
+            "number": 198,
+            "text": "`CORS (Cross-Origin Resource Sharing)` là gì? Làm thế nào để xử lý CORS trong Spring Boot?"
+          },
+          {
+            "number": 199,
+            "text": "`Servlet Container` là gì? Ví dụ."
+          },
+          {
+            "number": 200,
+            "text": "`JVM (Java Virtual Machine)` là gì? Vai trò của nó."
+          },
+          {
+            "number": 201,
+            "text": "`JRE (Java Runtime Environment)` và `JDK (Java Development Kit)` khác nhau như thế nào?"
+          },
+          {
+            "number": 202,
+            "text": "`Classpath` là gì?"
+          },
+          {
+            "number": 203,
+            "text": "`Garbage Collection` (cơ bản) là gì? Lợi ích của nó."
+          },
+          {
+            "number": 204,
+            "text": "`Access Modifiers` trong Java (public, protected, default, private) dùng để làm gì?"
+          },
+          {
+            "number": 205,
+            "text": "`Static` keyword trong Java dùng để làm gì với method, variable, block?"
+          }
+        ]
+      }
+    }
+  },
+  "middle": {
+    "level": "Middle (2+ năm kinh nghiệm)",
+    "categories": {
+      "A. Java Core (Nâng Cao & Chuyên Sâu)": {
+        "1. Concurrency & Multithreading (Chuyên Sâu)": [
+          {
+            "number": 206,
+            "text": "Giải thích chi tiết cơ chế hoạt động của `synchronized` keyword. Nó bảo vệ cái gì? Sự khác biệt giữa `synchronized method` và `synchronized block`?"
+          },
+          {
+            "number": 207,
+            "text": "Giải thích chi tiết cơ chế hoạt động của `volatile` keyword. Nó giải quyết vấn đề gì mà `synchronized` không giải quyết được?"
+          },
+          {
+            "number": 208,
+            "text": "`Atomic` variables (ví dụ: `AtomicInteger`, `AtomicLong`) là gì? Khi nào bạn sử dụng chúng thay vì `synchronized`?"
+          },
+          {
+            "number": 209,
+            "text": "So sánh `ExecutorService`, `ThreadPoolExecutor` và `ForkJoinPool`. Khi nào bạn chọn loại nào cho các tác vụ cụ thể?"
+          },
+          {
+            "number": 210,
+            "text": "Giải thích `Deadlock`, `Livelock`, `Starvation` với ví dụ cụ thể. Nêu các điều kiện để xảy ra `Deadlock` và các chiến lược phòng tránh/giải quyết."
+          },
+          {
+            "number": 211,
+            "text": "`CountDownLatch`, `CyclicBarrier`, `Semaphore` dùng để làm gì? Cung cấp ví dụ về cách sử dụng chúng để đồng bộ hóa các luồng."
+          },
+          {
+            "number": 212,
+            "text": "`CompletableFuture` là gì? Lợi ích của nó trong lập trình bất đồng bộ và xử lý các tác vụ song song. Cho ví dụ về việc `chaining` các `CompletableFuture`."
+          },
+          {
+            "number": 213,
+            "text": "`ReentrantLock` và `ReadWriteLock` là gì? So sánh với `synchronized` keyword và khi nào nên sử dụng chúng?"
+          },
+          {
+            "number": 214,
+            "text": "`Concurrent Collections` (ví dụ: `ConcurrentHashMap`, `CopyOnWriteArrayList`) là gì? Lợi ích của chúng so với các `Collection` truyền thống được đồng bộ hóa thủ công."
+          },
+          {
+            "number": 215,
+            "text": "`Thread starvation` là gì? Làm thế nào để tránh nó?"
+          }
+        ],
+        "2. Stream API (Chuyên Sâu)": [
+          {
+            "number": 216,
+            "text": "Cung cấp ví dụ phức tạp hơn về việc sử dụng các phép toán `intermediate` (`distinct`, `sorted`, `limit`, `skip`, `peek`) và `terminal` (`reduce`, `collect`, `min`, `max`, `summaryStatistics`) trong Stream API."
+          },
+          {
+            "number": 217,
+            "text": "Giải thích chi tiết sự khác biệt giữa `Stream` và `Collection`. Khi nào nên chuyển đổi giữa chúng?"
+          },
+          {
+            "number": 218,
+            "text": "`Parallel Streams` là gì? Nó hoạt động như thế nào? Khi nào nên sử dụng `Parallel Streams` và những rủi ro tiềm ẩn?"
+          },
+          {
+            "number": 219,
+            "text": "Giải thích `Optional` class một cách chuyên sâu, bao gồm các phương thức như `map`, `flatMap`, `filter`, `orElse`, `orElseGet`, `orElseThrow`. Khi nào nên trả về `Optional` từ một method?"
+          },
+          {
+            "number": 220,
+            "text": "`Collectors` class trong Stream API cung cấp những phương thức nào để `collect` dữ liệu? Cho ví dụ về `groupingBy`, `partitioningBy`, `joining`."
+          }
+        ],
+        "3. Functional Interfaces & Lambda Expressions (Chuyên Sâu)": [
+          {
+            "number": 221,
+            "text": "Giải thích sâu hơn về cách `Functional Interface` và `Lambda Expressions` cải thiện khả năng đọc, bảo trì và tính linh hoạt của code. So sánh với `anonymous inner classes`."
+          },
+          {
+            "number": 222,
+            "text": "Kể tên và giải thích chi tiết các `Functional Interface` có sẵn trong Java (`Predicate`, `Consumer`, `Function`, `Supplier`, `BiFunction`, `UnaryOperator`, `BinaryOperator`, `Comparator`, `Runnable`, `Callable`)."
+          },
+          {
+            "number": 223,
+            "text": "Cung cấp ví dụ phức tạp về `Method References` (static method, instance method của đối tượng cụ thể, instance method của đối tượng tùy ý, constructor reference)."
+          },
+          {
+            "number": 224,
+            "text": "`Higher-order functions` là gì? Làm thế nào để tạo và sử dụng chúng trong Java với Lambda Expressions?"
+          },
+          {
+            "number": 225,
+            "text": "`Currying` và `Partial Application` là gì trong lập trình hàm? Bạn có thể mô phỏng chúng trong Java không?"
+          }
+        ],
+        "4. Garbage Collection & Memory Management": [
+          {
+            "number": 226,
+            "text": "Giải thích chi tiết cách Garbage Collection hoạt động trong JVM, bao gồm các thế hệ (Young, Old, Permanent/Metaspace) và các giai đoạn (Mark, Sweep, Compact)."
+          },
+          {
+            "number": 227,
+            "text": "Kể tên và so sánh các loại Garbage Collector phổ biến (Serial, Parallel, CMS, G1, ZGC, Shenandoah). Khi nào bạn chọn loại nào?"
+          },
+          {
+            "number": 228,
+            "text": "Làm thế nào để tối ưu hóa hiệu suất GC? Các tham số JVM quan trọng liên quan đến GC (`-Xms`, `-Xmx`, `-XX:NewRatio`, `-XX:MaxMetaspaceSize`, `-XX:+UseG1GC`, v.v.)?"
+          },
+          {
+            "number": 229,
+            "text": "`Memory Leaks` trong Java là gì? Các nguyên nhân phổ biến gây ra `Memory Leaks` và làm thế nào để phát hiện, khắc phục chúng (ví dụ: sử dụng `profiler`, `heap dump analysis`)."
+          },
+          {
+            "number": 230,
+            "text": "`WeakReference`, `SoftReference`, `PhantomReference` là gì? Khi nào bạn sử dụng chúng?"
+          }
+        ],
+        "5. JVM Internals & Classloading": [
+          {
+            "number": 231,
+            "text": "Giải thích chi tiết các thành phần chính của JVM (Classloader Subsystem, Runtime Data Areas - Heap, Stack, Method Area, PC Registers, Native Method Stacks, Execution Engine)."
+          },
+          {
+            "number": 232,
+            "text": "`JRE`, `JDK`, `JVM` khác nhau như thế nào và mối quan hệ giữa chúng?"
+          },
+          {
+            "number": 233,
+            "text": "`Classloader` trong Java hoạt động như thế nào? Kể tên các loại `Classloader` (Bootstrap, Extension, System/Application) và vai trò của chúng."
+          },
+          {
+            "number": 234,
+            "text": "`Delegation Model` trong Classloader là gì? Tại sao nó quan trọng?"
+          },
+          {
+            "number": 235,
+            "text": "`PermGen` và `Metaspace` khác nhau như thế nào?"
+          }
+        ],
+        "6. Reflection API & Annotations (Chuyên Sâu)": [
+          {
+            "number": 236,
+            "text": "`Reflection API` là gì? Cung cấp ví dụ về cách sử dụng Reflection để truy cập và sửa đổi các thành viên của class tại runtime."
+          },
+          {
+            "number": 237,
+            "text": "Khi nào bạn sử dụng Reflection? Các rủi ro và nhược điểm của việc sử dụng Reflection?"
+          },
+          {
+            "number": 238,
+            "text": "`Custom Annotations` là gì? Làm thế nào để tạo và xử lý `custom annotations` bằng Reflection?"
+          },
+          {
+            "number": 239,
+            "text": "`Proxy` trong Java là gì? Khi nào bạn sử dụng `Dynamic Proxy`?"
+          },
+          {
+            "number": 240,
+            "text": "`ServiceLoader` là gì? Nó hoạt động như thế nào với `Service Provider Interface (SPI)`?"
+          }
+        ]
+      },
+      "B. Spring Boot & Spring Framework (Nâng Cao & Chuyên Sâu)": {
+        "1. Spring Security (Chuyên Sâu)": [
+          {
+            "number": 241,
+            "text": "Giải thích chi tiết luồng `Authentication` và `Authorization` trong Spring Security. Các thành phần chính (`SecurityContextHolder`, `AuthenticationManager`, `AuthenticationProvider`, `UserDetailsService`, `PasswordEncoder`, `AccessDecisionManager`)."
+          },
+          {
+            "number": 242,
+            "text": "Làm thế nào để cấu hình Spring Security cho một ứng dụng RESTful API sử dụng `JWT (JSON Web Tokens)`? Mô tả các bước và các lớp bạn sẽ tạo."
+          },
+          {
+            "number": 243,
+            "text": "Giải thích `OAuth2` và `OpenID Connect`. Làm thế nào để tích hợp `OAuth2` client hoặc resource server trong Spring Boot?"
+          },
+          {
+            "number": 244,
+            "text": "Sự khác biệt giữa `FilterChainProxy` và `SecurityFilterChain`? `DelegatingFilterProxy` có vai trò gì?"
+          },
+          {
+            "number": 245,
+            "text": "Cách triển khai `Role-Based Access Control (RBAC)` và `Method-Level Security` (`@PreAuthorize`, `@PostAuthorize`, `@Secured`) một cách hiệu quả."
+          },
+          {
+            "number": 246,
+            "text": "`CSRF (Cross-Site Request Forgery)` là gì và Spring Security bảo vệ chống lại nó như thế nào?"
+          },
+          {
+            "number": 247,
+            "text": "`CORS (Cross-Origin Resource Sharing)` là gì? Làm thế nào để cấu hình CORS trong Spring Security?"
+          },
+          {
+            "number": 248,
+            "text": "`Session Fixation` là gì? Spring Security ngăn chặn nó như thế nào?"
+          },
+          {
+            "number": 249,
+            "text": "`Spring Security` có hỗ trợ `Multi-factor Authentication (MFA)` không? Làm thế nào để triển khai?"
+          },
+          {
+            "number": 250,
+            "text": "`Spring Security` trong kiến trúc Microservices (ví dụ: sử dụng `Spring Cloud Security`, `Keycloak`)."
+          }
+        ],
+        "2. Spring AOP (Aspect-Oriented Programming)": [
+          {
+            "number": 251,
+            "text": "Giải thích AOP là gì và tại sao nó hữu ích trong việc giải quyết các `cross-cutting concerns`. So sánh AOP với OOP."
+          },
+          {
+            "number": 252,
+            "text": "Các khái niệm chính trong AOP: `Aspect`, `Join Point`, `Pointcut`, `Advice` (Before, After, AfterReturning, AfterThrowing, Around). Cung cấp ví dụ code cho từng loại `Advice`."
+          },
+          {
+            "number": 253,
+            "text": "`Proxy-based AOP` (JDK Dynamic Proxies, CGLIB Proxies) và `AspectJ-based AOP` khác nhau như thế nào? Khi nào Spring sử dụng loại nào?"
+          },
+          {
+            "number": 254,
+            "text": "Làm thế nào để cấu hình AOP trong Spring Boot (sử dụng `@EnableAspectJAutoProxy` và `@Aspect`)?"
+          },
+          {
+            "number": 255,
+            "text": "Các trường hợp sử dụng phổ biến của AOP trong các ứng dụng thực tế (logging, transaction management, security, caching, performance monitoring)."
+          }
+        ],
+        "3. Spring Transaction Management (Chuyên Sâu)": [
+          {
+            "number": 256,
+            "text": "Giải thích chi tiết `@Transactional` annotation. Các thuộc tính của nó (`propagation`, `isolation`, `readOnly`, `timeout`, `rollbackFor`, `noRollbackFor`)."
+          },
+          {
+            "number": 257,
+            "text": "So sánh `REQUIRED`, `REQUIRES_NEW`, `NESTED` trong `propagation` type. Khi nào bạn sử dụng từng loại?"
+          },
+          {
+            "number": 258,
+            "text": "`Isolation Levels` trong transaction là gì? Kể tên các `isolation levels` và các vấn đề chúng giải quyết (Dirty Read, Non-repeatable Read, Phantom Read)."
+          },
+          {
+            "number": 259,
+            "text": "Khi nào một transaction có thể bị rollback? Các vấn đề thường gặp với `@Transactional` (ví dụ: `self-invocation`, exception bị nuốt)."
+          },
+          {
+            "number": 260,
+            "text": "`Programmatic Transaction Management` là gì và khi nào bạn sử dụng nó thay vì `declarative transaction management`?"
+          },
+          {
+            "number": 261,
+            "text": "`Distributed Transactions` là gì? Các thách thức và giải pháp (ví dụ: `Two-Phase Commit`, `Saga Pattern`)."
+          },
+          {
+            "number": 262,
+            "text": "`Spring Transaction Synchronization` là gì?"
+          },
+          {
+            "number": 263,
+            "text": "`PlatformTransactionManager` là gì? Các triển khai phổ biến của nó."
+          },
+          {
+            "number": 264,
+            "text": "`Optimistic Locking` và `Pessimistic Locking` là gì? Khi nào sử dụng chúng trong ngữ cảnh transaction?"
+          },
+          {
+            "number": 265,
+            "text": "`Deadlock` trong database transaction là gì? Làm thế nào để phát hiện và giải quyết?"
+          }
+        ],
+        "4. Spring Boot Actuator & Monitoring": [
+          {
+            "number": 266,
+            "text": "Spring Boot Actuator là gì? Các tính năng chính của nó (health, info, metrics, env, beans, mappings, shutdown, loggers)."
+          },
+          {
+            "number": 267,
+            "text": "Làm thế nào để sử dụng Actuator để giám sát ứng dụng? Cách tùy chỉnh các endpoint và expose chúng qua HTTP/JMX."
+          },
+          {
+            "number": 268,
+            "text": "`Micrometer` là gì và vai trò của nó trong Actuator? Các loại `meter` (Counter, Gauge, Timer, DistributionSummary)."
+          },
+          {
+            "number": 269,
+            "text": "Làm thế nào để tích hợp Actuator với các hệ thống giám sát bên ngoài (ví dụ: Prometheus, Grafana, ELK Stack)?"
+          },
+          {
+            "number": 270,
+            "text": "`Distributed Tracing` là gì? Làm thế nào để tích hợp `Spring Cloud Sleuth` và `Zipkin` để theo dõi các request qua nhiều Microservices?"
+          }
+        ],
+        "5. Microservices với Spring Boot (Chuyên Sâu)": [
+          {
+            "number": 271,
+            "text": "Giải thích chi tiết kiến trúc Microservices. Ưu và nhược điểm của nó so với kiến trúc Monolithic. Khi nào nên chuyển sang Microservices?"
+          },
+          {
+            "number": 272,
+            "text": "Các thành phần phổ biến trong kiến trúc Microservices và các công cụ/thư viện Spring Cloud tương ứng: `Service Discovery` (Eureka, Consul, Zookeeper), `API Gateway` (Zuul, Spring Cloud Gateway), `Load Balancing` (Ribbon, Spring Cloud LoadBalancer), `Circuit Breaker` (Hystrix, Resilience4j), `Config Server` (Spring Cloud Config)."
+          },
+          {
+            "number": 273,
+            "text": "`Event-Driven Architecture` là gì? Vai trò của `Message Brokers` (Kafka, RabbitMQ, ActiveMQ) trong Microservices. So sánh `Kafka` và `RabbitMQ`."
+          },
+          {
+            "number": 274,
+            "text": "`Idempotency` trong Microservices là gì và tại sao nó quan trọng? Làm thế nào để thiết kế các dịch vụ `idempotent`?"
+          },
+          {
+            "number": 275,
+            "text": "`Saga Pattern` là gì? Khi nào bạn sử dụng nó để quản lý `distributed transactions`?"
+          },
+          {
+            "number": 276,
+            "text": "`Service Mesh` (ví dụ: Istio, Linkerd) là gì? Lợi ích của nó trong kiến trúc Microservices."
+          },
+          {
+            "number": 277,
+            "text": "`Containerization` (Docker) và `Orchestration` (Kubernetes) có vai trò gì trong việc triển khai Microservices?"
+          },
+          {
+            "number": 278,
+            "text": "`Bounded Context` trong `Domain-Driven Design (DDD)` là gì? Nó liên quan đến việc thiết kế Microservices như thế nào?"
+          },
+          {
+            "number": 279,
+            "text": "`API Versioning` trong Microservices? Các chiến lược phổ biến."
+          },
+          {
+            "number": 280,
+            "text": "`Centralized Logging` và `Monitoring` cho Microservices. Các công cụ và best practices."
+          }
+        ],
+        "6. Caching trong Spring (Chuyên Sâu)": [
+          {
+            "number": 281,
+            "text": "Giải thích chi tiết cách tích hợp caching vào ứng dụng Spring Boot bằng các annotation (`@Cacheable`, `@CachePut`, `@CacheEvict`, `@Caching`, `@CacheConfig`)."
+          },
+          {
+            "number": 282,
+            "text": "Các loại cache provider bạn đã từng làm việc (ví dụ: Ehcache, Redis, Caffeine, Guava Cache)? So sánh chúng về tính năng, hiệu suất và trường hợp sử dụng."
+          },
+          {
+            "number": 283,
+            "text": "`Cache Coherence` và `Cache Invalidation` là gì? Các chiến lược `cache invalidation` (ví dụ: Time-To-Live, Least Recently Used, Write-Through, Write-Back)."
+          },
+          {
+            "number": 284,
+            "text": "`Distributed Caching` là gì? Khi nào bạn cần nó và các giải pháp (ví dụ: Redis Cluster, Hazelcast)."
+          },
+          {
+            "number": 285,
+            "text": "`Cache-Aside Pattern` và `Read-Through/Write-Through Pattern` là gì?"
+          }
+        ],
+        "7. Spring WebFlux (Reactive Programming)": [
+          {
+            "number": 286,
+            "text": "`Reactive Programming` là gì? Tại sao nó lại quan trọng trong các ứng dụng hiện đại có yêu cầu về khả năng mở rộng và hiệu suất cao?"
+          },
+          {
+            "number": 287,
+            "text": "`Spring WebFlux` là gì? So sánh chi tiết với Spring MVC về mô hình lập trình, luồng xử lý và trường hợp sử dụng."
+          },
+          {
+            "number": 288,
+            "text": "`Mono` và `Flux` là gì? Cung cấp ví dụ phức tạp về cách sử dụng chúng để xử lý dữ liệu bất đồng bộ và luồng dữ liệu."
+          },
+          {
+            "number": 289,
+            "text": "`Backpressure` trong Reactive Streams là gì? Làm thế nào để WebFlux xử lý `backpressure`?"
+          },
+          {
+            "number": 290,
+            "text": "`Functional Endpoints` trong WebFlux là gì? So sánh với `@RestController`."
+          }
+        ],
+        "8. Spring Batch & Spring Integration": [
+          {
+            "number": 291,
+            "text": "`Spring Batch` là gì? Khi nào bạn sử dụng nó? Giải thích các khái niệm chính (`Job`, `Step`, `ItemReader`, `ItemProcessor`, `ItemWriter`, `JobLauncher`, `JobRepository`)."
+          },
+          {
+            "number": 292,
+            "text": "Làm thế nào để cấu hình một `Spring Batch Job` đơn giản?"
+          },
+          {
+            "number": 293,
+            "text": "`Spring Integration` là gì? Nó giải quyết vấn đề gì? Giải thích các khái niệm chính (`Message`, `Channel`, `Endpoint`, `Message Handler`, `Message Transformer`)."
+          },
+          {
+            "number": 294,
+            "text": "Cung cấp một ví dụ về cách sử dụng `Spring Integration` để xây dựng một `message flow`."
+          },
+          {
+            "number": 295,
+            "text": "So sánh `Spring Batch` và `Spring Integration`."
+          }
+        ],
+        "9. Validation & Data Binding": [
+          {
+            "number": 296,
+            "text": "Làm thế nào để thực hiện validation trong Spring Boot một cách toàn diện (sử dụng `javax.validation` / `jakarta.validation`, `@Valid`, `@Validated`, `BindingResult`, `MethodArgumentNotValidException`)?"
+          },
+          {
+            "number": 297,
+            "text": "`Custom validators` là gì và cách tạo chúng. Cho ví dụ về một `custom annotation` cho validation."
+          },
+          {
+            "number": 298,
+            "text": "`Data Binding` trong Spring MVC/WebFlux hoạt động như thế nào? Các vấn đề tiềm ẩn và cách giải quyết."
+          },
+          {
+            "number": 299,
+            "text": "`Converter` và `Formatter` trong Spring là gì? Khi nào sử dụng chúng?"
+          },
+          {
+            "number": 300,
+            "text": "`Error handling` cho validation errors trong RESTful API."
+          }
+        ]
+      },
+      "C. Cơ Sở Dữ Liệu (Nâng Cao & Chuyên Sâu)": {
+        "1. Tối ưu hóa truy vấn SQL & Database Performance": [
+          {
+            "number": 301,
+            "text": "Các kỹ thuật tối ưu hóa truy vấn SQL nâng cao bạn biết (Indexes, Query Rewriting, Partitioning, Denormalization, Materialized Views, Stored Procedures, Query Caching)?"
+          },
+          {
+            "number": 302,
+            "text": "Giải thích chi tiết `Index` và khi nào nên sử dụng chúng. Các loại Index (B-Tree, Hash, Full-Text, Spatial) và cách chúng hoạt động."
+          },
+          {
+            "number": 303,
+            "text": "Sự khác biệt giữa `Clustered Index` và `Non-Clustered Index`? Một bảng có thể có bao nhiêu `Clustered Index`?"
+          },
+          {
+            "number": 304,
+            "text": "`Explain Plan` là gì và cách sử dụng nó để phân tích hiệu suất truy vấn. Các thông số quan trọng cần chú ý trong `Explain Plan`."
+          },
+          {
+            "number": 305,
+            "text": "`Database Partitioning` (Horizontal/Vertical) là gì? Lợi ích và nhược điểm của nó."
+          },
+          {
+            "number": 306,
+            "text": "`Database Sharding` là gì? Khi nào bạn cần nó và các chiến lược `sharding`."
+          },
+          {
+            "number": 307,
+            "text": "`Replication` và `Failover` trong cơ sở dữ liệu là gì? Các loại `replication` (Master-Slave, Master-Master)."
+          },
+          {
+            "number": 308,
+            "text": "`Connection Pooling` là gì? Tại sao nó quan trọng? Các thư viện `connection pool` phổ biến (HikariCP, c3p0, Apache DBCP)."
+          },
+          {
+            "number": 309,
+            "text": "`Database Deadlock` là gì? Làm thế nào để phát hiện và giải quyết?"
+          },
+          {
+            "number": 310,
+            "text": "`Database Tuning` bao gồm những gì?"
+          }
+        ],
+        "2. Thiết kế Cơ Sở Dữ Liệu (Chuyên Sâu)": [
+          {
+            "number": 311,
+            "text": "Giải thích chi tiết các dạng chuẩn hóa cơ sở dữ liệu (1NF, 2NF, 3NF, BCNF, 4NF, 5NF). Tại sao cần chuẩn hóa và những lợi ích nó mang lại?"
+          },
+          {
+            "number": 312,
+            "text": "Khi nào bạn sẽ cân nhắc phi chuẩn hóa (denormalization)? Các rủi ro và đánh đổi của phi chuẩn hóa."
+          },
+          {
+            "number": 313,
+            "text": "`ACID properties` trong giao dịch cơ sở dữ liệu là gì? Giải thích từng thuộc tính (Atomicity, Consistency, Isolation, Durability)."
+          },
+          {
+            "number": 314,
+            "text": "So sánh chi tiết `SQL` (Relational) và `NoSQL` databases (Document, Key-Value, Column-Family, Graph). Khi nào sử dụng loại nào và các trường hợp sử dụng phù hợp?"
+          },
+          {
+            "number": 315,
+            "text": "`CAP Theorem` là gì? Giải thích Consistency, Availability, Partition Tolerance và cách nó ảnh hưởng đến việc lựa chọn cơ sở dữ liệu phân tán."
+          },
+          {
+            "number": 316,
+            "text": "`Eventual Consistency` là gì? Khi nào nó được chấp nhận?"
+          },
+          {
+            "number": 317,
+            "text": "`Data Warehousing` và `OLAP` là gì? So sánh với `OLTP`."
+          },
+          {
+            "number": 318,
+            "text": "`ETL (Extract, Transform, Load)` là gì?"
+          },
+          {
+            "number": 319,
+            "text": "`Data Lake` và `Data Mesh` là gì?"
+          },
+          {
+            "number": 320,
+            "text": "`Change Data Capture (CDC)` là gì?"
+          }
+        ],
+        "3. JPA & Hibernate (Chuyên Sâu)": [
+          {
+            "number": 321,
+            "text": "Giải thích chi tiết các chiến lược `FetchType` (EAGER, LAZY) và tác động của chúng đến hiệu suất. Cách giải quyết vấn đề `LazyInitializationException` và `N+1 select problem` một cách hiệu quả (ví dụ: `JOIN FETCH`, `EntityGraph`, `BatchSize`, `subselect`)."
+          },
+          {
+            "number": 322,
+            "text": "So sánh `merge()`, `persist()`, `save()`, `update()` trong JPA/Hibernate. Khi nào sử dụng từng phương thức?"
+          },
+          {
+            "number": 323,
+            "text": "`First-level cache` và `Second-level cache` trong Hibernate là gì? Cấu hình, lợi ích và nhược điểm của chúng. Các cache provider phổ biến cho `Second-level cache`."
+          },
+          {
+            "number": 324,
+            "text": "`Optimistic Locking` và `Pessimistic Locking` là gì? Cung cấp ví dụ về cách triển khai chúng trong JPA và khi nào sử dụng loại nào."
+          },
+          {
+            "number": 325,
+            "text": "`Criteria API` trong JPA là gì? Khi nào bạn sử dụng nó thay vì JPQL hoặc native SQL?"
+          },
+          {
+            "number": 326,
+            "text": "`Hibernate Envers` là gì? Nó dùng để làm gì?"
+          },
+          {
+            "number": 327,
+            "text": "`Custom Type` trong Hibernate là gì? Khi nào bạn cần tạo `custom type`?"
+          },
+          {
+            "number": 328,
+            "text": "`Hibernate Interceptors` và `Event Listeners` là gì?"
+          },
+          {
+            "number": 329,
+            "text": "`Spring Data JPA Projections` là gì? Lợi ích của chúng."
+          },
+          {
+            "number": 330,
+            "text": "`Querydsl` là gì? Lợi ích của nó so với JPQL."
+          }
+        ]
+      },
+      "D. Testing (Nâng Cao & Chuyên Sâu)": {
+        "1. Integration Testing & End-to-End Testing": [
+          {
+            "number": 331,
+            "text": "Tại sao cần `Integration Test`? So sánh với `Unit Test`. Bạn đã sử dụng framework nào để `Integration Test` trong Spring Boot (JUnit 5, Spring Test, MockMvc, Testcontainers, WireMock)?"
+          },
+          {
+            "number": 332,
+            "text": "Giải thích chi tiết `@SpringBootTest`, `@DataJpaTest`, `@WebMvcTest`, `@WebFluxTest`, `@RestClientTest`, `@JdbcTest`."
+          },
+          {
+            "number": 333,
+            "text": "Làm thế nào để kiểm thử các thành phần không đồng bộ hoặc các dịch vụ bên ngoài một cách hiệu quả trong `Integration Test`?"
+          },
+          {
+            "number": 334,
+            "text": "`Testcontainers` là gì? Lợi ích của nó trong việc tạo môi trường test độc lập và nhất quán."
+          },
+          {
+            "number": 335,
+            "text": "`WireMock` là gì? Khi nào bạn sử dụng nó để `mock` các dịch vụ bên ngoài?"
+          },
+          {
+            "number": 336,
+            "text": "`End-to-End Testing` là gì? Các công cụ và chiến lược cho `E2E Testing` (Selenium, Cypress, Playwright)."
+          },
+          {
+            "number": 337,
+            "text": "`Consumer-Driven Contract (CDC) Testing` là gì? Lợi ích của nó trong kiến trúc Microservices. Bạn đã sử dụng công cụ nào (ví dụ: Spring Cloud Contract)?"
+          },
+          {
+            "number": 338,
+            "text": "`Mutation Testing` là gì? Lợi ích của nó."
+          },
+          {
+            "number": 339,
+            "text": "`Performance Testing` là gì? Các công cụ (JMeter, Gatling)."
+          },
+          {
+            "number": 340,
+            "text": "`Security Testing` (SAST, DAST) là gì?"
+          }
+        ],
+        "2. Mocking Frameworks (Chuyên Sâu)": [
+          {
+            "number": 341,
+            "text": "Bạn đã sử dụng `Mockito` như thế nào để kiểm thử các thành phần phụ thuộc? Giải thích chi tiết các annotation `@Mock`, `@Spy`, `@InjectMocks` và các phương thức `when().thenReturn()`, `doReturn().when()`, `verify()`, `ArgumentCaptor`."
+          },
+          {
+            "number": 342,
+            "text": "Sự khác biệt chính giữa `spy` và `mock` trong Mockito? Khi nào sử dụng từng loại?"
+          },
+          {
+            "number": 343,
+            "text": "`Argument Matchers` trong Mockito là gì? Cho ví dụ."
+          },
+          {
+            "number": 344,
+            "text": "`PowerMock` là gì? Khi nào bạn sử dụng nó và tại sao nên hạn chế?"
+          },
+          {
+            "number": 345,
+            "text": "`Behavior-Driven Development (BDD)` là gì? Các công cụ (Cucumber, JBehave)."
+          }
+        ]
+      },
+      "E. Kiến Trúc & Thiết Kế Hệ Thống (Chuyên Sâu)": {
+        "1. Design Patterns & Principles": [
+          {
+            "number": 346,
+            "text": "Kể tên và giải thích chi tiết ít nhất 10 `Design Patterns` phổ biến bạn đã sử dụng (ví dụ: Singleton, Factory Method, Abstract Factory, Builder, Prototype, Adapter, Bridge, Composite, Decorator, Facade, Flyweight, Proxy, Chain of Responsibility, Command, Interpreter, Iterator, Mediator, Memento, Observer, State, Strategy, Template Method, Visitor)."
+          },
+          {
+            "number": 347,
+            "text": "So sánh `Dependency Injection` với `Factory Pattern`. Khi nào nên ưu tiên cái nào?"
+          },
+          {
+            "number": 348,
+            "text": "Giải thích chi tiết 5 nguyên tắc `SOLID` (Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, Dependency Inversion). Cung cấp ví dụ code vi phạm và tuân thủ từng nguyên tắc."
+          },
+          {
+            "number": 349,
+            "text": "`DRY (Don't Repeat Yourself)` và `KISS (Keep It Simple, Stupid)` principles là gì?"
+          },
+          {
+            "number": 350,
+            "text": "`YAGNI (You Ain't Gonna Need It)` principle là gì?"
+          },
+          {
+            "number": 351,
+            "text": "`Domain-Driven Design (DDD)` là gì? Giải thích các khái niệm chính (`Bounded Context`, `Aggregate Root`, `Entity`, `Value Object`, `Domain Service`, `Repository`)."
+          },
+          {
+            "number": 352,
+            "text": "`Event Sourcing` và `CQRS (Command Query Responsibility Segregation)` là gì? Khi nào bạn sử dụng chúng?"
+          },
+          {
+            "number": 353,
+            "text": "`Clean Architecture` hoặc `Hexagonal Architecture` là gì?"
+          },
+          {
+            "number": 354,
+            "text": "`Design by Contract` là gì?"
+          },
+          {
+            "number": 355,
+            "text": "`Architectural Patterns` (Layered, Client-Server, Event-Driven, Microkernel, Space-Based)."
+          }
+        ],
+        "2. Kiến trúc hệ thống (Chuyên Sâu)": [
+          {
+            "number": 356,
+            "text": "Giải thích chi tiết các kiến trúc hệ thống phổ biến (Monolithic, Microservices, Event-Driven Architecture, Serverless, Service-Oriented Architecture - SOA). Ưu và nhược điểm của từng loại và các trường hợp sử dụng phù hợp."
+          },
+          {
+            "number": 357,
+            "text": "Khi nào bạn sẽ chọn kiến trúc Microservices thay vì Monolithic? Các thách thức lớn khi chuyển từ Monolithic sang Microservices và cách giải quyết."
+          },
+          {
+            "number": 358,
+            "text": "`Distributed System` là gì? Các thách thức khi xây dựng `distributed systems` (Consistency, Latency, Fault Tolerance, Concurrency)."
+          },
+          {
+            "number": 359,
+            "text": "`Load Balancing` (Client-side vs Server-side) và `Clustering` là gì? Các thuật toán `load balancing` phổ biến."
+          },
+          {
+            "number": 360,
+            "text": "`API Gateway` có vai trò gì trong kiến trúc Microservices? Các tính năng chính của `API Gateway`."
+          },
+          {
+            "number": 361,
+            "text": "`Service Mesh` (ví dụ: Istio, Linkerd) là gì? Lợi ích của nó trong việc quản lý giao tiếp giữa các Microservices."
+          },
+          {
+            "number": 362,
+            "text": "`Message Queues/Brokers` (Kafka, RabbitMQ, ActiveMQ) dùng để làm gì trong các hệ thống phân tán? So sánh `publish/subscribe` và `point-to-point` messaging models."
+          },
+          {
+            "number": 363,
+            "text": "`Distributed Tracing` là gì? Tại sao nó quan trọng trong việc debug và giám sát Microservices?"
+          },
+          {
+            "number": 364,
+            "text": "`Circuit Breaker Pattern` và `Bulkhead Pattern` là gì? Khi nào bạn sử dụng chúng để tăng cường độ bền của hệ thống?"
+          },
+          {
+            "number": 365,
+            "text": "`Saga Pattern` là gì? Các loại `Saga` (Choreography, Orchestration)."
+          }
+        ],
+        "3. Scalability & High Availability": [
+          {
+            "number": 366,
+            "text": "Các kỹ thuật để đảm bảo khả năng mở rộng (`scalability`) và tính sẵn sàng cao (`high availability`) cho ứng dụng Spring Boot và hệ thống tổng thể (Load Balancing, Clustering, Horizontal/Vertical Scaling, Caching, Database Sharding, Replication, CDN, Message Queues, Asynchronous Processing)?"
+          },
+          {
+            "number": 367,
+            "text": "`Horizontal Scaling` và `Vertical Scaling` khác nhau như thế nào? Khi nào sử dụng loại nào?"
+          },
+          {
+            "number": 368,
+            "text": "`CAP Theorem` là gì? Giải thích lại Consistency, Availability, Partition Tolerance và cách nó ảnh hưởng đến việc lựa chọn cơ sở dữ liệu và thiết kế hệ thống phân tán."
+          },
+          {
+            "number": 369,
+            "text": "`Eventual Consistency` là gì? Khi nào nó được chấp nhận trong thiết kế hệ thống?"
+          },
+          {
+            "number": 370,
+            "text": "`Disaster Recovery` và `Business Continuity Planning` là gì?"
+          },
+          {
+            "number": 371,
+            "text": "`Fault Tolerance` và `Resilience` là gì?"
+          },
+          {
+            "number": 372,
+            "text": "`Single Point of Failure (SPOF)` là gì? Làm thế nào để tránh nó?"
+          },
+          {
+            "number": 373,
+            "text": "`Rate Limiting` là gì? Tại sao nó quan trọng và cách triển khai?"
+          },
+          {
+            "number": 374,
+            "text": "`Throttling` là gì?"
+          },
+          {
+            "number": 375,
+            "text": "`Blue/Green Deployment` và `Canary Deployment` là gì? Lợi ích của chúng."
+          }
+        ]
+      },
+      "F. Công Cụ & Thực Hành Phát Triển (Chuyên Sâu)": {
+        "1. CI/CD (Continuous Integration/Continuous Delivery)": [
+          {
+            "number": 376,
+            "text": "Giải thích chi tiết khái niệm `CI/CD (Continuous Integration/Continuous Delivery/Continuous Deployment)`. Lợi ích của việc áp dụng CI/CD trong phát triển phần mềm."
+          },
+          {
+            "number": 377,
+            "text": "Các công cụ CI/CD bạn đã sử dụng (Jenkins, GitLab CI, GitHub Actions, CircleCI, Travis CI, Azure DevOps)? Mô tả kinh nghiệm của bạn với một trong số đó."
+          },
+          {
+            "number": 378,
+            "text": "Thiết kế một `CI/CD pipeline` hoàn chỉnh cho một dự án Spring Boot, từ khi code được commit đến khi ứng dụng được triển khai lên môi trường sản xuất. Các bước chính và công cụ bạn sẽ tích hợp?"
+          },
+          {
+            "number": 379,
+            "text": "`Deployment strategies` (Blue/Green, Canary, Rolling, A/B Testing) là gì? So sánh ưu nhược điểm và khi nào sử dụng từng loại."
+          },
+          {
+            "number": 380,
+            "text": "`Infrastructure as Code (IaC)` là gì? Các công cụ (Terraform, Ansible, CloudFormation)."
+          }
+        ],
+        "2. Docker & Kubernetes": [
+          {
+            "number": 381,
+            "text": "`Docker` là gì? Tại sao nó hữu ích trong phát triển và triển khai ứng dụng hiện đại? Lợi ích của `containerization`."
+          },
+          {
+            "number": 382,
+            "text": "`Dockerfile` là gì? Viết một `Dockerfile` cơ bản để đóng gói một ứng dụng Spring Boot."
+          },
+          {
+            "number": 383,
+            "text": "Các lệnh Docker cơ bản bạn thường sử dụng (`docker build`, `docker run`, `docker push`, `docker pull`, `docker ps`, `docker exec`, `docker logs`)."
+          },
+          {
+            "number": 384,
+            "text": "`Docker Compose` dùng để làm gì? Viết một file `docker-compose.yml` để chạy một ứng dụng Spring Boot với database."
+          },
+          {
+            "number": 385,
+            "text": "`Kubernetes` là gì? Tại sao nó là một nền tảng `container orchestration` phổ biến?"
+          },
+          {
+            "number": 386,
+            "text": "Các khái niệm cơ bản trong Kubernetes (`Pod`, `Deployment`, `Service`, `Ingress`, `Namespace`, `ReplicaSet`, `ConfigMap`, `Secret`, `PersistentVolume`)."
+          },
+          {
+            "number": 387,
+            "text": "Làm thế nào để triển khai một ứng dụng Spring Boot lên Kubernetes? Mô tả các file YAML cần thiết."
+          },
+          {
+            "number": 388,
+            "text": "`Helm` là gì? Lợi ích của nó trong việc quản lý các ứng dụng Kubernetes."
+          },
+          {
+            "number": 389,
+            "text": "`Service Discovery` và `Load Balancing` trong Kubernetes hoạt động như thế nào?"
+          },
+          {
+            "number": 390,
+            "text": "`Horizontal Pod Autoscaler (HPA)` và `Vertical Pod Autoscaler (VPA)` là gì?"
+          }
+        ],
+        "3. Cloud Platforms (AWS, Azure, GCP)": [
+          {
+            "number": 391,
+            "text": "Bạn có kinh nghiệm làm việc với các nền tảng Cloud nào (AWS, Azure, GCP)? Kể tên các dịch vụ Cloud bạn đã sử dụng cho các ứng dụng Spring Boot."
+          },
+          {
+            "number": 392,
+            "text": "Làm thế nào để triển khai một ứng dụng Spring Boot lên AWS EC2, AWS Elastic Beanstalk, hoặc AWS Fargate?"
+          },
+          {
+            "number": 393,
+            "text": "`Serverless computing` (AWS Lambda, Azure Functions, Google Cloud Functions) là gì? Khi nào bạn sử dụng nó với Java?"
+          },
+          {
+            "number": 394,
+            "text": "`Managed Database Services` (AWS RDS, Azure SQL Database, Google Cloud SQL) là gì? Lợi ích của chúng."
+          },
+          {
+            "number": 395,
+            "text": "`Cloud Security` (IAM, Security Groups, Network ACLs) là gì?"
+          }
+        ],
+        "4. Logging, Monitoring & Alerting": [
+          {
+            "number": 396,
+            "text": "Các framework logging trong Java (Log4j, Logback, SLF4J)? Cách cấu hình logging trong Spring Boot để ghi log ra file và console."
+          },
+          {
+            "number": 397,
+            "text": "`Centralized Logging` là gì? Các công cụ (ELK Stack - Elasticsearch, Logstash, Kibana; Splunk, Grafana Loki)."
+          },
+          {
+            "number": 398,
+            "text": "Các công cụ giám sát ứng dụng (Prometheus, Grafana, New Relic, Dynatrace, AppDynamics)? Bạn đã sử dụng công cụ nào?"
+          },
+          {
+            "number": 399,
+            "text": "`Alerting` là gì? Làm thế nào để thiết lập các cảnh báo dựa trên metrics và logs?"
+          },
+          {
+            "number": 400,
+            "text": "`APM (Application Performance Monitoring)` là gì?"
+          }
+        ]
+      },
+      "G. Tình Huống Thực Tế (Case Studies) & Giải Quyết Vấn Đề Phức Tạp": {
+        "1. Xử lý lỗi và Độ bền (Resilience)": [
+          {
+            "number": 401,
+            "text": "Bạn sẽ thiết kế một cơ chế xử lý lỗi toàn cục (global error handling) trong một hệ thống Microservices như thế nào để đảm bảo tính nhất quán, thân thiện với người dùng và dễ dàng debug? Bao gồm cả việc xử lý lỗi từ các dịch vụ bên ngoài."
+          },
+          {
+            "number": 402,
+            "text": "Một dịch vụ quan trọng trong hệ thống của bạn thường xuyên gặp sự cố khi gọi một dịch vụ bên ngoài không ổn định. Bạn sẽ áp dụng các `resilience patterns` nào (Retry, Circuit Breaker, Bulkhead, Timeout) để cải thiện độ bền của hệ thống? Mô tả cách triển khai chúng với `Resilience4j`."
+          },
+          {
+            "number": 403,
+            "text": "Làm thế nào để xử lý các `dead letter queues (DLQ)` trong hệ thống messaging?"
+          },
+          {
+            "number": 404,
+            "text": "`Idempotent Consumers` là gì? Làm thế nào để đảm bảo một `message consumer` là `idempotent`?"
+          },
+          {
+            "number": 405,
+            "text": "`Compensating Transaction` là gì? Khi nào bạn sử dụng nó trong `Saga Pattern`?"
+          }
+        ],
+        "2. Hiệu suất và Tối ưu hóa (Performance & Optimization)": [
+          {
+            "number": 406,
+            "text": "Một ứng dụng Spring Boot của bạn đang gặp vấn đề về hiệu suất nghiêm trọng (phản hồi chậm, sử dụng CPU/RAM cao). Bạn sẽ thực hiện các bước nào để chẩn đoán, phân tích và tối ưu hóa hiệu suất? Các công cụ và kỹ thuật bạn sẽ sử dụng (JProfiler, VisualVM, YourKit, Spring Boot Actuator, `heap dump analysis`, `thread dump analysis`, tối ưu hóa database, caching, asynchronous processing)."
+          },
+          {
+            "number": 407,
+            "text": "Bạn phát hiện một `N+1 select problem` nghiêm trọng trong một API. Mô tả các cách bạn sẽ giải quyết vấn đề này trong Spring Data JPA/Hibernate."
+          },
+          {
+            "number": 408,
+            "text": "Làm thế nào để tối ưu hóa việc sử dụng bộ nhớ trong một ứng dụng Spring Boot để tránh `OutOfMemoryError`?"
+          },
+          {
+            "number": 409,
+            "text": "`Load Testing` và `Stress Testing` là gì? Làm thế nào để thực hiện chúng cho một ứng dụng Spring Boot?"
+          },
+          {
+            "number": 410,
+            "text": "`Garbage Collection Tuning` là gì? Làm thế nào để điều chỉnh GC để cải thiện hiệu suất ứng dụng?"
+          }
+        ],
+        "3. Bảo mật (Security)": [
+          {
+            "number": 411,
+            "text": "Thiết kế một giải pháp bảo mật toàn diện cho một hệ thống Microservices bao gồm nhiều dịch vụ Spring Boot, một API Gateway và một Frontend SPA. Bao gồm các khía cạnh `Authentication`, `Authorization`, `Data Protection`, `API Security` và `Vulnerability Management`."
+          },
+          {
+            "number": 412,
+            "text": "Làm thế nào để bảo vệ một ứng dụng Spring Boot khỏi các lỗ hổng bảo mật phổ biến như `SQL Injection`, `XSS`, `CSRF`, `Session Hijacking`, `Brute Force Attacks`, `Insecure Deserialization`, `Broken Access Control`?"
+          },
+          {
+            "number": 413,
+            "text": "`OWASP Top 10` là gì? Bạn đã áp dụng các biện pháp nào để giảm thiểu các rủi ro này?"
+          },
+          {
+            "number": 414,
+            "text": "Làm thế nào để quản lý các thông tin nhạy cảm (database credentials, API keys, private keys) trong môi trường sản xuất một cách an toàn (ví dụ: `Spring Cloud Config Server` với `Git Encrypted Properties`, `HashiCorp Vault`, `Kubernetes Secrets`, `AWS Secrets Manager`)?"
+          },
+          {
+            "number": 415,
+            "text": "`Penetration Testing` và `Vulnerability Scanning` là gì?"
+          }
+        ],
+        "4. Triển khai và Vận hành (DevOps)": [
+          {
+            "number": 416,
+            "text": "Mô tả quy trình triển khai một hệ thống Microservices phức tạp (bao gồm nhiều dịch vụ Spring Boot, database, message broker) lên môi trường Kubernetes. Các thành phần Kubernetes nào bạn sẽ sử dụng và tại sao? Làm thế nào để quản lý `configuration`, `secrets`, `logging` và `monitoring`?"
+          },
+          {
+            "number": 417,
+            "text": "Thiết kế một `CI/CD pipeline` nâng cao cho một dự án Microservices, bao gồm các bước `build`, `test`, `scan (security, quality)`, `containerize`, `deploy to staging`, `E2E test`, `deploy to production` với `Blue/Green` hoặc `Canary` strategy."
+          },
+          {
+            "number": 418,
+            "text": "`Observability` (Metrics, Logs, Traces) là gì? Làm thế nào để xây dựng một hệ thống `observability` hiệu quả cho Microservices?"
+          },
+          {
+            "number": 419,
+            "text": "`Site Reliability Engineering (SRE)` là gì? Các nguyên tắc và thực hành của SRE."
+          },
+          {
+            "number": 420,
+            "text": "`Chaos Engineering` là gì? Lợi ích của nó trong việc kiểm tra độ bền của hệ thống."
+          }
+        ],
+        "5. Thiết kế Hệ thống (System Design)": [
+          {
+            "number": 421,
+            "text": "Thiết kế một RESTful API cho một hệ thống thương mại điện tử quy mô lớn (quản lý sản phẩm, giỏ hàng, đơn hàng, người dùng, thanh toán, khuyến mãi). Bạn sẽ định nghĩa các `microservices`, `database schemas`, `API contracts`, `authentication/authorization` và cách xử lý các mối quan hệ phức tạp giữa các tài nguyên như thế nào?"
+          },
+          {
+            "number": 422,
+            "text": "Thiết kế một hệ thống xử lý đơn hàng trực tuyến có khả năng chịu tải cao, sẵn sàng cao và có thể mở rộng. Mô tả kiến trúc bạn sẽ đề xuất, bao gồm các thành phần chính, công nghệ sử dụng và cách bạn giải quyết các thách thức về `data consistency`, `distributed transactions`, `fault tolerance` và `scalability`."
+          },
+          {
+            "number": 423,
+            "text": "Khi nào bạn sẽ chọn `Kafka` thay vì `RabbitMQ` cho một hệ thống messaging? Giải thích các yếu tố quyết định (throughput, durability, ordering, consumer groups)."
+          },
+          {
+            "number": 424,
+            "text": "Khi nào bạn sẽ chọn một cơ sở dữ liệu `NoSQL` (ví dụ: MongoDB, Cassandra, Redis) thay vì một cơ sở dữ liệu quan hệ truyền thống (ví dụ: PostgreSQL, MySQL)? Cung cấp các trường hợp sử dụng cụ thể."
+          },
+          {
+            "number": 425,
+            "text": "Thiết kế một hệ thống `notification service` có thể gửi thông báo qua nhiều kênh (email, SMS, push notification) một cách bất đồng bộ và đáng tin cậy."
+          }
+        ],
+        "6. Câu Hỏi Về Tư Duy & Kỹ Năng Mềm (Nâng Cao)": [
+          {
+            "number": 426,
+            "text": "Mô tả một dự án Spring Boot phức tạp nhất bạn từng tham gia. Vai trò của bạn trong dự án đó là gì? Những thách thức kỹ thuật lớn nhất bạn gặp phải và cách bạn vượt qua chúng. Bạn đã học được gì từ dự án đó?"
+          },
+          {
+            "number": 427,
+            "text": "Mô tả một tình huống bạn phải đưa ra một quyết định kiến trúc quan trọng. Các yếu tố bạn đã cân nhắc, các lựa chọn thay thế và lý do cho quyết định cuối cùng của bạn. Kết quả như thế nào?"
+          },
+          {
+            "number": 428,
+            "text": "Bạn làm thế nào để đảm bảo chất lượng code trong một dự án lớn với nhiều lập trình viên? Các quy trình và công cụ bạn áp dụng (Code Review, Static Analysis, Linting, SonarQube)."
+          },
+          {
+            "number": 429,
+            "text": "Bạn làm thế nào để cập nhật kiến thức và kỹ năng trong lĩnh vực Java và Spring Boot đang phát triển nhanh chóng? Các nguồn tài liệu, cộng đồng, hội nghị bạn theo dõi."
+          },
+          {
+            "number": 430,
+            "text": "Mô tả một tình huống bạn phải giải quyết một xung đột kỹ thuật hoặc quan điểm trong nhóm. Bạn đã tiếp cận tình huống đó như thế nào và kết quả ra sao?"
+          },
+          {
+            "number": 431,
+            "text": "Bạn có kinh nghiệm `mentoring` các lập trình viên Junior không? Bạn sẽ hướng dẫn họ như thế nào để phát triển kỹ năng?"
+          },
+          {
+            "number": 432,
+            "text": "`Technical Debt` là gì? Làm thế nào để quản lý và giảm thiểu `technical debt` trong một dự án?"
+          },
+          {
+            "number": 433,
+            "text": "`Refactoring` là gì? Khi nào bạn thực hiện `refactoring` và làm thế nào để đảm bảo an toàn?"
+          },
+          {
+            "number": 434,
+            "text": "`Clean Code` và `Clean Architecture` có ý nghĩa gì đối với bạn? Bạn áp dụng chúng như thế nào trong công việc hàng ngày?"
+          },
+          {
+            "number": 435,
+            "text": "Bạn có đóng góp cho các dự án mã nguồn mở hoặc có dự án cá nhân nào đáng chú ý không? Mô tả về chúng."
+          }
+        ]
+      }
+    }
+  }
+}
