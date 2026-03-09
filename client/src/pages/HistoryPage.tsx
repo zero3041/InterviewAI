@@ -37,17 +37,20 @@ import {
   Lightbulb,
   TrendingUp,
   Calendar,
+  Loader2,
 } from "lucide-react";
-import { useHistory, type HistoryEntry } from "@/hooks/useHistory";
+import { useHistoryApi, type HistoryEntry } from "@/hooks/useHistoryApi";
+import { useTechnologies } from "@/hooks/useQuestionsApi";
 import { MarkdownContent } from "@/components/MarkdownContent";
-import technologiesData from "@/data/technologies.json";
 
 export default function HistoryPage() {
-  const { history, deleteEntry, clearHistory, getStats } = useHistory();
+  const { history, isLoading, deleteEntry, clearHistory, getStats } = useHistoryApi();
+  const { technologies } = useTechnologies();
   const [selectedTech, setSelectedTech] = useState<string>("all");
   const [selectedEntry, setSelectedEntry] = useState<HistoryEntry | null>(null);
 
   const stats = getStats();
+  const uniqueTechCount = Object.keys(stats.techCounts).length;
 
   // Filter history by technology
   const filteredHistory =
@@ -74,9 +77,20 @@ export default function HistoryPage() {
   };
 
   const getTechName = (techId: string) => {
-    const tech = technologiesData.technologies.find((t) => t.id === techId);
+    const tech = technologies.find((t) => t.id === techId);
     return tech?.name || techId;
   };
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white flex items-center justify-center">
+        <div className="text-center">
+          <Loader2 className="w-8 h-8 animate-spin mx-auto mb-4 text-purple-600" />
+          <p className="text-slate-600">Đang tải lịch sử...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
@@ -137,7 +151,7 @@ export default function HistoryPage() {
                 <div className="flex items-center gap-3">
                   <Calendar className="w-8 h-8 text-blue-600" />
                   <div>
-                    <p className="text-2xl font-bold text-blue-700">{stats.totalEntries}</p>
+                    <p className="text-2xl font-bold text-blue-700">{stats.totalAnswers}</p>
                     <p className="text-sm text-blue-600">Tổng số lần làm bài</p>
                   </div>
                 </div>
@@ -161,7 +175,7 @@ export default function HistoryPage() {
                 <div className="flex items-center gap-3">
                   <History className="w-8 h-8 text-purple-600" />
                   <div>
-                    <p className="text-2xl font-bold text-purple-700">{stats.technologies.length}</p>
+                    <p className="text-2xl font-bold text-purple-700">{uniqueTechCount}</p>
                     <p className="text-sm text-purple-600">Công nghệ đã học</p>
                   </div>
                 </div>
@@ -227,7 +241,7 @@ export default function HistoryPage() {
                           {entry.score}/100
                         </Badge>
                         <span className="text-sm text-slate-500">
-                          {new Date(entry.timestamp).toLocaleString("vi-VN")}
+                          {new Date(entry.createdAt).toLocaleString("vi-VN")}
                         </span>
                         {entry.chatMessages.length > 0 && (
                           <span className="text-xs text-purple-600 flex items-center gap-1">
@@ -274,7 +288,7 @@ export default function HistoryPage() {
                     {selectedEntry.level}
                   </Badge>
                   <span className="text-sm text-slate-500">
-                    {new Date(selectedEntry.timestamp).toLocaleString("vi-VN")}
+                    {new Date(selectedEntry.createdAt).toLocaleString("vi-VN")}
                   </span>
                 </DialogTitle>
               </DialogHeader>

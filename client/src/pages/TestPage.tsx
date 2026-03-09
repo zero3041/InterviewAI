@@ -22,9 +22,9 @@ import {
   Trophy,
   Clock,
   RotateCcw,
+  Loader2,
 } from "lucide-react";
-import { getLevelData, getAllQuestions, type Question } from "@/lib/questionsData";
-import technologiesData from "@/data/technologies.json";
+import { useQuestions, useTechnologies, type Question } from "@/hooks/useQuestionsApi";
 
 interface AIModel {
   id: string;
@@ -49,8 +49,19 @@ interface BatchScoreResponse {
 
 export default function TestPage() {
   const { techId, level } = useParams<{ techId: string; level: string }>();
-  const currentTech = technologiesData.technologies.find(t => t.id === techId);
+  const { technologies } = useTechnologies();
+  const currentTech = technologies.find(t => t.id === techId);
   const technologyName = currentTech?.name || "Lập trình";
+  
+  const isValidLevel = level === "junior" || level === "middle";
+  const currentTechId = techId || "java-springboot";
+  
+  // Fetch questions from API
+  const { questions: allQuestions, isLoading: isLoadingQuestions } = useQuestions(
+    currentTechId,
+    isValidLevel ? level : null
+  );
+  
   const [testQuestions, setTestQuestions] = useState<Question[]>([]);
   const [answers, setAnswers] = useState<Record<number, string>>({});
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -63,18 +74,7 @@ export default function TestPage() {
   const [startTime] = useState(Date.now());
   const [viewingResult, setViewingResult] = useState<number | null>(null);
 
-  const isValidLevel = level === "junior" || level === "middle";
-  const currentTechId = techId || "java-springboot";
-
-  // Get all questions for the level
-  const allQuestions = useMemo(() => {
-    if (!isValidLevel) return [];
-    const data = getLevelData(currentTechId, level as "junior" | "middle");
-    if (!data) return [];
-    return getAllQuestions(data);
-  }, [level, isValidLevel, currentTechId]);
-
-  // Pick 20 random questions on mount
+  // Pick 20 random questions when questions load
   useEffect(() => {
     if (allQuestions.length > 0 && testQuestions.length === 0) {
       const shuffled = [...allQuestions].sort(() => Math.random() - 0.5);
@@ -100,6 +100,17 @@ export default function TestPage() {
     }
     fetchModels();
   }, []);
+
+  if (isLoadingQuestions) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 flex items-center justify-center">
+        <div className="text-center">
+          <Loader2 className="w-8 h-8 animate-spin mx-auto mb-4 text-blue-600" />
+          <p className="text-slate-600">Đang tải câu hỏi...</p>
+        </div>
+      </div>
+    );
+  }
 
   if (!isValidLevel) {
     return (
