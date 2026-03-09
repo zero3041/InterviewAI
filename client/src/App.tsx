@@ -9,11 +9,13 @@ import TechPage from "./pages/TechPage";
 import QuestionsPage from "./pages/QuestionsPage";
 import TestPage from "./pages/TestPage";
 import BookmarksPage from "./pages/BookmarksPage";
+import HistoryPage from "./pages/HistoryPage";
 
 function Router() {
   return (
     <Switch>
       <Route path={"/"} component={Home} />
+      <Route path={"/history"} component={HistoryPage} />
       <Route path={"/tech/:techId"} component={TechPage} />
       <Route path={"/tech/:techId/questions/:level"} component={QuestionsPage} />
       <Route path={"/tech/:techId/test/:level"} component={TestPage} />

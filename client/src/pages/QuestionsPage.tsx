@@ -1,11 +1,12 @@
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo, useEffect, useCallback } from "react";
 import { useParams, Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { ChevronLeft, Search, Bookmark, BookmarkCheck, MessageCircle } from "lucide-react";
+import { ChevronLeft, Search, Bookmark, BookmarkCheck, MessageCircle, History } from "lucide-react";
 import { AnswerScoreDialog } from "@/components/AnswerScoreDialog";
 import { getLevelData, normalizeToCategories, countQuestions, type Question } from "@/lib/questionsData";
+import { useHistory, generateQuestionId } from "@/hooks/useHistory";
 import technologiesData from "@/data/technologies.json";
 
 export default function QuestionsPage() {
@@ -15,6 +16,10 @@ export default function QuestionsPage() {
   const [bookmarkedQuestions, setBookmarkedQuestions] = useState<Set<string>>(new Set());
   const [answerDialogOpen, setAnswerDialogOpen] = useState(false);
   const [selectedQuestion, setSelectedQuestion] = useState<{ text: string; number: number } | null>(null);
+  const [, forceUpdate] = useState(0);
+
+  // History hook
+  const { hasHistory } = useHistory();
 
   // Determine back link based on techId
   const backLink = techId ? `/tech/${techId}` : "/";
@@ -181,6 +186,8 @@ export default function QuestionsPage() {
                         {questions.map((question) => {
                           const questionId = `${selectedCategory}-${subcategoryName}-${question.number}`;
                           const isBookmarked = bookmarkedQuestions.has(questionId);
+                          const historyQuestionId = generateQuestionId(currentTechId, level || "junior", question.number);
+                          const questionHasHistory = hasHistory(historyQuestionId);
 
                           return (
                             <div
@@ -194,6 +201,12 @@ export default function QuestionsPage() {
                                       {question.number}
                                     </span>
                                     <p className="text-slate-900 font-medium">{question.text}</p>
+                                    {questionHasHistory && (
+                                      <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-purple-100 text-purple-700 text-xs font-medium">
+                                        <History className="w-3 h-3" />
+                                        Đã làm
+                                      </span>
+                                    )}
                                   </div>
                                 </div>
                                 <div className="flex-shrink-0 flex items-center gap-1">
@@ -251,6 +264,9 @@ export default function QuestionsPage() {
           question={selectedQuestion.text}
           questionNumber={selectedQuestion.number}
           technology={technologyName}
+          techId={currentTechId}
+          level={level || "junior"}
+          onHistorySaved={() => forceUpdate((n) => n + 1)}
         />
       )}
     </div>

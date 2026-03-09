@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "wouter";
-import { Code2, BookOpen, Zap, Coffee, Atom, FileCode2, Code } from "lucide-react";
+import { Code2, BookOpen, Zap, Coffee, Atom, FileCode2, Code, History, Server } from "lucide-react";
 import technologiesData from "@/data/technologies.json";
 import { getQuestionsData, countQuestions } from "@/lib/questionsData";
 
@@ -10,6 +10,8 @@ const iconMap: Record<string, React.ElementType> = {
   atom: Atom,
   "file-code": FileCode2,
   code: Code,
+  server: Server,
+  zap: Zap,
 };
 
 const colorMap: Record<string, string> = {
@@ -17,6 +19,8 @@ const colorMap: Record<string, string> = {
   green: "text-green-600 bg-green-100",
   purple: "text-purple-600 bg-purple-100",
   orange: "text-orange-600 bg-orange-100",
+  red: "text-red-600 bg-red-100",
+  slate: "text-slate-600 bg-slate-100",
 };
 
 // Count total questions across all technologies
@@ -50,11 +54,19 @@ export default function Home() {
               <Code2 className="w-8 h-8 text-blue-600" />
               <h1 className="text-2xl font-bold text-slate-900">Interview Prep Guide</h1>
             </div>
-            <Link href="/bookmarks">
-              <Button variant="outline" size="sm" className="border-slate-200">
-                📌 Bookmarks
-              </Button>
-            </Link>
+            <div className="flex items-center gap-2">
+              <Link href="/history">
+                <Button variant="outline" size="sm" className="border-purple-200 text-purple-600 hover:bg-purple-50">
+                  <History className="w-4 h-4 mr-1" />
+                  Lịch sử
+                </Button>
+              </Link>
+              <Link href="/bookmarks">
+                <Button variant="outline" size="sm" className="border-slate-200">
+                  📌 Bookmarks
+                </Button>
+              </Link>
+            </div>
           </div>
           <p className="text-slate-600">Ôn tập phỏng vấn với AI chấm điểm</p>
         </div>

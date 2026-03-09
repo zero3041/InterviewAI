@@ -261,6 +261,100 @@ Trả về kết quả theo định dạng JSON đã chỉ định.`;
     }
   });
 
+  // API: Follow-up chat for clarification after scoring
+  app.post("/api/chat", async (req, res) => {
+    try {
+      const { question, userAnswer, scoreResult, followUpQuestion, chatHistory, model, technology } = req.body as {
+        question: string;
+        userAnswer: string;
+        scoreResult: {
+          score: number;
+          feedback: string;
+          strengths: string[];
+          improvements: string[];
+          sampleAnswer: string;
+        };
+        followUpQuestion: string;
+        chatHistory: { role: "user" | "assistant"; content: string }[];
+        model?: string;
+        technology?: string;
+      };
+
+      if (!followUpQuestion) {
+        return res.status(400).json({ error: "Follow-up question is required" });
+      }
+
+      if (!AI_API_KEY) {
+        return res.status(500).json({ error: "AI API key not configured" });
+      }
+
+      const selectedModel = model || DEFAULT_AI_MODEL;
+      const techName = technology || "lập trình";
+
+      // Build context-aware system prompt
+      const systemPrompt = `Bạn là một chuyên gia phỏng vấn ${techName} với nhiều năm kinh nghiệm.
+Bạn vừa chấm điểm một câu trả lời phỏng vấn và người dùng muốn hỏi thêm để hiểu rõ hơn.
+
+Ngữ cảnh:
+- Câu hỏi phỏng vấn: ${question}
+- Câu trả lời của ứng viên: ${userAnswer}
+- Điểm số: ${scoreResult.score}/100
+- Nhận xét: ${scoreResult.feedback}
+- Điểm mạnh: ${scoreResult.strengths?.join(", ") || "Không có"}
+- Cần cải thiện: ${scoreResult.improvements?.join(", ") || "Không có"}
+- Câu trả lời mẫu: ${scoreResult.sampleAnswer || "Không có"}
+
+Hãy trả lời câu hỏi của người dùng một cách rõ ràng, dễ hiểu, có ví dụ cụ thể nếu cần.
+Trả lời bằng tiếng Việt. Không cần format JSON, chỉ cần trả lời tự nhiên.`;
+
+      // Build messages with chat history
+      const messages: { role: string; content: string }[] = [
+        { role: "system", content: systemPrompt },
+      ];
+
+      // Add chat history
+      chatHistory.forEach((msg) => {
+        messages.push({ role: msg.role, content: msg.content });
+      });
+
+      // Add current question
+      messages.push({ role: "user", content: followUpQuestion });
+
+      // Call the AI API
+      const response = await fetch(`${AI_API_BASE_URL}/chat/completions`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${AI_API_KEY}`,
+        },
+        body: JSON.stringify({
+          model: selectedModel,
+          messages,
+          temperature: 0.7,
+          max_tokens: 2048,
+        }),
+      });
+
+      if (!response.ok) {
+        const errorText = await response.text();
+        console.error("AI API error:", errorText);
+        return res.status(500).json({ error: "Failed to get AI response" });
+      }
+
+      const aiResponse = await response.json();
+      const content = aiResponse.choices?.[0]?.message?.content;
+
+      if (!content) {
+        return res.status(500).json({ error: "Empty AI response" });
+      }
+
+      return res.json({ reply: content });
+    } catch (error) {
+      console.error("Chat API error:", error);
+      return res.status(500).json({ error: "Internal server error" });
+    }
+  });
+
   // Handle client-side routing - serve index.html for all routes
   app.get("*", (_req, res) => {
     res.sendFile(path.join(staticPath, "index.html"));
