@@ -42,7 +42,7 @@ async function startServer() {
   // API: Score an answer using AI
   app.post("/api/score", async (req, res) => {
     try {
-      const { question, answer, model } = req.body as ScoreRequest;
+      const { question, answer, model, technology } = req.body as ScoreRequest & { technology?: string };
 
       if (!question || !answer) {
         return res.status(400).json({ error: "Question and answer are required" });
@@ -53,9 +53,10 @@ async function startServer() {
       }
 
       const selectedModel = model || DEFAULT_AI_MODEL;
+      const techName = technology || "lập trình";
 
       // Build the scoring prompt
-      const systemPrompt = `Bạn là một chuyên gia phỏng vấn Java/Spring Boot với nhiều năm kinh nghiệm. 
+      const systemPrompt = `Bạn là một chuyên gia phỏng vấn ${techName} với nhiều năm kinh nghiệm. 
 Nhiệm vụ của bạn là đánh giá câu trả lời phỏng vấn và cung cấp phản hồi chi tiết.
 
 Hãy đánh giá câu trả lời theo các tiêu chí sau:
@@ -93,7 +94,7 @@ Hãy đánh giá câu trả lời trên.`;
             { role: "user", content: userPrompt },
           ],
           temperature: 0.7,
-          max_tokens: 2000,
+          max_tokens: 4096,
         }),
       });
 
@@ -139,9 +140,10 @@ Hãy đánh giá câu trả lời trên.`;
   // API: Batch score multiple answers (for test mode)
   app.post("/api/score-batch", async (req, res) => {
     try {
-      const { questions, model } = req.body as {
+      const { questions, model, technology } = req.body as {
         questions: { question: string; answer: string }[];
         model?: string;
+        technology?: string;
       };
 
       if (!questions || !Array.isArray(questions) || questions.length === 0) {
@@ -153,9 +155,10 @@ Hãy đánh giá câu trả lời trên.`;
       }
 
       const selectedModel = model || DEFAULT_AI_MODEL;
+      const techName = technology || "lập trình";
 
       // Build the batch scoring prompt
-      const systemPrompt = `Bạn là một chuyên gia phỏng vấn Java/Spring Boot với nhiều năm kinh nghiệm.
+      const systemPrompt = `Bạn là một chuyên gia phỏng vấn ${techName} với nhiều năm kinh nghiệm.
 Nhiệm vụ của bạn là đánh giá nhiều câu trả lời phỏng vấn cùng lúc và cung cấp phản hồi chi tiết cho từng câu.
 
 Hãy đánh giá mỗi câu trả lời theo các tiêu chí sau:

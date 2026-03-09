@@ -38,6 +38,7 @@ interface AnswerScoreDialogProps {
   onOpenChange: (open: boolean) => void;
   question: string;
   questionNumber: number;
+  technology?: string;
 }
 
 export function AnswerScoreDialog({
@@ -45,6 +46,7 @@ export function AnswerScoreDialog({
   onOpenChange,
   question,
   questionNumber,
+  technology = "lập trình",
 }: AnswerScoreDialogProps) {
   const [answer, setAnswer] = useState("");
   const [selectedModel, setSelectedModel] = useState("");
@@ -107,6 +109,7 @@ export function AnswerScoreDialog({
           question,
           answer: answer.trim(),
           model: selectedModel,
+          technology,
         }),
       });
 

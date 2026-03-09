@@ -24,6 +24,7 @@ import {
   RotateCcw,
 } from "lucide-react";
 import { getLevelData, getAllQuestions, type Question } from "@/lib/questionsData";
+import technologiesData from "@/data/technologies.json";
 
 interface AIModel {
   id: string;
@@ -48,6 +49,8 @@ interface BatchScoreResponse {
 
 export default function TestPage() {
   const { techId, level } = useParams<{ techId: string; level: string }>();
+  const currentTech = technologiesData.technologies.find(t => t.id === techId);
+  const technologyName = currentTech?.name || "Lập trình";
   const [testQuestions, setTestQuestions] = useState<Question[]>([]);
   const [answers, setAnswers] = useState<Record<number, string>>({});
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -139,6 +142,7 @@ export default function TestPage() {
             answer: answers[i] || "",
           })),
           model: selectedModel,
+          technology: technologyName,
         }),
       });
 

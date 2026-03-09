@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { ChevronLeft, Search, Bookmark, BookmarkCheck, MessageCircle } from "lucide-react";
 import { AnswerScoreDialog } from "@/components/AnswerScoreDialog";
 import { getLevelData, normalizeToCategories, countQuestions, type Question } from "@/lib/questionsData";
+import technologiesData from "@/data/technologies.json";
 
 export default function QuestionsPage() {
   const { level, techId } = useParams<{ level: string; techId?: string }>();
@@ -20,6 +21,8 @@ export default function QuestionsPage() {
 
   // Get data for the current tech and level
   const currentTechId = techId || "java-springboot";
+  const currentTech = technologiesData.technologies.find(t => t.id === currentTechId);
+  const technologyName = currentTech?.name || "Lập trình";
   const levelData = (level === "junior" || level === "middle") ? getLevelData(currentTechId, level) : null;
 
   // Load bookmarks from localStorage
@@ -247,6 +250,7 @@ export default function QuestionsPage() {
           onOpenChange={setAnswerDialogOpen}
           question={selectedQuestion.text}
           questionNumber={selectedQuestion.number}
+          technology={technologyName}
         />
       )}
     </div>
