@@ -1,0 +1,2036 @@
+{
+  "junior": {
+    "level": "Junior (1-2 năm kinh nghiệm)",
+    "categories": {
+      "A. PHP Core & Cơ bản": {
+        "1. Cú pháp và Biến": [
+          {
+            "number": 1,
+            "text": "PHP là gì? Giải thích cơ chế hoạt động của PHP trên server."
+          },
+          {
+            "number": 2,
+            "text": "Phân biệt sự khác nhau giữa biến cục bộ (local) và biến toàn cục (global) trong PHP."
+          },
+          {
+            "number": 3,
+            "text": "Hằng số (constant) là gì? Làm thế nào để định nghĩa hằng số trong PHP? Phân biệt define() và const."
+          },
+          {
+            "number": 4,
+            "text": "Giải thích các kiểu dữ liệu cơ bản trong PHP (String, Integer, Float, Boolean, Array, Object, NULL, Resource)."
+          },
+          {
+            "number": 5,
+            "text": "Phân biệt sự khác nhau giữa dấu nháy đơn ('') và dấu nháy kép (\"\") khi khai báo chuỗi."
+          },
+          {
+            "number": 6,
+            "text": "Toán tử gán (assignment operators) trong PHP là gì? Cho ví dụ."
+          },
+          {
+            "number": 7,
+            "text": "Làm thế nào để kiểm tra một biến có tồn tại hay không? Phân biệt isset(), empty(), và is_null()."
+          },
+          {
+            "number": 8,
+            "text": "Ép kiểu (Type Casting) trong PHP là gì? Cung cấp ví dụ."
+          },
+          {
+            "number": 9,
+            "text": "Phân biệt toán tử so sánh == (equal) và === (identical)."
+          },
+          {
+            "number": 10,
+            "text": "Làm thế nào để nối chuỗi trong PHP? Giải thích toán tử . và .="
+          },
+          {
+            "number": 11,
+            "text": "Cấu trúc điều khiển if-else và switch-case khác nhau như thế nào? Khi nào nên dùng cái nào?"
+          },
+          {
+            "number": 12,
+            "text": "Vòng lặp for, while, do-while và foreach khác nhau như thế nào? Cho ví dụ sử dụng foreach với mảng."
+          },
+          {
+            "number": 13,
+            "text": "Làm thế nào để dừng một vòng lặp? Phân biệt break và continue."
+          },
+          {
+            "number": 14,
+            "text": "Hàm (function) là gì? Làm thế nào để truyền tham số theo giá trị (pass by value) và theo tham chiếu (pass by reference)?"
+          },
+          {
+            "number": 15,
+            "text": "Giá trị mặc định của tham số trong hàm là gì? Làm thế nào để thiết lập nó?"
+          },
+          {
+            "number": 16,
+            "text": "Phân biệt include, require, include_once, và require_once. Chuyện gì xảy ra nếu file không tồn tại?"
+          },
+          {
+            "number": 17,
+            "text": "Siêu biến toàn cục (Superglobals) là gì? Liệt kê ít nhất 5 siêu biến toàn cục trong PHP."
+          },
+          {
+            "number": 18,
+            "text": "$_GET và $_POST khác nhau như thế nào? Khi nào nên dùng cái nào?"
+          },
+          {
+            "number": 19,
+            "text": "$_REQUEST là gì? Tại sao nên hạn chế sử dụng nó?"
+          },
+          {
+            "number": 20,
+            "text": "Làm thế nào để lấy thông tin về phiên bản PHP đang chạy? (phpinfo() vs phpversion())"
+          },
+          {
+            "number": 21,
+            "text": "Làm thế nào để hiển thị lỗi trong PHP? Giải thích error_reporting và display_errors."
+          },
+          {
+            "number": 22,
+            "text": "Mảng (Array) trong PHP có mấy loại? Phân biệt Indexed Array, Associative Array và Multidimensional Array."
+          },
+          {
+            "number": 23,
+            "text": "Làm thế nào để thêm một phần tử vào cuối mảng? (array_push() vs $arr[] = ...)"
+          },
+          {
+            "number": 24,
+            "text": "Làm thế nào để xóa một phần tử khỏi mảng? Phân biệt unset() và array_splice()."
+          },
+          {
+            "number": 25,
+            "text": "Làm thế nào để đếm số phần tử trong mảng? (count() vs sizeof())"
+          },
+          {
+            "number": 26,
+            "text": "Làm thế nào để kiểm tra một giá trị có tồn tại trong mảng hay không? (in_array())"
+          },
+          {
+            "number": 27,
+            "text": "Làm thế nào để lấy tất cả các key của một mảng? (array_keys())"
+          },
+          {
+            "number": 28,
+            "text": "Làm thế nào để gộp hai mảng lại với nhau? (array_merge() vs toán tử +)"
+          },
+          {
+            "number": 29,
+            "text": "Làm thế nào để sắp xếp mảng theo thứ tự tăng dần/giảm dần? (sort(), rsort(), asort(), ksort())"
+          },
+          {
+            "number": 30,
+            "text": "Hàm explode() và implode() dùng để làm gì? Cho ví dụ."
+          },
+          {
+            "number": 31,
+            "text": "Làm thế nào để thay thế một chuỗi con trong một chuỗi? (str_replace())"
+          },
+          {
+            "number": 32,
+            "text": "Làm thế nào để tìm vị trí của một chuỗi con? (strpos())"
+          },
+          {
+            "number": 33,
+            "text": "Làm thế nào để cắt một phần của chuỗi? (substr())"
+          },
+          {
+            "number": 34,
+            "text": "Làm thế nào để chuyển đổi chuỗi thành chữ hoa/chữ thường? (strtoupper(), strtolower(), ucfirst())"
+          },
+          {
+            "number": 35,
+            "text": "Làm thế nào để loại bỏ khoảng trắng ở đầu và cuối chuỗi? (trim(), ltrim(), rtrim())"
+          },
+          {
+            "number": 36,
+            "text": "Làm thế nào để mã hóa và giải mã chuỗi JSON trong PHP? (json_encode(), json_decode())"
+          },
+          {
+            "number": 37,
+            "text": "Làm thế nào để lấy thời gian hiện tại trong PHP? (time(), date())"
+          },
+          {
+            "number": 38,
+            "text": "Làm thế nào để chuyển đổi một chuỗi ngày tháng thành timestamp? (strtotime())"
+          },
+          {
+            "number": 39,
+            "text": "Làm thế nào để định dạng ngày tháng theo kiểu 'Y-m-d H:i:s'?"
+          },
+          {
+            "number": 40,
+            "text": "Làm thế nào để tính toán sự chênh lệch giữa hai ngày tháng? (DateTime class)"
+          },
+          {
+            "number": 41,
+            "text": "Phân biệt die() và exit()."
+          },
+          {
+            "number": 42,
+            "text": "Làm thế nào để chuyển hướng trang (redirect) trong PHP? (header('Location: ...'))"
+          },
+          {
+            "number": 43,
+            "text": "Làm thế nào để thiết lập và lấy giá trị của Cookie? (setcookie(), $_COOKIE)"
+          },
+          {
+            "number": 44,
+            "text": "Session là gì? Làm thế nào để bắt đầu một session và lưu trữ dữ liệu? (session_start(), $_SESSION)"
+          },
+          {
+            "number": 45,
+            "text": "Sự khác biệt giữa Cookie và Session là gì?"
+          },
+          {
+            "number": 46,
+            "text": "Làm thế nào để xóa một session cụ thể hoặc toàn bộ session? (unset(), session_destroy())"
+          },
+          {
+            "number": 47,
+            "text": "Làm thế nào để upload file trong PHP? Giải thích $_FILES."
+          },
+          {
+            "number": 48,
+            "text": "Làm thế nào để đọc nội dung của một file văn bản? (file_get_contents(), fopen(), fread())"
+          },
+          {
+            "number": 49,
+            "text": "Làm thế nào để ghi dữ liệu vào một file? (file_put_contents(), fwrite())"
+          },
+          {
+            "number": 50,
+            "text": "Làm thế nào để kiểm tra một file hoặc thư mục có tồn tại hay không? (file_exists(), is_dir())"
+          },
+          {
+            "number": 51,
+            "text": "Hàm serialize() và unserialize() dùng để làm gì?"
+          },
+          {
+            "number": 52,
+            "text": "Làm thế nào để xử lý lỗi bằng try-catch trong PHP?"
+          },
+          {
+            "number": 53,
+            "text": "Exception là gì? Làm thế nào để throw một exception?"
+          },
+          {
+            "number": 54,
+            "text": "Làm thế nào để lấy thông tin từ URL query string?"
+          },
+          {
+            "number": 55,
+            "text": "Làm thế nào để gửi email đơn giản bằng PHP? (mail())"
+          },
+          {
+            "number": 56,
+            "text": "PHP Data Objects (PDO) là gì? Tại sao nên dùng PDO thay vì mysqli?"
+          },
+          {
+            "number": 57,
+            "text": "Làm thế nào để kết nối với database MySQL bằng PDO?"
+          },
+          {
+            "number": 58,
+            "text": "Prepared Statements là gì? Tại sao chúng quan trọng trong bảo mật?"
+          },
+          {
+            "number": 59,
+            "text": "Làm thế nào để thực hiện câu lệnh SELECT với PDO và lấy kết quả dưới dạng mảng associative?"
+          },
+          {
+            "number": 60,
+            "text": "Làm thế nào để lấy ID của bản ghi vừa mới chèn vào database? (lastInsertId())"
+          },
+          {
+            "number": 61,
+            "text": "SQL Injection là gì? Làm thế nào để phòng chống nó trong PHP?"
+          },
+          {
+            "number": 62,
+            "text": "XSS (Cross-Site Scripting) là gì? Làm thế nào để ngăn chặn XSS bằng htmlspecialchars()?"
+          },
+          {
+            "number": 63,
+            "text": "Làm thế nào để mã hóa mật khẩu trong PHP? (password_hash(), password_verify())"
+          },
+          {
+            "number": 64,
+            "text": "Tại sao không nên sử dụng md5() hoặc sha1() để lưu trữ mật khẩu?"
+          },
+          {
+            "number": 65,
+            "text": "Type Hinting là gì? Cho ví dụ về Type Hinting cho tham số hàm."
+          },
+          {
+            "number": 66,
+            "text": "Return Type Declaration là gì? (PHP 7+)"
+          },
+          {
+            "number": 67,
+            "text": "Toán tử Null Coalescing (??) dùng để làm gì? Cho ví dụ."
+          },
+          {
+            "number": 68,
+            "text": "Toán tử Spaceship (<=>) dùng để làm gì?"
+          },
+          {
+            "number": 69,
+            "text": "Anonymous Functions (Closures) là gì? Cho ví dụ."
+          },
+          {
+            "number": 70,
+            "text": "Làm thế nào để sử dụng biến bên ngoài vào trong một Closure? (từ khóa use)"
+          }
+        ]
+      },
+      "B. OOP Cơ bản": {
+        "1. Lập trình hướng đối tượng": [
+          {
+            "number": 71,
+            "text": "Giải thích 4 nguyên lý cơ bản của OOP trong PHP: Encapsulation, Inheritance, Polymorphism, Abstraction."
+          },
+          {
+            "number": 72,
+            "text": "Lớp (Class) và Đối tượng (Object) khác nhau như thế nào?"
+          },
+          {
+            "number": 73,
+            "text": "Làm thế nào để khai báo một class và khởi tạo một object trong PHP?"
+          },
+          {
+            "number": 74,
+            "text": "Thuộc tính (Property) và Phương thức (Method) là gì?"
+          },
+          {
+            "number": 75,
+            "text": "Giải thích các phạm vi truy cập (Access Modifiers): public, protected, private."
+          },
+          {
+            "number": 76,
+            "text": "Hàm khởi tạo (__construct) và hàm hủy (__destruct) dùng để làm gì?"
+          },
+          {
+            "number": 77,
+            "text": "Từ khóa $this dùng để làm gì?"
+          },
+          {
+            "number": 78,
+            "text": "Kế thừa (Inheritance) trong PHP được thực hiện như thế nào? (từ khóa extends)"
+          },
+          {
+            "number": 79,
+            "text": "Làm thế nào để gọi phương thức của lớp cha từ lớp con? (parent::method())"
+          },
+          {
+            "number": 80,
+            "text": "Tính đa hình (Polymorphism) trong PHP thể hiện qua ví dụ nào?"
+          },
+          {
+            "number": 81,
+            "text": "Interface là gì? Làm thế nào để một class thực thi (implement) một interface?"
+          },
+          {
+            "number": 82,
+            "text": "Abstract Class là gì? Khi nào nên dùng Abstract Class thay vì Interface?"
+          },
+          {
+            "number": 83,
+            "text": "Sự khác biệt giữa Interface và Abstract Class là gì?"
+          },
+          {
+            "number": 84,
+            "text": "Static properties và Static methods là gì? Làm thế nào để truy cập chúng? (self:: vs static::)"
+          },
+          {
+            "number": 85,
+            "text": "Giải thích Late Static Binding (từ khóa static)."
+          },
+          {
+            "number": 86,
+            "text": "Trait là gì? Tại sao PHP hỗ trợ Trait?"
+          },
+          {
+            "number": 87,
+            "text": "Làm thế nào để giải quyết xung đột tên phương thức khi sử dụng nhiều Trait? (insteadof, as)"
+          },
+          {
+            "number": 88,
+            "text": "Namespace là gì? Tại sao chúng ta cần sử dụng Namespace?"
+          },
+          {
+            "number": 89,
+            "text": "Làm thế nào để sử dụng một class từ một namespace khác? (từ khóa use)"
+          },
+          {
+            "number": 90,
+            "text": "Autoloading là gì? Giải thích cơ chế của spl_autoload_register()."
+          },
+          {
+            "number": 91,
+            "text": "Magic Methods là gì? Liệt kê ít nhất 5 magic methods (ví dụ: __get, __set, __call, __toString, __invoke)."
+          },
+          {
+            "number": 92,
+            "text": "Phân biệt __get() và __set() trong việc xử lý các thuộc tính không tồn tại."
+          },
+          {
+            "number": 93,
+            "text": "Phương thức __toString() được gọi khi nào?"
+          },
+          {
+            "number": 94,
+            "text": "Làm thế nào để ngăn chặn một class không cho phép kế thừa? (từ khóa final)"
+          },
+          {
+            "number": 95,
+            "text": "Làm thế nào để ngăn chặn một phương thức không cho phép override? (từ khóa final)"
+          },
+          {
+            "number": 96,
+            "text": "Dependency Injection (DI) là gì? Tại sao nó quan trọng?"
+          },
+          {
+            "number": 97,
+            "text": "Phân biệt Constructor Injection và Setter Injection."
+          },
+          {
+            "number": 98,
+            "text": "Object Cloning là gì? Phương thức __clone() dùng để làm gì?"
+          },
+          {
+            "number": 99,
+            "text": "Làm thế nào để kiểm tra một đối tượng có thuộc về một class cụ thể hay không? (instanceof)"
+          },
+          {
+            "number": 100,
+            "text": "Type Hinting cho Object là gì? Cho ví dụ."
+          }
+        ]
+      },
+      "C. Web, Database & Security Cơ bản": {
+        "1. HTTP & Web Forms": [
+          {
+            "number": 101,
+            "text": "HTTP Method là gì? Phân biệt GET, POST, PUT, DELETE."
+          },
+          {
+            "number": 102,
+            "text": "Làm thế nào để xử lý dữ liệu từ một form HTML trong PHP?"
+          },
+          {
+            "number": 103,
+            "text": "CSRF (Cross-Site Request Forgery) là gì? Cách PHP framework thường ngăn chặn nó?"
+          },
+          {
+            "number": 104,
+            "text": "URL Encoding là gì? Khi nào cần sử dụng urlencode()?"
+          },
+          {
+            "number": 105,
+            "text": "Làm thế nào để lấy địa chỉ IP của người dùng trong PHP?"
+          },
+          {
+            "number": 106,
+            "text": "Phân biệt client-side validation và server-side validation."
+          },
+          {
+            "number": 107,
+            "text": "Làm thế nào để tạo một thanh tiến trình (progress bar) cho việc upload file?"
+          },
+          {
+            "number": 108,
+            "text": "Cơ chế của Session Fixation là gì và cách phòng tránh?"
+          },
+          {
+            "number": 109,
+            "text": "Làm thế nào để giới hạn dung lượng file upload trong php.ini?"
+          },
+          {
+            "number": 110,
+            "text": "Giải thích khái niệm Stateless trong giao thức HTTP."
+          }
+        ],
+        "2. MySQL & PDO Cơ bản": [
+          {
+            "number": 111,
+            "text": "Khóa chính (Primary Key) và Khóa ngoại (Foreign Key) là gì?"
+          },
+          {
+            "number": 112,
+            "text": "Giải thích các loại Join trong SQL: INNER, LEFT, RIGHT, FULL JOIN."
+          },
+          {
+            "number": 113,
+            "text": "Làm thế nào để tối ưu câu lệnh SELECT bằng cách sử dụng Index?"
+          },
+          {
+            "number": 114,
+            "text": "Transaction trong MySQL là gì? Giải thích ACID."
+          },
+          {
+            "number": 115,
+            "text": "Làm thế nào để thực hiện một Transaction trong PHP sử dụng PDO?"
+          },
+          {
+            "number": 116,
+            "text": "Sự khác biệt giữa MyISAM và InnoDB là gì?"
+          },
+          {
+            "number": 117,
+            "text": "Làm thế nào để ngăn chặn SQL Injection bằng Prepared Statements?"
+          },
+          {
+            "number": 118,
+            "text": "Giải thích khái niệm Database Normalization (1NF, 2NF, 3NF)."
+          },
+          {
+            "number": 119,
+            "text": "Làm thế nào để backup và restore một database MySQL từ command line?"
+          },
+          {
+            "number": 120,
+            "text": "Làm thế nào để đếm số bản ghi trả về từ một câu lệnh SQL?"
+          }
+        ],
+        "3. Best Practices, Tooling & PHP 8.x": [
+          {
+            "number": 121,
+            "text": "Câu hỏi Junior 121: Trình bày hiểu biết của bạn về Composer và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 122,
+            "text": "Câu hỏi Junior 122: Trình bày hiểu biết của bạn về PSR-12 và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 123,
+            "text": "Câu hỏi Junior 123: Trình bày hiểu biết của bạn về Git basics và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 124,
+            "text": "Câu hỏi Junior 124: Trình bày hiểu biết của bạn về Debugging with Xdebug và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 125,
+            "text": "Câu hỏi Junior 125: Trình bày hiểu biết của bạn về PHP built-in server và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 126,
+            "text": "Câu hỏi Junior 126: Trình bày hiểu biết của bạn về Array functions và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 127,
+            "text": "Câu hỏi Junior 127: Trình bày hiểu biết của bạn về String manipulation và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 128,
+            "text": "Câu hỏi Junior 128: Trình bày hiểu biết của bạn về Regular Expressions và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 129,
+            "text": "Câu hỏi Junior 129: Trình bày hiểu biết của bạn về Error handling và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 130,
+            "text": "Câu hỏi Junior 130: Trình bày hiểu biết của bạn về Type hinting và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 131,
+            "text": "Câu hỏi Junior 131: Trình bày hiểu biết của bạn về Nullable types và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 132,
+            "text": "Câu hỏi Junior 132: Trình bày hiểu biết của bạn về Union types và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 133,
+            "text": "Câu hỏi Junior 133: Trình bày hiểu biết của bạn về Match expression và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 134,
+            "text": "Câu hỏi Junior 134: Trình bày hiểu biết của bạn về Constructor property promotion và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 135,
+            "text": "Câu hỏi Junior 135: Trình bày hiểu biết của bạn về Traits và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 136,
+            "text": "Câu hỏi Junior 136: Trình bày hiểu biết của bạn về Interfaces và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 137,
+            "text": "Câu hỏi Junior 137: Trình bày hiểu biết của bạn về Abstract classes và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 138,
+            "text": "Câu hỏi Junior 138: Trình bày hiểu biết của bạn về Inheritance và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 139,
+            "text": "Câu hỏi Junior 139: Trình bày hiểu biết của bạn về Polymorphism và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 140,
+            "text": "Câu hỏi Junior 140: Trình bày hiểu biết của bạn về Encapsulation và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 141,
+            "text": "Câu hỏi Junior 141: Trình bày hiểu biết của bạn về MySQL optimization và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 142,
+            "text": "Câu hỏi Junior 142: Trình bày hiểu biết của bạn về PDO prepared statements và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 143,
+            "text": "Câu hỏi Junior 143: Trình bày hiểu biết của bạn về SQL injection prevention và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 144,
+            "text": "Câu hỏi Junior 144: Trình bày hiểu biết của bạn về XSS prevention và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 145,
+            "text": "Câu hỏi Junior 145: Trình bày hiểu biết của bạn về Session management và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 146,
+            "text": "Câu hỏi Junior 146: Trình bày hiểu biết của bạn về Cookie handling và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 147,
+            "text": "Câu hỏi Junior 147: Trình bày hiểu biết của bạn về HTTP headers và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 148,
+            "text": "Câu hỏi Junior 148: Trình bày hiểu biết của bạn về File uploads và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 149,
+            "text": "Câu hỏi Junior 149: Trình bày hiểu biết của bạn về JSON handling và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 150,
+            "text": "Câu hỏi Junior 150: Trình bày hiểu biết của bạn về REST API basics và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 151,
+            "text": "Câu hỏi Junior 151: Trình bày hiểu biết của bạn về MVC architecture và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 152,
+            "text": "Câu hỏi Junior 152: Trình bày hiểu biết của bạn về Autoloading và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 153,
+            "text": "Câu hỏi Junior 153: Trình bày hiểu biết của bạn về Namespaces và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 154,
+            "text": "Câu hỏi Junior 154: Trình bày hiểu biết của bạn về Closure và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 155,
+            "text": "Câu hỏi Junior 155: Trình bày hiểu biết của bạn về Anonymous classes và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 156,
+            "text": "Câu hỏi Junior 156: Trình bày hiểu biết của bạn về Composer và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 157,
+            "text": "Câu hỏi Junior 157: Trình bày hiểu biết của bạn về PSR-12 và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 158,
+            "text": "Câu hỏi Junior 158: Trình bày hiểu biết của bạn về Git basics và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 159,
+            "text": "Câu hỏi Junior 159: Trình bày hiểu biết của bạn về Debugging with Xdebug và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 160,
+            "text": "Câu hỏi Junior 160: Trình bày hiểu biết của bạn về PHP built-in server và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 161,
+            "text": "Câu hỏi Junior 161: Trình bày hiểu biết của bạn về Array functions và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 162,
+            "text": "Câu hỏi Junior 162: Trình bày hiểu biết của bạn về String manipulation và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 163,
+            "text": "Câu hỏi Junior 163: Trình bày hiểu biết của bạn về Regular Expressions và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 164,
+            "text": "Câu hỏi Junior 164: Trình bày hiểu biết của bạn về Error handling và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 165,
+            "text": "Câu hỏi Junior 165: Trình bày hiểu biết của bạn về Type hinting và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 166,
+            "text": "Câu hỏi Junior 166: Trình bày hiểu biết của bạn về Nullable types và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 167,
+            "text": "Câu hỏi Junior 167: Trình bày hiểu biết của bạn về Union types và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 168,
+            "text": "Câu hỏi Junior 168: Trình bày hiểu biết của bạn về Match expression và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 169,
+            "text": "Câu hỏi Junior 169: Trình bày hiểu biết của bạn về Constructor property promotion và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 170,
+            "text": "Câu hỏi Junior 170: Trình bày hiểu biết của bạn về Traits và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 171,
+            "text": "Câu hỏi Junior 171: Trình bày hiểu biết của bạn về Interfaces và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 172,
+            "text": "Câu hỏi Junior 172: Trình bày hiểu biết của bạn về Abstract classes và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 173,
+            "text": "Câu hỏi Junior 173: Trình bày hiểu biết của bạn về Inheritance và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 174,
+            "text": "Câu hỏi Junior 174: Trình bày hiểu biết của bạn về Polymorphism và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 175,
+            "text": "Câu hỏi Junior 175: Trình bày hiểu biết của bạn về Encapsulation và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 176,
+            "text": "Câu hỏi Junior 176: Trình bày hiểu biết của bạn về MySQL optimization và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 177,
+            "text": "Câu hỏi Junior 177: Trình bày hiểu biết của bạn về PDO prepared statements và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 178,
+            "text": "Câu hỏi Junior 178: Trình bày hiểu biết của bạn về SQL injection prevention và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 179,
+            "text": "Câu hỏi Junior 179: Trình bày hiểu biết của bạn về XSS prevention và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 180,
+            "text": "Câu hỏi Junior 180: Trình bày hiểu biết của bạn về Session management và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 181,
+            "text": "Câu hỏi Junior 181: Trình bày hiểu biết của bạn về Cookie handling và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 182,
+            "text": "Câu hỏi Junior 182: Trình bày hiểu biết của bạn về HTTP headers và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 183,
+            "text": "Câu hỏi Junior 183: Trình bày hiểu biết của bạn về File uploads và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 184,
+            "text": "Câu hỏi Junior 184: Trình bày hiểu biết của bạn về JSON handling và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 185,
+            "text": "Câu hỏi Junior 185: Trình bày hiểu biết của bạn về REST API basics và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 186,
+            "text": "Câu hỏi Junior 186: Trình bày hiểu biết của bạn về MVC architecture và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 187,
+            "text": "Câu hỏi Junior 187: Trình bày hiểu biết của bạn về Autoloading và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 188,
+            "text": "Câu hỏi Junior 188: Trình bày hiểu biết của bạn về Namespaces và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 189,
+            "text": "Câu hỏi Junior 189: Trình bày hiểu biết của bạn về Closure và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 190,
+            "text": "Câu hỏi Junior 190: Trình bày hiểu biết của bạn về Anonymous classes và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 191,
+            "text": "Câu hỏi Junior 191: Trình bày hiểu biết của bạn về Composer và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 192,
+            "text": "Câu hỏi Junior 192: Trình bày hiểu biết của bạn về PSR-12 và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 193,
+            "text": "Câu hỏi Junior 193: Trình bày hiểu biết của bạn về Git basics và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 194,
+            "text": "Câu hỏi Junior 194: Trình bày hiểu biết của bạn về Debugging with Xdebug và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 195,
+            "text": "Câu hỏi Junior 195: Trình bày hiểu biết của bạn về PHP built-in server và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 196,
+            "text": "Câu hỏi Junior 196: Trình bày hiểu biết của bạn về Array functions và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 197,
+            "text": "Câu hỏi Junior 197: Trình bày hiểu biết của bạn về String manipulation và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 198,
+            "text": "Câu hỏi Junior 198: Trình bày hiểu biết của bạn về Regular Expressions và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 199,
+            "text": "Câu hỏi Junior 199: Trình bày hiểu biết của bạn về Error handling và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 200,
+            "text": "Câu hỏi Junior 200: Trình bày hiểu biết của bạn về Type hinting và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 201,
+            "text": "Câu hỏi Junior 201: Trình bày hiểu biết của bạn về Nullable types và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 202,
+            "text": "Câu hỏi Junior 202: Trình bày hiểu biết của bạn về Union types và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 203,
+            "text": "Câu hỏi Junior 203: Trình bày hiểu biết của bạn về Match expression và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 204,
+            "text": "Câu hỏi Junior 204: Trình bày hiểu biết của bạn về Constructor property promotion và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 205,
+            "text": "Câu hỏi Junior 205: Trình bày hiểu biết của bạn về Traits và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 206,
+            "text": "Câu hỏi Junior 206: Trình bày hiểu biết của bạn về Interfaces và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 207,
+            "text": "Câu hỏi Junior 207: Trình bày hiểu biết của bạn về Abstract classes và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 208,
+            "text": "Câu hỏi Junior 208: Trình bày hiểu biết của bạn về Inheritance và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 209,
+            "text": "Câu hỏi Junior 209: Trình bày hiểu biết của bạn về Polymorphism và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 210,
+            "text": "Câu hỏi Junior 210: Trình bày hiểu biết của bạn về Encapsulation và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 211,
+            "text": "Câu hỏi Junior 211: Trình bày hiểu biết của bạn về MySQL optimization và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 212,
+            "text": "Câu hỏi Junior 212: Trình bày hiểu biết của bạn về PDO prepared statements và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 213,
+            "text": "Câu hỏi Junior 213: Trình bày hiểu biết của bạn về SQL injection prevention và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 214,
+            "text": "Câu hỏi Junior 214: Trình bày hiểu biết của bạn về XSS prevention và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 215,
+            "text": "Câu hỏi Junior 215: Trình bày hiểu biết của bạn về Session management và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 216,
+            "text": "Câu hỏi Junior 216: Trình bày hiểu biết của bạn về Cookie handling và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 217,
+            "text": "Câu hỏi Junior 217: Trình bày hiểu biết của bạn về HTTP headers và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 218,
+            "text": "Câu hỏi Junior 218: Trình bày hiểu biết của bạn về File uploads và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 219,
+            "text": "Câu hỏi Junior 219: Trình bày hiểu biết của bạn về JSON handling và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 220,
+            "text": "Câu hỏi Junior 220: Trình bày hiểu biết của bạn về REST API basics và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 221,
+            "text": "Câu hỏi Junior 221: Trình bày hiểu biết của bạn về MVC architecture và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 222,
+            "text": "Câu hỏi Junior 222: Trình bày hiểu biết của bạn về Autoloading và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 223,
+            "text": "Câu hỏi Junior 223: Trình bày hiểu biết của bạn về Namespaces và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 224,
+            "text": "Câu hỏi Junior 224: Trình bày hiểu biết của bạn về Closure và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 225,
+            "text": "Câu hỏi Junior 225: Trình bày hiểu biết của bạn về Anonymous classes và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 226,
+            "text": "Câu hỏi Junior 226: Trình bày hiểu biết của bạn về Composer và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 227,
+            "text": "Câu hỏi Junior 227: Trình bày hiểu biết của bạn về PSR-12 và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 228,
+            "text": "Câu hỏi Junior 228: Trình bày hiểu biết của bạn về Git basics và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 229,
+            "text": "Câu hỏi Junior 229: Trình bày hiểu biết của bạn về Debugging with Xdebug và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 230,
+            "text": "Câu hỏi Junior 230: Trình bày hiểu biết của bạn về PHP built-in server và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 231,
+            "text": "Câu hỏi Junior 231: Trình bày hiểu biết của bạn về Array functions và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 232,
+            "text": "Câu hỏi Junior 232: Trình bày hiểu biết của bạn về String manipulation và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 233,
+            "text": "Câu hỏi Junior 233: Trình bày hiểu biết của bạn về Regular Expressions và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 234,
+            "text": "Câu hỏi Junior 234: Trình bày hiểu biết của bạn về Error handling và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 235,
+            "text": "Câu hỏi Junior 235: Trình bày hiểu biết của bạn về Type hinting và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 236,
+            "text": "Câu hỏi Junior 236: Trình bày hiểu biết của bạn về Nullable types và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 237,
+            "text": "Câu hỏi Junior 237: Trình bày hiểu biết của bạn về Union types và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 238,
+            "text": "Câu hỏi Junior 238: Trình bày hiểu biết của bạn về Match expression và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 239,
+            "text": "Câu hỏi Junior 239: Trình bày hiểu biết của bạn về Constructor property promotion và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 240,
+            "text": "Câu hỏi Junior 240: Trình bày hiểu biết của bạn về Traits và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 241,
+            "text": "Câu hỏi Junior 241: Trình bày hiểu biết của bạn về Interfaces và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 242,
+            "text": "Câu hỏi Junior 242: Trình bày hiểu biết của bạn về Abstract classes và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 243,
+            "text": "Câu hỏi Junior 243: Trình bày hiểu biết của bạn về Inheritance và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 244,
+            "text": "Câu hỏi Junior 244: Trình bày hiểu biết của bạn về Polymorphism và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 245,
+            "text": "Câu hỏi Junior 245: Trình bày hiểu biết của bạn về Encapsulation và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 246,
+            "text": "Câu hỏi Junior 246: Trình bày hiểu biết của bạn về MySQL optimization và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 247,
+            "text": "Câu hỏi Junior 247: Trình bày hiểu biết của bạn về PDO prepared statements và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 248,
+            "text": "Câu hỏi Junior 248: Trình bày hiểu biết của bạn về SQL injection prevention và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 249,
+            "text": "Câu hỏi Junior 249: Trình bày hiểu biết của bạn về XSS prevention và cách áp dụng nó trong dự án PHP thực tế."
+          },
+          {
+            "number": 250,
+            "text": "Câu hỏi Junior 250: Trình bày hiểu biết của bạn về Session management và cách áp dụng nó trong dự án PHP thực tế."
+          }
+        ]
+      }
+    }
+  },
+  "middle": {
+    "level": "Middle (3-5 năm kinh nghiệm)",
+    "categories": {
+      "A. Advanced PHP & Architecture": {
+        "1. Advanced PHP & Design Patterns": [
+          {
+            "number": 251,
+            "text": "Generator trong PHP là gì? Tại sao nó giúp tiết kiệm bộ nhớ?"
+          },
+          {
+            "number": 252,
+            "text": "Giải thích khái niệm Reflection API trong PHP. Khi nào nên dùng nó?"
+          },
+          {
+            "number": 253,
+            "text": "Weak Maps trong PHP 8 là gì?"
+          },
+          {
+            "number": 254,
+            "text": "Attributes (Annotations) trong PHP 8 hoạt động như thế nào?"
+          },
+          {
+            "number": 255,
+            "text": "JIT (Just-In-Time) compilation trong PHP 8 mang lại lợi ích gì?"
+          },
+          {
+            "number": 256,
+            "text": "Làm thế nào để xử lý đa luồng hoặc bất đồng bộ trong PHP? (Swoole, ReactPHP, Fiber)"
+          },
+          {
+            "number": 257,
+            "text": "Giải thích cơ chế Garbage Collection trong PHP."
+          },
+          {
+            "number": 258,
+            "text": "Làm thế nào để tối ưu hóa OPcache?"
+          },
+          {
+            "number": 259,
+            "text": "Phân biệt sự khác nhau giữa PHP-FPM và mod_php."
+          },
+          {
+            "number": 260,
+            "text": "Làm thế nào để viết một PHP extension đơn giản?"
+          },
+          {
+            "number": 261,
+            "text": "Giải thích 5 nguyên lý SOLID trong thiết kế hướng đối tượng."
+          },
+          {
+            "number": 262,
+            "text": "Singleton Pattern là gì? Tại sao nó thường bị coi là một 'Anti-pattern'?"
+          },
+          {
+            "number": 263,
+            "text": "Factory Pattern và Abstract Factory khác nhau như thế nào?"
+          },
+          {
+            "number": 264,
+            "text": "Strategy Pattern là gì? Cho một ví dụ thực tế trong PHP."
+          },
+          {
+            "number": 265,
+            "text": "Observer Pattern hoạt động như thế nào? (SplObserver, SplSubject)"
+          },
+          {
+            "number": 266,
+            "text": "Adapter Pattern dùng để làm gì?"
+          },
+          {
+            "number": 267,
+            "text": "Repository Pattern giúp ích gì cho việc quản lý database?"
+          },
+          {
+            "number": 268,
+            "text": "Dependency Injection Container (DIC) hoạt động như thế nào?"
+          },
+          {
+            "number": 269,
+            "text": "Facade Pattern trong Laravel được triển khai như thế nào?"
+          },
+          {
+            "number": 270,
+            "text": "Decorator Pattern là gì? Cho ví dụ về việc mở rộng tính năng mà không dùng kế thừa."
+          }
+        ]
+      },
+      "B. Frameworks, Performance & Security": {
+        "1. Frameworks & Advanced Topics": [
+          {
+            "number": 271,
+            "text": "Câu hỏi Middle 271: Giải thích chuyên sâu về Design Patterns (Strategy, Observer, Factory). Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 272,
+            "text": "Câu hỏi Middle 272: Giải thích chuyên sâu về SOLID principles. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 273,
+            "text": "Câu hỏi Middle 273: Giải thích chuyên sâu về Dependency Injection. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 274,
+            "text": "Câu hỏi Middle 274: Giải thích chuyên sâu về Unit testing with PHPUnit. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 275,
+            "text": "Câu hỏi Middle 275: Giải thích chuyên sâu về Mocking objects. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 276,
+            "text": "Câu hỏi Middle 276: Giải thích chuyên sâu về Integration testing. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 277,
+            "text": "Câu hỏi Middle 277: Giải thích chuyên sâu về Laravel Service Container. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 278,
+            "text": "Câu hỏi Middle 278: Giải thích chuyên sâu về Laravel Service Providers. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 279,
+            "text": "Câu hỏi Middle 279: Giải thích chuyên sâu về Laravel Middleware. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 280,
+            "text": "Câu hỏi Middle 280: Giải thích chuyên sâu về Laravel Eloquent optimization. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 281,
+            "text": "Câu hỏi Middle 281: Giải thích chuyên sâu về Symfony Dependency Injection. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 282,
+            "text": "Câu hỏi Middle 282: Giải thích chuyên sâu về Symfony Event Dispatcher. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 283,
+            "text": "Câu hỏi Middle 283: Giải thích chuyên sâu về Symfony Form component. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 284,
+            "text": "Câu hỏi Middle 284: Giải thích chuyên sâu về Performance profiling. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 285,
+            "text": "Câu hỏi Middle 285: Giải thích chuyên sâu về Caching strategies (Redis, Memcached). Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 286,
+            "text": "Câu hỏi Middle 286: Giải thích chuyên sâu về Message queues (RabbitMQ, SQS). Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 287,
+            "text": "Câu hỏi Middle 287: Giải thích chuyên sâu về Docker for PHP. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 288,
+            "text": "Câu hỏi Middle 288: Giải thích chuyên sâu về CI/CD pipelines. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 289,
+            "text": "Câu hỏi Middle 289: Giải thích chuyên sâu về Microservices architecture. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 290,
+            "text": "Câu hỏi Middle 290: Giải thích chuyên sâu về API authentication (JWT, OAuth2). Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 291,
+            "text": "Câu hỏi Middle 291: Giải thích chuyên sâu về Database sharding. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 292,
+            "text": "Câu hỏi Middle 292: Giải thích chuyên sâu về Read/Write splitting. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 293,
+            "text": "Câu hỏi Middle 293: Giải thích chuyên sâu về Query optimization. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 294,
+            "text": "Câu hỏi Middle 294: Giải thích chuyên sâu về Indexing strategies. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 295,
+            "text": "Câu hỏi Middle 295: Giải thích chuyên sâu về Security audits. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 296,
+            "text": "Câu hỏi Middle 296: Giải thích chuyên sâu về OWASP Top 10 for PHP. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 297,
+            "text": "Câu hỏi Middle 297: Giải thích chuyên sâu về Refactoring legacy code. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 298,
+            "text": "Câu hỏi Middle 298: Giải thích chuyên sâu về Domain Driven Design (DDD). Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 299,
+            "text": "Câu hỏi Middle 299: Giải thích chuyên sâu về Event Sourcing. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 300,
+            "text": "Câu hỏi Middle 300: Giải thích chuyên sâu về CQRS. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 301,
+            "text": "Câu hỏi Middle 301: Giải thích chuyên sâu về Serverless PHP. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 302,
+            "text": "Câu hỏi Middle 302: Giải thích chuyên sâu về GraphQL with PHP. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 303,
+            "text": "Câu hỏi Middle 303: Giải thích chuyên sâu về WebSockets with Ratchet/Swoole. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 304,
+            "text": "Câu hỏi Middle 304: Giải thích chuyên sâu về Design Patterns (Strategy, Observer, Factory). Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 305,
+            "text": "Câu hỏi Middle 305: Giải thích chuyên sâu về SOLID principles. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 306,
+            "text": "Câu hỏi Middle 306: Giải thích chuyên sâu về Dependency Injection. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 307,
+            "text": "Câu hỏi Middle 307: Giải thích chuyên sâu về Unit testing with PHPUnit. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 308,
+            "text": "Câu hỏi Middle 308: Giải thích chuyên sâu về Mocking objects. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 309,
+            "text": "Câu hỏi Middle 309: Giải thích chuyên sâu về Integration testing. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 310,
+            "text": "Câu hỏi Middle 310: Giải thích chuyên sâu về Laravel Service Container. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 311,
+            "text": "Câu hỏi Middle 311: Giải thích chuyên sâu về Laravel Service Providers. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 312,
+            "text": "Câu hỏi Middle 312: Giải thích chuyên sâu về Laravel Middleware. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 313,
+            "text": "Câu hỏi Middle 313: Giải thích chuyên sâu về Laravel Eloquent optimization. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 314,
+            "text": "Câu hỏi Middle 314: Giải thích chuyên sâu về Symfony Dependency Injection. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 315,
+            "text": "Câu hỏi Middle 315: Giải thích chuyên sâu về Symfony Event Dispatcher. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 316,
+            "text": "Câu hỏi Middle 316: Giải thích chuyên sâu về Symfony Form component. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 317,
+            "text": "Câu hỏi Middle 317: Giải thích chuyên sâu về Performance profiling. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 318,
+            "text": "Câu hỏi Middle 318: Giải thích chuyên sâu về Caching strategies (Redis, Memcached). Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 319,
+            "text": "Câu hỏi Middle 319: Giải thích chuyên sâu về Message queues (RabbitMQ, SQS). Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 320,
+            "text": "Câu hỏi Middle 320: Giải thích chuyên sâu về Docker for PHP. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 321,
+            "text": "Câu hỏi Middle 321: Giải thích chuyên sâu về CI/CD pipelines. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 322,
+            "text": "Câu hỏi Middle 322: Giải thích chuyên sâu về Microservices architecture. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 323,
+            "text": "Câu hỏi Middle 323: Giải thích chuyên sâu về API authentication (JWT, OAuth2). Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 324,
+            "text": "Câu hỏi Middle 324: Giải thích chuyên sâu về Database sharding. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 325,
+            "text": "Câu hỏi Middle 325: Giải thích chuyên sâu về Read/Write splitting. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 326,
+            "text": "Câu hỏi Middle 326: Giải thích chuyên sâu về Query optimization. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 327,
+            "text": "Câu hỏi Middle 327: Giải thích chuyên sâu về Indexing strategies. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 328,
+            "text": "Câu hỏi Middle 328: Giải thích chuyên sâu về Security audits. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 329,
+            "text": "Câu hỏi Middle 329: Giải thích chuyên sâu về OWASP Top 10 for PHP. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 330,
+            "text": "Câu hỏi Middle 330: Giải thích chuyên sâu về Refactoring legacy code. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 331,
+            "text": "Câu hỏi Middle 331: Giải thích chuyên sâu về Domain Driven Design (DDD). Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 332,
+            "text": "Câu hỏi Middle 332: Giải thích chuyên sâu về Event Sourcing. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 333,
+            "text": "Câu hỏi Middle 333: Giải thích chuyên sâu về CQRS. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 334,
+            "text": "Câu hỏi Middle 334: Giải thích chuyên sâu về Serverless PHP. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 335,
+            "text": "Câu hỏi Middle 335: Giải thích chuyên sâu về GraphQL with PHP. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 336,
+            "text": "Câu hỏi Middle 336: Giải thích chuyên sâu về WebSockets with Ratchet/Swoole. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 337,
+            "text": "Câu hỏi Middle 337: Giải thích chuyên sâu về Design Patterns (Strategy, Observer, Factory). Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 338,
+            "text": "Câu hỏi Middle 338: Giải thích chuyên sâu về SOLID principles. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 339,
+            "text": "Câu hỏi Middle 339: Giải thích chuyên sâu về Dependency Injection. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 340,
+            "text": "Câu hỏi Middle 340: Giải thích chuyên sâu về Unit testing with PHPUnit. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 341,
+            "text": "Câu hỏi Middle 341: Giải thích chuyên sâu về Mocking objects. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 342,
+            "text": "Câu hỏi Middle 342: Giải thích chuyên sâu về Integration testing. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 343,
+            "text": "Câu hỏi Middle 343: Giải thích chuyên sâu về Laravel Service Container. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 344,
+            "text": "Câu hỏi Middle 344: Giải thích chuyên sâu về Laravel Service Providers. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 345,
+            "text": "Câu hỏi Middle 345: Giải thích chuyên sâu về Laravel Middleware. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 346,
+            "text": "Câu hỏi Middle 346: Giải thích chuyên sâu về Laravel Eloquent optimization. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 347,
+            "text": "Câu hỏi Middle 347: Giải thích chuyên sâu về Symfony Dependency Injection. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 348,
+            "text": "Câu hỏi Middle 348: Giải thích chuyên sâu về Symfony Event Dispatcher. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 349,
+            "text": "Câu hỏi Middle 349: Giải thích chuyên sâu về Symfony Form component. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 350,
+            "text": "Câu hỏi Middle 350: Giải thích chuyên sâu về Performance profiling. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 351,
+            "text": "Câu hỏi Middle 351: Giải thích chuyên sâu về Caching strategies (Redis, Memcached). Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 352,
+            "text": "Câu hỏi Middle 352: Giải thích chuyên sâu về Message queues (RabbitMQ, SQS). Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 353,
+            "text": "Câu hỏi Middle 353: Giải thích chuyên sâu về Docker for PHP. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 354,
+            "text": "Câu hỏi Middle 354: Giải thích chuyên sâu về CI/CD pipelines. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 355,
+            "text": "Câu hỏi Middle 355: Giải thích chuyên sâu về Microservices architecture. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 356,
+            "text": "Câu hỏi Middle 356: Giải thích chuyên sâu về API authentication (JWT, OAuth2). Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 357,
+            "text": "Câu hỏi Middle 357: Giải thích chuyên sâu về Database sharding. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 358,
+            "text": "Câu hỏi Middle 358: Giải thích chuyên sâu về Read/Write splitting. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 359,
+            "text": "Câu hỏi Middle 359: Giải thích chuyên sâu về Query optimization. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 360,
+            "text": "Câu hỏi Middle 360: Giải thích chuyên sâu về Indexing strategies. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 361,
+            "text": "Câu hỏi Middle 361: Giải thích chuyên sâu về Security audits. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 362,
+            "text": "Câu hỏi Middle 362: Giải thích chuyên sâu về OWASP Top 10 for PHP. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 363,
+            "text": "Câu hỏi Middle 363: Giải thích chuyên sâu về Refactoring legacy code. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 364,
+            "text": "Câu hỏi Middle 364: Giải thích chuyên sâu về Domain Driven Design (DDD). Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 365,
+            "text": "Câu hỏi Middle 365: Giải thích chuyên sâu về Event Sourcing. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 366,
+            "text": "Câu hỏi Middle 366: Giải thích chuyên sâu về CQRS. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 367,
+            "text": "Câu hỏi Middle 367: Giải thích chuyên sâu về Serverless PHP. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 368,
+            "text": "Câu hỏi Middle 368: Giải thích chuyên sâu về GraphQL with PHP. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 369,
+            "text": "Câu hỏi Middle 369: Giải thích chuyên sâu về WebSockets with Ratchet/Swoole. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 370,
+            "text": "Câu hỏi Middle 370: Giải thích chuyên sâu về Design Patterns (Strategy, Observer, Factory). Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 371,
+            "text": "Câu hỏi Middle 371: Giải thích chuyên sâu về SOLID principles. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 372,
+            "text": "Câu hỏi Middle 372: Giải thích chuyên sâu về Dependency Injection. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 373,
+            "text": "Câu hỏi Middle 373: Giải thích chuyên sâu về Unit testing with PHPUnit. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 374,
+            "text": "Câu hỏi Middle 374: Giải thích chuyên sâu về Mocking objects. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 375,
+            "text": "Câu hỏi Middle 375: Giải thích chuyên sâu về Integration testing. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 376,
+            "text": "Câu hỏi Middle 376: Giải thích chuyên sâu về Laravel Service Container. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 377,
+            "text": "Câu hỏi Middle 377: Giải thích chuyên sâu về Laravel Service Providers. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 378,
+            "text": "Câu hỏi Middle 378: Giải thích chuyên sâu về Laravel Middleware. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 379,
+            "text": "Câu hỏi Middle 379: Giải thích chuyên sâu về Laravel Eloquent optimization. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 380,
+            "text": "Câu hỏi Middle 380: Giải thích chuyên sâu về Symfony Dependency Injection. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 381,
+            "text": "Câu hỏi Middle 381: Giải thích chuyên sâu về Symfony Event Dispatcher. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 382,
+            "text": "Câu hỏi Middle 382: Giải thích chuyên sâu về Symfony Form component. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 383,
+            "text": "Câu hỏi Middle 383: Giải thích chuyên sâu về Performance profiling. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 384,
+            "text": "Câu hỏi Middle 384: Giải thích chuyên sâu về Caching strategies (Redis, Memcached). Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 385,
+            "text": "Câu hỏi Middle 385: Giải thích chuyên sâu về Message queues (RabbitMQ, SQS). Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 386,
+            "text": "Câu hỏi Middle 386: Giải thích chuyên sâu về Docker for PHP. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 387,
+            "text": "Câu hỏi Middle 387: Giải thích chuyên sâu về CI/CD pipelines. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 388,
+            "text": "Câu hỏi Middle 388: Giải thích chuyên sâu về Microservices architecture. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 389,
+            "text": "Câu hỏi Middle 389: Giải thích chuyên sâu về API authentication (JWT, OAuth2). Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 390,
+            "text": "Câu hỏi Middle 390: Giải thích chuyên sâu về Database sharding. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 391,
+            "text": "Câu hỏi Middle 391: Giải thích chuyên sâu về Read/Write splitting. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 392,
+            "text": "Câu hỏi Middle 392: Giải thích chuyên sâu về Query optimization. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 393,
+            "text": "Câu hỏi Middle 393: Giải thích chuyên sâu về Indexing strategies. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 394,
+            "text": "Câu hỏi Middle 394: Giải thích chuyên sâu về Security audits. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 395,
+            "text": "Câu hỏi Middle 395: Giải thích chuyên sâu về OWASP Top 10 for PHP. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 396,
+            "text": "Câu hỏi Middle 396: Giải thích chuyên sâu về Refactoring legacy code. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 397,
+            "text": "Câu hỏi Middle 397: Giải thích chuyên sâu về Domain Driven Design (DDD). Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 398,
+            "text": "Câu hỏi Middle 398: Giải thích chuyên sâu về Event Sourcing. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 399,
+            "text": "Câu hỏi Middle 399: Giải thích chuyên sâu về CQRS. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 400,
+            "text": "Câu hỏi Middle 400: Giải thích chuyên sâu về Serverless PHP. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 401,
+            "text": "Câu hỏi Middle 401: Giải thích chuyên sâu về GraphQL with PHP. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 402,
+            "text": "Câu hỏi Middle 402: Giải thích chuyên sâu về WebSockets with Ratchet/Swoole. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 403,
+            "text": "Câu hỏi Middle 403: Giải thích chuyên sâu về Design Patterns (Strategy, Observer, Factory). Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 404,
+            "text": "Câu hỏi Middle 404: Giải thích chuyên sâu về SOLID principles. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 405,
+            "text": "Câu hỏi Middle 405: Giải thích chuyên sâu về Dependency Injection. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 406,
+            "text": "Câu hỏi Middle 406: Giải thích chuyên sâu về Unit testing with PHPUnit. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 407,
+            "text": "Câu hỏi Middle 407: Giải thích chuyên sâu về Mocking objects. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 408,
+            "text": "Câu hỏi Middle 408: Giải thích chuyên sâu về Integration testing. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 409,
+            "text": "Câu hỏi Middle 409: Giải thích chuyên sâu về Laravel Service Container. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 410,
+            "text": "Câu hỏi Middle 410: Giải thích chuyên sâu về Laravel Service Providers. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 411,
+            "text": "Câu hỏi Middle 411: Giải thích chuyên sâu về Laravel Middleware. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 412,
+            "text": "Câu hỏi Middle 412: Giải thích chuyên sâu về Laravel Eloquent optimization. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 413,
+            "text": "Câu hỏi Middle 413: Giải thích chuyên sâu về Symfony Dependency Injection. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 414,
+            "text": "Câu hỏi Middle 414: Giải thích chuyên sâu về Symfony Event Dispatcher. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 415,
+            "text": "Câu hỏi Middle 415: Giải thích chuyên sâu về Symfony Form component. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 416,
+            "text": "Câu hỏi Middle 416: Giải thích chuyên sâu về Performance profiling. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 417,
+            "text": "Câu hỏi Middle 417: Giải thích chuyên sâu về Caching strategies (Redis, Memcached). Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 418,
+            "text": "Câu hỏi Middle 418: Giải thích chuyên sâu về Message queues (RabbitMQ, SQS). Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 419,
+            "text": "Câu hỏi Middle 419: Giải thích chuyên sâu về Docker for PHP. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 420,
+            "text": "Câu hỏi Middle 420: Giải thích chuyên sâu về CI/CD pipelines. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 421,
+            "text": "Câu hỏi Middle 421: Giải thích chuyên sâu về Microservices architecture. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 422,
+            "text": "Câu hỏi Middle 422: Giải thích chuyên sâu về API authentication (JWT, OAuth2). Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 423,
+            "text": "Câu hỏi Middle 423: Giải thích chuyên sâu về Database sharding. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 424,
+            "text": "Câu hỏi Middle 424: Giải thích chuyên sâu về Read/Write splitting. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 425,
+            "text": "Câu hỏi Middle 425: Giải thích chuyên sâu về Query optimization. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 426,
+            "text": "Câu hỏi Middle 426: Giải thích chuyên sâu về Indexing strategies. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 427,
+            "text": "Câu hỏi Middle 427: Giải thích chuyên sâu về Security audits. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 428,
+            "text": "Câu hỏi Middle 428: Giải thích chuyên sâu về OWASP Top 10 for PHP. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 429,
+            "text": "Câu hỏi Middle 429: Giải thích chuyên sâu về Refactoring legacy code. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 430,
+            "text": "Câu hỏi Middle 430: Giải thích chuyên sâu về Domain Driven Design (DDD). Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 431,
+            "text": "Câu hỏi Middle 431: Giải thích chuyên sâu về Event Sourcing. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 432,
+            "text": "Câu hỏi Middle 432: Giải thích chuyên sâu về CQRS. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 433,
+            "text": "Câu hỏi Middle 433: Giải thích chuyên sâu về Serverless PHP. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 434,
+            "text": "Câu hỏi Middle 434: Giải thích chuyên sâu về GraphQL with PHP. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 435,
+            "text": "Câu hỏi Middle 435: Giải thích chuyên sâu về WebSockets with Ratchet/Swoole. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 436,
+            "text": "Câu hỏi Middle 436: Giải thích chuyên sâu về Design Patterns (Strategy, Observer, Factory). Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 437,
+            "text": "Câu hỏi Middle 437: Giải thích chuyên sâu về SOLID principles. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 438,
+            "text": "Câu hỏi Middle 438: Giải thích chuyên sâu về Dependency Injection. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 439,
+            "text": "Câu hỏi Middle 439: Giải thích chuyên sâu về Unit testing with PHPUnit. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 440,
+            "text": "Câu hỏi Middle 440: Giải thích chuyên sâu về Mocking objects. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 441,
+            "text": "Câu hỏi Middle 441: Giải thích chuyên sâu về Integration testing. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 442,
+            "text": "Câu hỏi Middle 442: Giải thích chuyên sâu về Laravel Service Container. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 443,
+            "text": "Câu hỏi Middle 443: Giải thích chuyên sâu về Laravel Service Providers. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 444,
+            "text": "Câu hỏi Middle 444: Giải thích chuyên sâu về Laravel Middleware. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 445,
+            "text": "Câu hỏi Middle 445: Giải thích chuyên sâu về Laravel Eloquent optimization. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 446,
+            "text": "Câu hỏi Middle 446: Giải thích chuyên sâu về Symfony Dependency Injection. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 447,
+            "text": "Câu hỏi Middle 447: Giải thích chuyên sâu về Symfony Event Dispatcher. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 448,
+            "text": "Câu hỏi Middle 448: Giải thích chuyên sâu về Symfony Form component. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 449,
+            "text": "Câu hỏi Middle 449: Giải thích chuyên sâu về Performance profiling. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 450,
+            "text": "Câu hỏi Middle 450: Giải thích chuyên sâu về Caching strategies (Redis, Memcached). Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 451,
+            "text": "Câu hỏi Middle 451: Giải thích chuyên sâu về Message queues (RabbitMQ, SQS). Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 452,
+            "text": "Câu hỏi Middle 452: Giải thích chuyên sâu về Docker for PHP. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 453,
+            "text": "Câu hỏi Middle 453: Giải thích chuyên sâu về CI/CD pipelines. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 454,
+            "text": "Câu hỏi Middle 454: Giải thích chuyên sâu về Microservices architecture. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 455,
+            "text": "Câu hỏi Middle 455: Giải thích chuyên sâu về API authentication (JWT, OAuth2). Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 456,
+            "text": "Câu hỏi Middle 456: Giải thích chuyên sâu về Database sharding. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 457,
+            "text": "Câu hỏi Middle 457: Giải thích chuyên sâu về Read/Write splitting. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 458,
+            "text": "Câu hỏi Middle 458: Giải thích chuyên sâu về Query optimization. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 459,
+            "text": "Câu hỏi Middle 459: Giải thích chuyên sâu về Indexing strategies. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 460,
+            "text": "Câu hỏi Middle 460: Giải thích chuyên sâu về Security audits. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 461,
+            "text": "Câu hỏi Middle 461: Giải thích chuyên sâu về OWASP Top 10 for PHP. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 462,
+            "text": "Câu hỏi Middle 462: Giải thích chuyên sâu về Refactoring legacy code. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 463,
+            "text": "Câu hỏi Middle 463: Giải thích chuyên sâu về Domain Driven Design (DDD). Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 464,
+            "text": "Câu hỏi Middle 464: Giải thích chuyên sâu về Event Sourcing. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 465,
+            "text": "Câu hỏi Middle 465: Giải thích chuyên sâu về CQRS. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 466,
+            "text": "Câu hỏi Middle 466: Giải thích chuyên sâu về Serverless PHP. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 467,
+            "text": "Câu hỏi Middle 467: Giải thích chuyên sâu về GraphQL with PHP. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 468,
+            "text": "Câu hỏi Middle 468: Giải thích chuyên sâu về WebSockets with Ratchet/Swoole. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 469,
+            "text": "Câu hỏi Middle 469: Giải thích chuyên sâu về Design Patterns (Strategy, Observer, Factory). Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 470,
+            "text": "Câu hỏi Middle 470: Giải thích chuyên sâu về SOLID principles. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 471,
+            "text": "Câu hỏi Middle 471: Giải thích chuyên sâu về Dependency Injection. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 472,
+            "text": "Câu hỏi Middle 472: Giải thích chuyên sâu về Unit testing with PHPUnit. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 473,
+            "text": "Câu hỏi Middle 473: Giải thích chuyên sâu về Mocking objects. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 474,
+            "text": "Câu hỏi Middle 474: Giải thích chuyên sâu về Integration testing. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 475,
+            "text": "Câu hỏi Middle 475: Giải thích chuyên sâu về Laravel Service Container. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 476,
+            "text": "Câu hỏi Middle 476: Giải thích chuyên sâu về Laravel Service Providers. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 477,
+            "text": "Câu hỏi Middle 477: Giải thích chuyên sâu về Laravel Middleware. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 478,
+            "text": "Câu hỏi Middle 478: Giải thích chuyên sâu về Laravel Eloquent optimization. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 479,
+            "text": "Câu hỏi Middle 479: Giải thích chuyên sâu về Symfony Dependency Injection. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 480,
+            "text": "Câu hỏi Middle 480: Giải thích chuyên sâu về Symfony Event Dispatcher. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 481,
+            "text": "Câu hỏi Middle 481: Giải thích chuyên sâu về Symfony Form component. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 482,
+            "text": "Câu hỏi Middle 482: Giải thích chuyên sâu về Performance profiling. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 483,
+            "text": "Câu hỏi Middle 483: Giải thích chuyên sâu về Caching strategies (Redis, Memcached). Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 484,
+            "text": "Câu hỏi Middle 484: Giải thích chuyên sâu về Message queues (RabbitMQ, SQS). Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 485,
+            "text": "Câu hỏi Middle 485: Giải thích chuyên sâu về Docker for PHP. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 486,
+            "text": "Câu hỏi Middle 486: Giải thích chuyên sâu về CI/CD pipelines. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 487,
+            "text": "Câu hỏi Middle 487: Giải thích chuyên sâu về Microservices architecture. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 488,
+            "text": "Câu hỏi Middle 488: Giải thích chuyên sâu về API authentication (JWT, OAuth2). Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 489,
+            "text": "Câu hỏi Middle 489: Giải thích chuyên sâu về Database sharding. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 490,
+            "text": "Câu hỏi Middle 490: Giải thích chuyên sâu về Read/Write splitting. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 491,
+            "text": "Câu hỏi Middle 491: Giải thích chuyên sâu về Query optimization. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 492,
+            "text": "Câu hỏi Middle 492: Giải thích chuyên sâu về Indexing strategies. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 493,
+            "text": "Câu hỏi Middle 493: Giải thích chuyên sâu về Security audits. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 494,
+            "text": "Câu hỏi Middle 494: Giải thích chuyên sâu về OWASP Top 10 for PHP. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 495,
+            "text": "Câu hỏi Middle 495: Giải thích chuyên sâu về Refactoring legacy code. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 496,
+            "text": "Câu hỏi Middle 496: Giải thích chuyên sâu về Domain Driven Design (DDD). Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 497,
+            "text": "Câu hỏi Middle 497: Giải thích chuyên sâu về Event Sourcing. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 498,
+            "text": "Câu hỏi Middle 498: Giải thích chuyên sâu về CQRS. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 499,
+            "text": "Câu hỏi Middle 499: Giải thích chuyên sâu về Serverless PHP. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          },
+          {
+            "number": 500,
+            "text": "Câu hỏi Middle 500: Giải thích chuyên sâu về GraphQL with PHP. Làm thế nào để giải quyết các vấn đề phức tạp liên quan đến nó trong hệ thống lớn?"
+          }
+        ]
+      }
+    }
+  }
+}

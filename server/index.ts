@@ -136,6 +136,128 @@ Hãy đánh giá câu trả lời trên.`;
     }
   });
 
+  // API: Batch score multiple answers (for test mode)
+  app.post("/api/score-batch", async (req, res) => {
+    try {
+      const { questions, model } = req.body as {
+        questions: { question: string; answer: string }[];
+        model?: string;
+      };
+
+      if (!questions || !Array.isArray(questions) || questions.length === 0) {
+        return res.status(400).json({ error: "Questions array is required" });
+      }
+
+      if (!AI_API_KEY) {
+        return res.status(500).json({ error: "AI API key not configured" });
+      }
+
+      const selectedModel = model || DEFAULT_AI_MODEL;
+
+      // Build the batch scoring prompt
+      const systemPrompt = `Bạn là một chuyên gia phỏng vấn Java/Spring Boot với nhiều năm kinh nghiệm.
+Nhiệm vụ của bạn là đánh giá nhiều câu trả lời phỏng vấn cùng lúc và cung cấp phản hồi chi tiết cho từng câu.
+
+Hãy đánh giá mỗi câu trả lời theo các tiêu chí sau:
+1. Độ chính xác kỹ thuật (40%)
+2. Độ đầy đủ của câu trả lời (30%)
+3. Cách trình bày và giải thích (20%)
+4. Ví dụ minh họa (10%)
+
+Trả lời CHÍNH XÁC theo định dạng JSON sau (không thêm text ngoài JSON):
+{
+  "totalScore": <tổng điểm của tất cả câu>,
+  "averageScore": <điểm trung bình>,
+  "overallFeedback": "<nhận xét tổng quan về toàn bộ bài làm>",
+  "results": [
+    {
+      "questionIndex": 0,
+      "score": <điểm từ 0-100>,
+      "feedback": "<nhận xét ngắn gọn>",
+      "strengths": ["<điểm mạnh>"],
+      "improvements": ["<cần cải thiện>"]
+    },
+    ... (cho tất cả ${questions.length} câu)
+  ]
+}`;
+
+      // Format questions for the prompt
+      const questionsText = questions
+        .map(
+          (q, i) => `--- CÂU ${i + 1} ---
+Câu hỏi: ${q.question}
+Câu trả lời: ${q.answer || "(Không có câu trả lời)"}
+`
+        )
+        .join("\n");
+
+      const userPrompt = `Hãy chấm điểm ${questions.length} câu trả lời phỏng vấn sau:
+
+${questionsText}
+
+Trả về kết quả theo định dạng JSON đã chỉ định.`;
+
+      // Call the AI API
+      const response = await fetch(`${AI_API_BASE_URL}/chat/completions`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${AI_API_KEY}`,
+        },
+        body: JSON.stringify({
+          model: selectedModel,
+          messages: [
+            { role: "system", content: systemPrompt },
+            { role: "user", content: userPrompt },
+          ],
+          temperature: 0.7,
+          max_tokens: 8000, // Higher limit for batch responses
+        }),
+      });
+
+      if (!response.ok) {
+        const errorText = await response.text();
+        console.error("AI API error:", errorText);
+        return res.status(500).json({ error: "Failed to get AI response" });
+      }
+
+      const aiResponse = await response.json();
+      const content = aiResponse.choices?.[0]?.message?.content;
+
+      if (!content) {
+        return res.status(500).json({ error: "Empty AI response" });
+      }
+
+      // Parse the JSON response from AI
+      try {
+        const jsonMatch = content.match(/\{[\s\S]*\}/);
+        if (!jsonMatch) {
+          throw new Error("No JSON found in response");
+        }
+        const batchResult = JSON.parse(jsonMatch[0]);
+        return res.json(batchResult);
+      } catch (parseError) {
+        console.error("Failed to parse batch AI response:", content);
+        // Return a fallback response
+        return res.json({
+          totalScore: 0,
+          averageScore: 0,
+          overallFeedback: "Không thể phân tích phản hồi từ AI. Vui lòng thử lại.",
+          results: questions.map((_, i) => ({
+            questionIndex: i,
+            score: 0,
+            feedback: "Không thể chấm điểm",
+            strengths: [],
+            improvements: [],
+          })),
+        });
+      }
+    } catch (error) {
+      console.error("Batch score API error:", error);
+      return res.status(500).json({ error: "Internal server error" });
+    }
+  });
+
   // Handle client-side routing - serve index.html for all routes
   app.get("*", (_req, res) => {
     res.sendFile(path.join(staticPath, "index.html"));

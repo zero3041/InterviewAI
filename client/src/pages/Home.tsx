@@ -1,9 +1,45 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "wouter";
-import { Code2, BookOpen, Zap, Target } from "lucide-react";
+import { Code2, BookOpen, Zap, Coffee, Atom, FileCode2, Code } from "lucide-react";
+import technologiesData from "@/data/technologies.json";
+import { getQuestionsData, countQuestions } from "@/lib/questionsData";
+
+const iconMap: Record<string, React.ElementType> = {
+  coffee: Coffee,
+  atom: Atom,
+  "file-code": FileCode2,
+  code: Code,
+};
+
+const colorMap: Record<string, string> = {
+  blue: "text-blue-600 bg-blue-100",
+  green: "text-green-600 bg-green-100",
+  purple: "text-purple-600 bg-purple-100",
+  orange: "text-orange-600 bg-orange-100",
+};
+
+// Count total questions across all technologies
+const countAllQuestions = () => {
+  let total = 0;
+  technologiesData.technologies.forEach((tech) => {
+    const data = getQuestionsData(tech.id);
+    if (data) {
+      tech.levels.forEach((level) => {
+        const levelData = data[level as "junior" | "middle"];
+        if (levelData) {
+          total += countQuestions(levelData);
+        }
+      });
+    }
+  });
+  return total;
+};
 
 export default function Home() {
+  const totalQuestions = countAllQuestions();
+  const totalTechnologies = technologiesData.technologies.length;
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
       {/* Header */}
@@ -12,7 +48,7 @@ export default function Home() {
           <div className="flex items-center justify-between gap-3 mb-2">
             <div className="flex items-center gap-3">
               <Code2 className="w-8 h-8 text-blue-600" />
-              <h1 className="text-2xl font-bold text-slate-900">Java Spring Boot Interview Guide</h1>
+              <h1 className="text-2xl font-bold text-slate-900">Interview Prep Guide</h1>
             </div>
             <Link href="/bookmarks">
               <Button variant="outline" size="sm" className="border-slate-200">
@@ -20,17 +56,16 @@ export default function Home() {
               </Button>
             </Link>
           </div>
-          <p className="text-slate-600">Comprehensive reference for interview preparation</p>
+          <p className="text-slate-600">Ôn tập phỏng vấn với AI chấm điểm</p>
         </div>
       </header>
 
       {/* Hero Section */}
       <section className="container max-w-6xl mx-auto px-4 py-16">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-slate-900 mb-4">Master Java Spring Boot Interviews</h2>
+          <h2 className="text-4xl font-bold text-slate-900 mb-4">Chuẩn Bị Phỏng Vấn Hiệu Quả</h2>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            Explore 850+ carefully curated interview questions spanning Junior and Middle developer levels. 
-            Search, filter, and learn at your own pace.
+            Học và làm test với {totalQuestions}+ câu hỏi phỏng vấn. AI sẽ chấm điểm và đưa ra gợi ý chi tiết.
           </p>
         </div>
 
@@ -39,123 +74,90 @@ export default function Home() {
           <Card className="border-slate-200">
             <CardContent className="pt-6">
               <div className="text-center">
-                <div className="text-3xl font-bold text-blue-600 mb-2">850+</div>
-                <p className="text-slate-600">Interview Questions</p>
+                <div className="text-3xl font-bold text-blue-600 mb-2">{totalQuestions}+</div>
+                <p className="text-slate-600">Câu hỏi phỏng vấn</p>
               </div>
             </CardContent>
           </Card>
           <Card className="border-slate-200">
             <CardContent className="pt-6">
               <div className="text-center">
-                <div className="text-3xl font-bold text-emerald-600 mb-2">2</div>
-                <p className="text-slate-600">Experience Levels</p>
+                <div className="text-3xl font-bold text-emerald-600 mb-2">{totalTechnologies}</div>
+                <p className="text-slate-600">Công nghệ</p>
               </div>
             </CardContent>
           </Card>
           <Card className="border-slate-200">
             <CardContent className="pt-6">
               <div className="text-center">
-                <div className="text-3xl font-bold text-purple-600 mb-2">12+</div>
-                <p className="text-slate-600">Topic Categories</p>
+                <div className="text-3xl font-bold text-purple-600 mb-2">AI</div>
+                <p className="text-slate-600">Chấm điểm tự động</p>
               </div>
             </CardContent>
           </Card>
         </div>
 
-        {/* Level Selection */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* Junior Level */}
-          <Link href="/questions/junior">
-            <Card className="cursor-pointer hover:shadow-lg transition-shadow border-slate-200 h-full">
-              <CardHeader>
-                <div className="flex items-center gap-2 mb-2">
-                  <Target className="w-5 h-5 text-blue-600" />
-                  <CardTitle className="text-xl">Junior Developer</CardTitle>
-                </div>
-                <CardDescription>1 Year Experience</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-slate-600 mb-4">
-                  Master the fundamentals of Java Core, Spring Boot basics, SQL, and essential development tools.
-                </p>
-                <div className="space-y-2 mb-6">
-                  <div className="flex items-center gap-2 text-sm text-slate-600">
-                    <BookOpen className="w-4 h-4" />
-                    <span>390+ Questions</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-sm text-slate-600">
-                    <Zap className="w-4 h-4" />
-                    <span>5 Categories</span>
-                  </div>
-                </div>
-                <Button className="w-full bg-blue-600 hover:bg-blue-700">
-                  Start Learning
-                </Button>
-              </CardContent>
-            </Card>
-          </Link>
+        {/* Technologies */}
+        <h3 className="text-2xl font-bold text-slate-900 mb-6 text-center">Chọn công nghệ</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
+          {technologiesData.technologies.map((tech) => {
+            const Icon = iconMap[tech.icon] || Code2;
+            const colorClass = colorMap[tech.color] || "text-blue-600 bg-blue-100";
 
-          {/* Middle Level */}
-          <Link href="/questions/middle">
-            <Card className="cursor-pointer hover:shadow-lg transition-shadow border-slate-200 h-full">
-              <CardHeader>
-                <div className="flex items-center gap-2 mb-2">
-                  <Zap className="w-5 h-5 text-emerald-600" />
-                  <CardTitle className="text-xl">Middle Developer</CardTitle>
-                </div>
-                <CardDescription>2+ Years Experience</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-slate-600 mb-4">
-                  Deep dive into advanced topics: Microservices, Security, Performance, System Design, and more.
-                </p>
-                <div className="space-y-2 mb-6">
-                  <div className="flex items-center gap-2 text-sm text-slate-600">
-                    <BookOpen className="w-4 h-4" />
-                    <span>460+ Questions</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-sm text-slate-600">
-                    <Zap className="w-4 h-4" />
-                    <span>7 Categories</span>
-                  </div>
-                </div>
-                <Button className="w-full bg-emerald-600 hover:bg-emerald-700">
-                  Start Learning
-                </Button>
-              </CardContent>
-            </Card>
-          </Link>
+            return (
+              <Link key={tech.id} href={`/tech/${tech.id}`}>
+                <Card className="cursor-pointer hover:shadow-lg transition-all hover:-translate-y-1 border-slate-200 h-full">
+                  <CardHeader>
+                    <div className={`w-12 h-12 rounded-lg ${colorClass} flex items-center justify-center mb-3`}>
+                      <Icon className="w-6 h-6" />
+                    </div>
+                    <CardTitle className="text-xl">{tech.name}</CardTitle>
+                    <CardDescription>{tech.description}</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="flex items-center gap-2 text-sm text-slate-600">
+                      <BookOpen className="w-4 h-4" />
+                      <span>{tech.levels.length} cấp độ</span>
+                    </div>
+                    <Button className="w-full mt-4" variant="outline">
+                      Bắt đầu →
+                    </Button>
+                  </CardContent>
+                </Card>
+              </Link>
+            );
+          })}
         </div>
 
         {/* Features */}
         <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6">
           <Card className="border-slate-200">
             <CardHeader>
-              <CardTitle className="text-base">🔍 Full-Text Search</CardTitle>
+              <CardTitle className="text-base">🎯 Làm Test</CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-sm text-slate-600">
-                Instantly search across all questions to find exactly what you need.
+                Làm bài test 20 câu ngẫu nhiên, AI chấm điểm và phân tích chi tiết.
               </p>
             </CardContent>
           </Card>
           <Card className="border-slate-200">
             <CardHeader>
-              <CardTitle className="text-base">📂 Organized by Topics</CardTitle>
+              <CardTitle className="text-base">📚 Học theo chủ đề</CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-sm text-slate-600">
-                Questions are neatly categorized by Java Core, Spring, Database, and more.
+                Câu hỏi được phân loại theo chủ đề, dễ dàng ôn tập từng phần.
               </p>
             </CardContent>
           </Card>
           <Card className="border-slate-200">
             <CardHeader>
-              <CardTitle className="text-base">⭐ Bookmark Favorites</CardTitle>
+              <CardTitle className="text-base">🤖 AI Chấm điểm</CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-sm text-slate-600">
-                Save important questions for quick reference during your preparation.
+                Trả lời và nhận feedback ngay từ AI với nhiều model để chọn.
               </p>
             </CardContent>
           </Card>
@@ -166,7 +168,7 @@ export default function Home() {
       <footer className="border-t border-slate-200 bg-white mt-16">
         <div className="container max-w-6xl mx-auto px-4 py-8">
           <p className="text-center text-slate-600 text-sm">
-            © 2026 Java Spring Boot Interview Guide. Comprehensive interview preparation resource.
+            © 2026 Interview Prep Guide. Ôn tập phỏng vấn hiệu quả với AI.
           </p>
         </div>
       </footer>

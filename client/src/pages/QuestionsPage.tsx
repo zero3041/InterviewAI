@@ -3,36 +3,24 @@ import { useParams, Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ChevronLeft, Search, Bookmark, BookmarkCheck, MessageCircle } from "lucide-react";
-import questionsData from "@/data/questions.json";
 import { AnswerScoreDialog } from "@/components/AnswerScoreDialog";
-
-interface Question {
-  number: number;
-  text: string;
-}
-
-interface QuestionsData {
-  junior: {
-    level: string;
-    categories: Record<string, Record<string, Question[]>>;
-  };
-  middle: {
-    level: string;
-    categories: Record<string, Record<string, Question[]>>;
-  };
-}
-
-const typedQuestionsData = questionsData as QuestionsData;
+import { getLevelData, normalizeToCategories, countQuestions, type Question } from "@/lib/questionsData";
 
 export default function QuestionsPage() {
-  const { level } = useParams<{ level: string }>();
+  const { level, techId } = useParams<{ level: string; techId?: string }>();
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [bookmarkedQuestions, setBookmarkedQuestions] = useState<Set<string>>(new Set());
   const [answerDialogOpen, setAnswerDialogOpen] = useState(false);
   const [selectedQuestion, setSelectedQuestion] = useState<{ text: string; number: number } | null>(null);
+
+  // Determine back link based on techId
+  const backLink = techId ? `/tech/${techId}` : "/";
+
+  // Get data for the current tech and level
+  const currentTechId = techId || "java-springboot";
+  const levelData = (level === "junior" || level === "middle") ? getLevelData(currentTechId, level) : null;
 
   // Load bookmarks from localStorage
   useEffect(() => {
@@ -60,13 +48,12 @@ export default function QuestionsPage() {
     setAnswerDialogOpen(true);
   };
 
-  const isValidLevel = level === "junior" || level === "middle";
-  if (!isValidLevel) {
+  if (!levelData) {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <Card className="border-slate-200">
           <CardContent className="pt-6">
-            <p className="text-slate-600 mb-4">Invalid level selected</p>
+            <p className="text-slate-600 mb-4">Invalid level or technology selected</p>
             <Link href="/">
               <Button>Back to Home</Button>
             </Link>
@@ -76,8 +63,8 @@ export default function QuestionsPage() {
     );
   }
 
-  const data = typedQuestionsData[level as "junior" | "middle"];
-  const categories = Object.entries(data.categories);
+  const categorizedData = normalizeToCategories(levelData);
+  const categories = Object.entries(categorizedData);
 
   // Initialize selected category
   if (selectedCategory === null && categories.length > 0) {
@@ -88,7 +75,7 @@ export default function QuestionsPage() {
   const filteredQuestions = useMemo(() => {
     const result: Record<string, Record<string, Question[]>> = {};
 
-    Object.entries(data.categories).forEach(([categoryName, subcategories]) => {
+    Object.entries(categorizedData).forEach(([categoryName, subcategories]) => {
       const filteredSubcategories: Record<string, Question[]> = {};
 
       Object.entries(subcategories).forEach(([subcategoryName, questions]) => {
@@ -107,15 +94,13 @@ export default function QuestionsPage() {
     });
 
     return result;
-  }, [searchQuery, data.categories]);
+  }, [searchQuery, categorizedData]);
 
-  const displayCategories = searchQuery ? filteredQuestions : data.categories;
+  const displayCategories = searchQuery ? filteredQuestions : categorizedData;
   const displayedCategory = selectedCategory && displayCategories[selectedCategory];
 
   // Count total questions
-  const totalQuestions = Object.values(data.categories).reduce((sum, subcats) => {
-    return sum + Object.values(subcats).reduce((subSum, questions) => subSum + questions.length, 0);
-  }, 0);
+  const totalQuestions = countQuestions(levelData);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
@@ -123,17 +108,17 @@ export default function QuestionsPage() {
       <header className="border-b border-slate-200 bg-white/80 backdrop-blur-sm sticky top-0 z-50">
         <div className="container max-w-6xl mx-auto px-4 py-4">
           <div className="flex items-center gap-3 mb-4">
-            <Link href="/">
+            <Link href={backLink}>
               <Button variant="ghost" size="sm" className="gap-2">
                 <ChevronLeft className="w-4 h-4" />
-                Back
+                Quay lại
               </Button>
             </Link>
             <h1 className="text-2xl font-bold text-slate-900 flex-1">
-              {data.level}
+              {levelData.level}
             </h1>
             <div className="text-sm text-slate-600">
-              {totalQuestions} questions
+              {totalQuestions} câu hỏi
             </div>
           </div>
 
@@ -141,7 +126,7 @@ export default function QuestionsPage() {
           <div className="relative">
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-slate-400" />
             <Input
-              placeholder="Search questions..."
+              placeholder="Tìm kiếm câu hỏi..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="pl-10 border-slate-200"

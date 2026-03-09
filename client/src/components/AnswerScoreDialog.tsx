@@ -140,7 +140,7 @@ export function AnswerScoreDialog({
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-3xl max-h-[90vh] overflow-y-auto">
+      <DialogContent className="sm:max-w-6xl max-w-[95vw] w-[95vw] max-h-[95vh] overflow-y-auto">
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2">
             <span className="inline-flex w-7 h-7 rounded-full bg-blue-100 text-blue-700 text-sm font-semibold items-center justify-center">
@@ -197,7 +197,7 @@ export function AnswerScoreDialog({
                 value={answer}
                 onChange={(e) => setAnswer(e.target.value)}
                 placeholder="Nhập câu trả lời của bạn ở đây..."
-                rows={6}
+                rows={10}
                 className="resize-none"
               />
             </div>

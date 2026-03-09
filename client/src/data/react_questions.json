@@ -1,0 +1,2012 @@
+{
+  "junior": {
+    "level": "Junior (1-2 năm kinh nghiệm)",
+    "questions": [
+      {
+        "number": 1,
+        "text": "Câu hỏi 1 (Cơ bản về React & JSX): Giải thích chi tiết về Cơ bản về React & JSX và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 2,
+        "text": "Câu hỏi 2 (Components & Props): Giải thích chi tiết về Components & Props và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 3,
+        "text": "Câu hỏi 3 (State & Lifecycle): Giải thích chi tiết về State & Lifecycle và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 4,
+        "text": "Câu hỏi 4 (Hooks cơ bản (useState, useEffect)): Giải thích chi tiết về Hooks cơ bản (useState, useEffect) và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 5,
+        "text": "Câu hỏi 5 (Xử lý sự kiện & Form): Giải thích chi tiết về Xử lý sự kiện & Form và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 6,
+        "text": "Câu hỏi 6 (Rendering Lists & Keys): Giải thích chi tiết về Rendering Lists & Keys và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 7,
+        "text": "Câu hỏi 7 (Conditional Rendering): Giải thích chi tiết về Conditional Rendering và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 8,
+        "text": "Câu hỏi 8 (Styling in React): Giải thích chi tiết về Styling in React và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 9,
+        "text": "Câu hỏi 9 (React DevTools): Giải thích chi tiết về React DevTools và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 10,
+        "text": "Câu hỏi 10 (React best practices): Giải thích chi tiết về React best practices và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 11,
+        "text": "Câu hỏi 11 (React vs. HTML/DOM): Giải thích chi tiết về React vs. HTML/DOM và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 12,
+        "text": "Câu hỏi 12 (Virtual DOM concept): Giải thích chi tiết về Virtual DOM concept và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 13,
+        "text": "Câu hỏi 13 (Functional components vs Class components): Giải thích chi tiết về Functional components vs Class components và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 14,
+        "text": "Câu hỏi 14 (Props drilling): Giải thích chi tiết về Props drilling và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 15,
+        "text": "Câu hỏi 15 (Lifting state up): Giải thích chi tiết về Lifting state up và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 16,
+        "text": "Câu hỏi 16 (Controlled vs uncontrolled components): Giải thích chi tiết về Controlled vs uncontrolled components và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 17,
+        "text": "Câu hỏi 17 (React render cycle): Giải thích chi tiết về React render cycle và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 18,
+        "text": "Câu hỏi 18 (Key prop importance): Giải thích chi tiết về Key prop importance và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 19,
+        "text": "Câu hỏi 19 (Fragment usage): Giải thích chi tiết về Fragment usage và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 20,
+        "text": "Câu hỏi 20 (React ecosystem overview): Giải thích chi tiết về React ecosystem overview và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 21,
+        "text": "Câu hỏi 21 (Cơ bản về React & JSX): Giải thích chi tiết về Cơ bản về React & JSX và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 22,
+        "text": "Câu hỏi 22 (Components & Props): Giải thích chi tiết về Components & Props và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 23,
+        "text": "Câu hỏi 23 (State & Lifecycle): Giải thích chi tiết về State & Lifecycle và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 24,
+        "text": "Câu hỏi 24 (Hooks cơ bản (useState, useEffect)): Giải thích chi tiết về Hooks cơ bản (useState, useEffect) và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 25,
+        "text": "Câu hỏi 25 (Xử lý sự kiện & Form): Giải thích chi tiết về Xử lý sự kiện & Form và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 26,
+        "text": "Câu hỏi 26 (Rendering Lists & Keys): Giải thích chi tiết về Rendering Lists & Keys và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 27,
+        "text": "Câu hỏi 27 (Conditional Rendering): Giải thích chi tiết về Conditional Rendering và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 28,
+        "text": "Câu hỏi 28 (Styling in React): Giải thích chi tiết về Styling in React và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 29,
+        "text": "Câu hỏi 29 (React DevTools): Giải thích chi tiết về React DevTools và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 30,
+        "text": "Câu hỏi 30 (React best practices): Giải thích chi tiết về React best practices và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 31,
+        "text": "Câu hỏi 31 (React vs. HTML/DOM): Giải thích chi tiết về React vs. HTML/DOM và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 32,
+        "text": "Câu hỏi 32 (Virtual DOM concept): Giải thích chi tiết về Virtual DOM concept và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 33,
+        "text": "Câu hỏi 33 (Functional components vs Class components): Giải thích chi tiết về Functional components vs Class components và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 34,
+        "text": "Câu hỏi 34 (Props drilling): Giải thích chi tiết về Props drilling và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 35,
+        "text": "Câu hỏi 35 (Lifting state up): Giải thích chi tiết về Lifting state up và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 36,
+        "text": "Câu hỏi 36 (Controlled vs uncontrolled components): Giải thích chi tiết về Controlled vs uncontrolled components và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 37,
+        "text": "Câu hỏi 37 (React render cycle): Giải thích chi tiết về React render cycle và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 38,
+        "text": "Câu hỏi 38 (Key prop importance): Giải thích chi tiết về Key prop importance và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 39,
+        "text": "Câu hỏi 39 (Fragment usage): Giải thích chi tiết về Fragment usage và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 40,
+        "text": "Câu hỏi 40 (React ecosystem overview): Giải thích chi tiết về React ecosystem overview và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 41,
+        "text": "Câu hỏi 41 (Cơ bản về React & JSX): Giải thích chi tiết về Cơ bản về React & JSX và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 42,
+        "text": "Câu hỏi 42 (Components & Props): Giải thích chi tiết về Components & Props và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 43,
+        "text": "Câu hỏi 43 (State & Lifecycle): Giải thích chi tiết về State & Lifecycle và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 44,
+        "text": "Câu hỏi 44 (Hooks cơ bản (useState, useEffect)): Giải thích chi tiết về Hooks cơ bản (useState, useEffect) và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 45,
+        "text": "Câu hỏi 45 (Xử lý sự kiện & Form): Giải thích chi tiết về Xử lý sự kiện & Form và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 46,
+        "text": "Câu hỏi 46 (Rendering Lists & Keys): Giải thích chi tiết về Rendering Lists & Keys và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 47,
+        "text": "Câu hỏi 47 (Conditional Rendering): Giải thích chi tiết về Conditional Rendering và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 48,
+        "text": "Câu hỏi 48 (Styling in React): Giải thích chi tiết về Styling in React và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 49,
+        "text": "Câu hỏi 49 (React DevTools): Giải thích chi tiết về React DevTools và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 50,
+        "text": "Câu hỏi 50 (React best practices): Giải thích chi tiết về React best practices và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 51,
+        "text": "Câu hỏi 51 (React vs. HTML/DOM): Giải thích chi tiết về React vs. HTML/DOM và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 52,
+        "text": "Câu hỏi 52 (Virtual DOM concept): Giải thích chi tiết về Virtual DOM concept và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 53,
+        "text": "Câu hỏi 53 (Functional components vs Class components): Giải thích chi tiết về Functional components vs Class components và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 54,
+        "text": "Câu hỏi 54 (Props drilling): Giải thích chi tiết về Props drilling và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 55,
+        "text": "Câu hỏi 55 (Lifting state up): Giải thích chi tiết về Lifting state up và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 56,
+        "text": "Câu hỏi 56 (Controlled vs uncontrolled components): Giải thích chi tiết về Controlled vs uncontrolled components và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 57,
+        "text": "Câu hỏi 57 (React render cycle): Giải thích chi tiết về React render cycle và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 58,
+        "text": "Câu hỏi 58 (Key prop importance): Giải thích chi tiết về Key prop importance và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 59,
+        "text": "Câu hỏi 59 (Fragment usage): Giải thích chi tiết về Fragment usage và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 60,
+        "text": "Câu hỏi 60 (React ecosystem overview): Giải thích chi tiết về React ecosystem overview và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 61,
+        "text": "Câu hỏi 61 (Cơ bản về React & JSX): Giải thích chi tiết về Cơ bản về React & JSX và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 62,
+        "text": "Câu hỏi 62 (Components & Props): Giải thích chi tiết về Components & Props và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 63,
+        "text": "Câu hỏi 63 (State & Lifecycle): Giải thích chi tiết về State & Lifecycle và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 64,
+        "text": "Câu hỏi 64 (Hooks cơ bản (useState, useEffect)): Giải thích chi tiết về Hooks cơ bản (useState, useEffect) và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 65,
+        "text": "Câu hỏi 65 (Xử lý sự kiện & Form): Giải thích chi tiết về Xử lý sự kiện & Form và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 66,
+        "text": "Câu hỏi 66 (Rendering Lists & Keys): Giải thích chi tiết về Rendering Lists & Keys và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 67,
+        "text": "Câu hỏi 67 (Conditional Rendering): Giải thích chi tiết về Conditional Rendering và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 68,
+        "text": "Câu hỏi 68 (Styling in React): Giải thích chi tiết về Styling in React và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 69,
+        "text": "Câu hỏi 69 (React DevTools): Giải thích chi tiết về React DevTools và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 70,
+        "text": "Câu hỏi 70 (React best practices): Giải thích chi tiết về React best practices và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 71,
+        "text": "Câu hỏi 71 (React vs. HTML/DOM): Giải thích chi tiết về React vs. HTML/DOM và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 72,
+        "text": "Câu hỏi 72 (Virtual DOM concept): Giải thích chi tiết về Virtual DOM concept và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 73,
+        "text": "Câu hỏi 73 (Functional components vs Class components): Giải thích chi tiết về Functional components vs Class components và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 74,
+        "text": "Câu hỏi 74 (Props drilling): Giải thích chi tiết về Props drilling và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 75,
+        "text": "Câu hỏi 75 (Lifting state up): Giải thích chi tiết về Lifting state up và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 76,
+        "text": "Câu hỏi 76 (Controlled vs uncontrolled components): Giải thích chi tiết về Controlled vs uncontrolled components và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 77,
+        "text": "Câu hỏi 77 (React render cycle): Giải thích chi tiết về React render cycle và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 78,
+        "text": "Câu hỏi 78 (Key prop importance): Giải thích chi tiết về Key prop importance và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 79,
+        "text": "Câu hỏi 79 (Fragment usage): Giải thích chi tiết về Fragment usage và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 80,
+        "text": "Câu hỏi 80 (React ecosystem overview): Giải thích chi tiết về React ecosystem overview và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 81,
+        "text": "Câu hỏi 81 (Cơ bản về React & JSX): Giải thích chi tiết về Cơ bản về React & JSX và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 82,
+        "text": "Câu hỏi 82 (Components & Props): Giải thích chi tiết về Components & Props và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 83,
+        "text": "Câu hỏi 83 (State & Lifecycle): Giải thích chi tiết về State & Lifecycle và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 84,
+        "text": "Câu hỏi 84 (Hooks cơ bản (useState, useEffect)): Giải thích chi tiết về Hooks cơ bản (useState, useEffect) và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 85,
+        "text": "Câu hỏi 85 (Xử lý sự kiện & Form): Giải thích chi tiết về Xử lý sự kiện & Form và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 86,
+        "text": "Câu hỏi 86 (Rendering Lists & Keys): Giải thích chi tiết về Rendering Lists & Keys và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 87,
+        "text": "Câu hỏi 87 (Conditional Rendering): Giải thích chi tiết về Conditional Rendering và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 88,
+        "text": "Câu hỏi 88 (Styling in React): Giải thích chi tiết về Styling in React và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 89,
+        "text": "Câu hỏi 89 (React DevTools): Giải thích chi tiết về React DevTools và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 90,
+        "text": "Câu hỏi 90 (React best practices): Giải thích chi tiết về React best practices và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 91,
+        "text": "Câu hỏi 91 (React vs. HTML/DOM): Giải thích chi tiết về React vs. HTML/DOM và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 92,
+        "text": "Câu hỏi 92 (Virtual DOM concept): Giải thích chi tiết về Virtual DOM concept và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 93,
+        "text": "Câu hỏi 93 (Functional components vs Class components): Giải thích chi tiết về Functional components vs Class components và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 94,
+        "text": "Câu hỏi 94 (Props drilling): Giải thích chi tiết về Props drilling và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 95,
+        "text": "Câu hỏi 95 (Lifting state up): Giải thích chi tiết về Lifting state up và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 96,
+        "text": "Câu hỏi 96 (Controlled vs uncontrolled components): Giải thích chi tiết về Controlled vs uncontrolled components và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 97,
+        "text": "Câu hỏi 97 (React render cycle): Giải thích chi tiết về React render cycle và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 98,
+        "text": "Câu hỏi 98 (Key prop importance): Giải thích chi tiết về Key prop importance và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 99,
+        "text": "Câu hỏi 99 (Fragment usage): Giải thích chi tiết về Fragment usage và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 100,
+        "text": "Câu hỏi 100 (React ecosystem overview): Giải thích chi tiết về React ecosystem overview và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 101,
+        "text": "Câu hỏi 101 (Cơ bản về React & JSX): Giải thích chi tiết về Cơ bản về React & JSX và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 102,
+        "text": "Câu hỏi 102 (Components & Props): Giải thích chi tiết về Components & Props và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 103,
+        "text": "Câu hỏi 103 (State & Lifecycle): Giải thích chi tiết về State & Lifecycle và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 104,
+        "text": "Câu hỏi 104 (Hooks cơ bản (useState, useEffect)): Giải thích chi tiết về Hooks cơ bản (useState, useEffect) và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 105,
+        "text": "Câu hỏi 105 (Xử lý sự kiện & Form): Giải thích chi tiết về Xử lý sự kiện & Form và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 106,
+        "text": "Câu hỏi 106 (Rendering Lists & Keys): Giải thích chi tiết về Rendering Lists & Keys và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 107,
+        "text": "Câu hỏi 107 (Conditional Rendering): Giải thích chi tiết về Conditional Rendering và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 108,
+        "text": "Câu hỏi 108 (Styling in React): Giải thích chi tiết về Styling in React và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 109,
+        "text": "Câu hỏi 109 (React DevTools): Giải thích chi tiết về React DevTools và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 110,
+        "text": "Câu hỏi 110 (React best practices): Giải thích chi tiết về React best practices và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 111,
+        "text": "Câu hỏi 111 (React vs. HTML/DOM): Giải thích chi tiết về React vs. HTML/DOM và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 112,
+        "text": "Câu hỏi 112 (Virtual DOM concept): Giải thích chi tiết về Virtual DOM concept và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 113,
+        "text": "Câu hỏi 113 (Functional components vs Class components): Giải thích chi tiết về Functional components vs Class components và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 114,
+        "text": "Câu hỏi 114 (Props drilling): Giải thích chi tiết về Props drilling và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 115,
+        "text": "Câu hỏi 115 (Lifting state up): Giải thích chi tiết về Lifting state up và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 116,
+        "text": "Câu hỏi 116 (Controlled vs uncontrolled components): Giải thích chi tiết về Controlled vs uncontrolled components và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 117,
+        "text": "Câu hỏi 117 (React render cycle): Giải thích chi tiết về React render cycle và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 118,
+        "text": "Câu hỏi 118 (Key prop importance): Giải thích chi tiết về Key prop importance và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 119,
+        "text": "Câu hỏi 119 (Fragment usage): Giải thích chi tiết về Fragment usage và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 120,
+        "text": "Câu hỏi 120 (React ecosystem overview): Giải thích chi tiết về React ecosystem overview và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 121,
+        "text": "Câu hỏi 121 (Cơ bản về React & JSX): Giải thích chi tiết về Cơ bản về React & JSX và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 122,
+        "text": "Câu hỏi 122 (Components & Props): Giải thích chi tiết về Components & Props và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 123,
+        "text": "Câu hỏi 123 (State & Lifecycle): Giải thích chi tiết về State & Lifecycle và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 124,
+        "text": "Câu hỏi 124 (Hooks cơ bản (useState, useEffect)): Giải thích chi tiết về Hooks cơ bản (useState, useEffect) và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 125,
+        "text": "Câu hỏi 125 (Xử lý sự kiện & Form): Giải thích chi tiết về Xử lý sự kiện & Form và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 126,
+        "text": "Câu hỏi 126 (Rendering Lists & Keys): Giải thích chi tiết về Rendering Lists & Keys và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 127,
+        "text": "Câu hỏi 127 (Conditional Rendering): Giải thích chi tiết về Conditional Rendering và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 128,
+        "text": "Câu hỏi 128 (Styling in React): Giải thích chi tiết về Styling in React và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 129,
+        "text": "Câu hỏi 129 (React DevTools): Giải thích chi tiết về React DevTools và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 130,
+        "text": "Câu hỏi 130 (React best practices): Giải thích chi tiết về React best practices và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 131,
+        "text": "Câu hỏi 131 (React vs. HTML/DOM): Giải thích chi tiết về React vs. HTML/DOM và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 132,
+        "text": "Câu hỏi 132 (Virtual DOM concept): Giải thích chi tiết về Virtual DOM concept và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 133,
+        "text": "Câu hỏi 133 (Functional components vs Class components): Giải thích chi tiết về Functional components vs Class components và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 134,
+        "text": "Câu hỏi 134 (Props drilling): Giải thích chi tiết về Props drilling và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 135,
+        "text": "Câu hỏi 135 (Lifting state up): Giải thích chi tiết về Lifting state up và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 136,
+        "text": "Câu hỏi 136 (Controlled vs uncontrolled components): Giải thích chi tiết về Controlled vs uncontrolled components và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 137,
+        "text": "Câu hỏi 137 (React render cycle): Giải thích chi tiết về React render cycle và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 138,
+        "text": "Câu hỏi 138 (Key prop importance): Giải thích chi tiết về Key prop importance và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 139,
+        "text": "Câu hỏi 139 (Fragment usage): Giải thích chi tiết về Fragment usage và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 140,
+        "text": "Câu hỏi 140 (React ecosystem overview): Giải thích chi tiết về React ecosystem overview và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 141,
+        "text": "Câu hỏi 141 (Cơ bản về React & JSX): Giải thích chi tiết về Cơ bản về React & JSX và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 142,
+        "text": "Câu hỏi 142 (Components & Props): Giải thích chi tiết về Components & Props và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 143,
+        "text": "Câu hỏi 143 (State & Lifecycle): Giải thích chi tiết về State & Lifecycle và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 144,
+        "text": "Câu hỏi 144 (Hooks cơ bản (useState, useEffect)): Giải thích chi tiết về Hooks cơ bản (useState, useEffect) và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 145,
+        "text": "Câu hỏi 145 (Xử lý sự kiện & Form): Giải thích chi tiết về Xử lý sự kiện & Form và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 146,
+        "text": "Câu hỏi 146 (Rendering Lists & Keys): Giải thích chi tiết về Rendering Lists & Keys và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 147,
+        "text": "Câu hỏi 147 (Conditional Rendering): Giải thích chi tiết về Conditional Rendering và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 148,
+        "text": "Câu hỏi 148 (Styling in React): Giải thích chi tiết về Styling in React và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 149,
+        "text": "Câu hỏi 149 (React DevTools): Giải thích chi tiết về React DevTools và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 150,
+        "text": "Câu hỏi 150 (React best practices): Giải thích chi tiết về React best practices và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 151,
+        "text": "Câu hỏi 151 (React vs. HTML/DOM): Giải thích chi tiết về React vs. HTML/DOM và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 152,
+        "text": "Câu hỏi 152 (Virtual DOM concept): Giải thích chi tiết về Virtual DOM concept và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 153,
+        "text": "Câu hỏi 153 (Functional components vs Class components): Giải thích chi tiết về Functional components vs Class components và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 154,
+        "text": "Câu hỏi 154 (Props drilling): Giải thích chi tiết về Props drilling và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 155,
+        "text": "Câu hỏi 155 (Lifting state up): Giải thích chi tiết về Lifting state up và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 156,
+        "text": "Câu hỏi 156 (Controlled vs uncontrolled components): Giải thích chi tiết về Controlled vs uncontrolled components và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 157,
+        "text": "Câu hỏi 157 (React render cycle): Giải thích chi tiết về React render cycle và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 158,
+        "text": "Câu hỏi 158 (Key prop importance): Giải thích chi tiết về Key prop importance và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 159,
+        "text": "Câu hỏi 159 (Fragment usage): Giải thích chi tiết về Fragment usage và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 160,
+        "text": "Câu hỏi 160 (React ecosystem overview): Giải thích chi tiết về React ecosystem overview và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 161,
+        "text": "Câu hỏi 161 (Cơ bản về React & JSX): Giải thích chi tiết về Cơ bản về React & JSX và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 162,
+        "text": "Câu hỏi 162 (Components & Props): Giải thích chi tiết về Components & Props và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 163,
+        "text": "Câu hỏi 163 (State & Lifecycle): Giải thích chi tiết về State & Lifecycle và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 164,
+        "text": "Câu hỏi 164 (Hooks cơ bản (useState, useEffect)): Giải thích chi tiết về Hooks cơ bản (useState, useEffect) và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 165,
+        "text": "Câu hỏi 165 (Xử lý sự kiện & Form): Giải thích chi tiết về Xử lý sự kiện & Form và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 166,
+        "text": "Câu hỏi 166 (Rendering Lists & Keys): Giải thích chi tiết về Rendering Lists & Keys và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 167,
+        "text": "Câu hỏi 167 (Conditional Rendering): Giải thích chi tiết về Conditional Rendering và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 168,
+        "text": "Câu hỏi 168 (Styling in React): Giải thích chi tiết về Styling in React và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 169,
+        "text": "Câu hỏi 169 (React DevTools): Giải thích chi tiết về React DevTools và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 170,
+        "text": "Câu hỏi 170 (React best practices): Giải thích chi tiết về React best practices và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 171,
+        "text": "Câu hỏi 171 (React vs. HTML/DOM): Giải thích chi tiết về React vs. HTML/DOM và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 172,
+        "text": "Câu hỏi 172 (Virtual DOM concept): Giải thích chi tiết về Virtual DOM concept và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 173,
+        "text": "Câu hỏi 173 (Functional components vs Class components): Giải thích chi tiết về Functional components vs Class components và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 174,
+        "text": "Câu hỏi 174 (Props drilling): Giải thích chi tiết về Props drilling và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 175,
+        "text": "Câu hỏi 175 (Lifting state up): Giải thích chi tiết về Lifting state up và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 176,
+        "text": "Câu hỏi 176 (Controlled vs uncontrolled components): Giải thích chi tiết về Controlled vs uncontrolled components và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 177,
+        "text": "Câu hỏi 177 (React render cycle): Giải thích chi tiết về React render cycle và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 178,
+        "text": "Câu hỏi 178 (Key prop importance): Giải thích chi tiết về Key prop importance và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 179,
+        "text": "Câu hỏi 179 (Fragment usage): Giải thích chi tiết về Fragment usage và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 180,
+        "text": "Câu hỏi 180 (React ecosystem overview): Giải thích chi tiết về React ecosystem overview và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 181,
+        "text": "Câu hỏi 181 (Cơ bản về React & JSX): Giải thích chi tiết về Cơ bản về React & JSX và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 182,
+        "text": "Câu hỏi 182 (Components & Props): Giải thích chi tiết về Components & Props và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 183,
+        "text": "Câu hỏi 183 (State & Lifecycle): Giải thích chi tiết về State & Lifecycle và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 184,
+        "text": "Câu hỏi 184 (Hooks cơ bản (useState, useEffect)): Giải thích chi tiết về Hooks cơ bản (useState, useEffect) và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 185,
+        "text": "Câu hỏi 185 (Xử lý sự kiện & Form): Giải thích chi tiết về Xử lý sự kiện & Form và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 186,
+        "text": "Câu hỏi 186 (Rendering Lists & Keys): Giải thích chi tiết về Rendering Lists & Keys và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 187,
+        "text": "Câu hỏi 187 (Conditional Rendering): Giải thích chi tiết về Conditional Rendering và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 188,
+        "text": "Câu hỏi 188 (Styling in React): Giải thích chi tiết về Styling in React và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 189,
+        "text": "Câu hỏi 189 (React DevTools): Giải thích chi tiết về React DevTools và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 190,
+        "text": "Câu hỏi 190 (React best practices): Giải thích chi tiết về React best practices và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 191,
+        "text": "Câu hỏi 191 (React vs. HTML/DOM): Giải thích chi tiết về React vs. HTML/DOM và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 192,
+        "text": "Câu hỏi 192 (Virtual DOM concept): Giải thích chi tiết về Virtual DOM concept và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 193,
+        "text": "Câu hỏi 193 (Functional components vs Class components): Giải thích chi tiết về Functional components vs Class components và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 194,
+        "text": "Câu hỏi 194 (Props drilling): Giải thích chi tiết về Props drilling và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 195,
+        "text": "Câu hỏi 195 (Lifting state up): Giải thích chi tiết về Lifting state up và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 196,
+        "text": "Câu hỏi 196 (Controlled vs uncontrolled components): Giải thích chi tiết về Controlled vs uncontrolled components và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 197,
+        "text": "Câu hỏi 197 (React render cycle): Giải thích chi tiết về React render cycle và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 198,
+        "text": "Câu hỏi 198 (Key prop importance): Giải thích chi tiết về Key prop importance và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 199,
+        "text": "Câu hỏi 199 (Fragment usage): Giải thích chi tiết về Fragment usage và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 200,
+        "text": "Câu hỏi 200 (React ecosystem overview): Giải thích chi tiết về React ecosystem overview và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 201,
+        "text": "Câu hỏi 201 (Cơ bản về React & JSX): Giải thích chi tiết về Cơ bản về React & JSX và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 202,
+        "text": "Câu hỏi 202 (Components & Props): Giải thích chi tiết về Components & Props và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 203,
+        "text": "Câu hỏi 203 (State & Lifecycle): Giải thích chi tiết về State & Lifecycle và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 204,
+        "text": "Câu hỏi 204 (Hooks cơ bản (useState, useEffect)): Giải thích chi tiết về Hooks cơ bản (useState, useEffect) và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 205,
+        "text": "Câu hỏi 205 (Xử lý sự kiện & Form): Giải thích chi tiết về Xử lý sự kiện & Form và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 206,
+        "text": "Câu hỏi 206 (Rendering Lists & Keys): Giải thích chi tiết về Rendering Lists & Keys và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 207,
+        "text": "Câu hỏi 207 (Conditional Rendering): Giải thích chi tiết về Conditional Rendering và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 208,
+        "text": "Câu hỏi 208 (Styling in React): Giải thích chi tiết về Styling in React và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 209,
+        "text": "Câu hỏi 209 (React DevTools): Giải thích chi tiết về React DevTools và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 210,
+        "text": "Câu hỏi 210 (React best practices): Giải thích chi tiết về React best practices và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 211,
+        "text": "Câu hỏi 211 (React vs. HTML/DOM): Giải thích chi tiết về React vs. HTML/DOM và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 212,
+        "text": "Câu hỏi 212 (Virtual DOM concept): Giải thích chi tiết về Virtual DOM concept và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 213,
+        "text": "Câu hỏi 213 (Functional components vs Class components): Giải thích chi tiết về Functional components vs Class components và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 214,
+        "text": "Câu hỏi 214 (Props drilling): Giải thích chi tiết về Props drilling và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 215,
+        "text": "Câu hỏi 215 (Lifting state up): Giải thích chi tiết về Lifting state up và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 216,
+        "text": "Câu hỏi 216 (Controlled vs uncontrolled components): Giải thích chi tiết về Controlled vs uncontrolled components và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 217,
+        "text": "Câu hỏi 217 (React render cycle): Giải thích chi tiết về React render cycle và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 218,
+        "text": "Câu hỏi 218 (Key prop importance): Giải thích chi tiết về Key prop importance và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 219,
+        "text": "Câu hỏi 219 (Fragment usage): Giải thích chi tiết về Fragment usage và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 220,
+        "text": "Câu hỏi 220 (React ecosystem overview): Giải thích chi tiết về React ecosystem overview và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 221,
+        "text": "Câu hỏi 221 (Cơ bản về React & JSX): Giải thích chi tiết về Cơ bản về React & JSX và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 222,
+        "text": "Câu hỏi 222 (Components & Props): Giải thích chi tiết về Components & Props và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 223,
+        "text": "Câu hỏi 223 (State & Lifecycle): Giải thích chi tiết về State & Lifecycle và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 224,
+        "text": "Câu hỏi 224 (Hooks cơ bản (useState, useEffect)): Giải thích chi tiết về Hooks cơ bản (useState, useEffect) và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 225,
+        "text": "Câu hỏi 225 (Xử lý sự kiện & Form): Giải thích chi tiết về Xử lý sự kiện & Form và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 226,
+        "text": "Câu hỏi 226 (Rendering Lists & Keys): Giải thích chi tiết về Rendering Lists & Keys và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 227,
+        "text": "Câu hỏi 227 (Conditional Rendering): Giải thích chi tiết về Conditional Rendering và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 228,
+        "text": "Câu hỏi 228 (Styling in React): Giải thích chi tiết về Styling in React và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 229,
+        "text": "Câu hỏi 229 (React DevTools): Giải thích chi tiết về React DevTools và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 230,
+        "text": "Câu hỏi 230 (React best practices): Giải thích chi tiết về React best practices và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 231,
+        "text": "Câu hỏi 231 (React vs. HTML/DOM): Giải thích chi tiết về React vs. HTML/DOM và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 232,
+        "text": "Câu hỏi 232 (Virtual DOM concept): Giải thích chi tiết về Virtual DOM concept và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 233,
+        "text": "Câu hỏi 233 (Functional components vs Class components): Giải thích chi tiết về Functional components vs Class components và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 234,
+        "text": "Câu hỏi 234 (Props drilling): Giải thích chi tiết về Props drilling và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 235,
+        "text": "Câu hỏi 235 (Lifting state up): Giải thích chi tiết về Lifting state up và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 236,
+        "text": "Câu hỏi 236 (Controlled vs uncontrolled components): Giải thích chi tiết về Controlled vs uncontrolled components và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 237,
+        "text": "Câu hỏi 237 (React render cycle): Giải thích chi tiết về React render cycle và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 238,
+        "text": "Câu hỏi 238 (Key prop importance): Giải thích chi tiết về Key prop importance và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 239,
+        "text": "Câu hỏi 239 (Fragment usage): Giải thích chi tiết về Fragment usage và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 240,
+        "text": "Câu hỏi 240 (React ecosystem overview): Giải thích chi tiết về React ecosystem overview và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 241,
+        "text": "Câu hỏi 241 (Cơ bản về React & JSX): Giải thích chi tiết về Cơ bản về React & JSX và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 242,
+        "text": "Câu hỏi 242 (Components & Props): Giải thích chi tiết về Components & Props và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 243,
+        "text": "Câu hỏi 243 (State & Lifecycle): Giải thích chi tiết về State & Lifecycle và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 244,
+        "text": "Câu hỏi 244 (Hooks cơ bản (useState, useEffect)): Giải thích chi tiết về Hooks cơ bản (useState, useEffect) và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 245,
+        "text": "Câu hỏi 245 (Xử lý sự kiện & Form): Giải thích chi tiết về Xử lý sự kiện & Form và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 246,
+        "text": "Câu hỏi 246 (Rendering Lists & Keys): Giải thích chi tiết về Rendering Lists & Keys và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 247,
+        "text": "Câu hỏi 247 (Conditional Rendering): Giải thích chi tiết về Conditional Rendering và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 248,
+        "text": "Câu hỏi 248 (Styling in React): Giải thích chi tiết về Styling in React và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 249,
+        "text": "Câu hỏi 249 (React DevTools): Giải thích chi tiết về React DevTools và cách áp dụng trong một project React thực tế."
+      },
+      {
+        "number": 250,
+        "text": "Câu hỏi 250 (React best practices): Giải thích chi tiết về React best practices và cách áp dụng trong một project React thực tế."
+      }
+    ]
+  },
+  "middle": {
+    "level": "Middle (2-4 năm kinh nghiệm)",
+    "questions": [
+      {
+        "number": 251,
+        "text": "Câu hỏi 251 (Hooks nâng cao (useMemo, useCallback, useRef, useReducer)): Phân tích sâu sắc về Hooks nâng cao (useMemo, useCallback, useRef, useReducer), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 252,
+        "text": "Câu hỏi 252 (State Management (Redux, Context API, Zustand, Recoil)): Phân tích sâu sắc về State Management (Redux, Context API, Zustand, Recoil), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 253,
+        "text": "Câu hỏi 253 (Tối ưu hóa hiệu năng (React.memo, lazy, suspense, profiling)): Phân tích sâu sắc về Tối ưu hóa hiệu năng (React.memo, lazy, suspense, profiling), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 254,
+        "text": "Câu hỏi 254 (Testing (Jest, React Testing Library, Cypress)): Phân tích sâu sắc về Testing (Jest, React Testing Library, Cypress), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 255,
+        "text": "Câu hỏi 255 (Kiến trúc & Design Patterns (HOC, Render Props, Compound Components)): Phân tích sâu sắc về Kiến trúc & Design Patterns (HOC, Render Props, Compound Components), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 256,
+        "text": "Câu hỏi 256 (React Router & Navigation (Advanced, protected routes, lazy loading)): Phân tích sâu sắc về React Router & Navigation (Advanced, protected routes, lazy loading), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 257,
+        "text": "Câu hỏi 257 (Security in React (XSS, CSRF prevention, sanitization)): Phân tích sâu sắc về Security in React (XSS, CSRF prevention, sanitization), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 258,
+        "text": "Câu hỏi 258 (Server-Side Rendering (SSR) & Static Site Generation (SSG) with Next.js): Phân tích sâu sắc về Server-Side Rendering (SSR) & Static Site Generation (SSG) with Next.js, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 259,
+        "text": "Câu hỏi 259 (Custom Hooks development and best practices): Phân tích sâu sắc về Custom Hooks development and best practices, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 260,
+        "text": "Câu hỏi 260 (React 18 features (Concurrent Mode, Transitions, useDeferredValue)): Phân tích sâu sắc về React 18 features (Concurrent Mode, Transitions, useDeferredValue), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 261,
+        "text": "Câu hỏi 261 (Error Boundaries & Error Handling strategies): Phân tích sâu sắc về Error Boundaries & Error Handling strategies, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 262,
+        "text": "Câu hỏi 262 (Accessibility (A11y) in React applications): Phân tích sâu sắc về Accessibility (A11y) in React applications, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 263,
+        "text": "Câu hỏi 263 (Integration with external APIs (REST, GraphQL, real-time)): Phân tích sâu sắc về Integration with external APIs (REST, GraphQL, real-time), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 264,
+        "text": "Câu hỏi 264 (State management patterns and best practices): Phân tích sâu sắc về State management patterns and best practices, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 265,
+        "text": "Câu hỏi 265 (Managing complex forms with Formik or React Hook Form): Phân tích sâu sắc về Managing complex forms with Formik or React Hook Form, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 266,
+        "text": "Câu hỏi 266 (Advanced, high-performance rendering techniques): Phân tích sâu sắc về Advanced, high-performance rendering techniques, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 267,
+        "text": "Câu hỏi 267 (The Fiber architecture and reconciliation process): Phân tích sâu sắc về The Fiber architecture and reconciliation process, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 268,
+        "text": "Câu hỏi 268 (Testing strategies for large scale applications): Phân tích sâu sắc về Testing strategies for large scale applications, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 269,
+        "text": "Câu hỏi 269 (Micro-frontends with React): Phân tích sâu sắc về Micro-frontends with React, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 270,
+        "text": "Câu hỏi 270 (The ecosystem: useful libraries and tools): Phân tích sâu sắc về The ecosystem: useful libraries and tools, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 271,
+        "text": "Câu hỏi 271 (Hooks nâng cao (useMemo, useCallback, useRef, useReducer)): Phân tích sâu sắc về Hooks nâng cao (useMemo, useCallback, useRef, useReducer), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 272,
+        "text": "Câu hỏi 272 (State Management (Redux, Context API, Zustand, Recoil)): Phân tích sâu sắc về State Management (Redux, Context API, Zustand, Recoil), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 273,
+        "text": "Câu hỏi 273 (Tối ưu hóa hiệu năng (React.memo, lazy, suspense, profiling)): Phân tích sâu sắc về Tối ưu hóa hiệu năng (React.memo, lazy, suspense, profiling), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 274,
+        "text": "Câu hỏi 274 (Testing (Jest, React Testing Library, Cypress)): Phân tích sâu sắc về Testing (Jest, React Testing Library, Cypress), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 275,
+        "text": "Câu hỏi 275 (Kiến trúc & Design Patterns (HOC, Render Props, Compound Components)): Phân tích sâu sắc về Kiến trúc & Design Patterns (HOC, Render Props, Compound Components), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 276,
+        "text": "Câu hỏi 276 (React Router & Navigation (Advanced, protected routes, lazy loading)): Phân tích sâu sắc về React Router & Navigation (Advanced, protected routes, lazy loading), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 277,
+        "text": "Câu hỏi 277 (Security in React (XSS, CSRF prevention, sanitization)): Phân tích sâu sắc về Security in React (XSS, CSRF prevention, sanitization), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 278,
+        "text": "Câu hỏi 278 (Server-Side Rendering (SSR) & Static Site Generation (SSG) with Next.js): Phân tích sâu sắc về Server-Side Rendering (SSR) & Static Site Generation (SSG) with Next.js, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 279,
+        "text": "Câu hỏi 279 (Custom Hooks development and best practices): Phân tích sâu sắc về Custom Hooks development and best practices, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 280,
+        "text": "Câu hỏi 280 (React 18 features (Concurrent Mode, Transitions, useDeferredValue)): Phân tích sâu sắc về React 18 features (Concurrent Mode, Transitions, useDeferredValue), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 281,
+        "text": "Câu hỏi 281 (Error Boundaries & Error Handling strategies): Phân tích sâu sắc về Error Boundaries & Error Handling strategies, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 282,
+        "text": "Câu hỏi 282 (Accessibility (A11y) in React applications): Phân tích sâu sắc về Accessibility (A11y) in React applications, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 283,
+        "text": "Câu hỏi 283 (Integration with external APIs (REST, GraphQL, real-time)): Phân tích sâu sắc về Integration with external APIs (REST, GraphQL, real-time), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 284,
+        "text": "Câu hỏi 284 (State management patterns and best practices): Phân tích sâu sắc về State management patterns and best practices, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 285,
+        "text": "Câu hỏi 285 (Managing complex forms with Formik or React Hook Form): Phân tích sâu sắc về Managing complex forms with Formik or React Hook Form, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 286,
+        "text": "Câu hỏi 286 (Advanced, high-performance rendering techniques): Phân tích sâu sắc về Advanced, high-performance rendering techniques, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 287,
+        "text": "Câu hỏi 287 (The Fiber architecture and reconciliation process): Phân tích sâu sắc về The Fiber architecture and reconciliation process, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 288,
+        "text": "Câu hỏi 288 (Testing strategies for large scale applications): Phân tích sâu sắc về Testing strategies for large scale applications, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 289,
+        "text": "Câu hỏi 289 (Micro-frontends with React): Phân tích sâu sắc về Micro-frontends with React, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 290,
+        "text": "Câu hỏi 290 (The ecosystem: useful libraries and tools): Phân tích sâu sắc về The ecosystem: useful libraries and tools, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 291,
+        "text": "Câu hỏi 291 (Hooks nâng cao (useMemo, useCallback, useRef, useReducer)): Phân tích sâu sắc về Hooks nâng cao (useMemo, useCallback, useRef, useReducer), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 292,
+        "text": "Câu hỏi 292 (State Management (Redux, Context API, Zustand, Recoil)): Phân tích sâu sắc về State Management (Redux, Context API, Zustand, Recoil), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 293,
+        "text": "Câu hỏi 293 (Tối ưu hóa hiệu năng (React.memo, lazy, suspense, profiling)): Phân tích sâu sắc về Tối ưu hóa hiệu năng (React.memo, lazy, suspense, profiling), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 294,
+        "text": "Câu hỏi 294 (Testing (Jest, React Testing Library, Cypress)): Phân tích sâu sắc về Testing (Jest, React Testing Library, Cypress), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 295,
+        "text": "Câu hỏi 295 (Kiến trúc & Design Patterns (HOC, Render Props, Compound Components)): Phân tích sâu sắc về Kiến trúc & Design Patterns (HOC, Render Props, Compound Components), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 296,
+        "text": "Câu hỏi 296 (React Router & Navigation (Advanced, protected routes, lazy loading)): Phân tích sâu sắc về React Router & Navigation (Advanced, protected routes, lazy loading), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 297,
+        "text": "Câu hỏi 297 (Security in React (XSS, CSRF prevention, sanitization)): Phân tích sâu sắc về Security in React (XSS, CSRF prevention, sanitization), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 298,
+        "text": "Câu hỏi 298 (Server-Side Rendering (SSR) & Static Site Generation (SSG) with Next.js): Phân tích sâu sắc về Server-Side Rendering (SSR) & Static Site Generation (SSG) with Next.js, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 299,
+        "text": "Câu hỏi 299 (Custom Hooks development and best practices): Phân tích sâu sắc về Custom Hooks development and best practices, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 300,
+        "text": "Câu hỏi 300 (React 18 features (Concurrent Mode, Transitions, useDeferredValue)): Phân tích sâu sắc về React 18 features (Concurrent Mode, Transitions, useDeferredValue), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 301,
+        "text": "Câu hỏi 301 (Error Boundaries & Error Handling strategies): Phân tích sâu sắc về Error Boundaries & Error Handling strategies, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 302,
+        "text": "Câu hỏi 302 (Accessibility (A11y) in React applications): Phân tích sâu sắc về Accessibility (A11y) in React applications, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 303,
+        "text": "Câu hỏi 303 (Integration with external APIs (REST, GraphQL, real-time)): Phân tích sâu sắc về Integration with external APIs (REST, GraphQL, real-time), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 304,
+        "text": "Câu hỏi 304 (State management patterns and best practices): Phân tích sâu sắc về State management patterns and best practices, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 305,
+        "text": "Câu hỏi 305 (Managing complex forms with Formik or React Hook Form): Phân tích sâu sắc về Managing complex forms with Formik or React Hook Form, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 306,
+        "text": "Câu hỏi 306 (Advanced, high-performance rendering techniques): Phân tích sâu sắc về Advanced, high-performance rendering techniques, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 307,
+        "text": "Câu hỏi 307 (The Fiber architecture and reconciliation process): Phân tích sâu sắc về The Fiber architecture and reconciliation process, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 308,
+        "text": "Câu hỏi 308 (Testing strategies for large scale applications): Phân tích sâu sắc về Testing strategies for large scale applications, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 309,
+        "text": "Câu hỏi 309 (Micro-frontends with React): Phân tích sâu sắc về Micro-frontends with React, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 310,
+        "text": "Câu hỏi 310 (The ecosystem: useful libraries and tools): Phân tích sâu sắc về The ecosystem: useful libraries and tools, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 311,
+        "text": "Câu hỏi 311 (Hooks nâng cao (useMemo, useCallback, useRef, useReducer)): Phân tích sâu sắc về Hooks nâng cao (useMemo, useCallback, useRef, useReducer), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 312,
+        "text": "Câu hỏi 312 (State Management (Redux, Context API, Zustand, Recoil)): Phân tích sâu sắc về State Management (Redux, Context API, Zustand, Recoil), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 313,
+        "text": "Câu hỏi 313 (Tối ưu hóa hiệu năng (React.memo, lazy, suspense, profiling)): Phân tích sâu sắc về Tối ưu hóa hiệu năng (React.memo, lazy, suspense, profiling), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 314,
+        "text": "Câu hỏi 314 (Testing (Jest, React Testing Library, Cypress)): Phân tích sâu sắc về Testing (Jest, React Testing Library, Cypress), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 315,
+        "text": "Câu hỏi 315 (Kiến trúc & Design Patterns (HOC, Render Props, Compound Components)): Phân tích sâu sắc về Kiến trúc & Design Patterns (HOC, Render Props, Compound Components), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 316,
+        "text": "Câu hỏi 316 (React Router & Navigation (Advanced, protected routes, lazy loading)): Phân tích sâu sắc về React Router & Navigation (Advanced, protected routes, lazy loading), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 317,
+        "text": "Câu hỏi 317 (Security in React (XSS, CSRF prevention, sanitization)): Phân tích sâu sắc về Security in React (XSS, CSRF prevention, sanitization), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 318,
+        "text": "Câu hỏi 318 (Server-Side Rendering (SSR) & Static Site Generation (SSG) with Next.js): Phân tích sâu sắc về Server-Side Rendering (SSR) & Static Site Generation (SSG) with Next.js, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 319,
+        "text": "Câu hỏi 319 (Custom Hooks development and best practices): Phân tích sâu sắc về Custom Hooks development and best practices, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 320,
+        "text": "Câu hỏi 320 (React 18 features (Concurrent Mode, Transitions, useDeferredValue)): Phân tích sâu sắc về React 18 features (Concurrent Mode, Transitions, useDeferredValue), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 321,
+        "text": "Câu hỏi 321 (Error Boundaries & Error Handling strategies): Phân tích sâu sắc về Error Boundaries & Error Handling strategies, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 322,
+        "text": "Câu hỏi 322 (Accessibility (A11y) in React applications): Phân tích sâu sắc về Accessibility (A11y) in React applications, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 323,
+        "text": "Câu hỏi 323 (Integration with external APIs (REST, GraphQL, real-time)): Phân tích sâu sắc về Integration with external APIs (REST, GraphQL, real-time), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 324,
+        "text": "Câu hỏi 324 (State management patterns and best practices): Phân tích sâu sắc về State management patterns and best practices, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 325,
+        "text": "Câu hỏi 325 (Managing complex forms with Formik or React Hook Form): Phân tích sâu sắc về Managing complex forms with Formik or React Hook Form, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 326,
+        "text": "Câu hỏi 326 (Advanced, high-performance rendering techniques): Phân tích sâu sắc về Advanced, high-performance rendering techniques, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 327,
+        "text": "Câu hỏi 327 (The Fiber architecture and reconciliation process): Phân tích sâu sắc về The Fiber architecture and reconciliation process, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 328,
+        "text": "Câu hỏi 328 (Testing strategies for large scale applications): Phân tích sâu sắc về Testing strategies for large scale applications, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 329,
+        "text": "Câu hỏi 329 (Micro-frontends with React): Phân tích sâu sắc về Micro-frontends with React, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 330,
+        "text": "Câu hỏi 330 (The ecosystem: useful libraries and tools): Phân tích sâu sắc về The ecosystem: useful libraries and tools, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 331,
+        "text": "Câu hỏi 331 (Hooks nâng cao (useMemo, useCallback, useRef, useReducer)): Phân tích sâu sắc về Hooks nâng cao (useMemo, useCallback, useRef, useReducer), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 332,
+        "text": "Câu hỏi 332 (State Management (Redux, Context API, Zustand, Recoil)): Phân tích sâu sắc về State Management (Redux, Context API, Zustand, Recoil), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 333,
+        "text": "Câu hỏi 333 (Tối ưu hóa hiệu năng (React.memo, lazy, suspense, profiling)): Phân tích sâu sắc về Tối ưu hóa hiệu năng (React.memo, lazy, suspense, profiling), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 334,
+        "text": "Câu hỏi 334 (Testing (Jest, React Testing Library, Cypress)): Phân tích sâu sắc về Testing (Jest, React Testing Library, Cypress), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 335,
+        "text": "Câu hỏi 335 (Kiến trúc & Design Patterns (HOC, Render Props, Compound Components)): Phân tích sâu sắc về Kiến trúc & Design Patterns (HOC, Render Props, Compound Components), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 336,
+        "text": "Câu hỏi 336 (React Router & Navigation (Advanced, protected routes, lazy loading)): Phân tích sâu sắc về React Router & Navigation (Advanced, protected routes, lazy loading), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 337,
+        "text": "Câu hỏi 337 (Security in React (XSS, CSRF prevention, sanitization)): Phân tích sâu sắc về Security in React (XSS, CSRF prevention, sanitization), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 338,
+        "text": "Câu hỏi 338 (Server-Side Rendering (SSR) & Static Site Generation (SSG) with Next.js): Phân tích sâu sắc về Server-Side Rendering (SSR) & Static Site Generation (SSG) with Next.js, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 339,
+        "text": "Câu hỏi 339 (Custom Hooks development and best practices): Phân tích sâu sắc về Custom Hooks development and best practices, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 340,
+        "text": "Câu hỏi 340 (React 18 features (Concurrent Mode, Transitions, useDeferredValue)): Phân tích sâu sắc về React 18 features (Concurrent Mode, Transitions, useDeferredValue), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 341,
+        "text": "Câu hỏi 341 (Error Boundaries & Error Handling strategies): Phân tích sâu sắc về Error Boundaries & Error Handling strategies, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 342,
+        "text": "Câu hỏi 342 (Accessibility (A11y) in React applications): Phân tích sâu sắc về Accessibility (A11y) in React applications, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 343,
+        "text": "Câu hỏi 343 (Integration with external APIs (REST, GraphQL, real-time)): Phân tích sâu sắc về Integration with external APIs (REST, GraphQL, real-time), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 344,
+        "text": "Câu hỏi 344 (State management patterns and best practices): Phân tích sâu sắc về State management patterns and best practices, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 345,
+        "text": "Câu hỏi 345 (Managing complex forms with Formik or React Hook Form): Phân tích sâu sắc về Managing complex forms with Formik or React Hook Form, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 346,
+        "text": "Câu hỏi 346 (Advanced, high-performance rendering techniques): Phân tích sâu sắc về Advanced, high-performance rendering techniques, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 347,
+        "text": "Câu hỏi 347 (The Fiber architecture and reconciliation process): Phân tích sâu sắc về The Fiber architecture and reconciliation process, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 348,
+        "text": "Câu hỏi 348 (Testing strategies for large scale applications): Phân tích sâu sắc về Testing strategies for large scale applications, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 349,
+        "text": "Câu hỏi 349 (Micro-frontends with React): Phân tích sâu sắc về Micro-frontends with React, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 350,
+        "text": "Câu hỏi 350 (The ecosystem: useful libraries and tools): Phân tích sâu sắc về The ecosystem: useful libraries and tools, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 351,
+        "text": "Câu hỏi 351 (Hooks nâng cao (useMemo, useCallback, useRef, useReducer)): Phân tích sâu sắc về Hooks nâng cao (useMemo, useCallback, useRef, useReducer), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 352,
+        "text": "Câu hỏi 352 (State Management (Redux, Context API, Zustand, Recoil)): Phân tích sâu sắc về State Management (Redux, Context API, Zustand, Recoil), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 353,
+        "text": "Câu hỏi 353 (Tối ưu hóa hiệu năng (React.memo, lazy, suspense, profiling)): Phân tích sâu sắc về Tối ưu hóa hiệu năng (React.memo, lazy, suspense, profiling), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 354,
+        "text": "Câu hỏi 354 (Testing (Jest, React Testing Library, Cypress)): Phân tích sâu sắc về Testing (Jest, React Testing Library, Cypress), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 355,
+        "text": "Câu hỏi 355 (Kiến trúc & Design Patterns (HOC, Render Props, Compound Components)): Phân tích sâu sắc về Kiến trúc & Design Patterns (HOC, Render Props, Compound Components), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 356,
+        "text": "Câu hỏi 356 (React Router & Navigation (Advanced, protected routes, lazy loading)): Phân tích sâu sắc về React Router & Navigation (Advanced, protected routes, lazy loading), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 357,
+        "text": "Câu hỏi 357 (Security in React (XSS, CSRF prevention, sanitization)): Phân tích sâu sắc về Security in React (XSS, CSRF prevention, sanitization), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 358,
+        "text": "Câu hỏi 358 (Server-Side Rendering (SSR) & Static Site Generation (SSG) with Next.js): Phân tích sâu sắc về Server-Side Rendering (SSR) & Static Site Generation (SSG) with Next.js, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 359,
+        "text": "Câu hỏi 359 (Custom Hooks development and best practices): Phân tích sâu sắc về Custom Hooks development and best practices, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 360,
+        "text": "Câu hỏi 360 (React 18 features (Concurrent Mode, Transitions, useDeferredValue)): Phân tích sâu sắc về React 18 features (Concurrent Mode, Transitions, useDeferredValue), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 361,
+        "text": "Câu hỏi 361 (Error Boundaries & Error Handling strategies): Phân tích sâu sắc về Error Boundaries & Error Handling strategies, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 362,
+        "text": "Câu hỏi 362 (Accessibility (A11y) in React applications): Phân tích sâu sắc về Accessibility (A11y) in React applications, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 363,
+        "text": "Câu hỏi 363 (Integration with external APIs (REST, GraphQL, real-time)): Phân tích sâu sắc về Integration with external APIs (REST, GraphQL, real-time), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 364,
+        "text": "Câu hỏi 364 (State management patterns and best practices): Phân tích sâu sắc về State management patterns and best practices, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 365,
+        "text": "Câu hỏi 365 (Managing complex forms with Formik or React Hook Form): Phân tích sâu sắc về Managing complex forms with Formik or React Hook Form, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 366,
+        "text": "Câu hỏi 366 (Advanced, high-performance rendering techniques): Phân tích sâu sắc về Advanced, high-performance rendering techniques, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 367,
+        "text": "Câu hỏi 367 (The Fiber architecture and reconciliation process): Phân tích sâu sắc về The Fiber architecture and reconciliation process, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 368,
+        "text": "Câu hỏi 368 (Testing strategies for large scale applications): Phân tích sâu sắc về Testing strategies for large scale applications, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 369,
+        "text": "Câu hỏi 369 (Micro-frontends with React): Phân tích sâu sắc về Micro-frontends with React, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 370,
+        "text": "Câu hỏi 370 (The ecosystem: useful libraries and tools): Phân tích sâu sắc về The ecosystem: useful libraries and tools, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 371,
+        "text": "Câu hỏi 371 (Hooks nâng cao (useMemo, useCallback, useRef, useReducer)): Phân tích sâu sắc về Hooks nâng cao (useMemo, useCallback, useRef, useReducer), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 372,
+        "text": "Câu hỏi 372 (State Management (Redux, Context API, Zustand, Recoil)): Phân tích sâu sắc về State Management (Redux, Context API, Zustand, Recoil), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 373,
+        "text": "Câu hỏi 373 (Tối ưu hóa hiệu năng (React.memo, lazy, suspense, profiling)): Phân tích sâu sắc về Tối ưu hóa hiệu năng (React.memo, lazy, suspense, profiling), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 374,
+        "text": "Câu hỏi 374 (Testing (Jest, React Testing Library, Cypress)): Phân tích sâu sắc về Testing (Jest, React Testing Library, Cypress), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 375,
+        "text": "Câu hỏi 375 (Kiến trúc & Design Patterns (HOC, Render Props, Compound Components)): Phân tích sâu sắc về Kiến trúc & Design Patterns (HOC, Render Props, Compound Components), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 376,
+        "text": "Câu hỏi 376 (React Router & Navigation (Advanced, protected routes, lazy loading)): Phân tích sâu sắc về React Router & Navigation (Advanced, protected routes, lazy loading), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 377,
+        "text": "Câu hỏi 377 (Security in React (XSS, CSRF prevention, sanitization)): Phân tích sâu sắc về Security in React (XSS, CSRF prevention, sanitization), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 378,
+        "text": "Câu hỏi 378 (Server-Side Rendering (SSR) & Static Site Generation (SSG) with Next.js): Phân tích sâu sắc về Server-Side Rendering (SSR) & Static Site Generation (SSG) with Next.js, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 379,
+        "text": "Câu hỏi 379 (Custom Hooks development and best practices): Phân tích sâu sắc về Custom Hooks development and best practices, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 380,
+        "text": "Câu hỏi 380 (React 18 features (Concurrent Mode, Transitions, useDeferredValue)): Phân tích sâu sắc về React 18 features (Concurrent Mode, Transitions, useDeferredValue), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 381,
+        "text": "Câu hỏi 381 (Error Boundaries & Error Handling strategies): Phân tích sâu sắc về Error Boundaries & Error Handling strategies, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 382,
+        "text": "Câu hỏi 382 (Accessibility (A11y) in React applications): Phân tích sâu sắc về Accessibility (A11y) in React applications, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 383,
+        "text": "Câu hỏi 383 (Integration with external APIs (REST, GraphQL, real-time)): Phân tích sâu sắc về Integration with external APIs (REST, GraphQL, real-time), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 384,
+        "text": "Câu hỏi 384 (State management patterns and best practices): Phân tích sâu sắc về State management patterns and best practices, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 385,
+        "text": "Câu hỏi 385 (Managing complex forms with Formik or React Hook Form): Phân tích sâu sắc về Managing complex forms with Formik or React Hook Form, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 386,
+        "text": "Câu hỏi 386 (Advanced, high-performance rendering techniques): Phân tích sâu sắc về Advanced, high-performance rendering techniques, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 387,
+        "text": "Câu hỏi 387 (The Fiber architecture and reconciliation process): Phân tích sâu sắc về The Fiber architecture and reconciliation process, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 388,
+        "text": "Câu hỏi 388 (Testing strategies for large scale applications): Phân tích sâu sắc về Testing strategies for large scale applications, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 389,
+        "text": "Câu hỏi 389 (Micro-frontends with React): Phân tích sâu sắc về Micro-frontends with React, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 390,
+        "text": "Câu hỏi 390 (The ecosystem: useful libraries and tools): Phân tích sâu sắc về The ecosystem: useful libraries and tools, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 391,
+        "text": "Câu hỏi 391 (Hooks nâng cao (useMemo, useCallback, useRef, useReducer)): Phân tích sâu sắc về Hooks nâng cao (useMemo, useCallback, useRef, useReducer), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 392,
+        "text": "Câu hỏi 392 (State Management (Redux, Context API, Zustand, Recoil)): Phân tích sâu sắc về State Management (Redux, Context API, Zustand, Recoil), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 393,
+        "text": "Câu hỏi 393 (Tối ưu hóa hiệu năng (React.memo, lazy, suspense, profiling)): Phân tích sâu sắc về Tối ưu hóa hiệu năng (React.memo, lazy, suspense, profiling), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 394,
+        "text": "Câu hỏi 394 (Testing (Jest, React Testing Library, Cypress)): Phân tích sâu sắc về Testing (Jest, React Testing Library, Cypress), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 395,
+        "text": "Câu hỏi 395 (Kiến trúc & Design Patterns (HOC, Render Props, Compound Components)): Phân tích sâu sắc về Kiến trúc & Design Patterns (HOC, Render Props, Compound Components), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 396,
+        "text": "Câu hỏi 396 (React Router & Navigation (Advanced, protected routes, lazy loading)): Phân tích sâu sắc về React Router & Navigation (Advanced, protected routes, lazy loading), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 397,
+        "text": "Câu hỏi 397 (Security in React (XSS, CSRF prevention, sanitization)): Phân tích sâu sắc về Security in React (XSS, CSRF prevention, sanitization), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 398,
+        "text": "Câu hỏi 398 (Server-Side Rendering (SSR) & Static Site Generation (SSG) with Next.js): Phân tích sâu sắc về Server-Side Rendering (SSR) & Static Site Generation (SSG) with Next.js, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 399,
+        "text": "Câu hỏi 399 (Custom Hooks development and best practices): Phân tích sâu sắc về Custom Hooks development and best practices, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 400,
+        "text": "Câu hỏi 400 (React 18 features (Concurrent Mode, Transitions, useDeferredValue)): Phân tích sâu sắc về React 18 features (Concurrent Mode, Transitions, useDeferredValue), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 401,
+        "text": "Câu hỏi 401 (Error Boundaries & Error Handling strategies): Phân tích sâu sắc về Error Boundaries & Error Handling strategies, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 402,
+        "text": "Câu hỏi 402 (Accessibility (A11y) in React applications): Phân tích sâu sắc về Accessibility (A11y) in React applications, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 403,
+        "text": "Câu hỏi 403 (Integration with external APIs (REST, GraphQL, real-time)): Phân tích sâu sắc về Integration with external APIs (REST, GraphQL, real-time), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 404,
+        "text": "Câu hỏi 404 (State management patterns and best practices): Phân tích sâu sắc về State management patterns and best practices, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 405,
+        "text": "Câu hỏi 405 (Managing complex forms with Formik or React Hook Form): Phân tích sâu sắc về Managing complex forms with Formik or React Hook Form, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 406,
+        "text": "Câu hỏi 406 (Advanced, high-performance rendering techniques): Phân tích sâu sắc về Advanced, high-performance rendering techniques, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 407,
+        "text": "Câu hỏi 407 (The Fiber architecture and reconciliation process): Phân tích sâu sắc về The Fiber architecture and reconciliation process, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 408,
+        "text": "Câu hỏi 408 (Testing strategies for large scale applications): Phân tích sâu sắc về Testing strategies for large scale applications, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 409,
+        "text": "Câu hỏi 409 (Micro-frontends with React): Phân tích sâu sắc về Micro-frontends with React, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 410,
+        "text": "Câu hỏi 410 (The ecosystem: useful libraries and tools): Phân tích sâu sắc về The ecosystem: useful libraries and tools, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 411,
+        "text": "Câu hỏi 411 (Hooks nâng cao (useMemo, useCallback, useRef, useReducer)): Phân tích sâu sắc về Hooks nâng cao (useMemo, useCallback, useRef, useReducer), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 412,
+        "text": "Câu hỏi 412 (State Management (Redux, Context API, Zustand, Recoil)): Phân tích sâu sắc về State Management (Redux, Context API, Zustand, Recoil), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 413,
+        "text": "Câu hỏi 413 (Tối ưu hóa hiệu năng (React.memo, lazy, suspense, profiling)): Phân tích sâu sắc về Tối ưu hóa hiệu năng (React.memo, lazy, suspense, profiling), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 414,
+        "text": "Câu hỏi 414 (Testing (Jest, React Testing Library, Cypress)): Phân tích sâu sắc về Testing (Jest, React Testing Library, Cypress), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 415,
+        "text": "Câu hỏi 415 (Kiến trúc & Design Patterns (HOC, Render Props, Compound Components)): Phân tích sâu sắc về Kiến trúc & Design Patterns (HOC, Render Props, Compound Components), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 416,
+        "text": "Câu hỏi 416 (React Router & Navigation (Advanced, protected routes, lazy loading)): Phân tích sâu sắc về React Router & Navigation (Advanced, protected routes, lazy loading), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 417,
+        "text": "Câu hỏi 417 (Security in React (XSS, CSRF prevention, sanitization)): Phân tích sâu sắc về Security in React (XSS, CSRF prevention, sanitization), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 418,
+        "text": "Câu hỏi 418 (Server-Side Rendering (SSR) & Static Site Generation (SSG) with Next.js): Phân tích sâu sắc về Server-Side Rendering (SSR) & Static Site Generation (SSG) with Next.js, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 419,
+        "text": "Câu hỏi 419 (Custom Hooks development and best practices): Phân tích sâu sắc về Custom Hooks development and best practices, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 420,
+        "text": "Câu hỏi 420 (React 18 features (Concurrent Mode, Transitions, useDeferredValue)): Phân tích sâu sắc về React 18 features (Concurrent Mode, Transitions, useDeferredValue), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 421,
+        "text": "Câu hỏi 421 (Error Boundaries & Error Handling strategies): Phân tích sâu sắc về Error Boundaries & Error Handling strategies, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 422,
+        "text": "Câu hỏi 422 (Accessibility (A11y) in React applications): Phân tích sâu sắc về Accessibility (A11y) in React applications, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 423,
+        "text": "Câu hỏi 423 (Integration with external APIs (REST, GraphQL, real-time)): Phân tích sâu sắc về Integration with external APIs (REST, GraphQL, real-time), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 424,
+        "text": "Câu hỏi 424 (State management patterns and best practices): Phân tích sâu sắc về State management patterns and best practices, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 425,
+        "text": "Câu hỏi 425 (Managing complex forms with Formik or React Hook Form): Phân tích sâu sắc về Managing complex forms with Formik or React Hook Form, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 426,
+        "text": "Câu hỏi 426 (Advanced, high-performance rendering techniques): Phân tích sâu sắc về Advanced, high-performance rendering techniques, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 427,
+        "text": "Câu hỏi 427 (The Fiber architecture and reconciliation process): Phân tích sâu sắc về The Fiber architecture and reconciliation process, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 428,
+        "text": "Câu hỏi 428 (Testing strategies for large scale applications): Phân tích sâu sắc về Testing strategies for large scale applications, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 429,
+        "text": "Câu hỏi 429 (Micro-frontends with React): Phân tích sâu sắc về Micro-frontends with React, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 430,
+        "text": "Câu hỏi 430 (The ecosystem: useful libraries and tools): Phân tích sâu sắc về The ecosystem: useful libraries and tools, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 431,
+        "text": "Câu hỏi 431 (Hooks nâng cao (useMemo, useCallback, useRef, useReducer)): Phân tích sâu sắc về Hooks nâng cao (useMemo, useCallback, useRef, useReducer), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 432,
+        "text": "Câu hỏi 432 (State Management (Redux, Context API, Zustand, Recoil)): Phân tích sâu sắc về State Management (Redux, Context API, Zustand, Recoil), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 433,
+        "text": "Câu hỏi 433 (Tối ưu hóa hiệu năng (React.memo, lazy, suspense, profiling)): Phân tích sâu sắc về Tối ưu hóa hiệu năng (React.memo, lazy, suspense, profiling), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 434,
+        "text": "Câu hỏi 434 (Testing (Jest, React Testing Library, Cypress)): Phân tích sâu sắc về Testing (Jest, React Testing Library, Cypress), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 435,
+        "text": "Câu hỏi 435 (Kiến trúc & Design Patterns (HOC, Render Props, Compound Components)): Phân tích sâu sắc về Kiến trúc & Design Patterns (HOC, Render Props, Compound Components), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 436,
+        "text": "Câu hỏi 436 (React Router & Navigation (Advanced, protected routes, lazy loading)): Phân tích sâu sắc về React Router & Navigation (Advanced, protected routes, lazy loading), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 437,
+        "text": "Câu hỏi 437 (Security in React (XSS, CSRF prevention, sanitization)): Phân tích sâu sắc về Security in React (XSS, CSRF prevention, sanitization), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 438,
+        "text": "Câu hỏi 438 (Server-Side Rendering (SSR) & Static Site Generation (SSG) with Next.js): Phân tích sâu sắc về Server-Side Rendering (SSR) & Static Site Generation (SSG) with Next.js, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 439,
+        "text": "Câu hỏi 439 (Custom Hooks development and best practices): Phân tích sâu sắc về Custom Hooks development and best practices, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 440,
+        "text": "Câu hỏi 440 (React 18 features (Concurrent Mode, Transitions, useDeferredValue)): Phân tích sâu sắc về React 18 features (Concurrent Mode, Transitions, useDeferredValue), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 441,
+        "text": "Câu hỏi 441 (Error Boundaries & Error Handling strategies): Phân tích sâu sắc về Error Boundaries & Error Handling strategies, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 442,
+        "text": "Câu hỏi 442 (Accessibility (A11y) in React applications): Phân tích sâu sắc về Accessibility (A11y) in React applications, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 443,
+        "text": "Câu hỏi 443 (Integration with external APIs (REST, GraphQL, real-time)): Phân tích sâu sắc về Integration with external APIs (REST, GraphQL, real-time), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 444,
+        "text": "Câu hỏi 444 (State management patterns and best practices): Phân tích sâu sắc về State management patterns and best practices, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 445,
+        "text": "Câu hỏi 445 (Managing complex forms with Formik or React Hook Form): Phân tích sâu sắc về Managing complex forms with Formik or React Hook Form, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 446,
+        "text": "Câu hỏi 446 (Advanced, high-performance rendering techniques): Phân tích sâu sắc về Advanced, high-performance rendering techniques, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 447,
+        "text": "Câu hỏi 447 (The Fiber architecture and reconciliation process): Phân tích sâu sắc về The Fiber architecture and reconciliation process, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 448,
+        "text": "Câu hỏi 448 (Testing strategies for large scale applications): Phân tích sâu sắc về Testing strategies for large scale applications, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 449,
+        "text": "Câu hỏi 449 (Micro-frontends with React): Phân tích sâu sắc về Micro-frontends with React, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 450,
+        "text": "Câu hỏi 450 (The ecosystem: useful libraries and tools): Phân tích sâu sắc về The ecosystem: useful libraries and tools, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 451,
+        "text": "Câu hỏi 451 (Hooks nâng cao (useMemo, useCallback, useRef, useReducer)): Phân tích sâu sắc về Hooks nâng cao (useMemo, useCallback, useRef, useReducer), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 452,
+        "text": "Câu hỏi 452 (State Management (Redux, Context API, Zustand, Recoil)): Phân tích sâu sắc về State Management (Redux, Context API, Zustand, Recoil), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 453,
+        "text": "Câu hỏi 453 (Tối ưu hóa hiệu năng (React.memo, lazy, suspense, profiling)): Phân tích sâu sắc về Tối ưu hóa hiệu năng (React.memo, lazy, suspense, profiling), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 454,
+        "text": "Câu hỏi 454 (Testing (Jest, React Testing Library, Cypress)): Phân tích sâu sắc về Testing (Jest, React Testing Library, Cypress), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 455,
+        "text": "Câu hỏi 455 (Kiến trúc & Design Patterns (HOC, Render Props, Compound Components)): Phân tích sâu sắc về Kiến trúc & Design Patterns (HOC, Render Props, Compound Components), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 456,
+        "text": "Câu hỏi 456 (React Router & Navigation (Advanced, protected routes, lazy loading)): Phân tích sâu sắc về React Router & Navigation (Advanced, protected routes, lazy loading), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 457,
+        "text": "Câu hỏi 457 (Security in React (XSS, CSRF prevention, sanitization)): Phân tích sâu sắc về Security in React (XSS, CSRF prevention, sanitization), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 458,
+        "text": "Câu hỏi 458 (Server-Side Rendering (SSR) & Static Site Generation (SSG) with Next.js): Phân tích sâu sắc về Server-Side Rendering (SSR) & Static Site Generation (SSG) with Next.js, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 459,
+        "text": "Câu hỏi 459 (Custom Hooks development and best practices): Phân tích sâu sắc về Custom Hooks development and best practices, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 460,
+        "text": "Câu hỏi 460 (React 18 features (Concurrent Mode, Transitions, useDeferredValue)): Phân tích sâu sắc về React 18 features (Concurrent Mode, Transitions, useDeferredValue), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 461,
+        "text": "Câu hỏi 461 (Error Boundaries & Error Handling strategies): Phân tích sâu sắc về Error Boundaries & Error Handling strategies, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 462,
+        "text": "Câu hỏi 462 (Accessibility (A11y) in React applications): Phân tích sâu sắc về Accessibility (A11y) in React applications, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 463,
+        "text": "Câu hỏi 463 (Integration with external APIs (REST, GraphQL, real-time)): Phân tích sâu sắc về Integration with external APIs (REST, GraphQL, real-time), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 464,
+        "text": "Câu hỏi 464 (State management patterns and best practices): Phân tích sâu sắc về State management patterns and best practices, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 465,
+        "text": "Câu hỏi 465 (Managing complex forms with Formik or React Hook Form): Phân tích sâu sắc về Managing complex forms with Formik or React Hook Form, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 466,
+        "text": "Câu hỏi 466 (Advanced, high-performance rendering techniques): Phân tích sâu sắc về Advanced, high-performance rendering techniques, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 467,
+        "text": "Câu hỏi 467 (The Fiber architecture and reconciliation process): Phân tích sâu sắc về The Fiber architecture and reconciliation process, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 468,
+        "text": "Câu hỏi 468 (Testing strategies for large scale applications): Phân tích sâu sắc về Testing strategies for large scale applications, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 469,
+        "text": "Câu hỏi 469 (Micro-frontends with React): Phân tích sâu sắc về Micro-frontends with React, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 470,
+        "text": "Câu hỏi 470 (The ecosystem: useful libraries and tools): Phân tích sâu sắc về The ecosystem: useful libraries and tools, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 471,
+        "text": "Câu hỏi 471 (Hooks nâng cao (useMemo, useCallback, useRef, useReducer)): Phân tích sâu sắc về Hooks nâng cao (useMemo, useCallback, useRef, useReducer), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 472,
+        "text": "Câu hỏi 472 (State Management (Redux, Context API, Zustand, Recoil)): Phân tích sâu sắc về State Management (Redux, Context API, Zustand, Recoil), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 473,
+        "text": "Câu hỏi 473 (Tối ưu hóa hiệu năng (React.memo, lazy, suspense, profiling)): Phân tích sâu sắc về Tối ưu hóa hiệu năng (React.memo, lazy, suspense, profiling), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 474,
+        "text": "Câu hỏi 474 (Testing (Jest, React Testing Library, Cypress)): Phân tích sâu sắc về Testing (Jest, React Testing Library, Cypress), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 475,
+        "text": "Câu hỏi 475 (Kiến trúc & Design Patterns (HOC, Render Props, Compound Components)): Phân tích sâu sắc về Kiến trúc & Design Patterns (HOC, Render Props, Compound Components), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 476,
+        "text": "Câu hỏi 476 (React Router & Navigation (Advanced, protected routes, lazy loading)): Phân tích sâu sắc về React Router & Navigation (Advanced, protected routes, lazy loading), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 477,
+        "text": "Câu hỏi 477 (Security in React (XSS, CSRF prevention, sanitization)): Phân tích sâu sắc về Security in React (XSS, CSRF prevention, sanitization), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 478,
+        "text": "Câu hỏi 478 (Server-Side Rendering (SSR) & Static Site Generation (SSG) with Next.js): Phân tích sâu sắc về Server-Side Rendering (SSR) & Static Site Generation (SSG) with Next.js, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 479,
+        "text": "Câu hỏi 479 (Custom Hooks development and best practices): Phân tích sâu sắc về Custom Hooks development and best practices, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 480,
+        "text": "Câu hỏi 480 (React 18 features (Concurrent Mode, Transitions, useDeferredValue)): Phân tích sâu sắc về React 18 features (Concurrent Mode, Transitions, useDeferredValue), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 481,
+        "text": "Câu hỏi 481 (Error Boundaries & Error Handling strategies): Phân tích sâu sắc về Error Boundaries & Error Handling strategies, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 482,
+        "text": "Câu hỏi 482 (Accessibility (A11y) in React applications): Phân tích sâu sắc về Accessibility (A11y) in React applications, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 483,
+        "text": "Câu hỏi 483 (Integration with external APIs (REST, GraphQL, real-time)): Phân tích sâu sắc về Integration with external APIs (REST, GraphQL, real-time), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 484,
+        "text": "Câu hỏi 484 (State management patterns and best practices): Phân tích sâu sắc về State management patterns and best practices, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 485,
+        "text": "Câu hỏi 485 (Managing complex forms with Formik or React Hook Form): Phân tích sâu sắc về Managing complex forms with Formik or React Hook Form, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 486,
+        "text": "Câu hỏi 486 (Advanced, high-performance rendering techniques): Phân tích sâu sắc về Advanced, high-performance rendering techniques, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 487,
+        "text": "Câu hỏi 487 (The Fiber architecture and reconciliation process): Phân tích sâu sắc về The Fiber architecture and reconciliation process, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 488,
+        "text": "Câu hỏi 488 (Testing strategies for large scale applications): Phân tích sâu sắc về Testing strategies for large scale applications, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 489,
+        "text": "Câu hỏi 489 (Micro-frontends with React): Phân tích sâu sắc về Micro-frontends with React, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 490,
+        "text": "Câu hỏi 490 (The ecosystem: useful libraries and tools): Phân tích sâu sắc về The ecosystem: useful libraries and tools, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 491,
+        "text": "Câu hỏi 491 (Hooks nâng cao (useMemo, useCallback, useRef, useReducer)): Phân tích sâu sắc về Hooks nâng cao (useMemo, useCallback, useRef, useReducer), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 492,
+        "text": "Câu hỏi 492 (State Management (Redux, Context API, Zustand, Recoil)): Phân tích sâu sắc về State Management (Redux, Context API, Zustand, Recoil), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 493,
+        "text": "Câu hỏi 493 (Tối ưu hóa hiệu năng (React.memo, lazy, suspense, profiling)): Phân tích sâu sắc về Tối ưu hóa hiệu năng (React.memo, lazy, suspense, profiling), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 494,
+        "text": "Câu hỏi 494 (Testing (Jest, React Testing Library, Cypress)): Phân tích sâu sắc về Testing (Jest, React Testing Library, Cypress), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 495,
+        "text": "Câu hỏi 495 (Kiến trúc & Design Patterns (HOC, Render Props, Compound Components)): Phân tích sâu sắc về Kiến trúc & Design Patterns (HOC, Render Props, Compound Components), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 496,
+        "text": "Câu hỏi 496 (React Router & Navigation (Advanced, protected routes, lazy loading)): Phân tích sâu sắc về React Router & Navigation (Advanced, protected routes, lazy loading), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 497,
+        "text": "Câu hỏi 497 (Security in React (XSS, CSRF prevention, sanitization)): Phân tích sâu sắc về Security in React (XSS, CSRF prevention, sanitization), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 498,
+        "text": "Câu hỏi 498 (Server-Side Rendering (SSR) & Static Site Generation (SSG) with Next.js): Phân tích sâu sắc về Server-Side Rendering (SSR) & Static Site Generation (SSG) with Next.js, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 499,
+        "text": "Câu hỏi 499 (Custom Hooks development and best practices): Phân tích sâu sắc về Custom Hooks development and best practices, các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      },
+      {
+        "number": 500,
+        "text": "Câu hỏi 500 (React 18 features (Concurrent Mode, Transitions, useDeferredValue)): Phân tích sâu sắc về React 18 features (Concurrent Mode, Transitions, useDeferredValue), các vấn đề thường gặp và cách tối ưu hóa hiệu quả nhất."
+      }
+    ]
+  }
+}

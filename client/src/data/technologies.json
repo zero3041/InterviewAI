@@ -1,0 +1,40 @@
+{
+  "technologies": [
+    {
+      "id": "java-springboot",
+      "name": "Java Spring Boot",
+      "icon": "coffee",
+      "description": "Backend development với Java và Spring Boot",
+      "color": "blue",
+      "levels": ["junior", "middle"],
+      "dataFile": "questions"
+    },
+    {
+      "id": "php",
+      "name": "PHP",
+      "icon": "code",
+      "description": "Backend development với PHP và Laravel",
+      "color": "purple",
+      "levels": ["junior", "middle"],
+      "dataFile": "php_questions"
+    },
+    {
+      "id": "react",
+      "name": "ReactJS",
+      "icon": "atom",
+      "description": "Frontend development với React",
+      "color": "green",
+      "levels": ["junior", "middle"],
+      "dataFile": "react_questions"
+    },
+    {
+      "id": "nextjs",
+      "name": "Next.js",
+      "icon": "file-code",
+      "description": "Full-stack React framework",
+      "color": "orange",
+      "levels": ["junior", "middle"],
+      "dataFile": "nextjs_questions"
+    }
+  ]
+}
