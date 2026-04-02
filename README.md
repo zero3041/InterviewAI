@@ -2,6 +2,11 @@
 
 Ứng dụng hỗ trợ ôn tập phỏng vấn cho các công nghệ: Java Spring Boot, PHP, React, NextJS. Tích hợp AI để chấm điểm và đánh giá câu trả lời.
 
+Kiến trúc hiện tại đã được tách thành:
+
+- `apps/web`: frontend React + Vite
+- `apps/api`: backend NestJS + PostgreSQL (Drizzle ORM)
+
 ## Tính năng
 
 - 📚 Ngân hàng câu hỏi phỏng vấn theo level (Junior/Middle)
@@ -78,27 +83,26 @@ Chỉnh sửa file `.env`:
 # AI API Configuration
 AI_API_BASE_URL=http://127.0.0.1:8045/v1
 AI_API_KEY=sk-antigravity
-AI_DEFAULT_MODEL=gemini-2.5-flash
+DEFAULT_AI_MODEL=gemini-2.5-flash
+
+# Frontend
+VITE_API_BASE_URL=http://localhost:3001
+
+# Database
+DATABASE_URL=postgres://postgres:postgres@localhost:5432/interview_prep
 ```
 
 ## Chạy ứng dụng
 
 ### Development mode
 
-Chạy cả frontend và backend server:
-
 ```bash
-pnpm dev:all
-```
-
-Hoặc chạy riêng:
-
-```bash
-# Chạy frontend (Vite)
+# Chạy cả web + api
 pnpm dev
 
-# Chạy backend server (Express)
-pnpm dev:server
+# Hoặc chạy riêng từng app
+pnpm dev:web
+pnpm dev:api
 ```
 
 ### Production build
@@ -107,7 +111,7 @@ pnpm dev:server
 # Build
 pnpm build
 
-# Run production server
+# Run backend server
 pnpm start
 ```
 
@@ -119,15 +123,19 @@ pnpm start
 ## Cấu trúc thư mục
 
 ```
-├── client/                 # Frontend React
-│   ├── src/
-│   │   ├── components/    # UI Components
-│   │   ├── data/          # Question data files
-│   │   ├── pages/         # Page components
-│   │   ├── hooks/         # Custom hooks
-│   │   └── lib/           # Utilities
-├── server/                 # Backend Express
-│   └── index.ts           # API server
+├── apps/
+│   ├── web/               # Frontend React + Vite
+│   │   ├── src/
+│   │   │   ├── components/
+│   │   │   ├── data/
+│   │   │   ├── hooks/
+│   │   │   ├── lib/
+│   │   │   └── pages/
+│   └── api/               # Backend NestJS
+│       └── src/
+│           ├── database/
+│           ├── modules/
+│           └── main.ts
 ├── shared/                 # Shared code
 │   ├── const.ts
 │   └── ai-models.ts       # AI model definitions
@@ -164,7 +172,7 @@ pnpm start
 ## Công nghệ sử dụng
 
 - **Frontend**: React 19, TypeScript, Vite, Tailwind CSS, shadcn/ui
-- **Backend**: Express.js, Node.js
+- **Backend**: NestJS, Node.js
 - **Database**: PostgreSQL 16, Drizzle ORM
 - **AI**: OpenAI-compatible API (qua Antigravity Proxy)
 

@@ -5,8 +5,8 @@ import { config } from "dotenv";
 config();
 
 export default defineConfig({
-  schema: "./server/db/schema.ts",
-  out: "./server/db/migrations",
+  schema: "./apps/api/src/database/schema.ts",
+  out: "./apps/api/src/database/migrations",
   dialect: "postgresql",
   dbCredentials: {
     url: process.env.DATABASE_URL || "postgres://postgres:postgres@localhost:5432/interview_prep",
