@@ -37,9 +37,9 @@ const learningPhases = [
 export default function StudyPlanPage() {
   return (
     <AppShell
-      eyebrow="Study Plan Demo"
+      eyebrow="Study plan"
       title="Structured preparation cadence for the JavaScript track."
-      description="Screen này bám theo Stitch board `Lộ trình học JavaScript`. Hiện tại planner chưa có backend, nên toàn bộ phase, milestone và review logic đang là frontend demo nhưng đã đúng visual language của project."
+      description="Planner này dùng UI của TechLab để mô tả cadence học theo tuần. Logic vẫn là preview state, nhưng flow và hierarchy đã khớp với app chính."
       actions={
         <>
           <DemoBadge />
@@ -108,7 +108,7 @@ export default function StudyPlanPage() {
         <div className="space-y-5">
           <div>
             <p className="editorial-kicker">Program phases</p>
-            <h2 className="text-2xl font-semibold text-foreground">Precision-lab sequence</h2>
+            <h2 className="text-2xl font-semibold text-foreground">TechLab study sequence</h2>
           </div>
 
           <div className="grid gap-4">

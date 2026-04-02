@@ -50,9 +50,9 @@ export default function DashboardPage() {
 
   return (
     <AppShell
-      eyebrow="Dashboard Demo"
+      eyebrow="Dashboard"
       title="Personal command cockpit for interview readiness."
-      description="Đây là screen demo để bù phần dashboard Stitch chưa có backend riêng. Nó dùng dữ liệu thật từ session hiện tại nếu có, còn planner và milestone sâu hơn vẫn là mock UI."
+      description="Dashboard này gom dữ liệu thật từ lịch sử và bookmark hiện có, rồi đặt chúng vào cùng workspace TechLab để bạn nhìn ra nhịp luyện tập của mình."
       actions={
         <>
           <DemoBadge />
@@ -109,13 +109,13 @@ export default function DashboardPage() {
                 value={bookmarks.length > 0 ? "Bookmarks armed" : "Needs curation"}
                 tone={bookmarks.length > 0 ? "primary" : "warm"}
               />
-              <InlineStatus label="Planner engine" value="Demo route" tone="warm" />
+              <InlineStatus label="Planner engine" value="Preview mode" tone="warm" />
             </div>
           </Surface>
 
           <Surface>
             <div className="space-y-4">
-              <p className="editorial-kicker">Stitch coverage</p>
+              <p className="editorial-kicker">Workspace links</p>
               {dashboardShortcuts.slice(1, 4).map((shortcut) => (
                 <Link
                   key={shortcut.href}
@@ -142,10 +142,10 @@ export default function DashboardPage() {
             <div>
               <p className="editorial-kicker">Mission board</p>
               <h2 className="text-2xl font-semibold text-foreground">
-                Focus lanes from the Precision Lab dashboard
+                Focus lanes from the TechLab dashboard
               </h2>
             </div>
-            <Badge variant="outline">Demo orchestration</Badge>
+            <Badge variant="outline">Preview workspace</Badge>
           </div>
 
           <div className="grid gap-4 lg:grid-cols-3">
@@ -185,7 +185,7 @@ export default function DashboardPage() {
                 No graded answers yet
               </p>
               <p className="text-sm leading-6 text-muted-foreground">
-                Làm ít nhất một câu hỏi hoặc một test để dashboard demo này chuyển từ empty state sang live state.
+                Làm ít nhất một câu hỏi hoặc một test để dashboard này chuyển từ empty state sang live state.
               </p>
               <Link href="/">
                 <Button>

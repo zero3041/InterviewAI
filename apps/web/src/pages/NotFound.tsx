@@ -10,13 +10,13 @@ export default function NotFound() {
     <AppShell
       eyebrow="404"
       title="This route is outside the mapped interview board."
-      description="Screen này chưa tồn tại trong app hoặc path đã bị sai. Giao diện vẫn giữ cùng ngôn ngữ tối của Precision Lab để không phá trải nghiệm."
+      description="Route này chưa tồn tại trong app hoặc path đang bị sai. Màn 404 vẫn dùng cùng shell của TechLab để không làm gãy trải nghiệm."
       actions={
         <>
           <Link href="/dashboard">
             <Button variant="outline">
               <Sparkles className="size-4" />
-              Dashboard demo
+              Dashboard
             </Button>
           </Link>
           <Button onClick={() => setLocation("/")}>
@@ -34,7 +34,7 @@ export default function NotFound() {
           <div className="space-y-3">
             <p className="font-display text-5xl font-semibold tracking-[-0.08em] text-foreground">404</p>
             <p className="text-sm leading-7 text-muted-foreground">
-              Page not found. Hãy quay lại trang chủ hoặc mở dashboard demo để tiếp tục đi trong board mới.
+              Page not found. Hãy quay lại trang chủ hoặc mở dashboard để tiếp tục trong workspace hiện tại.
             </p>
           </div>
         </div>

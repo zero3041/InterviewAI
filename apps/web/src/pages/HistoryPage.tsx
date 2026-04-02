@@ -85,7 +85,7 @@ export default function HistoryPage() {
     <AppShell
       eyebrow="History log"
       title="A scored record of every answer, follow-up, and revision."
-      description="Lịch sử giờ được trình bày như một review desk: score trends, entry list, detail dialog và chat follow-up đều nằm trong cùng grammar tối của Stitch."
+      description="Lịch sử được trình bày như một review desk: score trends, entry list, detail dialog và chat follow-up đều nằm trong cùng grammar tối của TechLab."
       actions={
         <>
           {history.length > 0 ? (

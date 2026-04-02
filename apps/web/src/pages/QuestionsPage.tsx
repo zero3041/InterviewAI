@@ -135,7 +135,7 @@ export default function QuestionsPage() {
     <AppShell
       eyebrow="Question library"
       title={`${technologyName} ${levelLabel.toLowerCase()} library.`}
-      description="Screen này gom hai ý trong Stitch: khám phá câu hỏi và thư viện câu hỏi ôn tập. Search, category rail, bookmark và answer dialog đều đã chuyển lên cùng language dark editorial."
+      description="Màn này gom stack library, search, category rail, bookmark và answer dialog vào cùng một workspace tối nhất quán với TechLab."
       actions={
         <>
           <Link href={backLink}>

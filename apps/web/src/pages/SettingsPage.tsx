@@ -32,7 +32,7 @@ export default function SettingsPage() {
   const [models, setModels] = useState<AIModel[]>([]);
   const [selectedModel, setSelectedModel] = useState("");
   const [answerTone, setAnswerTone] = useState("direct");
-  const [nickname, setNickname] = useState("Precision Candidate");
+  const [nickname, setNickname] = useState("TechLab Candidate");
 
   useEffect(() => {
     async function loadModels() {
@@ -46,7 +46,7 @@ export default function SettingsPage() {
         setModels(data.models ?? []);
         setSelectedModel(data.defaultModel ?? "");
       } catch {
-        // Demo screen keeps working with empty model state.
+        // Keep local preferences editable even when model registry is unavailable.
       }
     }
 
@@ -55,9 +55,9 @@ export default function SettingsPage() {
 
   return (
     <AppShell
-      eyebrow="Settings Demo"
+      eyebrow="Settings"
       title="Operator preferences for scoring, review style, and session posture."
-      description="Đây là screen demo cho phần thiết lập tài khoản và AI workflow. UI đã sẵn để nối vào API preferences sau này, còn hiện tại giữ state cục bộ để hoàn thiện whole board Stitch."
+      description="Thiết lập này tập trung vào model mặc định, cách phản hồi và hồ sơ người dùng. Hiện tại state vẫn cục bộ, nhưng UI đã được kéo về cùng workspace TechLab."
       actions={
         <>
           <DemoBadge />
@@ -84,14 +84,14 @@ export default function SettingsPage() {
           <MetricTile
             label="Default model"
             value={selectedModel || "Loading"}
-            caption="Kéo trực tiếp từ backend `/models` để demo screen bám với stack mới."
+            caption="Đọc từ backend `/models` khi có, còn không sẽ giữ chế độ fallback cục bộ."
             icon={Bot}
             tone="primary"
           />
           <MetricTile
             label="Mode"
-            value="Demo UI"
-            caption="Form này chưa persist server-side, nhưng layout và logic state đã sẵn."
+            value="Local state"
+            caption="Chưa persist server-side, nhưng form và interaction hierarchy đã sẵn."
             icon={SlidersHorizontal}
             tone="warm"
           />
@@ -133,7 +133,7 @@ export default function SettingsPage() {
                     </SelectItem>
                   ))}
                   {models.length === 0 ? (
-                    <SelectItem value="demo-fallback">Demo fallback</SelectItem>
+                    <SelectItem value="local-fallback">Local fallback</SelectItem>
                   ) : null}
                 </SelectContent>
               </Select>

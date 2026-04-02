@@ -9,7 +9,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Spinner } from "@/components/ui/spinner";
 import { useTechnologies } from "@/hooks/useQuestionsApi";
-import { apiFetch } from "@/lib/api";
+import { countCategories, countQuestions, getLevelData } from "@/lib/questionsData";
 import {
   ArrowRight,
   BookOpenText,
@@ -17,7 +17,7 @@ import {
   Layers3,
   Trophy,
 } from "lucide-react";
-import { useEffect, useMemo, useState } from "react";
+import { useMemo } from "react";
 import { Link, useParams } from "wouter";
 
 const levelDetails = {
@@ -40,53 +40,39 @@ const levelDetails = {
 export default function TechPage() {
   const { techId } = useParams<{ techId: string }>();
   const { technologies, isLoading: techLoading, error: techError } = useTechnologies();
-  const [questionCounts, setQuestionCounts] = useState<Record<string, number>>({});
-  const [categoryCounts, setCategoryCounts] = useState<Record<string, number>>({});
-  const [isLoadingCounts, setIsLoadingCounts] = useState(true);
-
   const tech = technologies.find((item) => item.id === techId);
-
-  useEffect(() => {
-    async function fetchCounts() {
-      if (!tech) return;
-
-      setIsLoadingCounts(true);
-      const responses = await Promise.all(
-        tech.levels.map(async (level) => {
-          try {
-            const response = await apiFetch(`/technologies/${techId}/questions?level=${level}`);
-            if (!response.ok) {
-              return { level, totalQuestions: 0, totalCategories: 0 };
-            }
-
-            const data = await response.json();
-            return {
-              level,
-              totalQuestions: data.totalQuestions || 0,
-              totalCategories: Object.keys(data.categories || {}).length,
-            };
-          } catch {
-            return { level, totalQuestions: 0, totalCategories: 0 };
-          }
-        })
-      );
-
-      const qCounts: Record<string, number> = {};
-      const cCounts: Record<string, number> = {};
-      responses.forEach((entry) => {
-        qCounts[entry.level] = entry.totalQuestions;
-        cCounts[entry.level] = entry.totalCategories;
-      });
-
-      setQuestionCounts(qCounts);
-      setCategoryCounts(cCounts);
-      setIsLoadingCounts(false);
+  const { questionCounts, categoryCounts, totalAcrossLevels, totalCategoryCount } = useMemo(() => {
+    if (!tech) {
+      return {
+        questionCounts: {} as Record<string, number>,
+        categoryCounts: {} as Record<string, number>,
+        totalAcrossLevels: 0,
+        totalCategoryCount: 0,
+      };
     }
 
-    if (tech) {
-      fetchCounts();
-    }
-  }, [tech, techId]);
+    const nextQuestionCounts: Record<string, number> = {};
+    const nextCategoryCounts: Record<string, number> = {};
+
+    tech.levels.forEach((level) => {
+      if (level !== "junior" && level !== "middle") {
+        nextQuestionCounts[level] = 0;
+        nextCategoryCounts[level] = 0;
+        return;
+      }
+
+      const levelData = getLevelData(tech.id, level);
+      nextQuestionCounts[level] = levelData ? countQuestions(levelData) : 0;
+      nextCategoryCounts[level] = levelData ? countCategories(levelData) : 0;
+    });
+
+    return {
+      questionCounts: nextQuestionCounts,
+      categoryCounts: nextCategoryCounts,
+      totalAcrossLevels: Object.values(nextQuestionCounts).reduce((sum, value) => sum + value, 0),
+      totalCategoryCount: Object.values(nextCategoryCounts).reduce((sum, value) => sum + value, 0),
+    };
+  }, [tech]);
 
   if (techLoading) {
     return (
@@ -113,15 +99,6 @@ export default function TechPage() {
       </div>
     );
   }
-
-  const totalAcrossLevels = useMemo(
-    () => Object.values(questionCounts).reduce((sum, value) => sum + value, 0),
-    [questionCounts]
-  );
-  const totalCategoryCount = useMemo(
-    () => Object.values(categoryCounts).reduce((sum, value) => sum + value, 0),
-    [categoryCounts]
-  );
 
   return (
     <AppShell
@@ -157,13 +134,13 @@ export default function TechPage() {
           </div>
           <MetricTile
             label="Question bank"
-            value={isLoadingCounts ? "..." : `${totalAcrossLevels}+`}
+            value={`${totalAcrossLevels}+`}
             caption="Tổng câu hỏi gộp qua các level của stack này."
             icon={Layers3}
           />
           <MetricTile
             label="Category spread"
-            value={isLoadingCounts ? "..." : totalCategoryCount}
+            value={totalCategoryCount}
             caption="Số danh mục hiện có để điều phối library và test coverage."
             icon={Trophy}
             tone="warm"
@@ -177,11 +154,11 @@ export default function TechPage() {
               <p className="editorial-kicker">Readiness notes</p>
               <InlineStatus
                 label="Question source"
-                value={isLoadingCounts ? "Syncing" : "Live API"}
-                tone={isLoadingCounts ? "neutral" : "success"}
+                value="Bundled dataset"
+                tone="success"
               />
               <InlineStatus label="Track count" value={`${tech.levels.length} routes`} tone="primary" />
-              <InlineStatus label="Learning plan" value="Demo supported" tone="warm" />
+              <InlineStatus label="Learning plan" value="Preview ready" tone="warm" />
             </div>
           </Surface>
         </>
@@ -228,13 +205,13 @@ export default function TechPage() {
                     <div className="surface-inset px-4 py-3">
                       <p className="editorial-kicker">Questions</p>
                       <p className="mt-2 font-display text-3xl font-semibold tracking-[-0.06em] text-foreground">
-                        {isLoadingCounts ? "..." : `${questionCount}+`}
+                        {`${questionCount}+`}
                       </p>
                     </div>
                     <div className="surface-inset px-4 py-3">
                       <p className="editorial-kicker">Categories</p>
                       <p className="mt-2 font-display text-3xl font-semibold tracking-[-0.06em] text-foreground">
-                        {isLoadingCounts ? "..." : categoryCount}
+                        {categoryCount}
                       </p>
                     </div>
                   </div>
