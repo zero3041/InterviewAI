@@ -1,22 +1,5 @@
-import { useState } from "react";
-import { Link } from "wouter";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Progress } from "@/components/ui/progress";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog";
+import { MarkdownContent } from "@/components/MarkdownContent";
+import { AppShell, InlineStatus, MetricTile, Surface } from "@/components/app-shell";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -28,20 +11,42 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import {
-  ChevronLeft,
-  History,
-  Trash2,
-  MessageCircle,
-  CheckCircle,
-  Lightbulb,
-  TrendingUp,
-  Calendar,
-  Loader2,
-} from "lucide-react";
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import { Progress } from "@/components/ui/progress";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { useHistoryApi, type HistoryEntry } from "@/hooks/useHistoryApi";
 import { useTechnologies } from "@/hooks/useQuestionsApi";
-import { MarkdownContent } from "@/components/MarkdownContent";
+import { cn } from "@/lib/utils";
+import {
+  CalendarDays,
+  CheckCircle,
+  History,
+  Lightbulb,
+  Loader2,
+  MessageCircle,
+  Sparkles,
+  Trash2,
+  TrendingUp,
+} from "lucide-react";
+import { useMemo, useState } from "react";
+import { Link } from "wouter";
+
+function formatLocalDate(value: string) {
+  return new Date(value).toLocaleString("vi-VN");
+}
 
 export default function HistoryPage() {
   const { history, isLoading, deleteEntry, clearHistory, getStats } = useHistoryApi();
@@ -51,144 +56,41 @@ export default function HistoryPage() {
 
   const stats = getStats();
   const uniqueTechCount = Object.keys(stats.techCounts).length;
-
-  // Filter history by technology
   const filteredHistory =
-    selectedTech === "all"
-      ? history
-      : history.filter((e) => e.techId === selectedTech);
+    selectedTech === "all" ? history : history.filter((entry) => entry.techId === selectedTech);
+  const usedTechnologies = Array.from(new Set(history.map((entry) => entry.techId)));
 
-  // Get unique technologies from history
-  const usedTechnologies = Array.from(new Set(history.map((e) => e.techId)));
-
-  const getScoreColor = (score: number) => {
-    if (score >= 80) return "text-green-600";
-    if (score >= 60) return "text-yellow-600";
-    if (score >= 40) return "text-orange-600";
-    return "text-red-600";
-  };
-
-  const getScoreBadgeVariant = (
-    score: number
-  ): "default" | "secondary" | "destructive" => {
-    if (score >= 80) return "default";
-    if (score >= 60) return "secondary";
-    return "destructive";
-  };
+  const sortedTechCounts = useMemo(
+    () => Object.entries(stats.techCounts).sort((left, right) => right[1] - left[1]),
+    [stats.techCounts]
+  );
 
   const getTechName = (techId: string) => {
-    const tech = technologies.find((t) => t.id === techId);
+    const tech = technologies.find((item) => item.id === techId);
     return tech?.name || techId;
   };
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white flex items-center justify-center">
+      <div className="flex min-h-screen items-center justify-center bg-background">
         <div className="text-center">
-          <Loader2 className="w-8 h-8 animate-spin mx-auto mb-4 text-purple-600" />
-          <p className="text-slate-600">Đang tải lịch sử...</p>
+          <Loader2 className="mx-auto mb-4 size-8 animate-spin text-[var(--primary)]" />
+          <p className="text-muted-foreground">Đang tải lịch sử...</p>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
-      <div className="container mx-auto px-4 py-8 max-w-6xl">
-        {/* Header */}
-        <div className="flex items-center justify-between mb-8">
-          <div className="flex items-center gap-4">
-            <Link href="/">
-              <Button variant="ghost" size="icon">
-                <ChevronLeft className="w-5 h-5" />
-              </Button>
-            </Link>
-            <div>
-              <h1 className="text-3xl font-bold text-slate-900 flex items-center gap-3">
-                <History className="w-8 h-8 text-purple-600" />
-                Lịch sử làm bài
-              </h1>
-              <p className="text-slate-600 mt-1">
-                Xem lại các câu trả lời đã được AI chấm điểm
-              </p>
-            </div>
-          </div>
-
-          {history.length > 0 && (
-            <AlertDialog>
-              <AlertDialogTrigger asChild>
-                <Button variant="outline" className="text-red-600 border-red-200 hover:bg-red-50">
-                  <Trash2 className="w-4 h-4 mr-2" />
-                  Xóa tất cả
-                </Button>
-              </AlertDialogTrigger>
-              <AlertDialogContent>
-                <AlertDialogHeader>
-                  <AlertDialogTitle>Xác nhận xóa lịch sử</AlertDialogTitle>
-                  <AlertDialogDescription>
-                    Bạn có chắc chắn muốn xóa toàn bộ lịch sử? Hành động này không thể hoàn tác.
-                  </AlertDialogDescription>
-                </AlertDialogHeader>
-                <AlertDialogFooter>
-                  <AlertDialogCancel>Hủy</AlertDialogCancel>
-                  <AlertDialogAction
-                    onClick={clearHistory}
-                    className="bg-red-600 hover:bg-red-700"
-                  >
-                    Xóa tất cả
-                  </AlertDialogAction>
-                </AlertDialogFooter>
-              </AlertDialogContent>
-            </AlertDialog>
-          )}
-        </div>
-
-        {/* Stats Cards */}
-        {history.length > 0 && (
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-            <Card className="border-blue-200 bg-blue-50/50">
-              <CardContent className="pt-6">
-                <div className="flex items-center gap-3">
-                  <Calendar className="w-8 h-8 text-blue-600" />
-                  <div>
-                    <p className="text-2xl font-bold text-blue-700">{stats.totalAnswers}</p>
-                    <p className="text-sm text-blue-600">Tổng số lần làm bài</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="border-green-200 bg-green-50/50">
-              <CardContent className="pt-6">
-                <div className="flex items-center gap-3">
-                  <TrendingUp className="w-8 h-8 text-green-600" />
-                  <div>
-                    <p className="text-2xl font-bold text-green-700">{stats.avgScore}/100</p>
-                    <p className="text-sm text-green-600">Điểm trung bình</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="border-purple-200 bg-purple-50/50">
-              <CardContent className="pt-6">
-                <div className="flex items-center gap-3">
-                  <History className="w-8 h-8 text-purple-600" />
-                  <div>
-                    <p className="text-2xl font-bold text-purple-700">{uniqueTechCount}</p>
-                    <p className="text-sm text-purple-600">Công nghệ đã học</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        )}
-
-        {/* Filter */}
-        {history.length > 0 && (
-          <div className="mb-6">
+    <AppShell
+      eyebrow="History log"
+      title="A scored record of every answer, follow-up, and revision."
+      description="Lịch sử giờ được trình bày như một review desk: score trends, entry list, detail dialog và chat follow-up đều nằm trong cùng grammar tối của Stitch."
+      actions={
+        <>
+          {history.length > 0 ? (
             <Select value={selectedTech} onValueChange={setSelectedTech}>
-              <SelectTrigger className="w-[200px]">
+              <SelectTrigger className="w-52">
                 <SelectValue placeholder="Chọn công nghệ" />
               </SelectTrigger>
               <SelectContent>
@@ -200,256 +102,303 @@ export default function HistoryPage() {
                 ))}
               </SelectContent>
             </Select>
-          </div>
-        )}
+          ) : null}
 
-        {/* History List */}
-        {filteredHistory.length === 0 ? (
-          <Card className="border-slate-200">
-            <CardContent className="py-12 text-center">
-              <History className="w-16 h-16 text-slate-300 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-slate-600 mb-2">
-                Chưa có lịch sử
-              </h3>
-              <p className="text-slate-500 mb-4">
-                Hãy làm bài và để AI chấm điểm để xem lịch sử tại đây
-              </p>
-              <Link href="/">
-                <Button>Bắt đầu học</Button>
-              </Link>
-            </CardContent>
-          </Card>
-        ) : (
-          <div className="space-y-4">
-            {filteredHistory.map((entry) => (
-              <Card
-                key={entry.id}
-                className="border-slate-200 hover:border-purple-300 transition-colors cursor-pointer"
-                onClick={() => setSelectedEntry(entry)}
-              >
-                <CardContent className="py-4">
-                  <div className="flex items-start justify-between gap-4">
-                    <div className="flex-1 min-w-0">
-                      <div className="flex items-center gap-3 mb-2 flex-wrap">
-                        <Badge variant="outline" className="text-xs">
-                          {getTechName(entry.techId)}
+          {history.length > 0 ? (
+            <AlertDialog>
+              <AlertDialogTrigger asChild>
+                <Button variant="outline">
+                  <Trash2 className="size-4" />
+                  Clear history
+                </Button>
+              </AlertDialogTrigger>
+              <AlertDialogContent>
+                <AlertDialogHeader>
+                  <AlertDialogTitle>Xác nhận xóa lịch sử</AlertDialogTitle>
+                  <AlertDialogDescription>
+                    Bạn có chắc chắn muốn xóa toàn bộ lịch sử? Hành động này không thể hoàn tác.
+                  </AlertDialogDescription>
+                </AlertDialogHeader>
+                <AlertDialogFooter>
+                  <AlertDialogCancel>Hủy</AlertDialogCancel>
+                  <AlertDialogAction onClick={clearHistory}>Xóa tất cả</AlertDialogAction>
+                </AlertDialogFooter>
+              </AlertDialogContent>
+            </AlertDialog>
+          ) : null}
+
+          <Link href="/">
+            <Button>
+              <Sparkles className="size-4" />
+              Back to stacks
+            </Button>
+          </Link>
+        </>
+      }
+      heroMeta={
+        <>
+          <MetricTile
+            label="Total answers"
+            value={stats.totalAnswers}
+            caption="Số entry AI scoring được lưu trong session hiện tại."
+            icon={CalendarDays}
+          />
+          <MetricTile
+            label="Average score"
+            value={`${stats.avgScore}/100`}
+            caption="Điểm trung bình hiện có, useful để đọc hướng tiến bộ toàn cục."
+            icon={TrendingUp}
+            tone="success"
+          />
+          <MetricTile
+            label="Active stacks"
+            value={uniqueTechCount}
+            caption="Số công nghệ đã từng được luyện tập trong history hiện có."
+            icon={History}
+            tone="warm"
+          />
+        </>
+      }
+      aside={
+        <>
+          <Surface>
+            <div className="space-y-4">
+              <p className="editorial-kicker">Distribution</p>
+              <InlineStatus
+                label="Excellent"
+                value={`${stats.scoreDistribution.excellent}`}
+                tone="success"
+              />
+              <InlineStatus
+                label="Good"
+                value={`${stats.scoreDistribution.good}`}
+                tone="primary"
+              />
+              <InlineStatus
+                label="Average"
+                value={`${stats.scoreDistribution.average}`}
+                tone="warm"
+              />
+              <InlineStatus
+                label="Needs work"
+                value={`${stats.scoreDistribution.needsWork}`}
+                tone="neutral"
+              />
+            </div>
+          </Surface>
+
+          {sortedTechCounts.length > 0 ? (
+            <Surface>
+              <div className="space-y-4">
+                <p className="editorial-kicker">Most practiced</p>
+                <div className="space-y-2">
+                  {sortedTechCounts.map(([techId, count]) => (
+                    <div
+                      key={techId}
+                      className="surface-inset flex items-center justify-between gap-3 px-4 py-3"
+                    >
+                      <span className="text-sm text-foreground">{getTechName(techId)}</span>
+                      <Badge variant="outline">{count}</Badge>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </Surface>
+          ) : null}
+        </>
+      }
+    >
+      {filteredHistory.length === 0 ? (
+        <Surface>
+          <div className="surface-inset space-y-4 p-10 text-center">
+            <History className="mx-auto size-14 text-muted-foreground" />
+            <p className="font-display text-2xl font-semibold tracking-[-0.05em] text-foreground">
+              Chưa có lịch sử
+            </p>
+            <p className="text-sm leading-6 text-muted-foreground">
+              Hãy làm bài và để AI chấm điểm để review desk này có dữ liệu thật.
+            </p>
+            <Link href="/">
+              <Button>Bắt đầu học</Button>
+            </Link>
+          </div>
+        </Surface>
+      ) : (
+        <Surface>
+          <div className="space-y-5">
+            <div>
+              <p className="editorial-kicker">Entry log</p>
+              <h2 className="text-2xl font-semibold text-foreground">Scored answer archive</h2>
+            </div>
+
+            <div className="space-y-3">
+              {filteredHistory.map((entry) => (
+                <div
+                  key={entry.id}
+                  className="surface-inset flex cursor-pointer flex-col gap-4 p-5 lg:flex-row lg:items-start lg:justify-between"
+                  onClick={() => setSelectedEntry(entry)}
+                >
+                  <div className="space-y-3">
+                    <div className="flex flex-wrap items-center gap-2">
+                      <Badge variant="outline">{getTechName(entry.techId)}</Badge>
+                      <Badge variant="secondary">{entry.level}</Badge>
+                      <Badge variant={entry.score >= 60 ? "secondary" : "destructive"}>
+                        {entry.score}/100
+                      </Badge>
+                      <span className="text-sm text-muted-foreground">
+                        {formatLocalDate(entry.createdAt)}
+                      </span>
+                      {entry.chatMessages.length > 0 ? (
+                        <Badge>
+                          <MessageCircle className="size-3" />
+                          {entry.chatMessages.length} follow-up
                         </Badge>
-                        <Badge variant="outline" className="text-xs capitalize">
-                          {entry.level}
-                        </Badge>
-                        <Badge variant={getScoreBadgeVariant(entry.score)}>
-                          {entry.score}/100
-                        </Badge>
-                        <span className="text-sm text-slate-500">
-                          {new Date(entry.createdAt).toLocaleString("vi-VN")}
-                        </span>
-                        {entry.chatMessages.length > 0 && (
-                          <span className="text-xs text-purple-600 flex items-center gap-1">
-                            <MessageCircle className="w-3 h-3" />
-                            {entry.chatMessages.length} tin nhắn
-                          </span>
-                        )}
-                      </div>
-                      <p className="text-slate-900 font-medium mb-1 line-clamp-1">
-                        {entry.questionText}
-                      </p>
-                      <p className="text-sm text-slate-600 line-clamp-2">
-                        {entry.userAnswer}
+                      ) : null}
+                    </div>
+                    <p className="font-medium text-foreground">{entry.questionText}</p>
+                    <p className="line-clamp-2 text-sm leading-6 text-muted-foreground">
+                      {entry.userAnswer}
+                    </p>
+                  </div>
+
+                  <div className="flex items-center gap-2">
+                    <div className="surface-inset min-w-24 px-4 py-3 text-center">
+                      <p className="editorial-kicker">Score</p>
+                      <p className="mt-2 font-display text-3xl font-semibold tracking-[-0.06em] text-foreground">
+                        {entry.score}
                       </p>
                     </div>
                     <Button
                       variant="ghost"
-                      size="icon"
-                      onClick={(e) => {
-                        e.stopPropagation();
+                      size="icon-sm"
+                      onClick={(event) => {
+                        event.stopPropagation();
                         deleteEntry(entry.id);
                       }}
-                      className="text-slate-400 hover:text-red-500 flex-shrink-0"
                     >
-                      <Trash2 className="w-4 h-4" />
+                      <Trash2 className="size-4 text-muted-foreground" />
                     </Button>
                   </div>
-                </CardContent>
-              </Card>
-            ))}
+                </div>
+              ))}
+            </div>
           </div>
-        )}
-      </div>
+        </Surface>
+      )}
 
-      {/* Detail Dialog */}
       <Dialog open={!!selectedEntry} onOpenChange={() => setSelectedEntry(null)}>
-        <DialogContent className="sm:max-w-4xl max-w-[95vw] w-[95vw] max-h-[90vh] overflow-y-auto">
-          {selectedEntry && (
+        <DialogContent className="max-h-[90vh] w-[95vw] max-w-5xl overflow-y-auto">
+          {selectedEntry ? (
             <>
               <DialogHeader>
-                <DialogTitle className="flex items-center gap-3 flex-wrap">
+                <DialogTitle className="flex flex-wrap items-center gap-2">
                   <Badge variant="outline">{getTechName(selectedEntry.techId)}</Badge>
-                  <Badge variant="outline" className="capitalize">
-                    {selectedEntry.level}
+                  <Badge variant="secondary">{selectedEntry.level}</Badge>
+                  <Badge variant={selectedEntry.score >= 60 ? "secondary" : "destructive"}>
+                    {selectedEntry.score}/100
                   </Badge>
-                  <span className="text-sm text-slate-500">
-                    {new Date(selectedEntry.createdAt).toLocaleString("vi-VN")}
+                  <span className="text-sm font-normal text-muted-foreground">
+                    {formatLocalDate(selectedEntry.createdAt)}
                   </span>
                 </DialogTitle>
               </DialogHeader>
 
               <div className="space-y-4">
-                {/* Question */}
-                <Card className="border-slate-200 bg-slate-50">
-                  <CardHeader className="pb-2">
-                    <CardTitle className="text-base">Câu hỏi</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-slate-900 font-medium">{selectedEntry.questionText}</p>
-                  </CardContent>
-                </Card>
+                <div className="surface-inset space-y-3 p-5">
+                  <p className="editorial-kicker">Question</p>
+                  <p className="text-sm leading-7 text-foreground">{selectedEntry.questionText}</p>
+                </div>
 
-                {/* User's Answer */}
-                <Card className="border-slate-200">
-                  <CardHeader className="pb-2">
-                    <CardTitle className="text-base">Câu trả lời của bạn</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-slate-700 whitespace-pre-wrap">{selectedEntry.userAnswer}</p>
-                  </CardContent>
-                </Card>
+                <div className="surface-inset space-y-3 p-5">
+                  <p className="editorial-kicker">Your answer</p>
+                  <p className="whitespace-pre-wrap text-sm leading-7 text-muted-foreground">
+                    {selectedEntry.userAnswer}
+                  </p>
+                </div>
 
-                {/* Score */}
-                <Card className="border-slate-200">
-                  <CardHeader className="pb-2">
-                    <CardTitle className="flex items-center justify-between">
-                      <span>Điểm số</span>
-                      <Badge
-                        variant={getScoreBadgeVariant(selectedEntry.score)}
-                        className="text-lg px-3 py-1"
-                      >
-                        {selectedEntry.score}/100
-                      </Badge>
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <Progress value={selectedEntry.score} className="h-3 mb-2" />
-                    <p className={`text-lg font-semibold ${getScoreColor(selectedEntry.score)}`}>
-                      {selectedEntry.score >= 80
-                        ? "Xuất sắc!"
-                        : selectedEntry.score >= 60
-                          ? "Khá tốt"
-                          : selectedEntry.score >= 40
-                            ? "Cần cải thiện"
-                            : "Cần học thêm"}
-                    </p>
-                  </CardContent>
-                </Card>
+                <div className="surface-inset space-y-4 p-5">
+                  <div className="flex items-center justify-between gap-4">
+                    <p className="editorial-kicker">Score profile</p>
+                    <Badge variant={selectedEntry.score >= 60 ? "secondary" : "destructive"}>
+                      {selectedEntry.score}/100
+                    </Badge>
+                  </div>
+                  <Progress value={selectedEntry.score} />
+                </div>
 
-                {/* Feedback */}
-                <Card className="border-slate-200">
-                  <CardHeader className="pb-2">
-                    <CardTitle className="text-base">Nhận xét</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-slate-700">{selectedEntry.feedback}</p>
-                  </CardContent>
-                </Card>
+                <div className="surface-inset space-y-3 p-5">
+                  <p className="editorial-kicker">Feedback</p>
+                  <p className="text-sm leading-7 text-muted-foreground">{selectedEntry.feedback}</p>
+                </div>
 
-                {/* Strengths */}
-                {selectedEntry.strengths.length > 0 && (
-                  <Card className="border-green-200 bg-green-50/50">
-                    <CardHeader className="pb-2">
-                      <CardTitle className="text-base flex items-center gap-2 text-green-700">
-                        <CheckCircle className="w-5 h-5" />
-                        Điểm mạnh
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <ul className="space-y-2">
-                        {selectedEntry.strengths.map((s, i) => (
-                          <li key={i} className="flex items-start gap-2 text-green-800">
-                            <span className="text-green-500 mt-1">•</span>
-                            <span>{s}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </CardContent>
-                  </Card>
-                )}
+                {selectedEntry.strengths.length > 0 ? (
+                  <div className="surface-inset bg-[linear-gradient(180deg,rgba(45,212,191,0.18),rgba(8,13,28,0.96))] p-5">
+                    <p className="editorial-kicker">Strengths</p>
+                    <ul className="mt-3 space-y-2">
+                      {selectedEntry.strengths.map((strength) => (
+                        <li key={strength} className="text-sm leading-6 text-emerald-100">
+                          • {strength}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ) : null}
 
-                {/* Improvements */}
-                {selectedEntry.improvements.length > 0 && (
-                  <Card className="border-orange-200 bg-orange-50/50">
-                    <CardHeader className="pb-2">
-                      <CardTitle className="text-base flex items-center gap-2 text-orange-700">
-                        <Lightbulb className="w-5 h-5" />
-                        Cần cải thiện
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <ul className="space-y-2">
-                        {selectedEntry.improvements.map((imp, i) => (
-                          <li key={i} className="flex items-start gap-2 text-orange-800">
-                            <span className="text-orange-500 mt-1">•</span>
-                            <span>{imp}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </CardContent>
-                  </Card>
-                )}
+                {selectedEntry.improvements.length > 0 ? (
+                  <div className="surface-inset bg-[linear-gradient(180deg,rgba(255,182,149,0.18),rgba(8,13,28,0.96))] p-5">
+                    <p className="editorial-kicker">Needs work</p>
+                    <ul className="mt-3 space-y-2">
+                      {selectedEntry.improvements.map((improvement) => (
+                        <li key={improvement} className="text-sm leading-6 text-amber-50">
+                          • {improvement}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ) : null}
 
-                {/* Sample Answer */}
-                {selectedEntry.sampleAnswer && (
-                  <Card className="border-blue-200 bg-blue-50/50">
-                    <CardHeader className="pb-2">
-                      <CardTitle className="text-base flex items-center gap-2 text-blue-700">
-                        <Lightbulb className="w-5 h-5" />
-                        Câu trả lời mẫu
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <MarkdownContent content={selectedEntry.sampleAnswer} className="text-blue-800" />
-                    </CardContent>
-                  </Card>
-                )}
+                {selectedEntry.sampleAnswer ? (
+                  <div className="surface-inset p-5">
+                    <p className="editorial-kicker">Sample answer</p>
+                    <div className="mt-3 text-sm leading-7 text-muted-foreground">
+                      <MarkdownContent content={selectedEntry.sampleAnswer} />
+                    </div>
+                  </div>
+                ) : null}
 
-                {/* Chat History */}
-                {selectedEntry.chatMessages.length > 0 && (
-                  <Card className="border-purple-200 bg-purple-50/50">
-                    <CardHeader className="pb-2">
-                      <CardTitle className="text-base flex items-center gap-2 text-purple-700">
-                        <MessageCircle className="w-5 h-5" />
-                        Lịch sử hỏi đáp
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="space-y-3">
-                        {selectedEntry.chatMessages.map((msg, i) => (
+                {selectedEntry.chatMessages.length > 0 ? (
+                  <div className="surface-inset p-5">
+                    <p className="editorial-kicker">Follow-up thread</p>
+                    <div className="mt-4 space-y-3">
+                      {selectedEntry.chatMessages.map((message, index) => (
+                        <div
+                          key={`${message.role}-${index}`}
+                          className={message.role === "user" ? "flex justify-end" : "flex justify-start"}
+                        >
                           <div
-                            key={i}
-                            className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"}`}
+                            className={cn(
+                              "max-w-[85%] rounded-[1.2rem] px-4 py-3 text-sm leading-6",
+                              message.role === "user"
+                                ? "bg-[linear-gradient(135deg,var(--primary-container),var(--primary))] text-[var(--primary-foreground)]"
+                                : "surface-inset text-muted-foreground"
+                            )}
                           >
-                            <div
-                              className={`max-w-[85%] rounded-lg px-3 py-2 text-sm ${
-                                msg.role === "user"
-                                  ? "bg-purple-600 text-white"
-                                  : "bg-white text-slate-800 border border-purple-100"
-                              }`}
-                            >
-                              {msg.role === "assistant" ? (
-                                <MarkdownContent content={msg.content} />
-                              ) : (
-                                <p className="whitespace-pre-wrap">{msg.content}</p>
-                              )}
-                            </div>
+                            {message.role === "assistant" ? (
+                              <MarkdownContent content={message.content} />
+                            ) : (
+                              <p className="whitespace-pre-wrap">{message.content}</p>
+                            )}
                           </div>
-                        ))}
-                      </div>
-                    </CardContent>
-                  </Card>
-                )}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ) : null}
               </div>
             </>
-          )}
+          ) : null}
         </DialogContent>
       </Dialog>
-    </div>
+    </AppShell>
   );
 }

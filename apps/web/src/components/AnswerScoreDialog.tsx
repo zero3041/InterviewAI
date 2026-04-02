@@ -243,10 +243,10 @@ export function AnswerScoreDialog({
   };
 
   const getScoreColor = (score: number) => {
-    if (score >= 80) return "text-green-600";
-    if (score >= 60) return "text-yellow-600";
-    if (score >= 40) return "text-orange-600";
-    return "text-red-600";
+    if (score >= 80) return "text-emerald-300";
+    if (score >= 60) return "text-[var(--tertiary)]";
+    if (score >= 40) return "text-orange-200";
+    return "text-rose-200";
   };
 
   const getScoreBadgeVariant = (score: number): "default" | "secondary" | "destructive" | "outline" => {
@@ -261,7 +261,7 @@ export function AnswerScoreDialog({
         <DialogHeader>
           <DialogTitle className="flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <span className="inline-flex w-7 h-7 rounded-full bg-blue-100 text-blue-700 text-sm font-semibold items-center justify-center">
+              <span className="question-index h-7 w-7 text-sm">
                 {questionNumber}
               </span>
               <span className="text-lg">Trả lời câu hỏi</span>
@@ -285,8 +285,8 @@ export function AnswerScoreDialog({
         </DialogHeader>
 
         {/* Question Display */}
-        <div className="bg-slate-50 rounded-lg p-4 mb-4">
-          <p className="text-slate-900 font-medium">{question}</p>
+        <div className="surface-inset mb-4 p-4">
+          <p className="font-medium text-foreground">{question}</p>
         </div>
 
         {/* History View Mode */}
@@ -303,23 +303,23 @@ export function AnswerScoreDialog({
                   >
                     ← Quay lại
                   </Button>
-                  <span className="text-sm text-slate-500">
+                  <span className="text-sm text-muted-foreground">
                     {new Date(selectedHistoryEntry.createdAt).toLocaleString("vi-VN")}
                   </span>
                 </div>
 
                 {/* User's Answer */}
-                <Card className="border-slate-200">
+                <Card>
                   <CardHeader className="pb-2">
                     <CardTitle className="text-base">Câu trả lời của bạn</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-slate-700 whitespace-pre-wrap">{selectedHistoryEntry.userAnswer}</p>
+                    <p className="whitespace-pre-wrap text-muted-foreground">{selectedHistoryEntry.userAnswer}</p>
                   </CardContent>
                 </Card>
 
                 {/* Score Card */}
-                <Card className="border-slate-200">
+                <Card>
                   <CardHeader className="pb-2">
                     <CardTitle className="flex items-center justify-between">
                       <span>Điểm số</span>
@@ -343,20 +343,20 @@ export function AnswerScoreDialog({
                 </Card>
 
                 {/* Feedback */}
-                <Card className="border-slate-200">
+                <Card>
                   <CardHeader className="pb-2">
                     <CardTitle className="text-base">Nhận xét</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-slate-700">{selectedHistoryEntry.feedback}</p>
+                    <p className="text-muted-foreground">{selectedHistoryEntry.feedback}</p>
                   </CardContent>
                 </Card>
 
                 {/* Strengths */}
                 {selectedHistoryEntry.strengths.length > 0 && (
-                  <Card className="border-green-200 bg-green-50/50">
+                  <Card className="bg-[linear-gradient(180deg,rgba(45,212,191,0.18),rgba(8,13,28,0.96))]">
                     <CardHeader className="pb-2">
-                      <CardTitle className="text-base flex items-center gap-2 text-green-700">
+                      <CardTitle className="text-base flex items-center gap-2 text-emerald-200">
                         <CheckCircle className="w-5 h-5" />
                         Điểm mạnh
                       </CardTitle>
@@ -364,8 +364,8 @@ export function AnswerScoreDialog({
                     <CardContent>
                       <ul className="space-y-2">
                         {selectedHistoryEntry.strengths.map((s, i) => (
-                          <li key={i} className="flex items-start gap-2 text-green-800">
-                            <span className="text-green-500 mt-1">•</span>
+                          <li key={i} className="flex items-start gap-2 text-emerald-50">
+                            <span className="mt-1 text-emerald-300">•</span>
                             <span>{s}</span>
                           </li>
                         ))}
@@ -376,9 +376,9 @@ export function AnswerScoreDialog({
 
                 {/* Improvements */}
                 {selectedHistoryEntry.improvements.length > 0 && (
-                  <Card className="border-orange-200 bg-orange-50/50">
+                  <Card className="bg-[linear-gradient(180deg,rgba(255,182,149,0.18),rgba(8,13,28,0.96))]">
                     <CardHeader className="pb-2">
-                      <CardTitle className="text-base flex items-center gap-2 text-orange-700">
+                      <CardTitle className="text-base flex items-center gap-2 text-amber-50">
                         <Lightbulb className="w-5 h-5" />
                         Cần cải thiện
                       </CardTitle>
@@ -386,8 +386,8 @@ export function AnswerScoreDialog({
                     <CardContent>
                       <ul className="space-y-2">
                         {selectedHistoryEntry.improvements.map((imp, i) => (
-                          <li key={i} className="flex items-start gap-2 text-orange-800">
-                            <span className="text-orange-500 mt-1">•</span>
+                          <li key={i} className="flex items-start gap-2 text-amber-50">
+                            <span className="mt-1 text-[var(--tertiary)]">•</span>
                             <span>{imp}</span>
                           </li>
                         ))}
@@ -398,24 +398,24 @@ export function AnswerScoreDialog({
 
                 {/* Sample Answer */}
                 {selectedHistoryEntry.sampleAnswer && (
-                  <Card className="border-blue-200 bg-blue-50/50">
+                  <Card className="bg-[linear-gradient(180deg,rgba(79,70,229,0.18),rgba(8,13,28,0.96))]">
                     <CardHeader className="pb-2">
-                      <CardTitle className="text-base flex items-center gap-2 text-blue-700">
+                      <CardTitle className="text-base flex items-center gap-2 text-[var(--primary)]">
                         <Lightbulb className="w-5 h-5" />
                         Câu trả lời mẫu
                       </CardTitle>
                     </CardHeader>
                     <CardContent>
-                      <MarkdownContent content={selectedHistoryEntry.sampleAnswer} className="text-blue-800" />
+                      <MarkdownContent content={selectedHistoryEntry.sampleAnswer} className="text-indigo-50" />
                     </CardContent>
                   </Card>
                 )}
 
                 {/* Chat History */}
                 {selectedHistoryEntry.chatMessages.length > 0 && (
-                  <Card className="border-purple-200 bg-purple-50/50">
+                  <Card className="bg-[linear-gradient(180deg,rgba(79,70,229,0.14),rgba(8,13,28,0.96))]">
                     <CardHeader className="pb-2">
-                      <CardTitle className="text-base flex items-center gap-2 text-purple-700">
+                      <CardTitle className="text-base flex items-center gap-2 text-[var(--primary)]">
                         <MessageCircle className="w-5 h-5" />
                         Lịch sử hỏi đáp
                       </CardTitle>
@@ -430,8 +430,8 @@ export function AnswerScoreDialog({
                             <div
                               className={`max-w-[85%] rounded-lg px-3 py-2 text-sm ${
                                 msg.role === "user"
-                                  ? "bg-purple-600 text-white"
-                                  : "bg-white text-slate-800 border border-purple-100"
+                                  ? "bg-[linear-gradient(135deg,var(--primary-container),var(--primary))] text-[var(--primary-foreground)]"
+                                  : "surface-inset text-muted-foreground"
                               }`}
                             >
                               {msg.role === "assistant" ? (
@@ -456,13 +456,13 @@ export function AnswerScoreDialog({
             ) : (
               /* Show history list */
               <div className="space-y-3">
-                <p className="text-sm text-slate-500">
+                <p className="text-sm text-muted-foreground">
                   Bạn đã trả lời câu hỏi này {questionHistory.length} lần
                 </p>
                 {questionHistory.map((entry) => (
                   <Card
                     key={entry.id}
-                    className="border-slate-200 cursor-pointer hover:border-blue-300 transition-colors"
+                    className="cursor-pointer transition-transform hover:-translate-y-0.5"
                     onClick={() => setSelectedHistoryEntry(entry)}
                   >
                     <CardContent className="py-4 flex items-center justify-between">
@@ -471,17 +471,17 @@ export function AnswerScoreDialog({
                           <Badge variant={getScoreBadgeVariant(entry.score)}>
                             {entry.score}/100
                           </Badge>
-                          <span className="text-sm text-slate-500">
+                          <span className="text-sm text-muted-foreground">
                             {new Date(entry.createdAt).toLocaleString("vi-VN")}
                           </span>
                           {entry.chatMessages.length > 0 && (
-                            <span className="text-xs text-purple-600 flex items-center gap-1">
+                            <span className="flex items-center gap-1 text-xs text-[var(--primary)]">
                               <MessageCircle className="w-3 h-3" />
                               {entry.chatMessages.length} tin nhắn
                             </span>
                           )}
                         </div>
-                        <p className="text-sm text-slate-600 truncate">
+                        <p className="truncate text-sm text-muted-foreground">
                           {entry.userAnswer.slice(0, 100)}...
                         </p>
                       </div>
@@ -493,7 +493,7 @@ export function AnswerScoreDialog({
                             e.stopPropagation();
                             deleteEntry(entry.id);
                           }}
-                          className="text-slate-400 hover:text-red-500"
+                          className="text-muted-foreground hover:text-rose-200"
                         >
                           <Trash2 className="w-4 h-4" />
                         </Button>
@@ -515,11 +515,11 @@ export function AnswerScoreDialog({
           <>
             {/* Model Selection */}
             <div className="mb-4">
-              <label className="block text-sm font-medium text-slate-700 mb-2">
+              <label className="mb-2 block text-sm font-medium text-foreground">
                 Chọn AI Model để chấm điểm
               </label>
               {isLoadingModels ? (
-                <div className="flex items-center gap-2 text-slate-500">
+                <div className="flex items-center gap-2 text-muted-foreground">
                   <Spinner className="w-4 h-4" />
                   <span>Đang tải danh sách model...</span>
                 </div>
@@ -546,7 +546,7 @@ export function AnswerScoreDialog({
 
             {/* Answer Input */}
             <div className="mb-4">
-              <label className="block text-sm font-medium text-slate-700 mb-2">
+              <label className="mb-2 block text-sm font-medium text-foreground">
                 Câu trả lời của bạn
               </label>
               <Textarea
@@ -560,7 +560,7 @@ export function AnswerScoreDialog({
 
             {/* Error Display */}
             {error && (
-              <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded-lg flex items-center gap-2 text-red-700">
+              <div className="surface-inset mb-4 flex items-center gap-2 bg-[linear-gradient(180deg,rgba(251,113,133,0.18),rgba(8,13,28,0.96))] p-3 text-rose-100">
                 <AlertCircle className="w-5 h-5" />
                 <span>{error}</span>
               </div>
@@ -591,7 +591,7 @@ export function AnswerScoreDialog({
           /* Score Result Display */
           <div className="space-y-4">
             {/* Score Card */}
-            <Card className="border-slate-200">
+            <Card>
               <CardHeader className="pb-2">
                 <CardTitle className="flex items-center justify-between">
                   <span>Kết quả chấm điểm</span>
@@ -615,20 +615,20 @@ export function AnswerScoreDialog({
             </Card>
 
             {/* Feedback */}
-            <Card className="border-slate-200">
+            <Card>
               <CardHeader className="pb-2">
                 <CardTitle className="text-base">Nhận xét</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-slate-700">{scoreResult.feedback}</p>
+                <p className="text-muted-foreground">{scoreResult.feedback}</p>
               </CardContent>
             </Card>
 
             {/* Strengths */}
             {scoreResult.strengths && scoreResult.strengths.length > 0 && (
-              <Card className="border-green-200 bg-green-50/50">
+              <Card className="bg-[linear-gradient(180deg,rgba(45,212,191,0.18),rgba(8,13,28,0.96))]">
                 <CardHeader className="pb-2">
-                  <CardTitle className="text-base flex items-center gap-2 text-green-700">
+                  <CardTitle className="text-base flex items-center gap-2 text-emerald-200">
                     <CheckCircle className="w-5 h-5" />
                     Điểm mạnh
                   </CardTitle>
@@ -636,8 +636,8 @@ export function AnswerScoreDialog({
                 <CardContent>
                   <ul className="space-y-2">
                     {scoreResult.strengths.map((strength, index) => (
-                      <li key={index} className="flex items-start gap-2 text-green-800">
-                        <span className="text-green-500 mt-1">•</span>
+                      <li key={index} className="flex items-start gap-2 text-emerald-50">
+                        <span className="mt-1 text-emerald-300">•</span>
                         <span>{strength}</span>
                       </li>
                     ))}
@@ -648,9 +648,9 @@ export function AnswerScoreDialog({
 
             {/* Improvements */}
             {scoreResult.improvements && scoreResult.improvements.length > 0 && (
-              <Card className="border-orange-200 bg-orange-50/50">
+              <Card className="bg-[linear-gradient(180deg,rgba(255,182,149,0.18),rgba(8,13,28,0.96))]">
                 <CardHeader className="pb-2">
-                  <CardTitle className="text-base flex items-center gap-2 text-orange-700">
+                  <CardTitle className="text-base flex items-center gap-2 text-amber-50">
                     <Lightbulb className="w-5 h-5" />
                     Cần cải thiện
                   </CardTitle>
@@ -658,8 +658,8 @@ export function AnswerScoreDialog({
                 <CardContent>
                   <ul className="space-y-2">
                     {scoreResult.improvements.map((improvement, index) => (
-                      <li key={index} className="flex items-start gap-2 text-orange-800">
-                        <span className="text-orange-500 mt-1">•</span>
+                      <li key={index} className="flex items-start gap-2 text-amber-50">
+                        <span className="mt-1 text-[var(--tertiary)]">•</span>
                         <span>{improvement}</span>
                       </li>
                     ))}
@@ -670,25 +670,25 @@ export function AnswerScoreDialog({
 
             {/* Sample Answer */}
             {scoreResult.sampleAnswer && (
-              <Card className="border-blue-200 bg-blue-50/50">
+              <Card className="bg-[linear-gradient(180deg,rgba(79,70,229,0.18),rgba(8,13,28,0.96))]">
                 <CardHeader className="pb-2">
-                  <CardTitle className="text-base flex items-center gap-2 text-blue-700">
+                  <CardTitle className="text-base flex items-center gap-2 text-[var(--primary)]">
                     <Lightbulb className="w-5 h-5" />
                     Câu trả lời mẫu
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <MarkdownContent content={scoreResult.sampleAnswer} className="text-blue-800" />
+                  <MarkdownContent content={scoreResult.sampleAnswer} className="text-indigo-50" />
                 </CardContent>
               </Card>
             )}
 
             {/* Follow-up Chat Section */}
             <Collapsible open={chatOpen} onOpenChange={setChatOpen}>
-              <Card className="border-purple-200 bg-purple-50/50">
+              <Card className="bg-[linear-gradient(180deg,rgba(79,70,229,0.14),rgba(8,13,28,0.96))]">
                 <CollapsibleTrigger asChild>
-                  <CardHeader className="pb-2 cursor-pointer hover:bg-purple-100/50 transition-colors rounded-t-xl">
-                    <CardTitle className="text-base flex items-center justify-between text-purple-700">
+                  <CardHeader className="cursor-pointer rounded-t-xl pb-2 transition-colors hover:bg-white/4">
+                    <CardTitle className="text-base flex items-center justify-between text-[var(--primary)]">
                       <div className="flex items-center gap-2">
                         <MessageCircle className="w-5 h-5" />
                         Hỏi thêm AI để hiểu rõ hơn
@@ -705,7 +705,7 @@ export function AnswerScoreDialog({
                   <CardContent className="pt-0">
                     {/* Chat Messages */}
                     {chatMessages.length > 0 && (
-                      <div className="max-h-60 overflow-y-auto mb-3 space-y-3 p-3 bg-white rounded-lg border border-purple-100">
+                      <div className="surface-inset mb-3 max-h-60 space-y-3 overflow-y-auto p-3">
                         {chatMessages.map((msg, index) => (
                           <div
                             key={index}
@@ -714,8 +714,8 @@ export function AnswerScoreDialog({
                             <div
                               className={`max-w-[85%] rounded-lg px-3 py-2 text-sm ${
                                 msg.role === "user"
-                                  ? "bg-purple-600 text-white"
-                                  : "bg-slate-100 text-slate-800"
+                                  ? "bg-[linear-gradient(135deg,var(--primary-container),var(--primary))] text-[var(--primary-foreground)]"
+                                  : "surface-inset text-muted-foreground"
                               }`}
                             >
                               {msg.role === "assistant" ? (
@@ -749,7 +749,6 @@ export function AnswerScoreDialog({
                         size="icon"
                         onClick={handleSendFollowUp}
                         disabled={!followUpInput.trim() || isSendingChat}
-                        className="bg-purple-600 hover:bg-purple-700"
                       >
                         {isSendingChat ? (
                           <Spinner className="w-4 h-4" />

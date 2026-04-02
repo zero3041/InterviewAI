@@ -11,11 +11,19 @@ import QuestionsPage from "./pages/QuestionsPage";
 import TestPage from "./pages/TestPage";
 import BookmarksPage from "./pages/BookmarksPage";
 import HistoryPage from "./pages/HistoryPage";
+import DashboardPage from "./pages/DashboardPage";
+import StudyPlanPage from "./pages/StudyPlanPage";
+import SettingsPage from "./pages/SettingsPage";
+import LoginPage from "./pages/LoginPage";
 
 function Router() {
   return (
     <Switch>
       <Route path={"/"} component={Home} />
+      <Route path={"/dashboard"} component={DashboardPage} />
+      <Route path={"/study-plan"} component={StudyPlanPage} />
+      <Route path={"/settings"} component={SettingsPage} />
+      <Route path={"/login"} component={LoginPage} />
       <Route path={"/history"} component={HistoryPage} />
       <Route path={"/tech/:techId"} component={TechPage} />
       <Route path={"/tech/:techId/questions/:level"} component={QuestionsPage} />
@@ -34,7 +42,7 @@ function App() {
   return (
     <ErrorBoundary>
       <SessionProvider>
-        <ThemeProvider defaultTheme="light">
+        <ThemeProvider defaultTheme="dark">
           <TooltipProvider>
             <Toaster />
             <Router />

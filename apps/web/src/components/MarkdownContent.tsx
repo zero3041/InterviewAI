@@ -1,6 +1,8 @@
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
+import { cn } from "@/lib/utils";
+
 interface MarkdownContentProps {
   content: string;
   className?: string;
@@ -8,90 +10,102 @@ interface MarkdownContentProps {
 
 export function MarkdownContent({ content, className = "" }: MarkdownContentProps) {
   return (
-    <div className={`prose prose-sm max-w-none ${className}`}>
+    <div
+      className={cn(
+        "max-w-none text-sm leading-7 text-muted-foreground [&>*:first-child]:mt-0 [&>*:last-child]:mb-0",
+        className
+      )}
+    >
       <ReactMarkdown
         remarkPlugins={[remarkGfm]}
         components={{
-          // Headings
           h1: ({ children }) => (
-            <h1 className="text-xl font-bold mt-4 mb-2 first:mt-0">{children}</h1>
+            <h1 className="mt-5 mb-3 text-xl font-semibold tracking-[-0.02em] text-foreground first:mt-0">
+              {children}
+            </h1>
           ),
           h2: ({ children }) => (
-            <h2 className="text-lg font-bold mt-4 mb-2 first:mt-0">{children}</h2>
+            <h2 className="mt-5 mb-3 text-lg font-semibold tracking-[-0.02em] text-foreground first:mt-0">
+              {children}
+            </h2>
           ),
           h3: ({ children }) => (
-            <h3 className="text-base font-bold mt-3 mb-1.5 first:mt-0">{children}</h3>
+            <h3 className="mt-4 mb-2 text-base font-semibold text-foreground first:mt-0">
+              {children}
+            </h3>
           ),
           h4: ({ children }) => (
-            <h4 className="text-sm font-bold mt-2 mb-1 first:mt-0">{children}</h4>
+            <h4 className="mt-3 mb-2 text-sm font-semibold uppercase tracking-[0.12em] text-muted-foreground first:mt-0">
+              {children}
+            </h4>
           ),
-          // Paragraphs
-          p: ({ children }) => <p className="mb-2 last:mb-0">{children}</p>,
-          // Lists
-          ul: ({ children }) => <ul className="list-disc pl-5 mb-2 space-y-1">{children}</ul>,
-          ol: ({ children }) => <ol className="list-decimal pl-5 mb-2 space-y-1">{children}</ol>,
+          p: ({ children }) => <p className="mb-3 last:mb-0">{children}</p>,
+          ul: ({ children }) => (
+            <ul className="mb-3 list-disc space-y-1.5 pl-5 marker:text-[var(--primary)]">
+              {children}
+            </ul>
+          ),
+          ol: ({ children }) => (
+            <ol className="mb-3 list-decimal space-y-1.5 pl-5 marker:text-[var(--primary)]">
+              {children}
+            </ol>
+          ),
           li: ({ children }) => <li className="leading-relaxed">{children}</li>,
-          // Code
           code: ({ className: codeClassName, children }) => {
             const isInline = !codeClassName;
             if (isInline) {
               return (
-                <code className="bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded text-sm font-mono text-purple-700 dark:text-purple-300">
+                <code className="rounded-md bg-white/8 px-1.5 py-0.5 font-mono text-[0.92em] text-[var(--primary)] shadow-[inset_0_0_0_1px_rgba(255,255,255,0.08)]">
                   {children}
                 </code>
               );
             }
             return (
-              <code className="block bg-slate-900 text-slate-100 p-3 rounded-lg text-sm font-mono overflow-x-auto">
+              <code className="block font-mono text-[13px] leading-6 text-slate-100">
                 {children}
               </code>
             );
           },
           pre: ({ children }) => (
-            <pre className="bg-slate-900 text-slate-100 p-3 rounded-lg my-2 overflow-x-auto">
+            <pre className="surface-inset my-3 overflow-x-auto p-4">
               {children}
             </pre>
           ),
-          // Blockquote
           blockquote: ({ children }) => (
-            <blockquote className="border-l-4 border-purple-300 pl-4 italic text-slate-600 my-2">
+            <blockquote className="my-3 rounded-[1.25rem] bg-[linear-gradient(135deg,rgba(79,70,229,0.16),rgba(8,13,28,0.96))] px-4 py-3 italic text-slate-100">
               {children}
             </blockquote>
           ),
-          // Strong & Em
-          strong: ({ children }) => <strong className="font-bold">{children}</strong>,
+          strong: ({ children }) => <strong className="font-semibold text-foreground">{children}</strong>,
           em: ({ children }) => <em className="italic">{children}</em>,
-          // Links
           a: ({ href, children }) => (
             <a
               href={href}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-blue-600 hover:text-blue-800 underline"
+              className="text-[var(--primary)] underline decoration-[rgba(195,192,255,0.45)] underline-offset-4 transition-colors hover:text-foreground"
             >
               {children}
             </a>
           ),
-          // Horizontal rule
-          hr: () => <hr className="border-slate-200 my-4" />,
-          // Table
+          hr: () => <hr className="my-4 border-white/10" />,
           table: ({ children }) => (
-            <div className="overflow-x-auto my-2">
-              <table className="min-w-full border-collapse border border-slate-200">
-                {children}
-              </table>
+            <div className="surface-inset my-3 overflow-x-auto p-0">
+              <table className="min-w-full border-collapse text-sm">{children}</table>
             </div>
           ),
-          thead: ({ children }) => <thead className="bg-slate-100">{children}</thead>,
+          thead: ({ children }) => <thead className="bg-white/6">{children}</thead>,
           tbody: ({ children }) => <tbody>{children}</tbody>,
-          tr: ({ children }) => <tr className="border-b border-slate-200">{children}</tr>,
+          tr: ({ children }) => <tr className="border-b border-white/8 last:border-b-0">{children}</tr>,
           th: ({ children }) => (
-            <th className="px-3 py-2 text-left text-sm font-semibold border border-slate-200">
+            <th className="border-r border-white/8 px-3 py-2 text-left text-xs font-semibold uppercase tracking-[0.12em] text-slate-200 last:border-r-0">
               {children}
             </th>
           ),
           td: ({ children }) => (
-            <td className="px-3 py-2 text-sm border border-slate-200">{children}</td>
+            <td className="border-r border-white/8 px-3 py-2 text-sm text-slate-100 last:border-r-0">
+              {children}
+            </td>
           ),
         }}
       >

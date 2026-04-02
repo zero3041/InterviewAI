@@ -1,11 +1,7 @@
-import { useState, useEffect, useMemo } from "react";
-import { useParams, Link } from "wouter";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Textarea } from "@/components/ui/textarea";
+import { AppShell, InlineStatus, MetricTile, Surface } from "@/components/app-shell";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
-import { Spinner } from "@/components/ui/spinner";
 import {
   Select,
   SelectContent,
@@ -13,19 +9,23 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import {
-  ChevronLeft,
-  Send,
-  CheckCircle,
-  AlertCircle,
-  Lightbulb,
-  Trophy,
-  Clock,
-  RotateCcw,
-  Loader2,
-} from "lucide-react";
+import { Spinner } from "@/components/ui/spinner";
+import { Textarea } from "@/components/ui/textarea";
 import { useQuestions, useTechnologies, type Question } from "@/hooks/useQuestionsApi";
 import { apiFetch } from "@/lib/api";
+import { cn } from "@/lib/utils";
+import {
+  AlertCircle,
+  CheckCircle,
+  Clock3,
+  Loader2,
+  RotateCcw,
+  Send,
+  Sparkles,
+  Trophy,
+} from "lucide-react";
+import { useEffect, useState } from "react";
+import { Link, useParams } from "wouter";
 
 interface AIModel {
   id: string;
@@ -48,21 +48,61 @@ interface BatchScoreResponse {
   overallFeedback: string;
 }
 
+function getScoreBadgeVariant(score: number): "default" | "secondary" | "destructive" {
+  if (score >= 80) {
+    return "default";
+  }
+
+  if (score >= 60) {
+    return "secondary";
+  }
+
+  return "destructive";
+}
+
+function getScoreTextClass(score: number) {
+  if (score >= 80) {
+    return "text-emerald-300";
+  }
+
+  if (score >= 60) {
+    return "text-[var(--tertiary)]";
+  }
+
+  return "text-rose-200";
+}
+
+function getScoreSurfaceClass(score: number) {
+  if (score >= 80) {
+    return "bg-[linear-gradient(180deg,rgba(45,212,191,0.2),rgba(8,13,28,0.96))]";
+  }
+
+  if (score >= 60) {
+    return "bg-[linear-gradient(180deg,rgba(255,182,149,0.18),rgba(8,13,28,0.96))]";
+  }
+
+  return "bg-[linear-gradient(180deg,rgba(251,113,133,0.18),rgba(8,13,28,0.96))]";
+}
+
+function formatTime(ms: number) {
+  const minutes = Math.floor(ms / 60000);
+  const seconds = Math.floor((ms % 60000) / 1000);
+  return `${minutes}:${seconds.toString().padStart(2, "0")}`;
+}
+
 export default function TestPage() {
   const { techId, level } = useParams<{ techId: string; level: string }>();
   const { technologies } = useTechnologies();
-  const currentTech = technologies.find(t => t.id === techId);
+  const currentTech = technologies.find((item) => item.id === techId);
   const technologyName = currentTech?.name || "Lập trình";
-  
-  const isValidLevel = level === "junior" || level === "middle";
   const currentTechId = techId || "java-springboot";
-  
-  // Fetch questions from API
+  const isValidLevel = level === "junior" || level === "middle";
+
   const { questions: allQuestions, isLoading: isLoadingQuestions } = useQuestions(
     currentTechId,
     isValidLevel ? level : null
   );
-  
+
   const [testQuestions, setTestQuestions] = useState<Question[]>([]);
   const [answers, setAnswers] = useState<Record<number, string>>({});
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -75,7 +115,6 @@ export default function TestPage() {
   const [startTime] = useState(Date.now());
   const [viewingResult, setViewingResult] = useState<number | null>(null);
 
-  // Pick 20 random questions when questions load
   useEffect(() => {
     if (allQuestions.length > 0 && testQuestions.length === 0) {
       const shuffled = [...allQuestions].sort(() => Math.random() - 0.5);
@@ -83,31 +122,39 @@ export default function TestPage() {
     }
   }, [allQuestions, testQuestions.length]);
 
-  // Fetch models
   useEffect(() => {
     async function fetchModels() {
       try {
         const response = await apiFetch("/models");
-        if (response.ok) {
-          const data = await response.json();
-          setModels(data.models);
-          setSelectedModel(data.defaultModel);
+        if (!response.ok) {
+          return;
         }
-      } catch (err) {
-        console.error("Failed to fetch models:", err);
+
+        const data = await response.json();
+        setModels(data.models ?? []);
+        setSelectedModel(data.defaultModel ?? "");
+      } catch (fetchError) {
+        console.error("Failed to fetch models:", fetchError);
       } finally {
         setIsLoadingModels(false);
       }
     }
+
     fetchModels();
   }, []);
 
+  useEffect(() => {
+    if (results && viewingResult === null && results.results.length > 0) {
+      setViewingResult(0);
+    }
+  }, [results, viewingResult]);
+
   if (isLoadingQuestions) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 flex items-center justify-center">
+      <div className="flex min-h-screen items-center justify-center bg-background">
         <div className="text-center">
-          <Loader2 className="w-8 h-8 animate-spin mx-auto mb-4 text-blue-600" />
-          <p className="text-slate-600">Đang tải câu hỏi...</p>
+          <Loader2 className="mx-auto mb-4 size-8 animate-spin text-[var(--primary)]" />
+          <p className="text-muted-foreground">Đang tải câu hỏi...</p>
         </div>
       </div>
     );
@@ -115,21 +162,27 @@ export default function TestPage() {
 
   if (!isValidLevel) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <Card className="border-slate-200">
-          <CardContent className="pt-6">
-            <p className="text-slate-600 mb-4">Invalid level</p>
-            <Link href="/">
-              <Button>Back to Home</Button>
-            </Link>
-          </CardContent>
-        </Card>
+      <div className="flex min-h-screen items-center justify-center bg-background px-4">
+        <div className="surface-card w-full max-w-xl p-8 text-center">
+          <p className="mb-4 font-display text-3xl font-semibold tracking-[-0.05em] text-foreground">
+            Invalid level
+          </p>
+          <p className="mb-6 text-sm leading-6 text-muted-foreground">
+            Route test này chỉ hỗ trợ `junior` và `middle`.
+          </p>
+          <Link href="/">
+            <Button>Back to Home</Button>
+          </Link>
+        </div>
       </div>
     );
   }
 
-  const answeredCount = Object.keys(answers).filter((k) => answers[parseInt(k)]?.trim()).length;
-  const progress = (answeredCount / testQuestions.length) * 100;
+  const answeredCount = Object.keys(answers).filter((key) => answers[Number(key)]?.trim()).length;
+  const progress = testQuestions.length > 0 ? (answeredCount / testQuestions.length) * 100 : 0;
+  const elapsedTime = formatTime(Date.now() - startTime);
+  const activeResultIndex = viewingResult ?? 0;
+  const activeResult = results?.results[activeResultIndex] ?? null;
 
   const handleAnswerChange = (index: number, value: string) => {
     setAnswers((prev) => ({ ...prev, [index]: value }));
@@ -149,9 +202,9 @@ export default function TestPage() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          questions: testQuestions.map((q, i) => ({
-            question: q.text,
-            answer: answers[i] || "",
+          questions: testQuestions.map((question, index) => ({
+            question: question.text,
+            answer: answers[index] || "",
           })),
           model: selectedModel,
           technology: technologyName,
@@ -165,8 +218,8 @@ export default function TestPage() {
         const errorData = await response.json();
         setError(errorData.error || "Có lỗi xảy ra khi chấm bài");
       }
-    } catch (err) {
-      console.error("Submit error:", err);
+    } catch (submitError) {
+      console.error("Submit error:", submitError);
       setError("Không thể kết nối đến server");
     } finally {
       setIsSubmitting(false);
@@ -183,339 +236,363 @@ export default function TestPage() {
     setError(null);
   };
 
-  const getScoreColor = (score: number) => {
-    if (score >= 80) return "text-green-600";
-    if (score >= 60) return "text-yellow-600";
-    if (score >= 40) return "text-orange-600";
-    return "text-red-600";
-  };
-
-  const getScoreBgColor = (score: number) => {
-    if (score >= 80) return "bg-green-100";
-    if (score >= 60) return "bg-yellow-100";
-    if (score >= 40) return "bg-orange-100";
-    return "bg-red-100";
-  };
-
-  const formatTime = (ms: number) => {
-    const minutes = Math.floor(ms / 60000);
-    const seconds = Math.floor((ms % 60000) / 1000);
-    return `${minutes}:${seconds.toString().padStart(2, "0")}`;
-  };
-
-  // Results View
-  if (results) {
+  if (results && activeResult) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
-        <header className="border-b border-slate-200 bg-white/80 backdrop-blur-sm sticky top-0 z-50">
-          <div className="container max-w-6xl mx-auto px-4 py-4">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-3">
-                <Link href={`/tech/${techId}`}>
-                  <Button variant="ghost" size="sm" className="gap-2">
-                    <ChevronLeft className="w-4 h-4" />
-                    Quay lại
-                  </Button>
-                </Link>
-                <h1 className="text-xl font-bold text-slate-900">Kết quả bài test</h1>
+      <AppShell
+        eyebrow="Batch score"
+        title={`${technologyName} ${level === "junior" ? "foundation" : "systems"} test results.`}
+        description="Màn hình này gộp thiết lập bài test, luyện tập và kết quả AI scoring vào một flow liên tục. Layout tối ưu cho so điểm từng câu thay vì chỉ show trung bình tổng."
+        actions={
+          <>
+            <Link href={`/tech/${techId}`}>
+              <Button variant="outline">Back to stack</Button>
+            </Link>
+            <Button onClick={resetTest}>
+              <RotateCcw className="size-4" />
+              Retake
+            </Button>
+          </>
+        }
+        heroMeta={
+          <>
+            <MetricTile
+              label="Average score"
+              value={`${Math.round(results.averageScore)}/100`}
+              caption="Điểm trung bình của cả batch câu trả lời."
+              icon={Trophy}
+              tone="primary"
+            />
+            <MetricTile
+              label="Pass rate"
+              value={`${results.results.filter((result) => result.score >= 60).length}/${testQuestions.length}`}
+              caption="Số câu đạt ngưỡng 60 điểm trở lên."
+              icon={CheckCircle}
+              tone="success"
+            />
+            <MetricTile
+              label="Elapsed time"
+              value={elapsedTime}
+              caption="Thời gian từ lúc bắt đầu đến khi nhận batch critique."
+              icon={Clock3}
+              tone="warm"
+            />
+          </>
+        }
+        aside={
+          <>
+            <Surface>
+              <div className="space-y-4">
+                <p className="editorial-kicker">Question heatmap</p>
+                <div className="grid grid-cols-5 gap-2">
+                  {results.results.map((result, index) => (
+                    <button
+                      key={`${result.questionIndex}-${index}`}
+                      onClick={() => setViewingResult(index)}
+                      className={cn(
+                        "surface-inset px-2 py-3 text-center transition-transform hover:-translate-y-0.5",
+                        getScoreSurfaceClass(result.score),
+                        activeResultIndex === index && "ring-2 ring-[rgba(195,192,255,0.36)]"
+                      )}
+                    >
+                      <p className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
+                        {index + 1}
+                      </p>
+                      <p className={cn("font-display text-xl font-semibold", getScoreTextClass(result.score))}>
+                        {result.score}
+                      </p>
+                    </button>
+                  ))}
+                </div>
               </div>
-              <Button onClick={resetTest} className="gap-2">
-                <RotateCcw className="w-4 h-4" />
-                Làm lại
-              </Button>
+            </Surface>
+
+            <Surface>
+              <div className="space-y-4">
+                <p className="editorial-kicker">Batch signal</p>
+                <InlineStatus label="Model" value={selectedModel || "Unknown"} tone="neutral" />
+                <InlineStatus label="Question count" value={`${testQuestions.length}`} tone="primary" />
+                <InlineStatus
+                  label="Overall status"
+                  value={results.averageScore >= 60 ? "Passable" : "Needs revision"}
+                  tone={results.averageScore >= 60 ? "success" : "warm"}
+                />
+              </div>
+            </Surface>
+          </>
+        }
+      >
+        {results.overallFeedback ? (
+          <Surface>
+            <div className="space-y-4">
+              <div>
+                <p className="editorial-kicker">Overall critique</p>
+                <h2 className="text-2xl font-semibold text-foreground">Batch-level readout</h2>
+              </div>
+              <div className="surface-inset p-5">
+                <p className="text-sm leading-7 text-muted-foreground">{results.overallFeedback}</p>
+              </div>
             </div>
-          </div>
-        </header>
+          </Surface>
+        ) : null}
 
-        <div className="container max-w-6xl mx-auto px-4 py-8">
-          {/* Summary Card */}
-          <Card className="border-slate-200 mb-8">
-            <CardContent className="pt-6">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-                <div>
-                  <Trophy className={`w-12 h-12 mx-auto mb-2 ${getScoreColor(results.averageScore)}`} />
-                  <div className={`text-4xl font-bold ${getScoreColor(results.averageScore)}`}>
-                    {Math.round(results.averageScore)}/100
-                  </div>
-                  <p className="text-slate-600">Điểm trung bình</p>
-                </div>
-                <div>
-                  <CheckCircle className="w-12 h-12 mx-auto mb-2 text-blue-600" />
-                  <div className="text-4xl font-bold text-blue-600">
-                    {results.results.filter((r) => r.score >= 60).length}/{testQuestions.length}
-                  </div>
-                  <p className="text-slate-600">Câu đạt (≥60 điểm)</p>
-                </div>
-                <div>
-                  <Clock className="w-12 h-12 mx-auto mb-2 text-purple-600" />
-                  <div className="text-4xl font-bold text-purple-600">
-                    {formatTime(Date.now() - startTime)}
-                  </div>
-                  <p className="text-slate-600">Thời gian làm bài</p>
-                </div>
+        <Surface>
+          <div className="space-y-5">
+            <div className="flex items-center justify-between gap-4">
+              <div>
+                <p className="editorial-kicker">Focused review</p>
+                <h2 className="text-2xl font-semibold text-foreground">
+                  Question {activeResultIndex + 1}
+                </h2>
               </div>
-            </CardContent>
-          </Card>
+              <Badge variant={getScoreBadgeVariant(activeResult.score)}>{activeResult.score}/100</Badge>
+            </div>
 
-          {/* Overall Feedback */}
-          {results.overallFeedback && (
-            <Card className="border-blue-200 bg-blue-50/50 mb-8">
-              <CardHeader>
-                <CardTitle className="text-base flex items-center gap-2 text-blue-700">
-                  <Lightbulb className="w-5 h-5" />
-                  Nhận xét tổng quan
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-blue-800 whitespace-pre-wrap">{results.overallFeedback}</p>
-              </CardContent>
-            </Card>
-          )}
+            <div className="surface-inset space-y-3 p-5">
+              <p className="editorial-kicker">Prompt</p>
+              <p className="text-sm leading-7 text-foreground">{testQuestions[activeResultIndex]?.text}</p>
+            </div>
 
-          {/* Questions Grid */}
-          <h3 className="text-lg font-semibold text-slate-900 mb-4">Chi tiết từng câu</h3>
-          <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-10 gap-3 mb-8">
-            {results.results.map((result, index) => (
-              <button
-                key={index}
-                onClick={() => setViewingResult(index)}
-                className={`p-3 rounded-lg border-2 transition-all hover:scale-105 ${
-                  viewingResult === index
-                    ? "border-blue-500 ring-2 ring-blue-200"
-                    : "border-transparent"
-                } ${getScoreBgColor(result.score)}`}
-              >
-                <div className="text-sm font-medium text-slate-600">Câu {index + 1}</div>
-                <div className={`text-lg font-bold ${getScoreColor(result.score)}`}>
-                  {result.score}
-                </div>
-              </button>
-            ))}
+            <div className="surface-inset space-y-3 p-5">
+              <p className="editorial-kicker">Your answer</p>
+              <p className="whitespace-pre-wrap text-sm leading-7 text-muted-foreground">
+                {answers[activeResultIndex] || "(Không có câu trả lời)"}
+              </p>
+            </div>
+
+            <div className="surface-inset space-y-3 p-5">
+              <p className="editorial-kicker">AI critique</p>
+              <p className="text-sm leading-7 text-muted-foreground">{activeResult.feedback}</p>
+            </div>
+
+            {activeResult.strengths?.length > 0 ? (
+              <div className="surface-inset bg-[linear-gradient(180deg,rgba(45,212,191,0.18),rgba(8,13,28,0.96))] p-5">
+                <p className="editorial-kicker">Strengths</p>
+                <ul className="mt-3 space-y-2">
+                  {activeResult.strengths.map((strength) => (
+                    <li key={strength} className="text-sm leading-6 text-emerald-100">
+                      • {strength}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ) : null}
+
+            {activeResult.improvements?.length > 0 ? (
+              <div className="surface-inset bg-[linear-gradient(180deg,rgba(255,182,149,0.18),rgba(8,13,28,0.96))] p-5">
+                <p className="editorial-kicker">Needs work</p>
+                <ul className="mt-3 space-y-2">
+                  {activeResult.improvements.map((improvement) => (
+                    <li key={improvement} className="text-sm leading-6 text-amber-50">
+                      • {improvement}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ) : null}
           </div>
-
-          {/* Selected Question Detail */}
-          {viewingResult !== null && (
-            <Card className="border-slate-200">
-              <CardHeader>
-                <CardTitle className="flex items-center justify-between">
-                  <span>Câu {viewingResult + 1}</span>
-                  <Badge
-                    variant={results.results[viewingResult].score >= 60 ? "default" : "destructive"}
-                    className="text-lg px-3 py-1"
-                  >
-                    {results.results[viewingResult].score}/100
-                  </Badge>
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                {/* Question */}
-                <div className="bg-slate-50 rounded-lg p-4">
-                  <p className="font-medium text-slate-900">{testQuestions[viewingResult].text}</p>
-                </div>
-
-                {/* Your Answer */}
-                <div>
-                  <h4 className="font-medium text-slate-700 mb-2">Câu trả lời của bạn:</h4>
-                  <div className="bg-white border rounded-lg p-4">
-                    <p className="text-slate-700 whitespace-pre-wrap">
-                      {answers[viewingResult] || "(Không có câu trả lời)"}
-                    </p>
-                  </div>
-                </div>
-
-                {/* Feedback */}
-                <div>
-                  <h4 className="font-medium text-slate-700 mb-2">Nhận xét:</h4>
-                  <p className="text-slate-700">{results.results[viewingResult].feedback}</p>
-                </div>
-
-                {/* Strengths */}
-                {results.results[viewingResult].strengths?.length > 0 && (
-                  <div className="bg-green-50 rounded-lg p-4">
-                    <h4 className="font-medium text-green-700 flex items-center gap-2 mb-2">
-                      <CheckCircle className="w-4 h-4" />
-                      Điểm mạnh
-                    </h4>
-                    <ul className="space-y-1">
-                      {results.results[viewingResult].strengths.map((s, i) => (
-                        <li key={i} className="text-green-800 text-sm">• {s}</li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-
-                {/* Improvements */}
-                {results.results[viewingResult].improvements?.length > 0 && (
-                  <div className="bg-orange-50 rounded-lg p-4">
-                    <h4 className="font-medium text-orange-700 flex items-center gap-2 mb-2">
-                      <AlertCircle className="w-4 h-4" />
-                      Cần cải thiện
-                    </h4>
-                    <ul className="space-y-1">
-                      {results.results[viewingResult].improvements.map((s, i) => (
-                        <li key={i} className="text-orange-800 text-sm">• {s}</li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-              </CardContent>
-            </Card>
-          )}
-        </div>
-      </div>
+        </Surface>
+      </AppShell>
     );
   }
 
-  // Test Taking View
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
-      <header className="border-b border-slate-200 bg-white/80 backdrop-blur-sm sticky top-0 z-50">
-        <div className="container max-w-6xl mx-auto px-4 py-4">
-          <div className="flex items-center justify-between gap-4">
-            <div className="flex items-center gap-3">
-              <Link href={`/tech/${techId}`}>
-                <Button variant="ghost" size="sm" className="gap-2">
-                  <ChevronLeft className="w-4 h-4" />
-                  Quay lại
-                </Button>
-              </Link>
-              <div>
-                <h1 className="text-lg font-bold text-slate-900">Bài Test - {level === "junior" ? "Junior" : "Middle"}</h1>
-                <p className="text-sm text-slate-600">{testQuestions.length} câu hỏi ngẫu nhiên</p>
-              </div>
-            </div>
-
-            {/* Model Selection */}
-            <div className="flex items-center gap-3">
+    <AppShell
+      eyebrow="Timed test"
+      title={`${technologyName} ${level === "junior" ? "foundation" : "systems"} drill.`}
+      description="Thiết lập bài test và practice view được hợp nhất thành một route. Chọn model, trả lời đủ batch câu hỏi, rồi để AI chấm điểm toàn bộ trong một lần."
+      actions={
+        <>
+          <Link href={`/tech/${techId}`}>
+            <Button variant="outline">Back to stack</Button>
+          </Link>
+          <Button variant="outline" onClick={resetTest}>
+            <RotateCcw className="size-4" />
+            Reshuffle
+          </Button>
+        </>
+      }
+      heroMeta={
+        <>
+          <MetricTile
+            label="Answered"
+            value={`${answeredCount}/${testQuestions.length || 0}`}
+            caption="Số câu đã có nội dung trả lời."
+            icon={CheckCircle}
+            tone="primary"
+          />
+          <MetricTile
+            label="Progress"
+            value={`${Math.round(progress)}%`}
+            caption="Tiến độ hoàn thành batch hiện tại."
+            icon={Sparkles}
+            tone="success"
+          />
+          <MetricTile
+            label="Elapsed"
+            value={elapsedTime}
+            caption="Thời gian làm bài đang trôi từ lúc route được mở."
+            icon={Clock3}
+            tone="warm"
+          />
+        </>
+      }
+      aside={
+        <>
+          <Surface>
+            <div className="space-y-4">
+              <p className="editorial-kicker">Scoring engine</p>
               {isLoadingModels ? (
-                <Spinner className="w-4 h-4" />
+                <div className="surface-inset flex items-center gap-3 px-4 py-3 text-sm text-muted-foreground">
+                  <Spinner className="size-4" />
+                  Loading models...
+                </div>
               ) : (
                 <Select value={selectedModel} onValueChange={setSelectedModel}>
-                  <SelectTrigger className="w-48">
+                  <SelectTrigger className="w-full">
                     <SelectValue placeholder="Chọn model" />
                   </SelectTrigger>
                   <SelectContent>
                     {models.map((model) => (
                       <SelectItem key={model.id} value={model.id}>
-                        {model.name}
+                        {model.name} · {model.provider}
                       </SelectItem>
                     ))}
                   </SelectContent>
                 </Select>
               )}
-            </div>
-          </div>
 
-          {/* Progress Bar */}
-          <div className="mt-4">
-            <div className="flex items-center justify-between text-sm text-slate-600 mb-2">
-              <span>Tiến độ: {answeredCount}/{testQuestions.length} câu</span>
-              <span>{Math.round(progress)}%</span>
-            </div>
-            <Progress value={progress} className="h-2" />
-          </div>
-        </div>
-      </header>
-
-      <div className="container max-w-6xl mx-auto px-4 py-6">
-        {/* Quick Navigation */}
-        <div className="flex flex-wrap gap-2 mb-6">
-          {testQuestions.map((_, index) => {
-            const hasAnswer = !!answers[index]?.trim();
-            return (
-              <button
-                key={index}
-                onClick={() => setCurrentQuestion(index)}
-                className={`w-10 h-10 rounded-lg font-medium text-sm transition-all ${
-                  currentQuestion === index
-                    ? "bg-blue-600 text-white"
-                    : hasAnswer
-                      ? "bg-green-100 text-green-700 border border-green-300"
-                      : "bg-slate-100 text-slate-600 hover:bg-slate-200"
-                }`}
-              >
-                {index + 1}
-              </button>
-            );
-          })}
-        </div>
-
-        {/* Current Question */}
-        {testQuestions[currentQuestion] && (
-          <Card className="border-slate-200 mb-6">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-3">
-                <span className="inline-flex w-8 h-8 rounded-full bg-blue-100 text-blue-700 text-sm font-semibold items-center justify-center">
-                  {currentQuestion + 1}
-                </span>
-                <span className="text-base font-normal text-slate-600">
-                  Câu {currentQuestion + 1}/{testQuestions.length}
-                </span>
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="bg-slate-50 rounded-lg p-4 mb-4">
-                <p className="text-slate-900 font-medium">{testQuestions[currentQuestion].text}</p>
-              </div>
-
-              <Textarea
-                value={answers[currentQuestion] || ""}
-                onChange={(e) => handleAnswerChange(currentQuestion, e.target.value)}
-                placeholder="Nhập câu trả lời của bạn..."
-                rows={8}
-                className="resize-none"
+              <InlineStatus label="Question count" value={`${testQuestions.length}`} tone="neutral" />
+              <InlineStatus
+                label="Submit readiness"
+                value={answeredCount === testQuestions.length && testQuestions.length > 0 ? "Ready" : "Incomplete"}
+                tone={answeredCount === testQuestions.length && testQuestions.length > 0 ? "success" : "warm"}
               />
+            </div>
+          </Surface>
 
-              <div className="flex justify-between mt-4">
-                <Button
-                  variant="outline"
-                  onClick={() => setCurrentQuestion((prev) => Math.max(0, prev - 1))}
-                  disabled={currentQuestion === 0}
-                >
-                  ← Câu trước
-                </Button>
-                <Button
-                  variant="outline"
-                  onClick={() => setCurrentQuestion((prev) => Math.min(testQuestions.length - 1, prev + 1))}
-                  disabled={currentQuestion === testQuestions.length - 1}
-                >
-                  Câu sau →
-                </Button>
-              </div>
-            </CardContent>
-          </Card>
-        )}
-
-        {/* Error Display */}
-        {error && (
-          <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg flex items-center gap-2 text-red-700">
-            <AlertCircle className="w-5 h-5" />
-            <span>{error}</span>
+          <Surface>
+            <div className="space-y-4">
+              <p className="editorial-kicker">Batch submit</p>
+              {error ? (
+                <div className="surface-inset flex items-start gap-3 px-4 py-3 text-sm text-rose-200">
+                  <AlertCircle className="mt-0.5 size-4" />
+                  <span>{error}</span>
+                </div>
+              ) : null}
+              <Button
+                size="lg"
+                onClick={handleSubmit}
+                disabled={isSubmitting || answeredCount < testQuestions.length || testQuestions.length === 0}
+                className="w-full"
+              >
+                {isSubmitting ? (
+                  <>
+                    <Spinner className="size-4" />
+                    Đang chấm bài...
+                  </>
+                ) : (
+                  <>
+                    <Send className="size-4" />
+                    Nộp bài ({answeredCount}/{testQuestions.length})
+                  </>
+                )}
+              </Button>
+            </div>
+          </Surface>
+        </>
+      }
+    >
+      <Surface>
+        <div className="space-y-5">
+          <div className="flex items-center justify-between gap-4">
+            <div>
+              <p className="editorial-kicker">Navigator</p>
+              <h2 className="text-2xl font-semibold text-foreground">Question grid</h2>
+            </div>
+            <Badge variant="outline">{testQuestions.length} prompts</Badge>
           </div>
-        )}
 
-        {/* Submit Button */}
-        <div className="flex justify-center">
-          <Button
-            size="lg"
-            onClick={handleSubmit}
-            disabled={isSubmitting || answeredCount < testQuestions.length}
-            className="gap-2 px-8"
-          >
-            {isSubmitting ? (
-              <>
-                <Spinner className="w-5 h-5" />
-                Đang chấm bài...
-              </>
-            ) : (
-              <>
-                <Send className="w-5 h-5" />
-                Nộp bài ({answeredCount}/{testQuestions.length})
-              </>
-            )}
-          </Button>
+          <div className="grid grid-cols-5 gap-2 md:grid-cols-10">
+            {testQuestions.map((question, index) => {
+              const hasAnswer = !!answers[index]?.trim();
+
+              return (
+                <button
+                  key={question.id}
+                  onClick={() => setCurrentQuestion(index)}
+                  className={cn(
+                    "surface-inset px-2 py-3 text-center transition-transform hover:-translate-y-0.5",
+                    currentQuestion === index && "ring-2 ring-[rgba(195,192,255,0.36)]",
+                    hasAnswer &&
+                      currentQuestion !== index &&
+                      "bg-[linear-gradient(180deg,rgba(45,212,191,0.18),rgba(8,13,28,0.96))]"
+                  )}
+                >
+                  <p className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
+                    {index + 1}
+                  </p>
+                  <p className="mt-1 text-sm font-semibold text-foreground">
+                    {hasAnswer ? "Done" : "Open"}
+                  </p>
+                </button>
+              );
+            })}
+          </div>
         </div>
-      </div>
-    </div>
+      </Surface>
+
+      {testQuestions[currentQuestion] ? (
+        <Surface>
+          <div className="space-y-5">
+            <div className="flex items-start justify-between gap-4">
+              <div className="space-y-3">
+                <div className="flex flex-wrap items-center gap-2">
+                  <span className="question-index">{currentQuestion + 1}</span>
+                  <Badge variant="outline">
+                    Câu {currentQuestion + 1}/{testQuestions.length}
+                  </Badge>
+                </div>
+                <p className="text-sm leading-7 text-foreground">{testQuestions[currentQuestion].text}</p>
+              </div>
+            </div>
+
+            <Textarea
+              value={answers[currentQuestion] || ""}
+              onChange={(event) => handleAnswerChange(currentQuestion, event.target.value)}
+              placeholder="Nhập câu trả lời của bạn..."
+              rows={10}
+              className="resize-none"
+            />
+
+            <div className="space-y-2">
+              <div className="flex items-center justify-between text-sm text-muted-foreground">
+                <span>Batch completion</span>
+                <span>{Math.round(progress)}%</span>
+              </div>
+              <Progress value={progress} />
+            </div>
+
+            <div className="flex flex-wrap justify-between gap-3">
+              <Button
+                variant="outline"
+                onClick={() => setCurrentQuestion((prev) => Math.max(0, prev - 1))}
+                disabled={currentQuestion === 0}
+              >
+                Previous
+              </Button>
+              <Button
+                variant="outline"
+                onClick={() =>
+                  setCurrentQuestion((prev) => Math.min(testQuestions.length - 1, prev + 1))
+                }
+                disabled={currentQuestion === testQuestions.length - 1}
+              >
+                Next
+              </Button>
+            </div>
+          </div>
+        </Surface>
+      ) : null}
+    </AppShell>
   );
 }

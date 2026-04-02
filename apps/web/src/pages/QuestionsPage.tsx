@@ -1,50 +1,57 @@
-import { useState, useMemo, useEffect } from "react";
-import { useParams, Link } from "wouter";
+import { AnswerScoreDialog } from "@/components/AnswerScoreDialog";
+import { AppShell, InlineStatus, MetricTile, Surface } from "@/components/app-shell";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Spinner } from "@/components/ui/spinner";
-import { ChevronLeft, Search, Bookmark, BookmarkCheck, MessageCircle, History } from "lucide-react";
-import { AnswerScoreDialog } from "@/components/AnswerScoreDialog";
-import { useQuestions, useTechnologies, type Question } from "@/hooks/useQuestionsApi";
-import { useHistoryApi } from "@/hooks/useHistoryApi";
 import { useBookmarksApi } from "@/hooks/useBookmarksApi";
+import { useHistoryApi } from "@/hooks/useHistoryApi";
+import { useQuestions, useTechnologies, type Question } from "@/hooks/useQuestionsApi";
+import {
+  BookMarked,
+  Bookmark,
+  BookmarkCheck,
+  History,
+  MessageCircle,
+  Search,
+  Sparkles,
+} from "lucide-react";
+import { useEffect, useMemo, useState } from "react";
+import { Link, useParams } from "wouter";
 
 export default function QuestionsPage() {
   const { level, techId } = useParams<{ level: string; techId?: string }>();
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [answerDialogOpen, setAnswerDialogOpen] = useState(false);
-  const [selectedQuestion, setSelectedQuestion] = useState<{ text: string; number: number; id: number } | null>(null);
-  const [, forceUpdate] = useState(0);
+  const [selectedQuestion, setSelectedQuestion] = useState<{
+    text: string;
+    number: number;
+    id: number;
+  } | null>(null);
 
-  // API hooks
   const currentTechId = techId || "java-springboot";
   const { technologies } = useTechnologies();
-  const { categories, questions, totalQuestions, levelLabel, isLoading, error } = useQuestions(
+  const { categories, totalQuestions, levelLabel, isLoading, error } = useQuestions(
     currentTechId,
     level || null
   );
-  const { hasHistory } = useHistoryApi();
+  const { hasHistory, refetch: refetchHistory } = useHistoryApi();
   const { isBookmarked, toggleBookmark } = useBookmarksApi();
 
-  // Get technology name
-  const currentTech = technologies.find((t) => t.id === currentTechId);
+  const currentTech = technologies.find((item) => item.id === currentTechId);
   const technologyName = currentTech?.name || "Lập trình";
 
-  // Determine back link based on techId
-  const backLink = techId ? `/tech/${techId}` : "/";
-
-  // Initialize selected category when data loads
   useEffect(() => {
     if (selectedCategory === null && Object.keys(categories).length > 0) {
       setSelectedCategory(Object.keys(categories)[0]);
     }
   }, [categories, selectedCategory]);
 
-  // Filter questions based on search query (must be before early returns)
   const filteredCategories = useMemo(() => {
-    if (!searchQuery) return categories;
+    if (!searchQuery) {
+      return categories;
+    }
 
     const result: Record<string, Record<string, Question[]>> = {};
 
@@ -52,8 +59,8 @@ export default function QuestionsPage() {
       const filteredSubcategories: Record<string, Question[]> = {};
 
       Object.entries(subcategories).forEach(([subcategoryName, questions]) => {
-        const filtered = questions.filter((q) =>
-          q.text.toLowerCase().includes(searchQuery.toLowerCase())
+        const filtered = questions.filter((question) =>
+          question.text.toLowerCase().includes(searchQuery.toLowerCase())
         );
 
         if (filtered.length > 0) {
@@ -69,22 +76,38 @@ export default function QuestionsPage() {
     return result;
   }, [searchQuery, categories]);
 
-  const displayedCategory = selectedCategory && filteredCategories[selectedCategory];
+  useEffect(() => {
+    if (selectedCategory && !filteredCategories[selectedCategory]) {
+      setSelectedCategory(Object.keys(filteredCategories)[0] ?? null);
+    }
+  }, [filteredCategories, selectedCategory]);
 
-  // Open answer dialog for a question
+  const displayedCategory = selectedCategory ? filteredCategories[selectedCategory] : null;
+  const filteredQuestionCount = useMemo(
+    () =>
+      Object.values(filteredCategories).reduce(
+        (sum, subcategories) =>
+          sum +
+          Object.values(subcategories).reduce((innerSum, group) => innerSum + group.length, 0),
+        0
+      ),
+    [filteredCategories]
+  );
+  const categoryCount = Object.keys(filteredCategories).length;
+  const backLink = techId ? `/tech/${techId}` : "/";
+
   const openAnswerDialog = (question: Question) => {
     setSelectedQuestion({ text: question.text, number: question.questionNumber, id: question.id });
     setAnswerDialogOpen(true);
   };
 
-  // Handle bookmark toggle
   const handleToggleBookmark = async (questionId: number) => {
     await toggleBookmark(questionId);
   };
 
   if (isLoading) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
+      <div className="flex min-h-screen items-center justify-center bg-background">
         <Spinner className="w-8 h-8" />
       </div>
     );
@@ -92,160 +115,196 @@ export default function QuestionsPage() {
 
   if (error || !level || (level !== "junior" && level !== "middle")) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <Card className="border-slate-200">
-          <CardContent className="pt-6">
-            <p className="text-slate-600 mb-4">{error || "Invalid level or technology selected"}</p>
-            <Link href="/">
-              <Button>Back to Home</Button>
-            </Link>
-          </CardContent>
-        </Card>
+      <div className="flex min-h-screen items-center justify-center bg-background px-4">
+        <div className="surface-card w-full max-w-xl p-8 text-center">
+          <p className="mb-4 font-display text-3xl font-semibold tracking-[-0.05em] text-foreground">
+            Invalid level or technology selected
+          </p>
+          <p className="mb-6 text-sm leading-6 text-muted-foreground">
+            {error || "Route này không trỏ tới level hợp lệ."}
+          </p>
+          <Link href="/">
+            <Button>Back to Home</Button>
+          </Link>
+        </div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
-      {/* Header */}
-      <header className="border-b border-slate-200 bg-white/80 backdrop-blur-sm sticky top-0 z-50">
-        <div className="container max-w-6xl mx-auto px-4 py-4">
-          <div className="flex items-center gap-3 mb-4">
-            <Link href={backLink}>
-              <Button variant="ghost" size="sm" className="gap-2">
-                <ChevronLeft className="w-4 h-4" />
-                Quay lại
-              </Button>
-            </Link>
-            <h1 className="text-2xl font-bold text-slate-900 flex-1">{levelLabel}</h1>
-            <div className="text-sm text-slate-600">{totalQuestions} câu hỏi</div>
-          </div>
-
-          {/* Search Bar */}
-          <div className="relative">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-slate-400" />
+    <AppShell
+      eyebrow="Question library"
+      title={`${technologyName} ${levelLabel.toLowerCase()} library.`}
+      description="Screen này gom hai ý trong Stitch: khám phá câu hỏi và thư viện câu hỏi ôn tập. Search, category rail, bookmark và answer dialog đều đã chuyển lên cùng language dark editorial."
+      actions={
+        <>
+          <Link href={backLink}>
+            <Button variant="outline">Back to stack</Button>
+          </Link>
+          <Link href={`/tech/${currentTechId}/test/${level}`}>
+            <Button>
+              <Sparkles className="size-4" />
+              Timed test
+            </Button>
+          </Link>
+        </>
+      }
+      heroMeta={
+        <>
+          <div className="surface-inset flex items-center gap-3 px-4 py-3 lg:col-span-2">
+            <Search className="size-4 text-muted-foreground" />
             <Input
-              placeholder="Tìm kiếm câu hỏi..."
+              placeholder="Tìm kiếm câu hỏi, khái niệm, hoặc chủ đề..."
               value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="pl-10 border-slate-200"
+              onChange={(event) => setSearchQuery(event.target.value)}
+              className="border-0 bg-transparent px-0 shadow-none focus-visible:ring-0"
             />
           </div>
-        </div>
-      </header>
+          <MetricTile
+            label="Filtered bank"
+            value={filteredQuestionCount}
+            caption={`${categoryCount} categories đang hiển thị sau khi lọc.`}
+            icon={BookMarked}
+            tone="primary"
+          />
+        </>
+      }
+      aside={
+        <>
+          <Surface>
+            <div className="space-y-4">
+              <p className="editorial-kicker">Category rail</p>
+              <div className="space-y-2">
+                {Object.entries(filteredCategories).map(([categoryName, subcategories]) => {
+                  const questionCount = Object.values(subcategories).reduce(
+                    (sum, items) => sum + items.length,
+                    0
+                  );
 
-      {/* Main Content */}
-      <div className="container max-w-6xl mx-auto px-4 py-8">
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
-          {/* Sidebar - Categories */}
-          <div className="lg:col-span-1">
-            <Card className="border-slate-200 sticky top-24">
-              <CardHeader>
-                <CardTitle className="text-base">Categories</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-2">
-                  {Object.keys(filteredCategories).map((categoryName) => (
+                  return (
                     <button
                       key={categoryName}
                       onClick={() => setSelectedCategory(categoryName)}
-                      className={`w-full text-left px-3 py-2 rounded-md text-sm transition-colors ${
-                        selectedCategory === categoryName
-                          ? "bg-blue-100 text-blue-900 font-medium"
-                          : "text-slate-700 hover:bg-slate-100"
-                      }`}
+                      className="surface-inset flex w-full items-center justify-between gap-3 px-4 py-3 text-left"
                     >
-                      {categoryName}
+                      <span
+                        className={
+                          selectedCategory === categoryName
+                            ? "font-semibold text-foreground"
+                            : "text-sm text-muted-foreground"
+                        }
+                      >
+                        {categoryName}
+                      </span>
+                      <Badge variant={selectedCategory === categoryName ? "default" : "outline"}>
+                        {questionCount}
+                      </Badge>
                     </button>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-
-          {/* Main Content - Questions */}
-          <div className="lg:col-span-3">
-            {displayedCategory ? (
-              <div className="space-y-6">
-                {Object.entries(displayedCategory).map(([subcategoryName, questions]) => (
-                  <Card key={subcategoryName} className="border-slate-200">
-                    <CardHeader>
-                      <CardTitle className="text-lg text-blue-600">{subcategoryName}</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="space-y-4">
-                        {questions.map((question) => {
-                          const questionBookmarked = isBookmarked(question.id);
-                          const questionHasHistory = hasHistory(question.id);
-
-                          return (
-                            <div
-                              key={question.id}
-                              className="pb-4 border-b border-slate-200 last:border-b-0 last:pb-0"
-                            >
-                              <div className="flex items-start justify-between gap-4">
-                                <div className="flex-1">
-                                  <div className="flex items-center gap-2 mb-2">
-                                    <span className="inline-block w-6 h-6 rounded-full bg-blue-100 text-blue-700 text-xs font-semibold flex items-center justify-center">
-                                      {question.questionNumber}
-                                    </span>
-                                    <p className="text-slate-900 font-medium">{question.text}</p>
-                                    {questionHasHistory && (
-                                      <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-purple-100 text-purple-700 text-xs font-medium">
-                                        <History className="w-3 h-3" />
-                                        Đã làm
-                                      </span>
-                                    )}
-                                  </div>
-                                </div>
-                                <div className="flex-shrink-0 flex items-center gap-1">
-                                  <button
-                                    onClick={() => openAnswerDialog(question)}
-                                    className="p-2 hover:bg-blue-100 rounded-md transition-colors"
-                                    title="Trả lời câu hỏi"
-                                  >
-                                    <MessageCircle className="w-5 h-5 text-blue-500" />
-                                  </button>
-                                  <button
-                                    onClick={() => handleToggleBookmark(question.id)}
-                                    className="p-2 hover:bg-slate-100 rounded-md transition-colors"
-                                    title={questionBookmarked ? "Remove bookmark" : "Add bookmark"}
-                                  >
-                                    {questionBookmarked ? (
-                                      <BookmarkCheck className="w-5 h-5 text-blue-600" />
-                                    ) : (
-                                      <Bookmark className="w-5 h-5 text-slate-400" />
-                                    )}
-                                  </button>
-                                </div>
-                              </div>
-                            </div>
-                          );
-                        })}
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
+                  );
+                })}
               </div>
-            ) : (
-              <Card className="border-slate-200">
-                <CardContent className="pt-12 pb-12 text-center">
-                  <p className="text-slate-600 mb-4">No questions found</p>
-                  <Button
-                    variant="outline"
-                    onClick={() => setSearchQuery("")}
-                    className="border-slate-200"
-                  >
-                    Clear Search
-                  </Button>
-                </CardContent>
-              </Card>
-            )}
-          </div>
-        </div>
-      </div>
+            </div>
+          </Surface>
 
-      {/* Answer Score Dialog */}
+          <Surface>
+            <div className="space-y-4">
+              <p className="editorial-kicker">Library signal</p>
+              <InlineStatus label="Questions in level" value={`${totalQuestions}`} tone="neutral" />
+              <InlineStatus
+                label="Search state"
+                value={searchQuery ? "Filtered" : "Full bank"}
+                tone="warm"
+              />
+              <InlineStatus label="Bookmark bridge" value="Live" tone="success" />
+            </div>
+          </Surface>
+        </>
+      }
+    >
+      {displayedCategory ? (
+        <div className="space-y-6">
+          {Object.entries(displayedCategory).map(([subcategoryName, subcategoryQuestions]) => (
+            <Surface key={subcategoryName}>
+              <div className="space-y-5">
+                <div className="flex items-center justify-between gap-4">
+                  <div>
+                    <p className="editorial-kicker">Subcategory</p>
+                    <h2 className="text-2xl font-semibold text-foreground">{subcategoryName}</h2>
+                  </div>
+                  <Badge variant="outline">{subcategoryQuestions.length} prompts</Badge>
+                </div>
+
+                <div className="space-y-3">
+                  {subcategoryQuestions.map((question) => {
+                    const questionBookmarked = isBookmarked(question.id);
+                    const questionHasHistory = hasHistory(question.id);
+
+                    return (
+                      <div
+                        key={question.id}
+                        className="surface-inset flex flex-col gap-4 p-4 lg:flex-row lg:items-start lg:justify-between"
+                      >
+                        <div className="space-y-3">
+                          <div className="flex flex-wrap items-center gap-2">
+                            <span className="question-index">{question.questionNumber}</span>
+                            {questionHasHistory ? (
+                              <Badge variant="secondary">
+                                <History className="size-3" />
+                                Reviewed
+                              </Badge>
+                            ) : null}
+                            {questionBookmarked ? (
+                              <Badge>
+                                <BookmarkCheck className="size-3" />
+                                Saved
+                              </Badge>
+                            ) : null}
+                          </div>
+                          <p className="text-sm leading-7 text-foreground">{question.text}</p>
+                        </div>
+
+                        <div className="flex items-center gap-2">
+                          <Button variant="outline" size="sm" onClick={() => openAnswerDialog(question)}>
+                            <MessageCircle className="size-4" />
+                            Trả lời
+                          </Button>
+                          <Button
+                            variant="ghost"
+                            size="icon-sm"
+                            onClick={() => handleToggleBookmark(question.id)}
+                            title={questionBookmarked ? "Remove bookmark" : "Add bookmark"}
+                          >
+                            {questionBookmarked ? (
+                              <BookmarkCheck className="size-4 text-[var(--primary)]" />
+                            ) : (
+                              <Bookmark className="size-4 text-muted-foreground" />
+                            )}
+                          </Button>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            </Surface>
+          ))}
+        </div>
+      ) : (
+        <Surface>
+          <div className="surface-inset space-y-4 p-8 text-center">
+            <p className="font-display text-2xl font-semibold tracking-[-0.05em] text-foreground">
+              No questions matched this filter
+            </p>
+            <p className="text-sm leading-6 text-muted-foreground">
+              Xoá search hoặc chọn category khác để mở lại library.
+            </p>
+            <Button variant="outline" onClick={() => setSearchQuery("")}>
+              Clear search
+            </Button>
+          </div>
+        </Surface>
+      )}
+
       {selectedQuestion && (
         <AnswerScoreDialog
           open={answerDialogOpen}
@@ -256,9 +315,11 @@ export default function QuestionsPage() {
           technology={technologyName}
           techId={currentTechId}
           level={level || "junior"}
-          onHistorySaved={() => forceUpdate((n) => n + 1)}
+          onHistorySaved={() => {
+            refetchHistory();
+          }}
         />
       )}
-    </div>
+    </AppShell>
   );
 }
